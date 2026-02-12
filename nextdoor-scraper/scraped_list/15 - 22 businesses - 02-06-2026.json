@@ -1,0 +1,31 @@
+{
+  "run_info": {
+    "posts_scraped": 15,
+    "businesses_found": 22,
+    "date": "02/06/2026"
+  },
+  "businesses": [
+    {"name": "Noscrubs Austin, TX", "href": "https://nextdoor.com/page/noscrubs-austin-tx"},
+    {"name": "Bentnail Construction Austin, TX 1", "href": "https://nextdoor.com/page/bentnail-construction-austin-tx-1"},
+    {"name": "Thompson Handyman Services Austin, TX", "href": "https://nextdoor.com/page/thompson-handyman-services-austin-tx"},
+    {"name": "Daniels Repair and Remodeling", "href": "https://nextdoor.com/page/daniels-repair-and-remodeling"},
+    {"name": "Max Contracting Services Elgin, TX", "href": "https://nextdoor.com/page/max-contracting-services-elgin-tx"},
+    {"name": "EA Construction 1", "href": "https://nextdoor.com/page/ea-construction-1"},
+    {"name": "Galindo Landscaping More Dripping Springs, TX", "href": "https://nextdoor.com/page/galindo-landscaping-more-dripping-springs-tx"},
+    {"name": "Gustavo Camarillo Austin, TX", "href": "https://nextdoor.com/page/gustavo-camarillo-austin-tx"},
+    {"name": "Freelance Arborist Austin, TX", "href": "https://nextdoor.com/page/freelance-arborist-austin-tx"},
+    {"name": "Maas Verde Landscape Restoration Austin, TX", "href": "https://nextdoor.com/page/maas-verde-landscape-restoration-austin-tx"},
+    {"name": "Patton Works Tree and Lawn Services Austin, TX", "href": "https://nextdoor.com/page/patton-works-tree-and-lawn-services-austin-tx"},
+    {"name": "Affordable Tree Service Austin, TX", "href": "https://nextdoor.com/page/affordable-tree-service-austin-tx"},
+    {"name": "Cupidolandscaping Austin, TX 1", "href": "https://nextdoor.com/page/cupidolandscaping-austin-tx-1"},
+    {"name": "Formidable Construction Del Valle, TX", "href": "https://nextdoor.com/page/formidable-construction-del-valle-tx"},
+    {"name": "Logical Choice Handyman Home Maintenance Pearland, TX", "href": "https://nextdoor.com/page/logical-choice-handyman-home-maintenance-pearland-tx"},
+    {"name": "JFIG Electric Service LLC", "href": "https://nextdoor.com/page/jfig-electric-service-llc"},
+    {"name": "Leos Landscaping and Handyman Services Austin, TX", "href": "https://nextdoor.com/page/leos-landscaping-and-handyman-services-austin-tx"},
+    {"name": "Handyman Pros Austin, TX", "href": "https://nextdoor.com/page/handyman-pros-austin-tx"},
+    {"name": "Laguna Landscaping Construction Austin, TX", "href": "https://nextdoor.com/page/laguna-landscaping-construction-austin-tx"},
+    {"name": "Brodie Food Mart Austin, TX 1", "href": "https://nextdoor.com/page/brodie-food-mart-austin-tx-1"},
+    {"name": "Xtreme Air Services Austin, TX 2", "href": "https://nextdoor.com/page/xtreme-air-services-austin-tx-2"},
+    {"name": "Texas Department of Licensing and Regulation", "href": "https://nextdoor.com/page/texas-department-of-licensing-and-regulation"}
+  ]
+}

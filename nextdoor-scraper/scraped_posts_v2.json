@@ -1,0 +1,30 @@
+[
+  {
+    "id": "Hello I have a  $3000 budget to get a car and insurance. Hit me up if you're serious and you're legi",
+    "page_links": [],
+    "html_length": 204378,
+    "scraped_at": "2026-02-05T17:50:00Z",
+    "notes": "20 comments, no business page links"
+  },
+  {
+    "id": "hey guys! I am doing a big fresh bake of sourdough loaves for pickup this Saturday and Sunday in eas",
+    "page_links": ["/page/conversation-starter?is=feed_commenter"],
+    "html_length": 20465,
+    "scraped_at": "2026-02-05T17:51:00Z",
+    "notes": "System page found (not a business)"
+  },
+  {
+    "id": "If anyone in Travis Country is getting there double garage door replaced, could you let me know. I n",
+    "page_links": [
+      "/page/justin-newhouse-austin-tx",
+      "/page/u-austin-tx",
+      "/page/handyman-93",
+      "/page/diamondpoint-contractors-remodels-fences-painting-austin-tx",
+      "/page/river-plate-design-drafting-handyman-services-austin-tx",
+      "/page/hesco-energy-austin-tx"
+    ],
+    "html_length": 239576,
+    "scraped_at": "2026-02-05T17:52:00Z",
+    "notes": "JACKPOT - 6 unique business pages found in comments!"
+  }
+]
