@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jose Treviño Landscaping - Windsor Park Austin. Lawn care, tree services, junk removal. Call (737) 213-7099.">
+  <title>Jose Treviño Landscaping | Windsor Park Austin</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --green: #166534;
+      --green-light: #22c55e;
+      --earth: #92400e;
+      --cream: #fefce8;
+      --text: #1c1917;
+      --text-light: #57534e;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Work Sans', system-ui, sans-serif; color: var(--text); line-height: 1.7; }
+    h1, h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; }
+
+    .nav { background: var(--green); padding: 16px 0; }
+    .nav-inner { max-width: 1000px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #fff; }
+    .nav-cta { background: #fff; color: var(--green); padding: 10px 20px; font-weight: 600; border-radius: 4px; text-decoration: none; }
+
+    .hero { background: linear-gradient(rgba(22,101,52,0.9), rgba(22,101,52,0.85)), url('https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=1400&h=800&fit=crop&q=80') center/cover; padding: 100px 0 80px; }
+    .hero-inner { max-width: 800px; margin: 0 auto; padding: 0 24px; text-align: center; color: #fff; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 20px; line-height: 1.2; }
+    .hero-sub { font-size: 1.1rem; opacity: 0.9; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .hero-cta { display: inline-block; background: #fff; color: var(--green); padding: 14px 36px; font-weight: 600; border-radius: 4px; text-decoration: none; font-size: 1.05rem; }
+
+    .services { padding: 80px 0; background: var(--cream); }
+    .services-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    .services h2 { font-size: 2rem; margin-bottom: 40px; color: var(--green); text-align: center; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .service-card { background: #fff; padding: 28px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .service-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .service-card h3 { font-size: 1.1rem; margin-bottom: 8px; font-weight: 600; }
+    .service-card p { color: var(--text-light); font-size: 0.9rem; }
+
+    .about { padding: 80px 0; background: #fff; }
+    .about-inner { max-width: 700px; margin: 0 auto; padding: 0 24px; text-align: center; }
+    .about h2 { font-size: 2rem; margin-bottom: 20px; color: var(--green); }
+    .about p { color: var(--text-light); margin-bottom: 16px; }
+
+    .cta { padding: 80px 0; background: var(--green); text-align: center; }
+    .cta h2 { font-size: 2.2rem; color: #fff; margin-bottom: 16px; font-family: 'Playfair Display', serif; }
+    .cta p { color: rgba(255,255,255,0.85); margin-bottom: 32px; }
+    .cta-phone { display: inline-block; background: #fff; color: var(--green); padding: 16px 40px; font-size: 1.2rem; font-weight: 600; border-radius: 4px; text-decoration: none; }
+    .cta-note { margin-top: 16px; color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+
+    .footer { padding: 32px 0; text-align: center; font-size: 0.9rem; color: var(--text-light); }
+
+    @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="logo">José Treviño Landscaping</span>
+      <a href="tel:7372137099" class="nav-cta">Call José</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Windsor Park's Landscaping Pro</h1>
+      <p class="hero-sub">Lawn care, tree services, and junk removal. Free quotes, honest prices, reliable service. Let me handle your yard.</p>
+      <a href="tel:7372137099" class="hero-cta">Call (737) 213-7099</a>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="services-inner">
+      <h2>What I Offer</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🌿</div>
+          <h3>Lawn Care</h3>
+          <p>Mowing, edging, trimming. Keep your yard looking great all season.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌳</div>
+          <h3>Tree Services</h3>
+          <p>Trimming, pruning, small removals. Healthy trees, safe property.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚛</div>
+          <h3>Junk Removal</h3>
+          <p>Yard debris, brush, old furniture. We haul it away.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about-inner">
+      <h2>About José</h2>
+      <p>I'm José Treviño, serving Windsor Park and East Austin neighborhoods. When you need landscaping work done, I'm available and ready to help.</p>
+      <p>I give free quotes, show up when I say I will, and do quality work at fair prices. No hassle, no runaround.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Need Landscaping Help?</h2>
+    <p>Call or text for a free quote.</p>
+    <a href="tel:7372137099" class="cta-phone">(737) 213-7099</a>
+    <p class="cta-note">Serving Windsor Park, East Austin, and surrounding areas</p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 José Treviño Landscaping. Austin, TX.</p>
+  </footer>
+</body>
+</html>

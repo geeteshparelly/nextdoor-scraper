@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Good Plumber - Austin TX plumbing you can trust. Call (512) 216-1900 for honest, reliable service.">
+  <title>The Good Plumber | Austin TX</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --green: #059669;
+      --green-dark: #047857;
+      --navy: #1e3a5f;
+      --light: #ecfdf5;
+      --text: #1f2937;
+      --text-light: #6b7280;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Source Sans 3', system-ui, sans-serif; color: var(--text); line-height: 1.7; }
+    h1, h2 { font-family: 'DM Sans', sans-serif; font-weight: 700; }
+
+    .nav { background: var(--green); padding: 16px 0; }
+    .nav-inner { max-width: 1000px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'DM Sans', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; }
+    .nav-cta { background: #fff; color: var(--green); padding: 10px 20px; font-weight: 600; border-radius: 4px; text-decoration: none; }
+
+    .hero { background: var(--green); padding: 80px 0 100px; position: relative; }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50px; background: #fff; clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 100%); }
+    .hero-inner { max-width: 800px; margin: 0 auto; padding: 0 24px; text-align: center; color: #fff; }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; margin-bottom: 20px; }
+    .hero-sub { font-size: 1.15rem; opacity: 0.9; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .hero-cta { display: inline-block; background: #fff; color: var(--green); padding: 16px 40px; font-family: 'DM Sans', sans-serif; font-size: 1.15rem; font-weight: 700; border-radius: 4px; text-decoration: none; }
+
+    .services { padding: 80px 0; background: #fff; }
+    .services-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    .services h2 { font-size: 2rem; margin-bottom: 48px; text-align: center; color: var(--navy); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .service-card { padding: 28px; border: 2px solid #e5e7eb; border-radius: 12px; text-align: center; transition: border-color 0.2s; }
+    .service-card:hover { border-color: var(--green); }
+    .service-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .service-card h3 { font-size: 1.1rem; margin-bottom: 8px; font-weight: 600; }
+    .service-card p { color: var(--text-light); font-size: 0.9rem; }
+
+    .why { padding: 80px 0; background: var(--light); }
+    .why-inner { max-width: 800px; margin: 0 auto; padding: 0 24px; text-align: center; }
+    .why h2 { font-size: 2rem; margin-bottom: 20px; color: var(--green); }
+    .why p { color: var(--text-light); font-size: 1.05rem; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .why-features { display: flex; justify-content: center; gap: 48px; margin-top: 40px; flex-wrap: wrap; }
+    .feature { text-align: center; }
+    .feature-icon { width: 60px; height: 60px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; color: #fff; font-size: 1.5rem; }
+    .feature h3 { font-size: 1rem; font-weight: 600; }
+
+    .cta { padding: 80px 0; background: var(--navy); text-align: center; }
+    .cta h2 { font-size: 2.2rem; color: #fff; margin-bottom: 16px; }
+    .cta p { color: rgba(255,255,255,0.8); margin-bottom: 32px; }
+    .cta-phone { display: inline-block; background: var(--green); color: #fff; padding: 18px 48px; font-family: 'DM Sans', sans-serif; font-size: 1.3rem; font-weight: 700; border-radius: 4px; text-decoration: none; }
+
+    .footer { padding: 32px 0; text-align: center; font-size: 0.9rem; color: var(--text-light); }
+
+    @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } .why-features { flex-direction: column; gap: 24px; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="logo">The Good Plumber</span>
+      <a href="tel:5122161900" class="nav-cta">Call Now</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Plumbing Done Right</h1>
+      <p class="hero-sub">We're called The Good Plumber for a reason. Honest assessments, fair prices, quality work. Austin trusts us.</p>
+      <a href="tel:5122161900" class="hero-cta">Call (512) 216-1900</a>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="services-inner">
+      <h2>What We Do</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Repairs</h3>
+          <p>Leaks, clogs, drips, and breaks. We fix it all, fast.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚿</div>
+          <h3>Installations</h3>
+          <p>New fixtures, water heaters, garbage disposals.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <h3>Inspections</h3>
+          <p>Camera inspections and leak detection.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💧</div>
+          <h3>Drain Cleaning</h3>
+          <p>Professional clearing that lasts.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <h3>Repiping</h3>
+          <p>Replace old, corroded pipes.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Emergency</h3>
+          <p>Same-day service when you need it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="why-inner">
+      <h2>Why We're "The Good Plumber"</h2>
+      <p>We don't upsell. We don't overcharge. We show up on time, explain the problem in plain English, and fix it right the first time.</p>
+      <div class="why-features">
+        <div class="feature">
+          <div class="feature-icon">✓</div>
+          <h3>Honest Pricing</h3>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">✓</div>
+          <h3>On-Time Arrival</h3>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">✓</div>
+          <h3>Quality Work</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Need a Plumber You Can Trust?</h2>
+    <p>Call us for honest, reliable service.</p>
+    <a href="tel:5122161900" class="cta-phone">(512) 216-1900</a>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 The Good Plumber. Austin, TX.</p>
+  </footer>
+</body>
+</html>

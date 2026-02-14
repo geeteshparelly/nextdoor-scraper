@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FreeFlow Plumbing - Master plumber Theo serving Austin. Honest, reliable plumbing. Call (512) 917-9813.">
+  <title>FreeFlow Plumbing | Master Plumber Austin TX</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --navy: #0f172a;
+      --blue: #3b82f6;
+      --cyan: #06b6d4;
+      --light: #f8fafc;
+      --text: #1e293b;
+      --text-light: #64748b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Source Sans 3', system-ui, sans-serif; color: var(--text); line-height: 1.7; }
+    h1, h2 { font-family: 'Archivo', sans-serif; font-weight: 700; }
+
+    .nav { background: var(--navy); padding: 16px 0; }
+    .nav-inner { max-width: 1000px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Archivo', sans-serif; font-size: 1.3rem; color: #fff; }
+    .logo span { color: var(--cyan); }
+    .nav-cta { background: var(--cyan); color: var(--navy); padding: 10px 20px; font-weight: 600; border-radius: 4px; text-decoration: none; }
+
+    .hero { background: linear-gradient(to right, var(--navy), #1e3a5f); padding: 80px 0; }
+    .hero-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); color: #fff; margin-bottom: 16px; line-height: 1.2; }
+    .hero-sub { color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 28px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(6,182,212,0.2); color: var(--cyan); padding: 8px 16px; border-radius: 50px; font-size: 0.9rem; font-weight: 500; margin-bottom: 20px; }
+    .hero-cta { display: inline-block; background: var(--cyan); color: var(--navy); padding: 14px 32px; font-weight: 600; font-size: 1.05rem; border-radius: 4px; text-decoration: none; }
+    .hero-img { border-radius: 8px; }
+
+    .services { padding: 80px 0; background: var(--light); }
+    .services-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    .services h2 { font-size: 2rem; margin-bottom: 40px; color: var(--navy); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .service-card { background: #fff; padding: 24px; border-radius: 8px; border-top: 3px solid var(--blue); }
+    .service-card h3 { font-size: 1.05rem; margin-bottom: 8px; font-weight: 600; }
+    .service-card p { color: var(--text-light); font-size: 0.9rem; }
+
+    .about { padding: 80px 0; background: #fff; }
+    .about-inner { max-width: 700px; margin: 0 auto; padding: 0 24px; text-align: center; }
+    .about h2 { font-size: 2rem; margin-bottom: 20px; color: var(--navy); }
+    .about p { color: var(--text-light); margin-bottom: 16px; font-size: 1.02rem; }
+    .about-highlight { background: var(--light); padding: 20px; border-radius: 8px; margin-top: 24px; border-left: 4px solid var(--cyan); text-align: left; }
+
+    .cta { padding: 80px 0; background: var(--navy); text-align: center; }
+    .cta h2 { font-size: 2.2rem; color: #fff; margin-bottom: 16px; }
+    .cta p { color: rgba(255,255,255,0.8); margin-bottom: 32px; }
+    .cta-phone { display: inline-block; background: var(--cyan); color: var(--navy); padding: 16px 40px; font-family: 'Archivo', sans-serif; font-size: 1.2rem; font-weight: 700; border-radius: 4px; text-decoration: none; }
+
+    .footer { padding: 32px 0; text-align: center; font-size: 0.9rem; color: var(--text-light); }
+
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-img { order: -1; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="logo">Free<span>Flow</span> Plumbing</span>
+      <a href="tel:5129179813" class="nav-cta">Call Theo</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">Master Plumber</div>
+        <h1>Honest Plumbing for Austin Homes</h1>
+        <p class="hero-sub">I'm Theo, a licensed master plumber. I do the job right the first time, charge fair prices, and don't upsell you stuff you don't need.</p>
+        <a href="tel:5129179813" class="hero-cta">Call (512) 917-9813</a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=500&h=400&fit=crop&q=80" alt="Professional plumber" class="hero-img">
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="services-inner">
+      <h2>Plumbing Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Leak Repairs</h3>
+          <p>Hidden leaks, pipe bursts, dripping faucets. I find and fix them fast.</p>
+        </div>
+        <div class="service-card">
+          <h3>Drain Cleaning</h3>
+          <p>Slow drains, clogs, backups. Professional clearing that lasts.</p>
+        </div>
+        <div class="service-card">
+          <h3>Water Heaters</h3>
+          <p>Repairs, replacements, tankless installations. Hot water when you need it.</p>
+        </div>
+        <div class="service-card">
+          <h3>Sewer Lines</h3>
+          <p>Camera inspections, repairs, replacements. Get to the root of the problem.</p>
+        </div>
+        <div class="service-card">
+          <h3>Fixture Install</h3>
+          <p>Toilets, sinks, showers, tubs. Installed correctly the first time.</p>
+        </div>
+        <div class="service-card">
+          <h3>Water Pressure</h3>
+          <p>Low pressure diagnosis and fixes. Restore your flow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about-inner">
+      <h2>About Theo</h2>
+      <p>I'm a licensed master plumber serving Austin and surrounding areas. That means I've put in the hours, passed the tests, and know plumbing inside and out.</p>
+      <p>When you call FreeFlow, you get me. I show up on time, explain the problem in plain English, and give you options—not pressure.</p>
+      <div class="about-highlight">
+        <strong>What neighbors say:</strong> "FreeFlow Plumbing. 512-917-9813. Honest, Master plumber. Ask for Theo." — Larry S., Austin
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Need a Plumber?</h2>
+    <p>Call or text for honest service from a master plumber.</p>
+    <a href="tel:5129179813" class="cta-phone">(512) 917-9813</a>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 FreeFlow Plumbing. Austin, TX and surrounding areas.</p>
+  </footer>
+</body>
+</html>

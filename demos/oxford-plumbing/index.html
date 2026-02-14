@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Oxford Plumbing - Austin's trusted plumber. 202 recommendations. Free assessments, same-day service. Call (512) 542-4056.">
+  <title>Oxford Plumbing | Austin Plumber - 202 Recommendations</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --navy: #1e3a5f;
+      --blue: #2563eb;
+      --orange: #f97316;
+      --gray: #f3f4f6;
+      --text: #1f2937;
+      --text-light: #6b7280;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    h1, h2, h3 { 
+      font-family: 'Archivo', sans-serif; 
+      font-weight: 700;
+    }
+
+    /* Nav */
+    .nav {
+      background: var(--navy);
+      padding: 16px 0;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Archivo', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .nav-cta {
+      background: var(--orange);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    /* Hero - bold stats */
+    .hero {
+      background: var(--navy);
+      padding: 60px 0 80px;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero-sub {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 4px;
+      font-family: 'Archivo', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 32px;
+    }
+    .stat {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      min-width: 100px;
+    }
+    .stat-num {
+      font-family: 'Archivo', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--orange);
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .hero-img {
+      border-radius: 8px;
+    }
+
+    /* Services */
+    .services {
+      padding: 80px 0;
+      background: var(--gray);
+    }
+    .services-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .services h2 {
+      font-size: 2rem;
+      margin-bottom: 48px;
+      color: var(--navy);
+    }
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .service-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #fff;
+      padding: 24px;
+      border-radius: 8px;
+      border-left: 4px solid var(--blue);
+    }
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--blue);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .service-item h3 {
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+    .service-item p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    /* Why Us */
+    .why {
+      padding: 80px 0;
+      background: #fff;
+    }
+    .why-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+    .why h2 {
+      font-size: 2rem;
+      margin-bottom: 48px;
+      color: var(--navy);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .why-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+    .why-item p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 80px 0;
+      background: var(--navy);
+      text-align: center;
+    }
+    .cta h2 {
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .cta p {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 32px;
+      font-size: 1.1rem;
+    }
+    .cta-phone {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      padding: 18px 48px;
+      border-radius: 4px;
+      font-family: 'Archivo', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .cta-note {
+      margin-top: 16px;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 32px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-img { order: -1; }
+      .hero-stats { justify-content: center; }
+      .services-list { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="logo">OXFORD PLUMBING</span>
+      <a href="tel:5125424056" class="nav-cta">Call Now</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>Austin's Most Trusted Plumber</h1>
+        <p class="hero-sub">Free assessments, same-day service. 202 neighbors recommend us on Nextdoor. We can come out today.</p>
+        <a href="tel:5125424056" class="hero-cta">Call (512) 542-4056</a>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">202</div>
+            <div class="stat-label">Recommendations</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">Free</div>
+            <div class="stat-label">Assessments</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">Same</div>
+            <div class="stat-label">Day Service</div>
+          </div>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&h=450&fit=crop&q=80" alt="Professional plumber at work" class="hero-img">
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="services-inner">
+      <h2>What We Fix</h2>
+      <div class="services-list">
+        <div class="service-item">
+          <div class="service-icon">🔧</div>
+          <div>
+            <h3>Drain Repairs</h3>
+            <p>Clogged sinks, showers, and toilets. We clear it fast.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">💧</div>
+          <div>
+            <h3>Leak Detection</h3>
+            <p>Find hidden leaks before they become disasters.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🚿</div>
+          <div>
+            <h3>Water Heaters</h3>
+            <p>Repairs, replacements, and new installations.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🚰</div>
+          <div>
+            <h3>Faucets & Fixtures</h3>
+            <p>Install or repair sinks, toilets, and showers.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🔌</div>
+          <div>
+            <h3>Garbage Disposals</h3>
+            <p>Jammed or broken? We fix or replace them.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🏠</div>
+          <div>
+            <h3>Sewer Lines</h3>
+            <p>Camera inspections and repairs for your main line.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="why-inner">
+      <h2>Why Austin Trusts Us</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>Free Assessments</h3>
+          <p>We'll come out, diagnose the problem, and give you an honest quote—no charge.</p>
+        </div>
+        <div class="why-item">
+          <h3>Same-Day Service</h3>
+          <p>Plumbing emergencies can't wait. We often arrive the same day you call.</p>
+        </div>
+        <div class="why-item">
+          <h3>Fair Pricing</h3>
+          <p>No hidden fees or surprise charges. We tell you the cost upfront.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Plumbing Problem?</h2>
+    <p>Call or text now for a free assessment. We can come out today.</p>
+    <a href="tel:5125424056" class="cta-phone">(512) 542-4056</a>
+    <p class="cta-note">Serving Austin and surrounding areas</p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Oxford Plumbing. Austin, TX.</p>
+  </footer>
+</body>
+</html>

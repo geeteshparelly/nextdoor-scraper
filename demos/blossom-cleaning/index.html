@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blossom Cleaning Services - Bee Cave and Austin area house cleaning by Leny Garcia. Professional, reliable, affordable.">
+  <title>Blossom Cleaning Services | Bee Cave & Austin</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --rose: #be185d;
+      --rose-light: #f472b6;
+      --peach: #fef2f2;
+      --cream: #fffbeb;
+      --text: #1f2937;
+      --text-light: #6b7280;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); line-height: 1.7; }
+    h1, h2 { font-family: 'Quicksand', sans-serif; font-weight: 700; }
+
+    .nav { background: #fff; padding: 16px 0; border-bottom: 1px solid #fce7f3; }
+    .nav-inner { max-width: 1000px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Quicksand', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--rose); }
+    .nav-cta { background: var(--rose); color: #fff; padding: 10px 20px; border-radius: 50px; font-weight: 500; text-decoration: none; }
+
+    .hero { background: linear-gradient(135deg, #fff 0%, var(--peach) 50%, var(--cream) 100%); padding: 80px 0; position: relative; }
+    .hero-inner { max-width: 1000px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); color: var(--text); line-height: 1.2; margin-bottom: 16px; }
+    .hero-sub { color: var(--text-light); font-size: 1.05rem; margin-bottom: 24px; }
+    .hero-offer { background: linear-gradient(90deg, var(--rose), var(--rose-light)); color: #fff; padding: 12px 20px; border-radius: 8px; display: inline-block; margin-bottom: 24px; font-weight: 500; }
+    .hero-cta { display: inline-block; background: var(--rose); color: #fff; padding: 14px 32px; border-radius: 50px; font-family: 'Quicksand', sans-serif; font-weight: 600; text-decoration: none; }
+    .hero-img { border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+    .services { padding: 80px 0; background: #fff; }
+    .services-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    .services h2 { font-size: 1.8rem; margin-bottom: 40px; text-align: center; color: var(--rose); }
+    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .service-card { background: var(--peach); padding: 28px; border-radius: 16px; }
+    .service-card h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--rose); font-weight: 600; }
+    .service-card p { color: var(--text-light); font-size: 0.95rem; }
+
+    .about { padding: 80px 0; background: var(--cream); }
+    .about-inner { max-width: 700px; margin: 0 auto; padding: 0 24px; text-align: center; }
+    .about h2 { font-size: 1.8rem; margin-bottom: 20px; color: var(--rose); }
+    .about p { color: var(--text-light); margin-bottom: 16px; }
+
+    .cta { padding: 80px 0; background: var(--rose); text-align: center; }
+    .cta h2 { font-size: 2rem; color: #fff; margin-bottom: 16px; }
+    .cta p { color: rgba(255,255,255,0.85); margin-bottom: 32px; }
+    .cta-btn { display: inline-block; background: #fff; color: var(--rose); padding: 16px 40px; border-radius: 50px; font-family: 'Quicksand', sans-serif; font-size: 1.1rem; font-weight: 700; text-decoration: none; }
+    .cta-areas { margin-top: 20px; color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+
+    .footer { padding: 32px 0; text-align: center; font-size: 0.9rem; color: var(--text-light); }
+
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-img { order: -1; max-width: 350px; margin: 0 auto; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="logo">Blossom Cleaning</span>
+      <a href="#contact" class="nav-cta">Get a Quote</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-offer">20% Off First Cleaning</div>
+        <h1>Bee Cave's Trusted Cleaning Service</h1>
+        <p class="hero-sub">Hi, I'm Leny. I provide professional house cleaning for Bee Cave, West Austin, and surrounding areas. Your home will sparkle.</p>
+        <a href="#contact" class="hero-cta">Request a Quote</a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&h=400&fit=crop&q=80" alt="Clean home" class="hero-img">
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="services-inner">
+      <h2>Cleaning Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Regular Cleaning</h3>
+          <p>Weekly, bi-weekly, or monthly visits to keep your home fresh and tidy.</p>
+        </div>
+        <div class="service-card">
+          <h3>Deep Cleaning</h3>
+          <p>Thorough top-to-bottom clean. Perfect for seasonal refreshes.</p>
+        </div>
+        <div class="service-card">
+          <h3>Move-In / Move-Out</h3>
+          <p>Start fresh in your new home or leave your old one spotless.</p>
+        </div>
+        <div class="service-card">
+          <h3>Airbnb / Vacation Rentals</h3>
+          <p>Quick turnovers to impress your guests every time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about-inner">
+      <h2>About Leny</h2>
+      <p>I'm Leny Garcia, the owner of Blossom Cleaning Services. I take pride in making homes shine and helping busy families enjoy clean, comfortable spaces.</p>
+      <p>I'm reliable, detail-oriented, and treat every home like my own. Currently offering 20% off for first-time clients!</p>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <h2>Ready for a Cleaner Home?</h2>
+    <p>Message me on Nextdoor or reach out for a free quote.</p>
+    <a href="https://nextdoor.com/page/cherrys-cleaning-services-1" class="cta-btn">Message on Nextdoor</a>
+    <p class="cta-areas">Serving Bee Cave, West Austin, Lakeway, and surrounding areas</p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Blossom Cleaning Services. Bee Cave, TX.</p>
+  </footer>
+</body>
+</html>
