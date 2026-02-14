@@ -41,6 +41,41 @@
 "Log: sent intro text to [Business]"
 ```
 
+### Export for Website Builder
+```
+"Export [Business] for Website Builder"
+"Get website info for [Business]"
+"Prepare [Business] for site build"
+```
+
+---
+
+## 🔗 WORKS WITH WEBSITE BUILDER
+
+**Closed a deal? Export the lead for instant website creation:**
+
+```
+"Export Martinez Plumbing for Website Builder"
+```
+
+**Output:**
+```
+=== PROSPECTOR LEAD EXPORT ===
+Business: Martinez Plumbing
+Industry: plumbing / home-services
+Phone: (512) 555-1234
+Location: Austin, TX
+Website: none
+Services: Residential plumbing, Emergency repairs
+Notes: 15 years in business, licensed & insured
+=== PASTE INTO WEBSITE BUILDER ===
+```
+
+Then paste into Website Builder and say: `"Build a site with this info"`
+
+**The full workflow:**
+1. Prospector finds leads → 2. You close the deal → 3. Export to Website Builder → 4. Build & deliver site → 5. Get paid
+
 ---
 
 ## 🎯 FEATURES AT A GLANCE
