@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geetesh Parelly - Flowly</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background: linear-gradient(145deg, #252538 0%, #1a1a2e 100%);
+            border-radius: 24px;
+            padding: 40px;
+            width: 100%;
+            max-width: 380px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: #fff;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+        .tagline {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+        .avatar {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 20px;
+        }
+        .name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .title {
+            color: #6366f1;
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.3), transparent);
+            margin: 25px 0;
+        }
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 14px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            color: #e5e5e5;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+        .contact-item:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+        .contact-icon {
+            font-size: 1.2rem;
+        }
+        .cta {
+            display: block;
+            margin-top: 25px;
+            padding: 16px;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            border-radius: 12px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+        .price {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 30px;
+            color: #10b981;
+            font-weight: 600;
+        }
+        .footer {
+            margin-top: 25px;
+            color: #6b7280;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo">Flowly</div>
+        <div class="tagline">Professional Websites for Small Businesses</div>
+        
+        <div class="avatar">👨‍💻</div>
+        <div class="name">Geetesh Parelly</div>
+        <div class="title">Web Developer • Austin, TX</div>
+        
+        <div class="divider"></div>
+        
+        <div class="contact-list">
+            <a href="tel:7372875336" class="contact-item">
+                <span class="contact-icon">📞</span>
+                (737) 287-5336
+            </a>
+            <a href="mailto:geetesh.parelly@2hourlearning.com" class="contact-item">
+                <span class="contact-icon">✉️</span>
+                geetesh.parelly@2hourlearning.com
+            </a>
+            <a href="https://x.com/GeeteshParelly" target="_blank" class="contact-item">
+                <span class="contact-icon">𝕏</span>
+                @GeeteshParelly
+            </a>
+        </div>
+
+        <div class="price">💰 Websites from $100</div>
+
+        <a href="tel:7372875336" class="cta">
+            📱 Save Contact
+        </a>
+
+        <div class="footer">
+            Austin, TX • Let's build something amazing
+        </div>
+    </div>
+</body>
+</html>

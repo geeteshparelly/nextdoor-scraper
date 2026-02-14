@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fade Room | Premium Barbershop in Austin</title>
+    <meta name="description" content="The Fade Room - Premium haircuts, fades, and grooming in East Austin. Walk-ins welcome. Book your appointment today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Page Load Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        header { animation: fadeInDown 0.6s ease-out; }
+        .hero-badge { animation: fadeIn 0.6s ease-out 0.2s both; }
+        .hero-title { animation: fadeInUp 0.7s ease-out 0.1s both; }
+        .hero-subtitle { animation: fadeIn 0.6s ease-out 0.3s both; }
+        .hero-ctas { animation: fadeInUp 0.6s ease-out 0.5s both; }
+        .hero-visual { animation: scaleIn 0.8s ease-out 0.3s both; }
+        :root {
+            --bg-dark: #0f0f0f;
+            --bg-surface: #1a1a1a;
+            --surface-elevated: #222;
+            --text-light: #f5f5f5;
+            --text-muted: #888;
+            --gold: #c9a54e;
+            --gold-bright: #e0bd5f;
+            --gold-dim: #8a7235;
+            --border: #2a2a2a;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Work Sans', -apple-system, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.75rem;
+            color: var(--text-light);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+
+        .logo span { color: var(--gold); }
+
+        nav { display: flex; gap: 2.5rem; align-items: center; }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--gold); }
+
+        .header-cta {
+            background: var(--gold);
+            color: var(--bg-dark);
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: all 0.2s;
+        }
+
+        .header-cta:hover { background: var(--gold-bright); }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-surface) 100%);
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(180deg, transparent 0%, rgba(201, 165, 78, 0.05) 50%, transparent 100%);
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8rem 2rem;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content { max-width: 550px; }
+
+        .hero-badge {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.9rem;
+            color: var(--gold);
+            letter-spacing: 0.25em;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero-badge::before, .hero-badge::after {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .hero-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            line-height: 0.95;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-title span { color: var(--gold); }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--bg-dark);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-primary:hover { background: var(--gold-bright); transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 28px rgba(201, 165, 78, 0.3); }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+        .hero-visual { position: relative; }
+
+        .hero-image-frame {
+            position: relative;
+            border: 1px solid var(--border);
+        }
+
+        .hero-image-frame::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border: 1px solid var(--gold-dim);
+            pointer-events: none;
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            display: block;
+        }
+
+        .services-section { padding: 6rem 2rem; background: var(--bg-surface); }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .section-header { text-align: center; margin-bottom: 4rem; }
+
+        .section-label {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: 0.05em;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--bg-dark);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            position: relative;
+            transition: all 0.3s ease-out;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease-out;
+        }
+
+        .service-card:hover { border-color: var(--gold-dim); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.3); }
+        .service-card:hover::before { width: 100%; }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .service-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.35rem;
+            letter-spacing: 0.05em;
+        }
+
+        .service-price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.25rem;
+            color: var(--gold);
+        }
+
+        .service-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .service-time { margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); opacity: 0.7; }
+
+        .gallery-section { padding: 6rem 2rem; background: var(--bg-dark); }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            object-fit: cover;
+            width: 100%;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease-out;
+        }
+
+        .gallery-item:hover { border-color: var(--gold); transform: scale(1.02); }
+
+        .gallery-item:first-child {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .barbers-section { padding: 6rem 2rem; background: var(--bg-surface); }
+
+        .barbers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .barber-card { text-align: center; }
+
+        .barber-image {
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .barber-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.35rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.25rem;
+        }
+
+        .barber-title {
+            font-size: 0.85rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .location-section {
+            padding: 6rem 2rem;
+            background: var(--gold);
+            color: var(--bg-dark);
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .location-item h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+        }
+
+        .location-item p { font-size: 0.95rem; font-weight: 400; line-height: 1.7; }
+        .location-item a { color: var(--bg-dark); text-decoration: underline; }
+
+        .cta-section {
+            padding: 6rem 2rem;
+            background: var(--bg-dark);
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(201, 165, 78, 0.08) 0%, transparent 70%);
+        }
+
+        .cta-content { position: relative; z-index: 1; }
+
+        .cta-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-phone {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            transition: color 0.2s;
+        }
+
+        .cta-phone:hover { color: var(--gold-bright); }
+
+        footer {
+            background: var(--bg-surface);
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-logo span { color: var(--gold); }
+
+        .footer-social { display: flex; gap: 2rem; }
+
+        .footer-social a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.2s;
+        }
+
+        .footer-social a:hover { color: var(--gold); }
+
+        .footer-copy { font-size: 0.8rem; color: var(--text-muted); }
+
+        @media (max-width: 1024px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-visual { order: -1; }
+            .hero-image { aspect-ratio: 16/9; }
+            .services-grid, .barbers-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-item:first-child { grid-column: span 2; grid-row: span 1; }
+            .location-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero-inner { padding: 6rem 1.5rem; }
+            .services-grid, .barbers-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+            .gallery-item:first-child { grid-column: span 2; }
+            .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">THE <span>FADE</span> ROOM</a>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#barbers">Barbers</a>
+                <a href="#location">Location</a>
+            </nav>
+            <a href="tel:5125550891" class="header-cta">Book Now</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge">EST. 2018</span>
+                <h1 class="hero-title">
+                    PREMIUM <span>CUTS</span> & GROOMING
+                </h1>
+                <p class="hero-subtitle">
+                    Classic barbering meets modern style. Walk-ins welcome, appointments preferred. Experience the difference at East Austin's premier grooming destination.
+                </p>
+                <div class="hero-ctas">
+                    <a href="tel:5125550891" class="btn-primary">Book Appointment</a>
+                    <a href="#services" class="btn-secondary">View Services</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-frame">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&h=1067&fit=crop" alt="Barber giving a fresh fade" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">SERVICES</p>
+                <h2 class="section-title">WHAT WE OFFER</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-header">
+                        <h3 class="service-name">Classic Cut</h3>
+                        <span class="service-price">$35</span>
+                    </div>
+                    <p class="service-desc">Precision haircut with hot towel finish. Includes consultation and styling.</p>
+                    <p class="service-time">30 min</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-header">
+                        <h3 class="service-name">Skin Fade</h3>
+                        <span class="service-price">$45</span>
+                    </div>
+                    <p class="service-desc">Sharp, clean fade with seamless blend. Our most popular cut.</p>
+                    <p class="service-time">45 min</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-header">
+                        <h3 class="service-name">Beard Trim</h3>
+                        <span class="service-price">$20</span>
+                    </div>
+                    <p class="service-desc">Shape, line, and detail your beard to perfection.</p>
+                    <p class="service-time">20 min</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-header">
+                        <h3 class="service-name">Cut + Beard</h3>
+                        <span class="service-price">$55</span>
+                    </div>
+                    <p class="service-desc">The full experience. Haircut plus complete beard service.</p>
+                    <p class="service-time">60 min</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-header">
+                        <h3 class="service-name">Hot Towel Shave</h3>
+                        <span class="service-price">$35</span>
+                    </div>
+                    <p class="service-desc">Traditional straight razor shave with premium products.</p>
+                    <p class="service-time">30 min</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-header">
+                        <h3 class="service-name">Kids Cut</h3>
+                        <span class="service-price">$25</span>
+                    </div>
+                    <p class="service-desc">Patient, quality cuts for the little ones. Ages 12 and under.</p>
+                    <p class="service-time">25 min</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">OUR WORK</p>
+                <h2 class="section-title">LATEST CUTS</h2>
+            </div>
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&h=800&fit=crop" alt="Fresh fade haircut" class="gallery-item" data-aos="zoom-in" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=400&h=400&fit=crop" alt="Beard trim" class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=400&h=400&fit=crop" alt="Side fade" class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=400&h=400&fit=crop" alt="Clean cut" class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1634302086887-13b5281d0cae?w=400&h=400&fit=crop" alt="Textured cut" class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+            </div>
+        </div>
+    </section>
+
+    <section class="barbers-section" id="barbers">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">THE TEAM</p>
+                <h2 class="section-title">MEET YOUR BARBERS</h2>
+            </div>
+            <div class="barbers-grid">
+                <div class="barber-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=533&fit=crop" alt="Marcus Johnson" class="barber-image">
+                    <h3 class="barber-name">Marcus Johnson</h3>
+                    <p class="barber-title">Owner / Master Barber</p>
+                </div>
+                <div class="barber-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?w=400&h=533&fit=crop" alt="David Chen" class="barber-image">
+                    <h3 class="barber-name">David Chen</h3>
+                    <p class="barber-title">Senior Barber</p>
+                </div>
+                <div class="barber-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=533&fit=crop" alt="James Williams" class="barber-image">
+                    <h3 class="barber-name">James Williams</h3>
+                    <p class="barber-title">Barber</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="location-section" id="location">
+        <div class="container">
+            <div class="location-grid">
+                <div class="location-item" data-aos="zoom-in" data-aos-delay="0">
+                    <h3>LOCATION</h3>
+                    <p>2401 E 6th Street<br>Austin, TX 78702<br><a href="#">Get Directions →</a></p>
+                </div>
+                <div class="location-item" data-aos="zoom-in" data-aos-delay="100">
+                    <h3>HOURS</h3>
+                    <p>Tue-Fri: 10am–7pm<br>Saturday: 9am–5pm<br>Sun-Mon: Closed</p>
+                </div>
+                <div class="location-item" data-aos="zoom-in" data-aos-delay="200">
+                    <h3>CONTACT</h3>
+                    <p><a href="tel:5125550891">(512) 555-0891</a><br><a href="#">@thefaderoomATX</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content" data-aos="fade-up">
+            <h2 class="cta-title">READY FOR A FRESH CUT?</h2>
+            <p class="cta-subtitle">Walk-ins welcome. Appointments recommended for weekends.</p>
+            <a href="tel:5125550891" class="cta-phone">📞 (512) 555-0891</a>
+        </div>
+    </section>
+
+    <footer data-aos="fade" data-aos-delay="100">
+        <div class="footer-inner">
+            <span class="footer-logo">THE <span>FADE</span> ROOM</span>
+            <div class="footer-social">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+            </div>
+            <span class="footer-copy">© 2026 The Fade Room</span>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration: 800, once: true, easing: 'ease-out'});</script>
+</body>
+</html>

@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hill Country Builders | Austin Custom Homes & Renovations</title>
+    <meta name="description" content="Hill Country Builders - Custom home construction and renovations in Austin, TX. Licensed, insured, and trusted by homeowners since 2009. Call (512) 555-0147 for a free estimate.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Page Load Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        header { animation: fadeInDown 0.6s ease-out; }
+        .hero-badge { animation: fadeIn 0.6s ease-out 0.2s both; }
+        .hero-title { animation: fadeInUp 0.7s ease-out 0.1s both; }
+        .hero-subtitle { animation: fadeIn 0.6s ease-out 0.3s both; }
+        .hero-stats { animation: fadeIn 0.6s ease-out 0.4s both; }
+        .hero-ctas { animation: fadeInUp 0.6s ease-out 0.5s both; }
+        .hero-visual { animation: scaleIn 0.8s ease-out 0.3s both; }
+        :root {
+            --bg-dark: #1a1a1a;
+            --bg-darker: #0d0d0d;
+            --surface: #242424;
+            --surface-elevated: #2a2a2a;
+            --text-primary: #f0f0f0;
+            --text-secondary: #888;
+            --accent: #e85d04;
+            --accent-bright: #ff6b1a;
+            --accent-muted: #9d4300;
+            --success: #22c55e;
+            --border: #333;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Space Grotesk', -apple-system, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        nav { display: flex; gap: 2rem; align-items: center; }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease-out;
+        }
+
+        nav a:hover { color: var(--text-primary); }
+
+        .header-cta {
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.25rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .header-cta:hover {
+            background: var(--accent-bright);
+            transform: translateY(-1px);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            padding: 8rem 4rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-title span { color: var(--accent); }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat { display: flex; flex-direction: column; gap: 0.25rem; }
+
+        .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease-out;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-bright);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 28px rgba(232, 93, 4, 0.35);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-primary);
+            background: var(--surface);
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            position: relative;
+            background: var(--bg-darker);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 40%, var(--accent-muted) 100%);
+            opacity: 0.3;
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: transform 0.6s ease-out;
+        }
+
+        .hero-visual:hover .hero-image {
+            transform: scale(1.03);
+        }
+
+        .services {
+            padding: 6rem 2rem;
+            background: var(--bg-darker);
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .section-header { margin-bottom: 4rem; }
+
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .section-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--surface);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--accent);
+            transition: height 0.3s ease-out;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+        }
+
+        .service-card:hover::before { height: 100%; }
+
+        .service-icon { font-size: 2rem; margin-bottom: 1.25rem; }
+
+        .service-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .why-us {
+            padding: 6rem 2rem;
+            background: var(--bg-dark);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .why-content { max-width: 500px; }
+
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .feature-check {
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .feature-text h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .why-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .why-card {
+            background: var(--surface);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .why-card:nth-child(2) { transform: translateY(2rem); }
+
+        .why-card-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .why-card-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .cta-section {
+            padding: 6rem 2rem;
+            background: var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 20px,
+                rgba(0,0,0,0.05) 20px,
+                rgba(0,0,0,0.05) 40px
+            );
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .cta-subtitle {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 2rem;
+        }
+
+        .cta-phone {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: rgba(0,0,0,0.2);
+            transition: all 0.2s;
+        }
+
+        .cta-phone:hover {
+            background: rgba(0,0,0,0.3);
+            transform: scale(1.02);
+        }
+
+        footer {
+            background: var(--bg-darker);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 300px;
+        }
+
+        .footer-links h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease-out, transform 0.3s ease-out;
+            display: inline-block;
+        }
+
+        .footer-links a:hover { 
+            color: var(--accent); 
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-badges { display: flex; gap: 1rem; }
+
+        .badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 0.4rem 0.75rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 1024px) {
+            .hero { grid-template-columns: 1fr; min-height: auto; }
+            .hero-visual { display: none; }
+            .hero-content { padding: 7rem 2rem 4rem; }
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .why-visual { order: -1; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero-content { padding: 6rem 1.5rem 3rem; }
+            .hero-title { font-size: 2.25rem; }
+            .hero-stats { flex-direction: column; gap: 1.5rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .why-visual { grid-template-columns: 1fr; }
+            .why-card:nth-child(2) { transform: none; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <span class="logo-icon">🔨</span>
+                Hill Country Builders
+            </a>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#why-us">Why Us</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="tel:5125550147" class="header-cta">
+                📞 (512) 555-0147
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Licensed & Insured Since 2009</span>
+            <h1 class="hero-title">
+                Custom <span>Home Building</span> in Austin
+            </h1>
+            <p class="hero-subtitle">
+                From dream homes in Westlake to renovations in Travis Heights, we build with precision and pride. Get your free estimate today.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value">15+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">500+</span>
+                    <span class="stat-label">Projects Done</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Satisfaction</span>
+                </div>
+            </div>
+            <div class="hero-ctas">
+                <a href="tel:5125550147" class="btn-primary">
+                    Get Free Estimate →
+                </a>
+                <a href="#services" class="btn-secondary">
+                    Our Services
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&h=900&fit=crop" alt="Construction worker on job site" class="hero-image">
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">What We Do</span>
+                <h2 class="section-title">Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-icon">🏠</div>
+                    <h3 class="service-title">Custom Home Building</h3>
+                    <p class="service-desc">Ground-up custom homes tailored to your vision. From modern farmhouses to contemporary builds, we make it happen.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="service-title">Kitchen & Bath Remodels</h3>
+                    <p class="service-desc">Transform your outdated kitchen or bathroom into a stunning space. Custom cabinetry, fixtures, and finishes.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">Room Additions</h3>
+                    <p class="service-desc">Need more space? We seamlessly add square footage that matches your home's existing style.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-icon">🛠️</div>
+                    <h3 class="service-title">Deck & Patio</h3>
+                    <p class="service-desc">Outdoor living spaces perfect for Texas weather. Cedar decks, covered patios, and outdoor kitchens.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">📐</div>
+                    <h3 class="service-title">Whole-Home Renovations</h3>
+                    <p class="service-desc">Complete transformations for dated homes. We modernize everything while preserving what you love.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">✅</div>
+                    <h3 class="service-title">Free Estimates</h3>
+                    <p class="service-desc">No obligation quotes. We assess your project and provide honest, upfront pricing within 48 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-content" data-aos="fade-right">
+                    <span class="section-label">Why Choose Us</span>
+                    <h2 class="section-title">Built on Trust, Delivered with Excellence</h2>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div class="feature-text">
+                                <h4>Licensed & Insured</h4>
+                                <p>Texas License #HIC-24891. Full liability and workers' comp coverage.</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div class="feature-text">
+                                <h4>Quality Materials</h4>
+                                <p>We partner with local suppliers for premium lumber, fixtures, and finishes.</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div class="feature-text">
+                                <h4>On-Time Completion</h4>
+                                <p>We build detailed timelines and stick to them. Your project, on schedule.</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div class="feature-text">
+                                <h4>5-Year Warranty</h4>
+                                <p>We stand behind our work with comprehensive warranty coverage.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="why-visual" data-aos="fade-left">
+                    <div class="why-card" data-aos="zoom-in" data-aos-delay="0">
+                        <div class="why-card-value">15+</div>
+                        <div class="why-card-label">Years in Austin</div>
+                    </div>
+                    <div class="why-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="why-card-value">500+</div>
+                        <div class="why-card-label">Happy Homeowners</div>
+                    </div>
+                    <div class="why-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="why-card-value">4.9★</div>
+                        <div class="why-card-label">Google Rating</div>
+                    </div>
+                    <div class="why-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="why-card-value">24hr</div>
+                        <div class="why-card-label">Response Time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="cta-content" data-aos="fade-up">
+            <h2 class="cta-title">Ready to Build Your Dream?</h2>
+            <p class="cta-subtitle">Call us today for a free, no-obligation estimate. Serving Austin, Round Rock, Cedar Park, and the Hill Country.</p>
+            <a href="tel:5125550147" class="cta-phone">
+                📞 (512) 555-0147
+            </a>
+        </div>
+    </section>
+
+    <footer data-aos="fade" data-aos-delay="100">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>🔨 Hill Country Builders</h3>
+                <p>Custom home building and renovations in Austin and surrounding areas. Licensed, insured, and committed to quality since 2009.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Custom Homes</a></li>
+                    <li><a href="#">Renovations</a></li>
+                    <li><a href="#">Room Additions</a></li>
+                    <li><a href="#">Free Estimates</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:5125550147">(512) 555-0147</a></li>
+                    <li><a href="mailto:info@hillcountrybuilders.com">info@hillcountrybuilders.com</a></li>
+                    <li><a href="#">Austin, TX</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Hill Country Builders. All rights reserved.</span>
+            <div class="footer-badges">
+                <span class="badge">Licensed</span>
+                <span class="badge">Insured</span>
+                <span class="badge">BBB A+</span>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration: 800, once: true, easing: 'ease-out'});</script>
+</body>
+</html>

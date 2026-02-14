@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowly Business Cards - Print</title>
+    <style>
+        @page { margin: 0.5in; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fff;
+        }
+        .print-sheet {
+            display: grid;
+            grid-template-columns: repeat(2, 3.5in);
+            grid-template-rows: repeat(5, 2in);
+            gap: 0;
+            max-width: 7in;
+            margin: 0 auto;
+        }
+        .card {
+            width: 3.5in;
+            height: 2in;
+            padding: 0.25in;
+            border: 0.5px dashed #ccc;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .logo {
+            font-size: 18px;
+            font-weight: 800;
+            color: #6366f1;
+        }
+        .price-tag {
+            background: #10b981;
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-top: 8px;
+        }
+        .title {
+            font-size: 11px;
+            color: #6366f1;
+        }
+        .card-bottom {
+            display: flex;
+            gap: 20px;
+            font-size: 10px;
+            color: #4b5563;
+        }
+        .contact-col {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .tagline {
+            font-size: 9px;
+            color: #9ca3af;
+            text-align: right;
+            margin-top: 5px;
+        }
+        @media print {
+            .card { border: 0.5px dashed #eee; }
+        }
+    </style>
+</head>
+<body>
+    <div class="print-sheet">
+        <!-- Card 1 -->
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <div class="logo">Flowly</div>
+                    <div class="price-tag">$100 Websites</div>
+                </div>
+                <div class="name">Geetesh Parelly</div>
+                <div class="title">Web Developer • Austin, TX</div>
+            </div>
+            <div>
+                <div class="card-bottom">
+                    <div class="contact-col">
+                        <div class="contact-item">📞 (737) 287-5336</div>
+                        <div class="contact-item">✉️ geetesh.parelly@2hourlearning.com</div>
+                    </div>
+                    <div class="contact-col">
+                        <div class="contact-item">𝕏 @GeeteshParelly</div>
+                    </div>
+                </div>
+                <div class="tagline">Professional websites for small businesses</div>
+            </div>
+        </div>
+        <!-- Card 2-10 (duplicates) -->
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <div class="logo">Flowly</div>
+                    <div class="price-tag">$100 Websites</div>
+                </div>
+                <div class="name">Geetesh Parelly</div>
+                <div class="title">Web Developer • Austin, TX</div>
+            </div>
+            <div>
+                <div class="card-bottom">
+                    <div class="contact-col">
+                        <div class="contact-item">📞 (737) 287-5336</div>
+                        <div class="contact-item">✉️ geetesh.parelly@2hourlearning.com</div>
+                    </div>
+                    <div class="contact-col">
+                        <div class="contact-item">𝕏 @GeeteshParelly</div>
+                    </div>
+                </div>
+                <div class="tagline">Professional websites for small businesses</div>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <div class="logo">Flowly</div>
+                    <div class="price-tag">$100 Websites</div>
+                </div>
+                <div class="name">Geetesh Parelly</div>
+                <div class="title">Web Developer • Austin, TX</div>
+            </div>
+            <div>
+                <div class="card-bottom">
+                    <div class="contact-col">
+                        <div class="contact-item">📞 (737) 287-5336</div>
+                        <div class="contact-item">✉️ geetesh.parelly@2hourlearning.com</div>
+                    </div>
+                    <div class="contact-col">
+                        <div class="contact-item">𝕏 @GeeteshParelly</div>
+                    </div>
+                </div>
+                <div class="tagline">Professional websites for small businesses</div>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <div class="logo">Flowly</div>
+                    <div class="price-tag">$100 Websites</div>
+                </div>
+                <div class="name">Geetesh Parelly</div>
+                <div class="title">Web Developer • Austin, TX</div>
+            </div>
+            <div>
+                <div class="card-bottom">
+                    <div class="contact-col">
+                        <div class="contact-item">📞 (737) 287-5336</div>
+                        <div class="contact-item">✉️ geetesh.parelly@2hourlearning.com</div>
+                    </div>
+                    <div class="contact-col">
+                        <div class="contact-item">𝕏 @GeeteshParelly</div>
+                    </div>
+                </div>
+                <div class="tagline">Professional websites for small businesses</div>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <div class="logo">Flowly</div>
+                    <div class="price-tag">$100 Websites</div>
+                </div>
+                <div class="name">Geetesh Parelly</div>
+                <div class="title">Web Developer • Austin, TX</div>
+            </div>
+            <div>
+                <div class="card-bottom">
+                    <div class="contact-col">
+                        <div class="contact-item">📞 (737) 287-5336</div>
+                        <div class="contact-item">✉️ geetesh.parelly@2hourlearning.com</div>
+                    </div>
+                    <div class="contact-col">
+                        <div class="contact-item">𝕏 @GeeteshParelly</div>
+                    </div>
+                </div>
+                <div class="tagline">Professional websites for small businesses</div>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <div class="logo">Flowly</div>
+                    <div class="price-tag">$100 Websites</div>
+                </div>
+                <div class="name">Geetesh Parelly</div>
+                <div class="title">Web Developer • Austin, TX</div>
+            </div>
+            <div>
+                <div class="card-bottom">
+                    <div class="contact-col">
+                        <div class="contact-item">📞 (737) 287-5336</div>
+                        <div class="contact-item">✉️ geetesh.parelly@2hourlearning.com</div>
+                    </div>
+                    <div class="contact-col">
+                        <div class="contact-item">𝕏 @GeeteshParelly</div>
+                    </div>
+                </div>
+                <div class="tagline">Professional websites for small businesses</div>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <div class="logo">Flowly</div>
+                    <div class="price-tag">$100 Websites</div>
+                </div>
+                <div class="name">Geetesh Parelly</div>
+                <div class="title">Web Developer • Austin, TX</div>
+            </div>
+            <div>
+                <div class="card-bottom">
+                    <div class="contact-col">
+                        <div class="contact-item">📞 (737) 287-5336</div>
+                        <div class="contact-item">✉️ geetesh.parelly@2hourlearning.com</div>
+                    </div>
+                    <div class="contact-col">
+                        <div class="contact-item">𝕏 @GeeteshParelly</div>
+                    </div>
+                </div>
+                <div class="tagline">Professional websites for small businesses</div>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <div class="logo">Flowly</div>
+                    <div class="price-tag">$100 Websites</div>
+                </div>
+                <div class="name">Geetesh Parelly</div>
+                <div class="title">Web Developer • Austin, TX</div>
+            </div>
+            <div>
+                <div class="card-bottom">
+                    <div class="contact-col">
+                        <div class="contact-item">📞 (737) 287-5336</div>
+                        <div class="contact-item">✉️ geetesh.parelly@2hourlearning.com</div>
+                    </div>
+                    <div class="contact-col">
+                        <div class="contact-item">𝕏 @GeeteshParelly</div>
+                    </div>
+                </div>
+                <div class="tagline">Professional websites for small businesses</div>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <div class="logo">Flowly</div>
+                    <div class="price-tag">$100 Websites</div>
+                </div>
+                <div class="name">Geetesh Parelly</div>
+                <div class="title">Web Developer • Austin, TX</div>
+            </div>
+            <div>
+                <div class="card-bottom">
+                    <div class="contact-col">
+                        <div class="contact-item">📞 (737) 287-5336</div>
+                        <div class="contact-item">✉️ geetesh.parelly@2hourlearning.com</div>
+                    </div>
+                    <div class="contact-col">
+                        <div class="contact-item">𝕏 @GeeteshParelly</div>
+                    </div>
+                </div>
+                <div class="tagline">Professional websites for small businesses</div>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <div class="logo">Flowly</div>
+                    <div class="price-tag">$100 Websites</div>
+                </div>
+                <div class="name">Geetesh Parelly</div>
+                <div class="title">Web Developer • Austin, TX</div>
+            </div>
+            <div>
+                <div class="card-bottom">
+                    <div class="contact-col">
+                        <div class="contact-item">📞 (737) 287-5336</div>
+                        <div class="contact-item">✉️ geetesh.parelly@2hourlearning.com</div>
+                    </div>
+                    <div class="contact-col">
+                        <div class="contact-item">𝕏 @GeeteshParelly</div>
+                    </div>
+                </div>
+                <div class="tagline">Professional websites for small businesses</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

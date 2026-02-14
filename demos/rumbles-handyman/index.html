@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rumbles Handyman Service - Georgetown TX handyman. Electrical, plumbing, carpentry. 8 years serving Williamson County. Call Michael at (737) 990-5176.">
+  <title>Rumbles Handyman Service | Georgetown TX</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #1565c0;
+      --primary-dark: #0d47a1;
+      --accent: #ff6f00;
+      --text: #212121;
+      --text-muted: #555;
+      --bg: #f9fafb;
+      --card: #fff;
+      --border: #e0e0e0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', system-ui, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    h1, h2 { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; }
+    h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1.2; }
+    h2 { font-size: clamp(1.4rem, 3vw, 1.875rem); line-height: 1.3; margin-bottom: 20px; }
+    h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+    /* Nav */
+    .nav {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 56px;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+    .nav-cta {
+      background: var(--primary);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 5px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .nav-cta:hover { background: var(--primary-dark); }
+
+    /* Hero */
+    .hero {
+      padding: 48px 0 40px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .hero h1 { margin-bottom: 12px; color: var(--text); }
+    .hero-text {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 1.02rem;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .hero-cta:hover { background: var(--primary-dark); }
+    .hero-img {
+      border-radius: 6px;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+    .hero-meta {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .hero-meta span {
+      display: inline-block;
+      margin-right: 16px;
+    }
+
+    /* Services */
+    .services { padding: 48px 0; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .service-item {
+      background: #fff;
+      padding: 20px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+    .service-item p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* About */
+    .about {
+      padding: 48px 0;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .about-inner { max-width: 680px; }
+    .about-text {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .about-list {
+      list-style: none;
+      columns: 2;
+      gap: 24px;
+    }
+    .about-list li {
+      padding: 4px 0;
+      padding-left: 20px;
+      position: relative;
+      font-size: 0.95rem;
+    }
+    .about-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+
+    /* Reviews */
+    .reviews { padding: 48px 0; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .review-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+    .review-text {
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+    .review-author {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Contact */
+    .contact { padding: 48px 0; background: var(--primary); color: #fff; }
+    .contact h2 { color: #fff; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .contact-item h3 { color: rgba(255,255,255,0.8); font-weight: 500; }
+    .contact-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .contact-value a { color: #fff; }
+
+    /* Footer */
+    .footer {
+      padding: 24px 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-img { order: -1; }
+      .services-grid { grid-template-columns: 1fr; }
+      .about-list { columns: 1; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <span class="logo">Rumbles Handyman</span>
+      <a href="tel:7379905176" class="nav-cta">Call (737) 990-5176</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <h1>Georgetown's Neighborhood Handyman</h1>
+        <p class="hero-text">I'm Michael. I take on jobs big and small—electrical, plumbing, carpentry, you name it. Fair pricing, no runaround. I've been doing this for 8 years and I'm not going anywhere.</p>
+        <a href="tel:7379905176" class="hero-cta">Call or Text Michael</a>
+        <div class="hero-meta">
+          <span>607 recommendations on Nextdoor</span>
+          <span>Mon–Sat 8am–6pm</span>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=700&h=525&fit=crop&q=80" alt="Handyman at work" class="hero-img">
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container">
+      <h2>What I Can Help With</h2>
+      <div class="services-grid">
+        <div class="service-item">
+          <h3>Electrical</h3>
+          <p>Outlets, switches, fixtures, ceiling fans. If it involves wires, I can handle it.</p>
+        </div>
+        <div class="service-item">
+          <h3>Plumbing</h3>
+          <p>Leaky faucets, toilet repairs, garbage disposals, outdoor spigots.</p>
+        </div>
+        <div class="service-item">
+          <h3>Carpentry</h3>
+          <p>Door repairs, trim work, shelving, deck fixes. Wood work of all kinds.</p>
+        </div>
+        <div class="service-item">
+          <h3>Drywall</h3>
+          <p>Holes, cracks, water damage patches. I'll make it look like it never happened.</p>
+        </div>
+        <div class="service-item">
+          <h3>Doors & Locks</h3>
+          <p>Stuck doors, broken locks, weatherstripping. Security and functionality.</p>
+        </div>
+        <div class="service-item">
+          <h3>Odd Jobs</h3>
+          <p>TV mounting, furniture assembly, whatever you need done around the house.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="container about-inner">
+      <h2>About Me</h2>
+      <p class="about-text">I got tired of working for other people and started Rumbles Handyman Service 8 years ago. What I thought would be temporary turned into a full-time thing—and I love it. I've met hundreds of great neighbors in Georgetown and the surrounding areas.</p>
+      <p class="about-text">I'm not a big company with a call center. When you call, you get me. I show up on time, I'm upfront about pricing, and I do the job right.</p>
+      <ul class="about-list">
+        <li>8 years in Georgetown</li>
+        <li>607 Nextdoor recommendations</li>
+        <li>One guy, not a franchise</li>
+        <li>Fair and reasonable pricing</li>
+        <li>Available 7 days a week</li>
+        <li>Call or text anytime</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="container">
+      <h2>What Neighbors Say</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <p class="review-text">"Michael fixed my electrical outlet issue quickly. Very reasonable priced for the good job he did. Way cheaper than the big companies!"</p>
+          <div class="review-author">— Dennis R., Georgetown</div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"Very nice guy, came promptly and fixed the outside faucet. So happy to have found him."</p>
+          <div class="review-author">— Kathryn W., Georgetown</div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"Fantastic jobs!! Very honest and reliable."</p>
+          <div class="review-author">— Yuri H., Georgetown</div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"Honest, dependable, and good pricing. Will always use him again."</p>
+          <div class="review-author">— Verified Nextdoor Review</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <h3>Phone</h3>
+          <div class="contact-value"><a href="tel:7379905176">(737) 990-5176</a></div>
+        </div>
+        <div class="contact-item">
+          <h3>Email</h3>
+          <div class="contact-value"><a href="mailto:mikerumble76@yahoo.com">mikerumble76@yahoo.com</a></div>
+        </div>
+        <div class="contact-item">
+          <h3>Area</h3>
+          <div class="contact-value">Georgetown & Williamson County</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Rumbles Handyman Service. Georgetown, TX and surrounding areas.</p>
+    </div>
+  </footer>
+</body>
+</html>

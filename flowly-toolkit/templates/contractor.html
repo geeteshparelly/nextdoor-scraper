@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Business Name] | Professional [Service] in [City], TX</title>
+    <meta name="description" content="[Business Name] provides professional [service] services in [City], TX. Quality work, fair prices. Call for a free estimate!">
+    <style>
+        :root {
+            --primary: #1e3a5f;
+            --primary-dark: #152942;
+            --accent: #e85d04;
+            --accent-hover: #d35400;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --radius: 8px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; height: auto; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .logo span { color: var(--accent); }
+        .header-cta {
+            background: var(--accent);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .header-cta:hover { background: var(--accent-hover); transform: translateY(-2px); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 80px 0 100px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 18px 36px;
+            border-radius: var(--radius);
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-lg);
+        }
+        .hero-cta:hover { background: var(--accent-hover); transform: translateY(-2px); }
+        @media (min-width: 768px) {
+            .hero { padding: 120px 0 140px; }
+            .hero h1 { font-size: 3.5rem; }
+        }
+
+        /* Section */
+        .section { padding: 80px 0; }
+        .section-alt { background: var(--light); }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
+        .section-header p { color: var(--gray); max-width: 600px; margin: 0 auto; }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+        }
+        .service-card h3 { color: var(--primary); margin-bottom: 10px; }
+        .service-card p { color: var(--gray); font-size: 0.95rem; }
+
+        /* Why Us */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        .why-card { text-align: center; padding: 25px; }
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+        .why-card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.1rem; }
+        .why-card p { color: var(--gray); font-size: 0.9rem; }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .contact-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .contact-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+        .contact-card h3 { color: var(--primary); margin-bottom: 10px; }
+        .contact-value { color: var(--accent); font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+        .contact-note { color: var(--gray); font-size: 0.9rem; }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+        .footer h3 { margin-bottom: 20px; }
+        .footer p { opacity: 0.8; margin-bottom: 10px; }
+        .footer a { color: var(--accent); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; margin-top: 30px; }
+
+        /* Sticky Mobile CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            padding: 15px 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            z-index: 99;
+            display: flex;
+            gap: 10px;
+        }
+        .sticky-cta a {
+            flex: 1;
+            padding: 14px;
+            border-radius: var(--radius);
+            text-align: center;
+            font-weight: 600;
+        }
+        .sticky-cta .cta-call { background: var(--primary); color: var(--white); }
+        .sticky-cta .cta-contact { background: var(--accent); color: var(--white); }
+        @media (min-width: 768px) { .sticky-cta { display: none; } }
+        @media (max-width: 767px) { body { padding-bottom: 80px; } }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="#" class="logo">[Business<span>Name</span>]</a>
+            <a href="#contact" class="header-cta">Get Free Estimate</a>
+        </div>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <h1>[City]'s Trusted [Service] Experts</h1>
+        <p>Quality workmanship, honest pricing, and dependable service. From small repairs to complete projects, we deliver results you can count on.</p>
+        <a href="tel:[PHONE]" class="hero-cta">📞 Call Now: [PHONE]</a>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="section" id="services">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>Professional solutions for all your [service] needs</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>[Service 1]</h3>
+                <p>Brief description of this service and what's included.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>[Service 2]</h3>
+                <p>Brief description of this service and what's included.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>[Service 3]</h3>
+                <p>Brief description of this service and what's included.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3>[Service 4]</h3>
+                <p>Brief description of this service and what's included.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✅</div>
+                <h3>[Service 5]</h3>
+                <p>Brief description of this service and what's included.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>Free Estimates</h3>
+                <p>Contact us for a no-obligation quote on any project.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="section section-alt" id="about">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose [Business Name]</h2>
+            <p>What sets us apart from the competition</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">📍</div>
+                <h3>Locally Owned</h3>
+                <p>We're based right here in [City] and know the area.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">⭐</div>
+                <h3>Quality Work</h3>
+                <p>We take pride in every job, big or small.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">💰</div>
+                <h3>Fair Pricing</h3>
+                <p>Honest estimates with no hidden fees.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🤝</div>
+                <h3>Reliable Service</h3>
+                <p>We show up on time and get the job done right.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="section" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2>Contact Us</h2>
+            <p>Ready to get started? Reach out today for a free estimate.</p>
+        </div>
+        <div class="contact-grid">
+            <a href="tel:[PHONE]" class="contact-card">
+                <div class="contact-icon">📞</div>
+                <h3>Call Us</h3>
+                <p class="contact-value">[PHONE]</p>
+                <p class="contact-note">Available Mon-Sat</p>
+            </a>
+            <a href="mailto:[EMAIL]" class="contact-card">
+                <div class="contact-icon">✉️</div>
+                <h3>Email Us</h3>
+                <p class="contact-value">[EMAIL]</p>
+                <p class="contact-note">We'll respond quickly</p>
+            </a>
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>Service Area</h3>
+                <p class="contact-value">[City], TX</p>
+                <p class="contact-note">& Surrounding Areas</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <h3>[Business Name]</h3>
+        <p>Professional [service] services in [City], TX</p>
+        <p>📞 <a href="tel:[PHONE]">[PHONE]</a> | ✉️ <a href="mailto:[EMAIL]">[EMAIL]</a></p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 [Business Name]. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Sticky Mobile CTA -->
+<div class="sticky-cta">
+    <a href="tel:[PHONE]" class="cta-call">📞 Call Now</a>
+    <a href="#contact" class="cta-contact">Get Estimate</a>
+</div>
+
+</body>
+</html>

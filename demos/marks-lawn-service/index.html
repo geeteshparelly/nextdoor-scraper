@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mark's Lawn Service - Lawn care in East Austin. Call (512) 293-6736 for mowing, trimming, and yard cleanup.">
+  <title>Mark's Lawn Service | East Austin Lawn Care</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #2d6a4f;
+      --primary-dark: #1b4332;
+      --text: #1b1b1b;
+      --text-muted: #4a4a4a;
+      --bg: #f8faf8;
+      --card-bg: #ffffff;
+      --border: #e0e0e0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', system-ui, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    h1, h2, h3 { font-family: 'Source Serif 4', Georgia, serif; font-weight: 600; }
+    h1 { font-size: clamp(1.875rem, 4vw, 2.75rem); line-height: 1.2; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.3; }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+    /* Nav */
+    .nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+    .logo {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .nav-phone {
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .nav-phone:hover { background: var(--primary-dark); }
+
+    /* Hero */
+    .hero {
+      padding: 60px 0 50px;
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero h1 { margin-bottom: 16px; }
+    .hero-text {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 24px;
+      max-width: 400px;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .hero-cta:hover { background: var(--primary-dark); }
+    .hero-img {
+      border-radius: 8px;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+    .hero-badge {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 6px 12px;
+      background: #e8f5e9;
+      color: var(--primary-dark);
+      font-size: 0.85rem;
+      border-radius: 4px;
+    }
+
+    /* Services */
+    .services {
+      padding: 60px 0;
+    }
+    .services h2 { margin-bottom: 32px; }
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .service-item {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .service-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-weight: 600;
+    }
+    .service-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* About */
+    .about {
+      padding: 60px 0;
+      background: var(--card-bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .about-inner {
+      max-width: 700px;
+    }
+    .about h2 { margin-bottom: 16px; }
+    .about-text {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .about-points {
+      list-style: none;
+    }
+    .about-points li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+    }
+    .about-points li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+
+    /* Contact */
+    .contact {
+      padding: 60px 0;
+    }
+    .contact h2 { margin-bottom: 32px; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .contact-item {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .contact-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .contact-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .contact-value a { color: var(--primary); }
+
+    /* Footer */
+    .footer {
+      padding: 30px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-img { order: -1; }
+      .services-list { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="logo">Mark's Lawn Service</a>
+      <a href="tel:5122936736" class="nav-phone">Call (512) 293-6736</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <h1>East Austin's Go-To Lawn Crew</h1>
+        <p class="hero-text">Mowing, trimming, yard cleanup. Based in the 78702, serving East Austin and surrounding neighborhoods. We show up when we say we will.</p>
+        <a href="tel:5122936736" class="hero-cta">Get a Free Quote</a>
+        <div class="hero-badge">Neighborhood Fave on Nextdoor</div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=800&h=600&fit=crop&q=80" alt="Lawn mowing in progress" class="hero-img">
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container">
+      <h2>What We Do</h2>
+      <div class="services-list">
+        <div class="service-item">
+          <h3>Lawn Mowing</h3>
+          <p>Weekly or bi-weekly. We bring our own gear and haul the clippings. Your yard, not your problem.</p>
+        </div>
+        <div class="service-item">
+          <h3>Edging & Trimming</h3>
+          <p>Clean edges along walkways, driveways, and fence lines. The details that make a yard look sharp.</p>
+        </div>
+        <div class="service-item">
+          <h3>Yard Cleanup</h3>
+          <p>Leaves, branches, debris—we clear it out. We leave your yard better than we found it.</p>
+        </div>
+        <div class="service-item">
+          <h3>Bush & Hedge Work</h3>
+          <p>Trimming and shaping to keep your shrubs looking neat. No overgrown messes on our watch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="container about-inner">
+      <h2>About Us</h2>
+      <p class="about-text">We're a small crew based right here in East Austin. No call centers, no corporate runaround—just folks who know lawns and show up on time. We've been taking care of yards in the 78702 and nearby for years, and we're not going anywhere.</p>
+      <ul class="about-points">
+        <li>Local to East Austin (78702)</li>
+        <li>We answer the phone</li>
+        <li>Fair pricing, no surprises</li>
+        <li>Not a franchise—just us</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-label">Phone</div>
+          <div class="contact-value"><a href="tel:5122936736">(512) 293-6736</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:qsteve141@gmail.com">qsteve141@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-label">Area</div>
+          <div class="contact-value">East Austin & nearby</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Mark's Lawn Service. East Austin and surrounding areas.</p>
+    </div>
+  </footer>
+</body>
+</html>

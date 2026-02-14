@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Farm Name] | Fresh [Products] from [City], TX</title>
+    <meta name="description" content="[Farm Name] offers fresh, locally-grown [products] in [City], TX. Find us at local farmers markets or order online!">
+    <style>
+        :root {
+            --primary: #2d5016;
+            --primary-light: #4a7c23;
+            --accent: #d4a017;
+            --accent-hover: #b8860b;
+            --earth: #8b4513;
+            --cream: #faf8f0;
+            --light: #f5f5dc;
+            --dark: #2c2c2c;
+            --gray: #6c757d;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --radius: 12px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--cream);
+        }
+        a { color: inherit; text-decoration: none; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .logo-icon { font-size: 1.8rem; }
+        .header-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .header-cta:hover { background: var(--primary-light); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 80px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '🌿';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            top: -50px;
+            right: -50px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 550px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 16px 32px;
+            border-radius: var(--radius);
+            font-size: 1.05rem;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        .hero-cta:hover { background: var(--accent-hover); transform: translateY(-2px); }
+        @media (min-width: 768px) { .hero h1 { font-size: 3.5rem; } }
+
+        /* Section */
+        .section { padding: 70px 0; }
+        .section-alt { background: var(--white); }
+        .section-header { text-align: center; margin-bottom: 45px; }
+        .section-header h2 { font-size: 2rem; color: var(--primary); margin-bottom: 12px; }
+        .section-header p { color: var(--gray); max-width: 550px; margin: 0 auto; }
+
+        /* Products */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+        }
+        .product-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .product-image {
+            height: 180px;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        .product-info { padding: 20px; }
+        .product-info h3 { color: var(--primary); margin-bottom: 8px; }
+        .product-info p { color: var(--gray); font-size: 0.9rem; margin-bottom: 12px; }
+        .product-tag {
+            display: inline-block;
+            background: var(--light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Story */
+        .story {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        @media (min-width: 768px) { .story { grid-template-columns: 1fr 1fr; } }
+        .story-image {
+            background: var(--light);
+            height: 300px;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+        .story-content h2 { color: var(--primary); margin-bottom: 20px; font-size: 1.8rem; }
+        .story-content p { color: var(--gray); margin-bottom: 15px; }
+
+        /* Find Us */
+        .markets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .market-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary);
+        }
+        .market-card h3 { color: var(--primary); margin-bottom: 10px; }
+        .market-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; }
+        .market-day { color: var(--accent); font-weight: 600; }
+
+        /* Contact */
+        .contact-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        .contact-box h2 { color: var(--primary); margin-bottom: 20px; }
+        .contact-box p { color: var(--gray); margin-bottom: 25px; }
+        .contact-links { display: flex; flex-direction: column; gap: 15px; }
+        .contact-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+            background: var(--light);
+            border-radius: var(--radius);
+            color: var(--primary);
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .contact-link:hover { background: var(--primary); color: var(--white); }
+
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+        .footer p { opacity: 0.9; margin-bottom: 8px; }
+        .footer a { color: var(--accent); }
+
+        /* Sticky Mobile CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            padding: 15px 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            z-index: 99;
+        }
+        .sticky-cta a {
+            display: block;
+            padding: 14px;
+            border-radius: var(--radius);
+            text-align: center;
+            font-weight: 600;
+            background: var(--primary);
+            color: var(--white);
+        }
+        @media (min-width: 768px) { .sticky-cta { display: none; } }
+        @media (max-width: 767px) { body { padding-bottom: 80px; } }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <span class="logo-icon">🌱</span>
+                [Farm Name]
+            </a>
+            <a href="#contact" class="header-cta">Contact Us</a>
+        </div>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-badge">🌿 Locally Grown • [City], TX</div>
+        <h1>[Farm Name]</h1>
+        <p>Fresh, locally-grown [products] from our family to yours. Find us at local farmers markets!</p>
+        <a href="#find-us" class="hero-cta">🗓️ Find Us at Markets</a>
+    </div>
+</section>
+
+<!-- Products -->
+<section class="section" id="products">
+    <div class="container">
+        <div class="section-header">
+            <h2>What We Grow</h2>
+            <p>Fresh from the farm to your table</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">🍅</div>
+                <div class="product-info">
+                    <h3>[Product 1]</h3>
+                    <p>Brief description of this product and what makes it special.</p>
+                    <span class="product-tag">Seasonal</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🥬</div>
+                <div class="product-info">
+                    <h3>[Product 2]</h3>
+                    <p>Brief description of this product and what makes it special.</p>
+                    <span class="product-tag">Year-Round</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🍯</div>
+                <div class="product-info">
+                    <h3>[Product 3]</h3>
+                    <p>Brief description of this product and what makes it special.</p>
+                    <span class="product-tag">Local Favorite</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🥚</div>
+                <div class="product-info">
+                    <h3>[Product 4]</h3>
+                    <p>Brief description of this product and what makes it special.</p>
+                    <span class="product-tag">Farm Fresh</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Story -->
+<section class="section section-alt" id="story">
+    <div class="container">
+        <div class="story">
+            <div class="story-image">👨‍🌾</div>
+            <div class="story-content">
+                <h2>Our Story</h2>
+                <p>We're a [family-owned/small/local] farm located in [City], Texas. For [X years], we've been growing fresh, quality produce for our community.</p>
+                <p>We believe in sustainable farming practices and take pride in bringing you the freshest [products] possible. When you buy from us, you're supporting a local family and getting food that's grown with care.</p>
+                <p><strong>Thank you for supporting local agriculture!</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Find Us -->
+<section class="section" id="find-us">
+    <div class="container">
+        <div class="section-header">
+            <h2>Where to Find Us</h2>
+            <p>Visit us at these local farmers markets</p>
+        </div>
+        <div class="markets-grid">
+            <div class="market-card">
+                <h3>📍 [Market Name 1]</h3>
+                <p>
+                    <span class="market-day">Saturdays, 9am - 1pm</span><br>
+                    [Market Address]<br>
+                    [City], TX
+                </p>
+            </div>
+            <div class="market-card">
+                <h3>📍 [Market Name 2]</h3>
+                <p>
+                    <span class="market-day">Sundays, 10am - 2pm</span><br>
+                    [Market Address]<br>
+                    [City], TX
+                </p>
+            </div>
+            <div class="market-card">
+                <h3>📍 [Market Name 3]</h3>
+                <p>
+                    <span class="market-day">Wednesdays, 4pm - 7pm</span><br>
+                    [Market Address]<br>
+                    [City], TX
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="section section-alt" id="contact">
+    <div class="container">
+        <div class="contact-box">
+            <h2>Get in Touch</h2>
+            <p>Questions about our products? Want to place a special order? We'd love to hear from you!</p>
+            <div class="contact-links">
+                <a href="tel:[PHONE]" class="contact-link">📞 [PHONE]</a>
+                <a href="mailto:[EMAIL]" class="contact-link">✉️ [EMAIL]</a>
+                <a href="#" class="contact-link">📸 Follow us on Instagram</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p><strong>🌱 [Farm Name]</strong></p>
+        <p>[City], Texas</p>
+        <p>📞 <a href="tel:[PHONE]">[PHONE]</a></p>
+        <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.7;">&copy; 2025 [Farm Name]. Locally grown with love.</p>
+    </div>
+</footer>
+
+<!-- Sticky Mobile CTA -->
+<div class="sticky-cta">
+    <a href="tel:[PHONE]">📞 Call Us: [PHONE]</a>
+</div>
+
+</body>
+</html>

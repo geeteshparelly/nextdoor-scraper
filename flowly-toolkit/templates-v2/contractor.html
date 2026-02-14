@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Business Name] | [City] [Service] Contractor</title>
+    <meta name="description" content="[Business Name] - Professional [Service] services in [City]. Licensed, insured, and trusted by homeowners. Call [PHONE] for a free estimate.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #1a1a1a;
+            --bg-darker: #0d0d0d;
+            --surface: #242424;
+            --surface-elevated: #2a2a2a;
+            --text-primary: #f0f0f0;
+            --text-secondary: #888;
+            --accent: #e85d04;
+            --accent-bright: #ff6b1a;
+            --accent-muted: #9d4300;
+            --success: #22c55e;
+            --border: #333;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Space Grotesk', -apple-system, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Grain texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* === HEADER === */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(13, 13, 13, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        nav { display: flex; gap: 2rem; align-items: center; }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--text-primary); }
+
+        .header-cta {
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.25rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .header-cta:hover {
+            background: var(--accent-bright);
+            transform: translateY(-1px);
+        }
+
+        /* === HERO === */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            padding: 8rem 4rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-title span {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-bright);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(232, 93, 4, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-primary);
+            background: var(--surface);
+        }
+
+        .hero-visual {
+            position: relative;
+            background: var(--bg-darker);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(135deg, transparent 40%, var(--accent-muted) 100%),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 50px,
+                    rgba(255,255,255,0.02) 50px,
+                    rgba(255,255,255,0.02) 51px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 50px,
+                    rgba(255,255,255,0.02) 50px,
+                    rgba(255,255,255,0.02) 51px
+                );
+            opacity: 0.5;
+        }
+
+        .hero-image-placeholder {
+            position: relative;
+            z-index: 1;
+            width: 80%;
+            aspect-ratio: 4/3;
+            background: var(--surface);
+            border: 2px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .hero-image-placeholder span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* === SERVICES === */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--bg-darker);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .section-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--surface);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--accent);
+            transition: height 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .service-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* === WHY US === */
+        .why-us {
+            padding: 6rem 2rem;
+            background: var(--bg-dark);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .why-content {
+            max-width: 500px;
+        }
+
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .feature-check {
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .feature-text h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .why-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .why-card {
+            background: var(--surface);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .why-card:nth-child(2) {
+            transform: translateY(2rem);
+        }
+
+        .why-card-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .why-card-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* === CTA SECTION === */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 20px,
+                rgba(0,0,0,0.05) 20px,
+                rgba(0,0,0,0.05) 40px
+            );
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .cta-subtitle {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 2rem;
+        }
+
+        .cta-phone {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: rgba(0,0,0,0.2);
+            transition: all 0.2s;
+        }
+
+        .cta-phone:hover {
+            background: rgba(0,0,0,0.3);
+            transform: scale(1.02);
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: var(--bg-darker);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 300px;
+        }
+
+        .footer-links h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-badges {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 0.4rem 0.75rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* === MOBILE === */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .hero-content {
+                padding: 7rem 2rem 4rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .why-visual {
+                order: -1;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+
+            .hero-content {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .hero-title {
+                font-size: 2.25rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-visual {
+                grid-template-columns: 1fr;
+            }
+
+            .why-card:nth-child(2) {
+                transform: none;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <span class="logo-icon">🔨</span>
+                [Business Name]
+            </a>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#why-us">Why Us</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="tel:[PHONE]" class="header-cta">
+                📞 [PHONE]
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Licensed & Insured</span>
+            <h1 class="hero-title">
+                Professional <span>[Service]</span> in [City]
+            </h1>
+            <p class="hero-subtitle">
+                Quality workmanship you can trust. From small repairs to complete installations, we deliver results that last. Get your free estimate today.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value">15+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">500+</span>
+                    <span class="stat-label">Projects Done</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Satisfaction</span>
+                </div>
+            </div>
+            <div class="hero-ctas">
+                <a href="tel:[PHONE]" class="btn-primary">
+                    Get Free Estimate →
+                </a>
+                <a href="#services" class="btn-secondary">
+                    Our Services
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-image-placeholder">
+                <span>📷 Add Project Photo</span>
+                <span style="font-size: 0.7rem; opacity: 0.6;">Replace with real work image</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What We Do</span>
+                <h2 class="section-title">Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3 class="service-title">[Service 1]</h3>
+                    <p class="service-desc">Professional [service 1] with quality materials and expert craftsmanship. We handle projects of all sizes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="service-title">[Service 2]</h3>
+                    <p class="service-desc">Fast and reliable [service 2]. We diagnose the problem and fix it right the first time.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">[Service 3]</h3>
+                    <p class="service-desc">Expert [service 3] to keep your home safe and efficient. Licensed professionals you can trust.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <h3 class="service-title">[Service 4]</h3>
+                    <p class="service-desc">Complete [service 4] solutions. From planning to completion, we handle every detail.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📐</div>
+                    <h3 class="service-title">[Service 5]</h3>
+                    <p class="service-desc">Custom [service 5] tailored to your needs. Quality work at competitive prices.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✅</div>
+                    <h3 class="service-title">Free Estimates</h3>
+                    <p class="service-desc">No obligation quotes. We assess your project and provide honest, upfront pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-content">
+                    <span class="section-label">Why Choose Us</span>
+                    <h2 class="section-title">Built on Trust, Delivered with Excellence</h2>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div class="feature-text">
+                                <h4>Licensed & Insured</h4>
+                                <p>Full coverage for your peace of mind on every project.</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div class="feature-text">
+                                <h4>Quality Materials</h4>
+                                <p>We only use premium products that stand the test of time.</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div class="feature-text">
+                                <h4>On-Time Completion</h4>
+                                <p>We respect your schedule and deliver when we say we will.</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div class="feature-text">
+                                <h4>Satisfaction Guaranteed</h4>
+                                <p>Not happy? We make it right. That's our promise.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="why-visual">
+                    <div class="why-card">
+                        <div class="why-card-value">15+</div>
+                        <div class="why-card-label">Years in Business</div>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-card-value">500+</div>
+                        <div class="why-card-label">Happy Customers</div>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-card-value">5★</div>
+                        <div class="why-card-label">Google Rating</div>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-card-value">24hr</div>
+                        <div class="why-card-label">Response Time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="cta-content">
+            <h2 class="cta-title">Ready to Get Started?</h2>
+            <p class="cta-subtitle">Call us today for a free, no-obligation estimate. We're here to help.</p>
+            <a href="tel:[PHONE]" class="cta-phone">
+                📞 [PHONE]
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>🔨 [Business Name]</h3>
+                <p>Professional [Service] services in [City] and surrounding areas. Licensed, insured, and committed to quality.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">[Service 1]</a></li>
+                    <li><a href="#">[Service 2]</a></li>
+                    <li><a href="#">[Service 3]</a></li>
+                    <li><a href="#">Free Estimates</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:[PHONE]">[PHONE]</a></li>
+                    <li><a href="mailto:[EMAIL]">[EMAIL]</a></li>
+                    <li><a href="#">[City], TX</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 [Business Name]. All rights reserved.</span>
+            <div class="footer-badges">
+                <span class="badge">Licensed</span>
+                <span class="badge">Insured</span>
+                <span class="badge">BBB A+</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

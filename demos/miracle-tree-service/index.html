@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Miracle Tree Service - Austin's trusted tree guy. Tree trimming, removal, lawn care, fence repair. 67 Nextdoor recommendations. Call Santos at (512) 644-7187.">
+  <title>Miracle Tree Service | Austin TX Tree Trimming & Removal</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bark: #2d3a1f;
+      --forest: #3d5a27;
+      --caution: #f59e0b;
+      --sawdust: #f5f3ef;
+      --text: #1f2937;
+      --text-light: #4b5563;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Work Sans', system-ui, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    h1, h2, h3 { 
+      font-family: 'Oswald', Impact, sans-serif; 
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    /* Nav - minimal, dark */
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 0;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .nav-cta {
+      background: var(--caution);
+      color: var(--bark);
+      padding: 12px 24px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 4px;
+      transition: transform 0.2s;
+    }
+    .nav-cta:hover { transform: scale(1.05); }
+
+    /* Hero - full bleed dramatic */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(45,58,31,0.92) 0%, rgba(61,90,39,0.85) 100%),
+                  url('https://images.unsplash.com/photo-1598902468171-680e29d8bb76?w=1400&h=900&fit=crop&q=80') center/cover;
+    }
+    .hero-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+      color: #fff;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(4px);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+    .hero-badge strong { color: var(--caution); }
+    .hero h1 {
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      line-height: 1.05;
+      max-width: 700px;
+      margin-bottom: 20px;
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      max-width: 500px;
+      opacity: 0.9;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--caution);
+      color: var(--bark);
+      padding: 16px 36px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hero-cta:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Stats bar */
+    .stats {
+      background: var(--bark);
+      padding: 40px 0;
+    }
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .stat {
+      text-align: center;
+      color: #fff;
+    }
+    .stat-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--caution);
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* Services - simple list, not cards */
+    .services {
+      padding: 80px 0;
+      background: var(--sawdust);
+    }
+    .services-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .services h2 {
+      font-size: 2rem;
+      color: var(--bark);
+      margin-bottom: 40px;
+    }
+    .services-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px 48px;
+    }
+    .service-item {
+      display: flex;
+      gap: 16px;
+    }
+    .service-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--forest);
+      opacity: 0.5;
+    }
+    .service-item h3 {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: none;
+      margin-bottom: 4px;
+    }
+    .service-item p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    /* About - first person */
+    .about {
+      padding: 80px 0;
+      background: #fff;
+    }
+    .about-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .about-img {
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .about h2 {
+      font-size: 1.8rem;
+      color: var(--bark);
+      margin-bottom: 20px;
+    }
+    .about p {
+      color: var(--text-light);
+      margin-bottom: 16px;
+      font-size: 1.02rem;
+    }
+    .about-sig {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2rem;
+      color: var(--forest);
+      margin-top: 24px;
+    }
+
+    /* Reviews - real quotes */
+    .reviews {
+      padding: 80px 0;
+      background: var(--forest);
+    }
+    .reviews-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .reviews h2 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .review {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(4px);
+      padding: 28px;
+      border-radius: 8px;
+      border-left: 4px solid var(--caution);
+    }
+    .review-text {
+      color: rgba(255,255,255,0.95);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .review-author {
+      color: var(--caution);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* CTA section */
+    .cta {
+      padding: 80px 0;
+      background: var(--sawdust);
+      text-align: center;
+    }
+    .cta h2 {
+      font-size: 2.2rem;
+      color: var(--bark);
+      margin-bottom: 16px;
+    }
+    .cta p {
+      color: var(--text-light);
+      margin-bottom: 32px;
+      font-size: 1.1rem;
+    }
+    .cta-phone {
+      display: inline-block;
+      background: var(--bark);
+      color: #fff;
+      padding: 18px 48px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .cta-phone:hover { background: var(--forest); }
+    .cta-areas {
+      margin-top: 24px;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 32px 0;
+      background: var(--bark);
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .stats-inner { gap: 32px; }
+      .stat-num { font-size: 2rem; }
+      .services-list { grid-template-columns: 1fr; }
+      .about-inner { grid-template-columns: 1fr; }
+      .about-img { order: -1; aspect-ratio: 16/9; }
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="logo">Miracle Tree Service</span>
+      <a href="tel:5126447187" class="nav-cta">Call Santos</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <strong>67</strong> neighbors recommend Santos on Nextdoor
+      </div>
+      <h1>Austin's Go-To Tree Guy</h1>
+      <p class="hero-sub">Tree trimming, removal, lawn care, and fence repair. When you call, you get me—not a call center. Fair prices, no runaround.</p>
+      <a href="tel:5126447187" class="hero-cta">Call (512) 644-7187</a>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stats-inner">
+      <div class="stat">
+        <div class="stat-num">67</div>
+        <div class="stat-label">Recommendations</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Same Day</div>
+        <div class="stat-label">Response</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Free</div>
+        <div class="stat-label">Estimates</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="services-inner">
+      <h2>What I Do</h2>
+      <div class="services-list">
+        <div class="service-item">
+          <span class="service-num">01</span>
+          <div>
+            <h3>Tree Trimming</h3>
+            <p>Keep your trees healthy and your property safe. I handle branches of all sizes.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <span class="service-num">02</span>
+          <div>
+            <h3>Tree Removal</h3>
+            <p>Dead trees, storm damage, or just need it gone? I'll take care of it and haul everything away.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <span class="service-num">03</span>
+          <div>
+            <h3>Lawn Care</h3>
+            <p>Mowing, edging, cleanup. Your yard looking sharp without the hassle.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <span class="service-num">04</span>
+          <div>
+            <h3>Fence Repair</h3>
+            <p>Storm knock your fence down? Posts rotting? I'll get it standing straight again.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about-inner">
+      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&h=625&fit=crop&q=80" alt="Tree work" class="about-img">
+      <div>
+        <h2>About Me</h2>
+        <p>I'm Santos. I've been doing tree work and landscaping in Austin for years. Started out helping neighbors, and it turned into Miracle Tree Service.</p>
+        <p>When you call me, you actually talk to me—not some dispatcher. I show up when I say I will, give you a fair quote on the spot, and get the job done right. No surprises, no upselling.</p>
+        <p>67 of your neighbors already trust me with their yards. Let me show you why.</p>
+        <div class="about-sig">— Santos Marroquin</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <div class="reviews-inner">
+      <h2>What Neighbors Say</h2>
+      <div class="reviews-grid">
+        <div class="review">
+          <p class="review-text">"Santos came when he said he would, gave a fair quote, and did more work than he promised the very next day. He will be my first call for any yard projects."</p>
+          <div class="review-author">— Darija K., North Shoal Creek</div>
+        </div>
+        <div class="review">
+          <p class="review-text">"He was at my house shortly after I called, for an affordable price! I will be calling Miracle Tree again when needed."</p>
+          <div class="review-author">— Roni B., Windsor Park</div>
+        </div>
+        <div class="review">
+          <p class="review-text">"Came out right away, did the bid, and when I got home the yard was done! Great job. I would recommend him!"</p>
+          <div class="review-author">— Denise C., Highland</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Need Tree Work Done?</h2>
+    <p>Call or text for a free estimate. I'll get back to you the same day.</p>
+    <a href="tel:5126447187" class="cta-phone">(512) 644-7187</a>
+    <p class="cta-areas">Serving Austin, North Point, Windsor Park, Highland, and surrounding areas</p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Miracle Tree Service. Austin, TX.</p>
+  </footer>
+</body>
+</html>

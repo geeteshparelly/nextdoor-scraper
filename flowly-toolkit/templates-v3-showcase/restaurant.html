@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosie's Kitchen | Southern Comfort Food in Austin</title>
+    <meta name="description" content="Rosie's Kitchen - Authentic Southern comfort food in East Austin. Fresh ingredients, bold flavors, unforgettable meals. Visit us or order online.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Page Load Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        header { animation: fadeInDown 0.6s ease-out; }
+        .hero-badge { animation: fadeIn 0.6s ease-out 0.2s both; }
+        .hero-title { animation: fadeInUp 0.7s ease-out 0.1s both; }
+        .hero-subtitle { animation: fadeIn 0.6s ease-out 0.3s both; }
+        .hero-meta { animation: fadeIn 0.6s ease-out 0.4s both; }
+        .hero-ctas { animation: fadeInUp 0.6s ease-out 0.5s both; }
+        .hero-visual { animation: scaleIn 0.8s ease-out 0.3s both; }
+        :root {
+            --bg-cream: #faf8f5;
+            --bg-warm: #f5f0e8;
+            --surface: #ffffff;
+            --text-dark: #1a1612;
+            --text-body: #3d3630;
+            --text-muted: #7a7067;
+            --accent: #c45c26;
+            --accent-deep: #8b3a14;
+            --accent-light: #e8d5c4;
+            --border: #e5ddd3;
+            --gold: #b8860b;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        nav { display: flex; gap: 2.5rem; align-items: center; }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            letter-spacing: 0.02em;
+        }
+
+        nav a:hover { color: var(--accent); }
+
+        .header-cta {
+            background: var(--accent);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 2rem;
+            transition: all 0.2s;
+        }
+
+        .header-cta:hover { background: var(--accent-deep); transform: translateY(-1px); }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            right: -10%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 55%;
+            height: 120%;
+            background: var(--accent-light);
+            border-radius: 50% 0 0 50%;
+            opacity: 0.4;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text { max-width: 550px; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--accent-light);
+            border-radius: 2rem;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.75rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-title em { font-style: italic; color: var(--accent); }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .meta-item { display: flex; flex-direction: column; gap: 0.25rem; }
+
+        .meta-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+        }
+
+        .meta-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 2rem;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-deep);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 28px rgba(196, 92, 38, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 2px solid var(--border);
+            border-radius: 2rem;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-secondary:hover { 
+            border-color: var(--accent); 
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .hero-visual { position: relative; }
+
+        .hero-image-frame {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.1);
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-badge-float {
+            position: absolute;
+            bottom: -1rem;
+            left: -1rem;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .badge-stars { color: var(--gold); font-size: 0.9rem; }
+        .badge-text { font-size: 0.85rem; font-weight: 600; color: var(--text-dark); }
+
+        .menu-section { padding: 6rem 2rem; background: var(--surface); }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .section-header { text-align: center; margin-bottom: 4rem; }
+
+        .section-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .menu-card {
+            background: var(--bg-cream);
+            border-radius: 1rem;
+            padding: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            transition: all 0.3s ease-out;
+            border: 1px solid transparent;
+        }
+
+        .menu-card:hover {
+            border-color: var(--accent-light);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+        }
+        
+        .menu-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 0.75rem;
+            object-fit: cover;
+            flex-shrink: 0;
+            transition: transform 0.3s ease-out;
+        }
+        
+        .menu-card:hover .menu-image {
+            transform: scale(1.05);
+        }
+
+        .menu-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 0.75rem;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .menu-content { flex: 1; }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .menu-price { font-weight: 700; color: var(--accent); font-size: 1.1rem; }
+
+        .menu-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+        .about-section { padding: 6rem 2rem; background: var(--bg-warm); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .about-image {
+            border-radius: 0.75rem;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .about-image:first-child {
+            grid-column: span 2;
+            aspect-ratio: 2/1;
+        }
+
+        .about-image:not(:first-child) { aspect-ratio: 1; }
+
+        .about-content { max-width: 500px; }
+
+        .about-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--text-dark);
+            margin: 2rem 0;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--accent);
+        }
+
+        .info-section {
+            padding: 6rem 2rem;
+            background: var(--text-dark);
+            color: white;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .info-card { text-align: center; }
+        .info-icon { font-size: 2rem; margin-bottom: 1rem; }
+
+        .info-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-text { font-size: 0.95rem; opacity: 0.8; line-height: 1.8; }
+        .info-text a { color: var(--accent-light); text-decoration: none; }
+        .info-text a:hover { text-decoration: underline; }
+
+        .cta-section {
+            padding: 6rem 2rem;
+            background: var(--accent);
+            text-align: center;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        .btn-white {
+            background: white;
+            color: var(--accent);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 2rem;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-white:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 28px rgba(0,0,0,0.18); }
+
+        .btn-outline-white {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 2px solid rgba(255,255,255,0.5);
+            border-radius: 2rem;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-outline-white:hover { border-color: white; background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+
+        footer {
+            background: var(--text-dark);
+            padding: 4rem 2rem 2rem;
+            color: white;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer-social { display: flex; gap: 1.5rem; }
+
+        .footer-social a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: color 0.2s;
+        }
+
+        .footer-social a:hover { color: white; }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-visual { order: -1; }
+            .hero-image { aspect-ratio: 16/9; }
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .info-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero { padding: 6rem 1.5rem 3rem; }
+            .hero-bg { display: none; }
+            .hero-meta { flex-direction: column; gap: 1rem; }
+            .menu-grid { grid-template-columns: 1fr; }
+            .menu-card { flex-direction: column; text-align: center; }
+            .menu-image { margin: 0 auto; }
+            .about-images { grid-template-columns: 1fr; }
+            .about-image:first-child { grid-column: span 1; aspect-ratio: 16/9; }
+            .footer-content { flex-direction: column; gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">Rosie's Kitchen</a>
+            <nav>
+                <a href="#menu">Menu</a>
+                <a href="#about">About</a>
+                <a href="#location">Location</a>
+            </nav>
+            <a href="tel:5125550243" class="header-cta">Order Now</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">🔥 Now Serving Brunch</span>
+                <h1 class="hero-title">
+                    Authentic <em>Southern</em> Made Fresh Daily
+                </h1>
+                <p class="hero-subtitle">
+                    From our kitchen to your table — comfort food like your grandmother made, with a modern Texas twist. Come hungry, leave happy.
+                </p>
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Hours</span>
+                        <span class="meta-value">7am–9pm Daily</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Location</span>
+                        <span class="meta-value">East Austin</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Phone</span>
+                        <span class="meta-value">(512) 555-0243</span>
+                    </div>
+                </div>
+                <div class="hero-ctas">
+                    <a href="#menu" class="btn-primary">View Menu</a>
+                    <a href="tel:5125550243" class="btn-secondary">Call to Order</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-frame">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=1000&fit=crop" alt="Delicious Southern food" class="hero-image">
+                </div>
+                <div class="hero-badge-float">
+                    <span class="badge-stars">★★★★★</span>
+                    <span class="badge-text">4.9 on Google</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">Our Menu</p>
+                <h2 class="section-title">Customer Favorites</h2>
+                <p class="section-subtitle">Fresh ingredients, authentic recipes, unforgettable taste.</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb44?w=200&h=200&fit=crop" alt="Chicken and Waffles" class="menu-image">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <span class="menu-name">Rosie's Chicken & Waffles</span>
+                            <span class="menu-price">$16</span>
+                        </div>
+                        <p class="menu-desc">Crispy buttermilk fried chicken on Belgian waffles with bourbon maple syrup and whipped honey butter.</p>
+                    </div>
+                </div>
+                <div class="menu-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=200&h=200&fit=crop" alt="Shrimp and Grits" class="menu-image">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <span class="menu-name">Gulf Shrimp & Grits</span>
+                            <span class="menu-price">$19</span>
+                        </div>
+                        <p class="menu-desc">Blackened Gulf shrimp over creamy stone-ground grits with andouille sausage and Creole cream sauce.</p>
+                    </div>
+                </div>
+                <div class="menu-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=200&h=200&fit=crop" alt="BBQ Brisket Plate" class="menu-image">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <span class="menu-name">Smoked Brisket Plate</span>
+                            <span class="menu-price">$22</span>
+                        </div>
+                        <p class="menu-desc">14-hour oak-smoked brisket with mac & cheese, collard greens, and fresh-baked cornbread.</p>
+                    </div>
+                </div>
+                <div class="menu-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=200&h=200&fit=crop" alt="Pecan Pie" class="menu-image">
+                    <div class="menu-content">
+                        <div class="menu-header">
+                            <span class="menu-name">Texas Pecan Pie</span>
+                            <span class="menu-price">$8</span>
+                        </div>
+                        <p class="menu-desc">Made-from-scratch with Hill Country pecans, brown butter, and a flaky butter crust. A la mode +$2.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=400&fit=crop" alt="Restaurant interior" class="about-image">
+                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400&h=400&fit=crop" alt="Chef cooking" class="about-image">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=400&fit=crop" alt="Food being served" class="about-image">
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <p class="section-label">Our Story</p>
+                    <h2 class="section-title">Three Generations of Soul</h2>
+                    <p class="hero-subtitle">
+                        Rosie's Kitchen started in 2018 when Rosie Mae Turner decided Austin needed real Southern comfort food. Using recipes passed down from her grandmother in Louisiana, she opened a tiny spot on East 6th that quickly became a neighborhood institution.
+                    </p>
+                    <blockquote class="about-quote">
+                        "We don't just serve food — we serve memories on a plate."
+                    </blockquote>
+                    <a href="tel:5125550243" class="btn-primary">Join Us for a Meal</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section" id="location">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="info-icon">📍</div>
+                    <h3 class="info-title">Location</h3>
+                    <p class="info-text">
+                        1847 E 6th Street<br>
+                        Austin, TX 78702<br>
+                        <a href="#">Get Directions →</a>
+                    </p>
+                </div>
+                <div class="info-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="info-icon">🕐</div>
+                    <h3 class="info-title">Hours</h3>
+                    <p class="info-text">
+                        Mon-Thu: 7am–9pm<br>
+                        Fri-Sat: 7am–10pm<br>
+                        Sunday: 8am–3pm (Brunch)
+                    </p>
+                </div>
+                <div class="info-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="info-icon">📞</div>
+                    <h3 class="info-title">Contact</h3>
+                    <p class="info-text">
+                        <a href="tel:5125550243">(512) 555-0243</a><br>
+                        <a href="mailto:hello@rosieskitchenatx.com">hello@rosieskitchenatx.com</a><br>
+                        <a href="#">@rosieskitchenatx</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container" data-aos="fade-up">
+            <h2 class="cta-title">Hungry Yet?</h2>
+            <p class="cta-subtitle">Order online, call ahead, or just walk in. We've got a seat for you.</p>
+            <div class="cta-buttons">
+                <a href="tel:5125550243" class="btn-white">📞 Call to Order</a>
+                <a href="#" class="btn-outline-white">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <footer data-aos="fade" data-aos-delay="100">
+        <div class="footer-content">
+            <span class="footer-logo">Rosie's Kitchen</span>
+            <div class="footer-social">
+                <a href="#">📘</a>
+                <a href="#">📸</a>
+                <a href="#">🐦</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Rosie's Kitchen. All rights reserved. | East Austin, TX
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration: 800, once: true, easing: 'ease-out'});</script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Freedom Lawn Services - Professional lawn care and landscaping in Austin, Buda & Kyle. 5 years experience. Free estimates. Call (956) 343-7140.">
+  <title>Freedom Lawn Services | Austin Lawn Care & Landscaping</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #27ae60;
+      --primary-dark: #219a52;
+      --secondary: #2ecc71;
+      --text: #2d3748;
+      --text-light: #718096;
+      --bg: #f5f9f6;
+      --bg-alt: #e8f5e9;
+      --white: #ffffff;
+      --radius: 12px;
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 1rem; }
+    h3 { font-size: clamp(1.2rem, 3vw, 1.5rem); }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; }
+    .section-header { text-align: center; max-width: 600px; margin: 0 auto 48px; }
+    .section-header p { color: var(--text-light); margin-top: 8px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 32px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary { background: var(--primary); color: var(--white); }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .btn-outline { background: transparent; border: 2px solid var(--white); color: var(--white); }
+    .btn-outline:hover { background: var(--white); color: var(--primary); }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 72px; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+    .nav .btn { padding: 12px 24px; }
+
+    /* HERO */
+    .hero {
+      padding: 120px 0 80px;
+      background: linear-gradient(135deg, rgba(39,174,96,0.88) 0%, rgba(34,139,34,0.85) 100%), 
+                  url('https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=1920&h=1080&fit=crop');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .hero h1 { color: var(--white); margin-bottom: 20px; }
+    .hero-subtitle { font-size: 1.3rem; opacity: 0.95; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* BADGES */
+    .badges {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .badge {
+      background: rgba(255,255,255,0.15);
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      backdrop-filter: blur(5px);
+    }
+
+    /* SERVICES */
+    .services { background: var(--white); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+    
+    .service-card {
+      padding: 32px;
+      background: var(--bg);
+      border-radius: var(--radius);
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .service-icon { font-size: 3rem; margin-bottom: 16px; }
+    .service-card h3 { margin-bottom: 8px; }
+    .service-card p { color: var(--text-light); }
+
+    /* SEASONAL */
+    .seasonal { background: var(--bg-alt); }
+    .seasonal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    
+    .seasonal-card {
+      background: var(--white);
+      padding: 24px;
+      border-radius: var(--radius);
+      border-top: 4px solid var(--primary);
+    }
+    .seasonal-card h3 { margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .seasonal-card ul { list-style: none; }
+    .seasonal-card li { padding: 6px 0; color: var(--text-light); }
+    .seasonal-card li::before { content: '✓ '; color: var(--primary); font-weight: bold; }
+
+    /* ABOUT */
+    .about { background: var(--white); }
+    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-image img { border-radius: var(--radius); box-shadow: var(--shadow); }
+    .about-content p { color: var(--text-light); margin-bottom: 24px; }
+    
+    .trust-list { list-style: none; }
+    .trust-list li { display: flex; align-items: center; gap: 12px; padding: 8px 0; font-weight: 500; }
+    .trust-list li::before { content: '🌿'; }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: var(--primary);
+      padding: 60px 0;
+      text-align: center;
+      color: var(--white);
+    }
+    .cta-banner h2 { color: var(--white); margin-bottom: 16px; }
+    .cta-banner p { opacity: 0.9; margin-bottom: 24px; }
+    .cta-banner .btn { background: var(--white); color: var(--primary); }
+    .cta-banner .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+
+    /* CONTACT */
+    .contact { background: var(--bg); }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+    
+    .contact-card {
+      background: var(--white);
+      padding: 32px;
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    .contact-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .contact-card h3 { margin-bottom: 8px; }
+    .contact-card a { color: var(--primary); font-size: 1.2rem; font-weight: 600; }
+    .contact-card p { color: var(--text-light); }
+
+    /* HOURS */
+    .hours-table {
+      margin-top: 12px;
+      font-size: 0.95rem;
+    }
+    .hours-table div {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      color: var(--text-light);
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.7);
+      padding: 40px 0;
+      text-align: center;
+    }
+    .footer p { margin: 4px 0; }
+
+    @media (max-width: 900px) {
+      .about-inner { grid-template-columns: 1fr; gap: 40px; }
+      .about-image { order: -1; }
+      .section { padding: 60px 0; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-inner { height: 64px; }
+      .logo { font-size: 1.2rem; }
+      .nav .btn { padding: 10px 16px; font-size: 0.9rem; }
+      .hero { padding: 100px 0 60px; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .hero-ctas .btn { width: 100%; max-width: 300px; }
+      .badges { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="logo">Freedom Lawn Services</a>
+      <a href="tel:9563437140" class="btn btn-primary">📞 Free Estimate</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Your Lawn, Our Passion</h1>
+      <p class="hero-subtitle">Reliable, full-service lawn care and landscaping for Austin, Buda, and Kyle. Quality service at a professional level.</p>
+      <div class="hero-ctas">
+        <a href="tel:9563437140" class="btn btn-primary">📞 Call (956) 343-7140</a>
+        <a href="#contact" class="btn btn-outline">Get Free Estimate</a>
+      </div>
+      <div class="badges">
+        <span class="badge">⭐ 4.7 Stars on Yelp</span>
+        <span class="badge">🏆 5 Years in Business</span>
+        <span class="badge">🇲🇽 Hablamos Español</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>Complete lawn care and landscaping solutions for Central Texas</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🌿</div>
+          <h3>Lawn Mowing</h3>
+          <p>Weekly or bi-weekly mowing service to keep your lawn pristine and healthy all season long.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌳</div>
+          <h3>Tree Services</h3>
+          <p>Professional tree trimming, pruning, and removal. Keep your trees healthy and your property safe.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌺</div>
+          <h3>Garden Bed Installation</h3>
+          <p>Beautiful flower beds and garden installations to add color and curb appeal to your home.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✂️</div>
+          <h3>Bush Trimming</h3>
+          <p>Expert shrub and bush trimming to maintain shape and promote healthy growth.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🍂</div>
+          <h3>Yard Cleanup</h3>
+          <p>Seasonal cleanups, debris removal, and property maintenance to keep your yard looking fresh.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌱</div>
+          <h3>Full Landscaping</h3>
+          <p>Complete landscape design and installation. Transform your outdoor space into your dream yard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section seasonal">
+    <div class="container">
+      <div class="section-header">
+        <h2>Year-Round Care</h2>
+        <p>Texas lawns need attention every season — we've got you covered</p>
+      </div>
+      <div class="seasonal-grid">
+        <div class="seasonal-card">
+          <h3>🌸 Spring</h3>
+          <ul>
+            <li>Spring cleanup</li>
+            <li>Aeration</li>
+            <li>Fertilization</li>
+            <li>Mulching</li>
+          </ul>
+        </div>
+        <div class="seasonal-card">
+          <h3>☀️ Summer</h3>
+          <ul>
+            <li>Regular mowing</li>
+            <li>Edging & trimming</li>
+            <li>Weed control</li>
+            <li>Heat stress care</li>
+          </ul>
+        </div>
+        <div class="seasonal-card">
+          <h3>🍂 Fall</h3>
+          <ul>
+            <li>Leaf removal</li>
+            <li>Overseeding</li>
+            <li>Fall fertilization</li>
+            <li>Bed prep</li>
+          </ul>
+        </div>
+        <div class="seasonal-card">
+          <h3>❄️ Winter</h3>
+          <ul>
+            <li>Winterization</li>
+            <li>Dormant pruning</li>
+            <li>Cleanup services</li>
+            <li>Spring planning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section about">
+    <div class="container about-inner">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=800&h=600&fit=crop" alt="Professional lawn care in Austin">
+      </div>
+      <div class="about-content">
+        <h2>About Freedom Lawn Services</h2>
+        <p>We're a locally-owned lawn care and landscaping company proudly serving the Austin, Buda, and Kyle areas. For 5 years, we've been committed to delivering quality services at a professional level — treating every yard like it's our own.</p>
+        <p>Owner Adrian and our team take pride in reliable service, honest pricing, and results you can see. Whether you need weekly mowing or a complete landscape transformation, we're here to help.</p>
+        <ul class="trust-list">
+          <li>5 years serving Central Texas</li>
+          <li>Locally owned & operated</li>
+          <li>Free estimates, no obligation</li>
+          <li>Se habla español</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready for a Beautiful Lawn?</h2>
+      <p>Get your free estimate today — no obligation, no pressure!</p>
+      <a href="tel:9563437140" class="btn">📞 Call (956) 343-7140</a>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contact Us</h2>
+        <p>We're here to help with all your lawn care needs</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">📞</div>
+          <h3>Call Us</h3>
+          <a href="tel:9563437140">(956) 343-7140</a>
+          <p style="margin-top: 8px; font-size: 0.9rem;">We typically respond within 3 hours</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">🕐</div>
+          <h3>Business Hours</h3>
+          <div class="hours-table">
+            <div><span>Monday - Friday</span><span>7AM - 7PM</span></div>
+            <div><span>Saturday - Sunday</span><span>Closed</span></div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📍</div>
+          <h3>Service Area</h3>
+          <p>Austin, Buda, Kyle<br>& surrounding areas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Freedom Lawn Services. All rights reserved.</p>
+      <p>Professional lawn care for Austin, Buda, Kyle and surrounding areas.</p>
+    </div>
+  </footer>
+</body>
+</html>
