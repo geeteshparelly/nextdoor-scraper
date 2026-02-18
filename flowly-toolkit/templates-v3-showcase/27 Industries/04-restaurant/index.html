@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosso Trattoria | Italian Restaurant | Austin, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary:#b8383d;--secondary:#d4a24c;--cream:#fffaf5;--dark:#2d2d2d}
+    html{scroll-behavior:smooth}
+    body{font-family:'Lora',serif;color:var(--dark);line-height:1.8;background:var(--cream)}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,250,245,0.95);backdrop-filter:blur(10px);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--primary);text-decoration:none}
+    nav{display:flex;gap:2rem;align-items:center}
+    nav a{text-decoration:none;color:var(--dark);font-weight:500}
+    .nav-cta{background:var(--primary);color:#fff;padding:.75rem 1.5rem;border-radius:4px}
+    .hero{min-height:100vh;background:linear-gradient(rgba(45,45,45,0.6),rgba(45,45,45,0.7)),url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center}
+    .hero-content{color:#fff;animation:fadeInUp 1s ease-out}
+    .hero h1{font-family:'Playfair Display',serif;font-size:4.5rem;margin-bottom:1rem}
+    .hero p{font-size:1.4rem;margin-bottom:2rem;color:var(--secondary)}
+    .btn{display:inline-block;padding:1rem 2.5rem;text-decoration:none;font-weight:600;transition:all .3s;border:2px solid var(--secondary);color:var(--secondary)}
+    .btn:hover{background:var(--secondary);color:var(--dark)}
+    .menu{padding:6rem 5%;background:var(--cream)}
+    .section-title{text-align:center;margin-bottom:4rem}
+    .section-title h2{font-family:'Playfair Display',serif;font-size:2.8rem;color:var(--primary)}
+    .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1000px;margin:0 auto}
+    .menu-item{padding:1.5rem;border-bottom:1px solid rgba(184,56,61,0.2)}
+    .menu-item h3{font-family:'Playfair Display',serif;color:var(--primary);display:flex;justify-content:space-between}
+    .menu-item h3 span{color:var(--secondary)}
+    .menu-item p{font-size:.95rem;color:#666;margin-top:.5rem}
+    .cta{padding:6rem 5%;background:var(--primary);text-align:center;color:#fff}
+    .cta h2{font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:1rem}
+    .cta-phone{display:inline-block;color:var(--secondary);font-family:'Playfair Display',serif;font-size:2rem;text-decoration:none;margin-top:1rem}
+    footer{background:var(--dark);color:#fff;padding:3rem 5%;text-align:center}
+    @media(max-width:768px){.hero h1{font-size:2.8rem}nav{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Rosso Trattoria</a>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="tel:5125550126" class="nav-cta">Reservations</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Rosso Trattoria</h1>
+      <p>Authentic Italian Cuisine in Austin</p>
+      <a href="#menu" class="btn">View Menu</a>
+    </div>
+  </section>
+  <section class="menu" id="menu">
+    <div class="section-title" data-aos="fade-up"><h2>Our Menu</h2></div>
+    <div class="menu-grid">
+      <div class="menu-item" data-aos="fade-up"><h3>Bruschetta <span>$12</span></h3><p>Toasted bread with fresh tomatoes, basil, and garlic.</p></div>
+      <div class="menu-item" data-aos="fade-up"><h3>Spaghetti Carbonara <span>$22</span></h3><p>Classic Roman pasta with guanciale and pecorino.</p></div>
+      <div class="menu-item" data-aos="fade-up"><h3>Osso Buco <span>$34</span></h3><p>Braised veal shank with gremolata and risotto.</p></div>
+      <div class="menu-item" data-aos="fade-up"><h3>Tiramisu <span>$10</span></h3><p>Traditional Italian coffee-flavored dessert.</p></div>
+    </div>
+  </section>
+  <section class="cta" data-aos="fade-up">
+    <h2>Reserve Your Table</h2>
+    <p>Open Tuesday - Sunday, 5pm - 10pm</p>
+    <a href="tel:5125550126" class="cta-phone">(512) 555-0126</a>
+  </section>
+  <footer><p>© 2026 Rosso Trattoria. 1234 Main St, Austin, TX.</p></footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hat and Heart Farm | Sustainable Vegetables in Austin</title>
+    <meta name="description" content="Hat and Heart Farm - Small-batch sustainable vegetables grown with love near Austin, TX. Find us at local farmers markets.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        
+        header { animation: fadeInDown 0.6s ease-out; }
+        .hero-badge { animation: fadeIn 0.6s ease-out 0.2s both; }
+        .hero-title { animation: fadeInUp 0.7s ease-out 0.1s both; }
+        .hero-subtitle { animation: fadeIn 0.6s ease-out 0.3s both; }
+        .hero-ctas { animation: fadeInUp 0.6s ease-out 0.5s both; }
+        .hero-visual { animation: scaleIn 0.8s ease-out 0.3s both; }
+
+        :root {
+            --bg: #fdfbf7;
+            --bg-warm: #f7f3eb;
+            --surface: #ffffff;
+            --text-dark: #2c2416;
+            --text-body: #5a5044;
+            --text-muted: #8a7e6d;
+            --rust: #c4704b;
+            --rust-deep: #a85a38;
+            --rust-light: #f5e6de;
+            --sage: #7d9178;
+            --border: #e8e2d6;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Lato', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon { font-size: 1.5rem; }
+
+        nav { display: flex; gap: 2.5rem; align-items: center; }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--rust); }
+
+        .header-cta {
+            background: var(--rust);
+            color: white;
+            padding: 0.7rem 1.4rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            transition: all 0.2s;
+        }
+
+        .header-cta:hover { background: var(--rust-deep); }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content { max-width: 520px; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--rust);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-title span { color: var(--rust); }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn-primary {
+            background: var(--rust);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-primary:hover { background: var(--rust-deep); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(196, 112, 75, 0.3); }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-secondary:hover { border-color: var(--rust); color: var(--rust); }
+
+        .hero-visual { position: relative; }
+
+        .hero-image-main {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.12);
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .products-section { padding: 6rem 2rem; background: var(--surface); }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--rust); margin-bottom: 0.75rem; font-weight: 600; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3.5vw, 2.25rem); color: var(--text-dark); }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease-out;
+            text-align: center;
+        }
+
+        .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.1); }
+
+        .product-image {
+            aspect-ratio: 1;
+            object-fit: cover;
+            width: 100%;
+            display: block;
+            transition: transform 0.4s ease-out;
+        }
+
+        .product-card:hover .product-image { transform: scale(1.05); }
+        .product-content { padding: 1.25rem; }
+        .product-name { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--text-dark); margin-bottom: 0.25rem; }
+        .product-price { font-size: 0.85rem; color: var(--rust); font-weight: 600; }
+
+        .story-section { padding: 6rem 2rem; background: var(--bg-warm); }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-image {
+            border-radius: 12px;
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+        }
+
+        .story-content { max-width: 480px; }
+        .story-text { font-size: 1rem; color: var(--text-body); margin: 1.5rem 0; line-height: 1.9; }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .value-item { display: flex; align-items: flex-start; gap: 0.75rem; }
+        .value-icon { font-size: 1.25rem; color: var(--sage); }
+        .value-text h4 { font-weight: 600; color: var(--text-dark); font-size: 0.95rem; }
+        .value-text p { font-size: 0.85rem; color: var(--text-muted); }
+
+        .contact-section { padding: 6rem 2rem; background: var(--rust); color: white; }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .contact-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; margin-bottom: 1rem; }
+        .contact-card p { font-size: 0.95rem; opacity: 0.9; line-height: 1.7; }
+        .contact-card a { color: white; text-decoration: underline; }
+
+        footer { background: var(--text-dark); padding: 3rem 2rem; color: white; text-align: center; }
+        footer p { font-size: 0.9rem; opacity: 0.7; }
+
+        @media (max-width: 1024px) {
+            .hero-inner, .story-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-visual { order: -1; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero { padding: 6rem 1.5rem 3rem; }
+            .products-grid { grid-template-columns: 1fr 1fr; }
+            .values-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo"><span class="logo-icon">🎩</span> Hat and Heart Farm</a>
+            <nav>
+                <a href="#products">Produce</a>
+                <a href="#story">Our Story</a>
+                <a href="#contact">Find Us</a>
+            </nav>
+            <a href="#contact" class="header-cta">Market Days</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge">Small-Batch Sustainable</span>
+                <h1 class="hero-title">Grown With <span>Heart</span>, Shared With Joy</h1>
+                <p class="hero-subtitle">We're a small family farm growing vegetables the sustainable way — no chemicals, no shortcuts, just real food grown with real care. Find us at Austin's best farmers markets.</p>
+                <div class="hero-ctas">
+                    <a href="#products" class="btn-primary">What's Growing</a>
+                    <a href="#contact" class="btn-secondary">Find Us</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-main">
+                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&h=600&fit=crop" alt="Fresh vegetables from the farm" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">This Week's Harvest</p>
+                <h2 class="section-title">Fresh From Our Fields</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1518977676601-b53f82ber5f9?w=400&h=400&fit=crop" alt="Rainbow Chard" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Rainbow Chard</h3>
+                        <p class="product-price">$4/bunch</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+                    <img src="https://images.unsplash.com/photo-1590868309235-ea34bed7bd7f?w=400&h=400&fit=crop" alt="Cherry Tomatoes" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Cherry Tomatoes</h3>
+                        <p class="product-price">$6/pint</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?w=400&h=400&fit=crop" alt="Zucchini" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Summer Zucchini</h3>
+                        <p class="product-price">$3/lb</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400&h=400&fit=crop" alt="Fresh Basil" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Fresh Basil</h3>
+                        <p class="product-price">$3/bunch</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?w=400&h=400&fit=crop" alt="Eggplant" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Japanese Eggplant</h3>
+                        <p class="product-price">$5/lb</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+                    <img src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&h=400&fit=crop" alt="Sweet Peppers" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Sweet Peppers</h3>
+                        <p class="product-price">$5/lb</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1574316071802-0d684efa7bf5?w=400&h=400&fit=crop" alt="Cucumbers" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Persian Cucumbers</h3>
+                        <p class="product-price">$4/lb</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=400&fit=crop" alt="Salad Mix" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Salad Mix</h3>
+                        <p class="product-price">$6/bag</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section" id="story">
+        <div class="container">
+            <div class="story-grid">
+                <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?w=800&h=600&fit=crop" alt="Working on the farm" class="story-image" data-aos="fade-right">
+                <div class="story-content" data-aos="fade-left">
+                    <p class="section-label">Our Story</p>
+                    <h2 class="section-title">Farming With Purpose</h2>
+                    <p class="story-text">Hat and Heart Farm was born from a simple belief: food should be grown with intention. We left our city jobs to do something that mattered — to put our hands in the soil and grow food that nourishes our community.</p>
+                    <p class="story-text">On our five acres outside Austin, we practice regenerative farming. No pesticides, no synthetic fertilizers. Just hard work, good compost, and a whole lot of love.</p>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <span class="value-icon">🌱</span>
+                            <div class="value-text">
+                                <h4>Regenerative</h4>
+                                <p>Building soil health</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-icon">💚</span>
+                            <div class="value-text">
+                                <h4>Chemical-Free</h4>
+                                <p>No pesticides ever</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-icon">🌻</span>
+                            <div class="value-text">
+                                <h4>Seasonal</h4>
+                                <p>What nature provides</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-icon">🤝</span>
+                            <div class="value-text">
+                                <h4>Community</h4>
+                                <p>Feeding neighbors</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Barton Creek Market</h3>
+                    <p>2901 S Capital of TX Hwy<br>Saturdays 9am - 1pm<br>Year-round</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Pre-Orders Welcome</h3>
+                    <p>Reserve your favorites<br>Message us by Thursday<br>Pick up Saturday</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Say Hello</h3>
+                    <p><a href="mailto:hello@hatandheartfarm.com">hello@hatandheartfarm.com</a><br>@hatandheartfarm<br>Austin, TX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Hat and Heart Farm. Growing with love in Austin, Texas.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true, offset: 100 });</script>
+</body>
+</html>

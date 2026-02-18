@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeAnn's Kitchen | Homemade Prepared Foods</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root{--cream:#fdf9f3;--peach:#e8a87c;--brown:#5c4033;--warm:#f5ebe0;--text:#2d2319}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.8;font-weight:300}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,249,243,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--text);text-decoration:none}
+        nav a{color:#666;text-decoration:none;margin-left:2rem;font-size:.9rem}
+        .header-cta{background:var(--peach);color:#fff;padding:.7rem 1.5rem;border-radius:50px}
+        .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:6rem 2rem;gap:4rem;max-width:1300px;margin:0 auto}
+        .hero-content{max-width:500px}
+        .hero-badge{font-size:.8rem;color:var(--peach);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1rem}
+        .hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3rem);line-height:1.15;margin-bottom:1.5rem}
+        .hero-title em{font-style:italic;color:var(--peach)}
+        .hero-subtitle{color:#666;margin-bottom:2rem}
+        .btn{display:inline-block;padding:1rem 2rem;text-decoration:none;font-weight:500;border-radius:50px;transition:all .3s;background:var(--peach);color:#fff}
+        .btn:hover{background:var(--brown);transform:translateY(-3px)}
+        .hero-image{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;box-shadow:0 24px 48px rgba(0,0,0,0.1)}
+        .menu{padding:6rem 2rem;background:#fff}
+        .container{max-width:1000px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--peach);margin-bottom:.75rem}
+        .section-title{font-family:'Playfair Display',serif;font-size:2.25rem}
+        .menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+        .menu-card{background:var(--cream);border-radius:16px;padding:2rem;display:flex;gap:1.5rem;transition:all .3s}
+        .menu-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,0.08)}
+        .menu-image{width:100px;height:100px;border-radius:12px;object-fit:cover;flex-shrink:0}
+        .menu-content{flex:1}
+        .menu-header{display:flex;justify-content:space-between;margin-bottom:.5rem}
+        .menu-name{font-family:'Playfair Display',serif;font-size:1.1rem}
+        .menu-price{color:var(--peach);font-weight:600}
+        .menu-desc{font-size:.9rem;color:#666}
+        .cta{padding:5rem 2rem;background:var(--peach);text-align:center;color:#fff}
+        .cta h2{font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:1rem}
+        .cta-grid{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem}
+        .cta-grid div strong{display:block;margin-bottom:.25rem}
+        footer{background:var(--text);padding:2rem;color:#fff;text-align:center}
+        @media(max-width:1024px){.hero{grid-template-columns:1fr}.hero-image{order:-1}.menu-grid{grid-template-columns:1fr}}
+        @media(max-width:768px){nav{display:none}.menu-card{flex-direction:column;text-align:center}.menu-image{margin:0 auto}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">LeAnn's Kitchen</a>
+            <nav><a href="#menu">Menu</a><a href="#visit" class="header-cta">Find Us</a></nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">🍲 Homemade Goodness</span>
+            <h1 class="hero-title">Comfort Food Made with <em>Love</em></h1>
+            <p class="hero-subtitle">Homemade soups, casseroles, and prepared meals — ready to heat and eat. Like having a home-cooked meal without the work.</p>
+            <a href="#menu" class="btn">See This Week's Menu</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=700&h=900&fit=crop" alt="Homemade food" class="hero-image">
+    </section>
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up"><p class="section-label">This Week</p><h2 class="section-title">Fresh From My Kitchen</h2></div>
+            <div class="menu-grid">
+                <div class="menu-card" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=200&h=200&fit=crop" class="menu-image" alt="Soup"><div class="menu-content"><div class="menu-header"><span class="menu-name">Chicken Tortilla Soup</span><span class="menu-price">$12/qt</span></div><p class="menu-desc">Slow-simmered with roasted tomatoes and spices.</p></div></div>
+                <div class="menu-card" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=200&h=200&fit=crop" class="menu-image" alt="Casserole"><div class="menu-content"><div class="menu-header"><span class="menu-name">King Ranch Casserole</span><span class="menu-price">$18</span></div><p class="menu-desc">Texas classic. Feeds 4-6 people.</p></div></div>
+                <div class="menu-card" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=200&h=200&fit=crop" class="menu-image" alt="Quiche"><div class="menu-content"><div class="menu-header"><span class="menu-name">Spinach Quiche</span><span class="menu-price">$16</span></div><p class="menu-desc">Made with local eggs and fresh spinach.</p></div></div>
+                <div class="menu-card" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1606923829579-0cb981a83e2e?w=200&h=200&fit=crop" class="menu-image" alt="Pie"><div class="menu-content"><div class="menu-header"><span class="menu-name">Apple Pie</span><span class="menu-price">$22</span></div><p class="menu-desc">Homemade crust, Hill Country apples.</p></div></div>
+            </div>
+        </div>
+    </section>
+    <section class="cta" id="visit">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Us at Market</h2>
+            <p>Fresh prepared foods every Saturday</p>
+            <div class="cta-grid">
+                <div><strong>📍</strong>Barton Creek Farmers Market</div>
+                <div><strong>🕐</strong>Saturdays 9am–1pm</div>
+                <div><strong>📞</strong>(512) 555-0211</div>
+            </div>
+        </div>
+    </section>
+    <footer><p>© 2026 LeAnn's Kitchen • Austin, TX</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

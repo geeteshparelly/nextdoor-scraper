@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lone Star Antiques | Texas Treasures & Collectibles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root{--cream:#f9f6f1;--brown:#5c4033;--gold:#c9a227;--rust:#a0522d;--text:#2d2319}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Source Sans 3',sans-serif;background:var(--cream);color:var(--text);line-height:1.8}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(249,246,241,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Libre Baskerville',serif;font-size:1.3rem;color:var(--text);text-decoration:none}
+        nav a{color:#666;text-decoration:none;margin-left:2rem;font-size:.9rem}
+        .header-cta{background:var(--brown);color:#fff;padding:.7rem 1.5rem;border-radius:50px}
+        .hero{min-height:100vh;display:flex;align-items:center;padding:6rem 2rem;background:linear-gradient(135deg,var(--cream) 0%,#e8e0d5 100%)}
+        .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .hero-content{max-width:500px}
+        .hero-badge{font-size:.8rem;color:var(--rust);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1rem}
+        .hero-title{font-family:'Libre Baskerville',serif;font-size:clamp(2.2rem,4vw,3rem);line-height:1.2;margin-bottom:1.5rem}
+        .hero-title span{color:var(--rust)}
+        .hero-subtitle{color:#666;margin-bottom:2rem}
+        .btn{display:inline-block;padding:1rem 2rem;text-decoration:none;font-weight:500;border-radius:50px;transition:all .3s;background:var(--brown);color:#fff}
+        .btn:hover{transform:translateY(-3px)}
+        .hero-image{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:0 24px 48px rgba(0,0,0,0.15)}
+        .gallery{padding:6rem 2rem;background:#fff}
+        .container{max-width:1100px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.2em;color:var(--rust);margin-bottom:.75rem}
+        .section-title{font-family:'Libre Baskerville',serif;font-size:2rem}
+        .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+        .gallery-item{aspect-ratio:1;overflow:hidden;border-radius:8px}
+        .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+        .gallery-item:hover img{transform:scale(1.08)}
+        .cta{padding:5rem 2rem;background:var(--brown);text-align:center;color:#fff}
+        .cta h2{font-family:'Libre Baskerville',serif;font-size:2rem;margin-bottom:1rem}
+        .cta-grid{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem}
+        .cta-grid div strong{display:block;color:var(--gold);margin-bottom:.25rem}
+        footer{background:var(--text);padding:2rem;color:#fff;text-align:center}
+        @media(max-width:1024px){.hero-inner{grid-template-columns:1fr}.hero-image{order:-1}.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){nav{display:none}.gallery-grid{grid-template-columns:1fr 1fr}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">⭐ Lone Star Antiques</a>
+            <nav><a href="#gallery">Browse</a><a href="#visit" class="header-cta">Find Us</a></nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge">🤠 Texas Treasures</span>
+                <h1 class="hero-title">Antiques with <span>Character</span></h1>
+                <p class="hero-subtitle">Vintage furniture, Western collectibles, and unique finds with Texas roots. Every piece has a story to tell.</p>
+                <a href="#gallery" class="btn">See What's In</a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop" alt="Antiques" class="hero-image">
+        </div>
+    </section>
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up"><p class="section-label">The Collection</p><h2 class="section-title">Recent Arrivals</h2></div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=400&fit=crop" alt="Furniture"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="50"><img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=400&h=400&fit=crop" alt="Decor"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1594040226829-7f251ab46d80?w=400&h=400&fit=crop" alt="Collectibles"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="150"><img src="https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=400&h=400&fit=crop" alt="Vintage items"></div>
+            </div>
+        </div>
+    </section>
+    <section class="cta" id="visit">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Us at the Flea</h2>
+            <p>New treasures every weekend</p>
+            <div class="cta-grid">
+                <div><strong>📍</strong>Austin Country Flea Market</div>
+                <div><strong>🕐</strong>Sat-Sun 9am–5pm</div>
+                <div><strong>📞</strong>(512) 555-0401</div>
+            </div>
+        </div>
+    </section>
+    <footer><p>© 2026 Lone Star Antiques • Austin, TX</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

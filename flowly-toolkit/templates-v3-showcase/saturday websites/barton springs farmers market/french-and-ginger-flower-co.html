@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>French & Ginger Flower Co. | Artisan Florals in Austin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+        :root{--cream:#fdfbf7;--blush:#f8e8e8;--sage:#a3b899;--text:#2d2926;--muted:#6b6560;--accent:#c9a87c;--rose:#d4a5a5}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);line-height:1.8;font-weight:300}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,251,247,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,0.05)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--text);text-decoration:none;font-weight:500}
+        nav{display:flex;gap:2.5rem}
+        nav a{color:var(--muted);text-decoration:none;font-size:.9rem;letter-spacing:.05em}
+        .header-cta{background:var(--sage);color:#fff;padding:.7rem 1.5rem;text-decoration:none;font-weight:500;font-size:.85rem;border-radius:50px}
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem;background:linear-gradient(to bottom,var(--blush) 0%,var(--cream) 100%)}
+        .hero-content{max-width:700px;animation:fadeIn 1.2s ease-out}
+        .hero-eyebrow{font-size:.8rem;letter-spacing:.25em;text-transform:uppercase;color:var(--sage);margin-bottom:1.5rem}
+        .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,5rem);font-weight:400;line-height:1.1;margin-bottom:1.5rem;color:var(--text)}
+        .hero-subtitle{font-size:1.1rem;color:var(--muted);margin-bottom:2.5rem;max-width:500px;margin-left:auto;margin-right:auto}
+        .btn{display:inline-block;padding:1rem 2.5rem;text-decoration:none;font-weight:500;border-radius:50px;transition:all .3s}
+        .btn-primary{background:var(--sage);color:#fff}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(163,184,153,0.3)}
+        .btn-outline{border:1.5px solid var(--text);color:var(--text);margin-left:1rem}
+        .btn-outline:hover{background:var(--text);color:#fff}
+        .gallery{padding:6rem 2rem;background:var(--cream)}
+        .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:1200px;margin:0 auto}
+        .gallery-item{aspect-ratio:1;overflow:hidden;border-radius:8px}
+        .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+        .gallery-item:hover img{transform:scale(1.08)}
+        .gallery-item:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:1}
+        .services{padding:6rem 2rem;background:var(--blush)}
+        .container{max-width:1000px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:1rem}
+        .section-title{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400}
+        .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .service-card{background:var(--cream);padding:2.5rem;border-radius:16px;text-align:center;transition:all .3s}
+        .service-card:hover{transform:translateY(-8px);box-shadow:0 16px 40px rgba(0,0,0,0.08)}
+        .service-icon{font-size:2.5rem;margin-bottom:1rem}
+        .service-card h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;margin-bottom:.75rem}
+        .service-card p{font-size:.9rem;color:var(--muted)}
+        .about{padding:6rem 2rem;background:var(--cream)}
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .about-image{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px}
+        .about-content h2{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;margin-bottom:1.5rem}
+        .about-content p{margin-bottom:1rem;color:var(--muted)}
+        .about-signature{margin-top:2rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem}
+        .cta{padding:5rem 2rem;background:var(--sage);text-align:center;color:#fff}
+        .cta h2{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;margin-bottom:1rem}
+        .cta p{opacity:.9;margin-bottom:2rem}
+        .cta-info{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
+        .cta-info div{text-align:center}
+        .cta-info strong{display:block;font-size:1.1rem;margin-bottom:.25rem}
+        footer{background:var(--text);padding:3rem 2rem;color:#fff;text-align:center;font-size:.9rem}
+        @media(max-width:1024px){.about-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}.gallery-item:first-child{grid-column:span 2}.services-grid{grid-template-columns:1fr}}
+        @media(max-width:768px){nav{display:none}.gallery-grid{grid-template-columns:1fr}.gallery-item:first-child{grid-column:span 1;grid-row:span 1}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">French & Ginger</a>
+            <nav><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+            <a href="#contact" class="header-cta">Inquire</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow">Artisan Florals</p>
+            <h1 class="hero-title">Flowers That Tell Stories</h1>
+            <p class="hero-subtitle">Seasonal blooms, thoughtfully arranged. Find us at Austin's finest farmers markets or book a custom arrangement.</p>
+            <a href="#services" class="btn btn-primary">Our Work</a>
+            <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="gallery-grid">
+            <div class="gallery-item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=800&h=800&fit=crop" alt="Floral arrangement"></div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="50"><img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=400&h=400&fit=crop" alt="Bouquet"></div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop" alt="Flowers"></div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="150"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&h=400&fit=crop" alt="Roses"></div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1468327768560-75b778cbb551?w=400&h=400&fit=crop" alt="Wildflowers"></div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">What We Do</p>
+                <h2 class="section-title">Floral Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up"><div class="service-icon">💐</div><h3>Market Bouquets</h3><p>Fresh seasonal arrangements every Saturday at Barton Creek.</p></div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100"><div class="service-icon">💒</div><h3>Weddings</h3><p>Full-service wedding florals from bouquets to installations.</p></div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200"><div class="service-icon">🎁</div><h3>Custom Orders</h3><p>Special occasions deserve special flowers. Let's create together.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=600&h=800&fit=crop" class="about-image" data-aos="fade-right" alt="Florist">
+                <div class="about-content" data-aos="fade-left">
+                    <p class="section-label">Our Story</p>
+                    <h2>Beauty in Every Bloom</h2>
+                    <p>French & Ginger was born from a love of wild gardens and the belief that flowers should look gathered, not manufactured.</p>
+                    <p>We source locally when possible, work with seasonal blooms, and design arrangements that feel organic and alive.</p>
+                    <p class="about-signature">— Sarah French, Founder</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Us at Market</h2>
+            <p>Fresh bouquets every Saturday morning</p>
+            <div class="cta-info">
+                <div><strong>📍 Location</strong>Barton Creek Farmers Market</div>
+                <div><strong>🕐 Hours</strong>Saturdays 9am–1pm</div>
+                <div><strong>📞 Inquiries</strong>(512) 555-0203</div>
+            </div>
+        </div>
+    </section>
+
+    <footer><p>© 2026 French & Ginger Flower Co. • Austin, Texas</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

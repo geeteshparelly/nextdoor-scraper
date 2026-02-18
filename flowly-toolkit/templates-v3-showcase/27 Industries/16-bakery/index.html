@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet Flour Bakery | Austin, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Karla:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary:#8b4513;--secondary:#daa520;--cream:#fffaf0;--caramel:#d4a574}
+    html{scroll-behavior:smooth}
+    body{font-family:'Karla',sans-serif;color:#333;line-height:1.7;background:var(--cream)}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,250,240,0.95);backdrop-filter:blur(10px);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Amatic SC',cursive;font-size:2.5rem;color:var(--primary);text-decoration:none}
+    nav{display:flex;gap:2rem;align-items:center}
+    nav a{text-decoration:none;color:var(--primary);font-weight:500}
+    .nav-cta{background:var(--primary);color:#fff;padding:.75rem 1.5rem;border-radius:30px}
+    .hero{min-height:100vh;background:linear-gradient(rgba(139,69,19,0.6),rgba(139,69,19,0.7)),url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1920&q=80');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center}
+    .hero-content{color:#fff;animation:fadeInUp 1s ease-out}
+    .hero h1{font-family:'Amatic SC',cursive;font-size:6rem;margin-bottom:1rem}
+    .hero p{font-size:1.3rem;margin-bottom:2rem;color:var(--secondary)}
+    .btn{display:inline-block;padding:1rem 2.5rem;border-radius:30px;text-decoration:none;transition:all .3s;background:var(--secondary);color:var(--primary);font-weight:600}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(218,165,32,0.4)}
+    .menu{padding:6rem 5%;background:var(--cream)}
+    .section-title{text-align:center;margin-bottom:4rem}
+    .section-title h2{font-family:'Amatic SC',cursive;font-size:4rem;color:var(--primary)}
+    .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1200px;margin:0 auto}
+    .menu-item{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.08);transition:all .3s}
+    .menu-item:hover{transform:translateY(-8px)}
+    .menu-image{height:200px;background-size:cover;background-position:center}
+    .menu-content{padding:1.5rem;text-align:center}
+    .menu-content h3{font-family:'Amatic SC',cursive;font-size:2rem;color:var(--primary)}
+    .menu-content .price{color:var(--secondary);font-weight:600;font-size:1.2rem}
+    .cta{padding:6rem 5%;background:var(--primary);text-align:center;color:#fff}
+    .cta h2{font-family:'Amatic SC',cursive;font-size:4rem;margin-bottom:1rem}
+    .cta-info{font-size:1.2rem;margin-bottom:2rem;color:var(--caramel)}
+    footer{background:#5d3a1a;color:#fff;padding:3rem 5%;text-align:center}
+    @media(max-width:768px){.hero h1{font-size:4rem}nav{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Sweet Flour</a>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="tel:5125550138" class="nav-cta">Order Now</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Sweet Flour Bakery</h1>
+      <p>Fresh Baked Daily</p>
+      <a href="#menu" class="btn">See Menu</a>
+    </div>
+  </section>
+  <section class="menu" id="menu">
+    <div class="section-title" data-aos="fade-up"><h2>Fresh From the Oven</h2></div>
+    <div class="menu-grid">
+      <div class="menu-item" data-aos="fade-up"><div class="menu-image" style="background-image:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80')"></div><div class="menu-content"><h3>Artisan Bread</h3><p class="price">$6</p></div></div>
+      <div class="menu-item" data-aos="fade-up" data-aos-delay="100"><div class="menu-image" style="background-image:url('https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?w=600&q=80')"></div><div class="menu-content"><h3>Croissants</h3><p class="price">$4</p></div></div>
+      <div class="menu-item" data-aos="fade-up" data-aos-delay="200"><div class="menu-image" style="background-image:url('https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=600&q=80')"></div><div class="menu-content"><h3>Cinnamon Rolls</h3><p class="price">$5</p></div></div>
+    </div>
+  </section>
+  <section class="cta" data-aos="fade-up">
+    <h2>Visit Us Today!</h2>
+    <p class="cta-info">Open 7am - 5pm Daily</p>
+    <p>123 Baker Street, Austin TX | <a href="tel:5125550138" style="color:var(--secondary);text-decoration:none">(512) 555-0138</a></p>
+  </section>
+  <footer><p>© 2026 Sweet Flour Bakery. Austin, TX.</p></footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

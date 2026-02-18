@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Austin Arborist | Certified Tree Care | Austin, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary:#1a4731;--secondary:#8b4513;--accent:#90EE90;--dark:#0d2818;--light:#f5f5f0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Source Sans 3',sans-serif;color:#333;line-height:1.6}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(26,71,49,0.95);backdrop-filter:blur(10px);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Oswald',sans-serif;font-size:1.6rem;color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:2px}
+    .logo span{color:var(--accent)}
+    nav{display:flex;gap:2rem;align-items:center}
+    nav a{text-decoration:none;color:rgba(255,255,255,0.9);font-weight:500}
+    .nav-cta{background:#c62828;color:#fff;padding:.75rem 1.5rem}
+    .hero{min-height:100vh;background:linear-gradient(rgba(13,40,24,0.8),rgba(26,71,49,0.75)),url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1920&q=80');background-size:cover;background-position:center;display:flex;align-items:center;padding:0 5%}
+    .hero-content{max-width:700px;color:#fff;animation:fadeInUp 1s ease-out}
+    .badge{display:inline-block;background:var(--secondary);padding:.5rem 1rem;font-size:.9rem;font-weight:600;margin-bottom:1.5rem}
+    .hero h1{font-family:'Oswald',sans-serif;font-size:4rem;text-transform:uppercase;margin-bottom:1rem}
+    .hero p{font-size:1.3rem;margin-bottom:2rem;opacity:.9}
+    .btn{display:inline-block;padding:1rem 2rem;text-decoration:none;font-weight:600;text-transform:uppercase;letter-spacing:1px;background:var(--accent);color:var(--dark);font-family:'Oswald',sans-serif}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(144,238,144,0.4)}
+    .services{padding:6rem 5%;background:var(--light)}
+    .section-title{text-align:center;margin-bottom:4rem}
+    .section-title h2{font-family:'Oswald',sans-serif;font-size:2.8rem;color:var(--primary);text-transform:uppercase}
+    .services-list{max-width:1000px;margin:0 auto}
+    .service-item{display:flex;gap:2rem;padding:2rem;background:#fff;margin-bottom:1rem;border-radius:8px;align-items:center;border-left:4px solid transparent;transition:all .3s}
+    .service-item:hover{transform:translateX(10px);border-left-color:var(--secondary)}
+    .service-number{font-family:'Oswald',sans-serif;font-size:2.5rem;color:var(--accent);min-width:60px}
+    .service-item h3{font-family:'Oswald',sans-serif;color:var(--primary);text-transform:uppercase;margin-bottom:.5rem}
+    .cta{padding:6rem 5%;background:var(--secondary);text-align:center;color:#fff}
+    .cta h2{font-family:'Oswald',sans-serif;font-size:2.8rem;text-transform:uppercase;margin-bottom:1rem}
+    .cta-phone{display:inline-block;background:#fff;color:var(--secondary);padding:1.25rem 3rem;font-family:'Oswald',sans-serif;font-size:2rem;text-decoration:none}
+    footer{background:var(--dark);color:#fff;padding:3rem 5%;text-align:center}
+    @media(max-width:768px){.hero h1{font-size:2.5rem}nav{display:none}.service-item{flex-direction:column;text-align:center}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Austin <span>Arborist</span></a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="tel:5125550130" class="nav-cta">24/7 Emergency</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="badge">ISA Certified</div>
+      <h1>Certified Tree Care</h1>
+      <p>15 years protecting Austin's urban forest. From precision trimming to emergency storm response.</p>
+      <a href="tel:5125550130" class="btn">Call (512) 555-0130</a>
+    </div>
+  </section>
+  <section class="services" id="services">
+    <div class="section-title" data-aos="fade-up"><h2>Tree Services</h2></div>
+    <div class="services-list">
+      <div class="service-item" data-aos="fade-up"><div class="service-number">01</div><div><h3>Tree Trimming</h3><p>Professional pruning for healthy growth.</p></div></div>
+      <div class="service-item" data-aos="fade-up" data-aos-delay="100"><div class="service-number">02</div><div><h3>Tree Removal</h3><p>Safe removal of hazardous trees.</p></div></div>
+      <div class="service-item" data-aos="fade-up" data-aos-delay="200"><div class="service-number">03</div><div><h3>Stump Grinding</h3><p>Complete stump removal below ground.</p></div></div>
+      <div class="service-item" data-aos="fade-up" data-aos-delay="300"><div class="service-number">04</div><div><h3>Storm Damage</h3><p>24/7 emergency storm response.</p></div></div>
+    </div>
+  </section>
+  <section class="cta" data-aos="fade-up">
+    <h2>Need Tree Work?</h2>
+    <p>Free estimates. Emergency calls answered 24/7.</p>
+    <a href="tel:5125550130" class="cta-phone">(512) 555-0130</a>
+  </section>
+  <footer><p>© 2026 Austin Arborist. ISA Certified. Fully Insured.</p></footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

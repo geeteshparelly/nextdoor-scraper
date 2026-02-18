@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bentnail Construction | Building Austin's Dreams Since 2012</title>
+  <meta name="description" content="General contractor in Austin, TX. Kitchen remodels, bathroom renovations, room additions. 13 years experience. Call (512) 553-9012.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto+Slab:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --primary: #2c3e50;
+      --secondary: #d35400;
+      --accent: #f39c12;
+      --dark: #1a252f;
+      --light: #f9f9f9;
+    }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Roboto Slab', serif;
+      color: #333;
+      line-height: 1.7;
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(26, 37, 47, 0.98);
+      backdrop-filter: blur(10px);
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1.5rem;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .logo span { color: var(--secondary); }
+    
+    nav { display: flex; gap: 2rem; align-items: center; }
+    
+    nav a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover { color: var(--secondary); }
+    
+    .header-cta {
+      background: var(--secondary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    
+    .header-cta:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+    
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(rgba(26, 37, 47, 0.85), rgba(44, 62, 80, 0.9)),
+                  url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
+    }
+    
+    .hero-content {
+      max-width: 700px;
+      color: white;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    .hero h1 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 3.5rem;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+    
+    .hero h1 span { color: var(--secondary); }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .hero-stat h4 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 2.5rem;
+      color: var(--secondary);
+    }
+    
+    .hero-stat span {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    .hero-ctas { display: flex; gap: 1rem; }
+    
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .btn-primary {
+      background: var(--secondary);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(211, 84, 0, 0.3);
+    }
+    
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+    }
+    
+    .btn-outline:hover {
+      background: white;
+      color: var(--primary);
+    }
+    
+    /* Services */
+    .services {
+      padding: 6rem 5%;
+      background: var(--light);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .section-header h2 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 2.5rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .service-card {
+      position: relative;
+      height: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    
+    .service-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .service-card:hover img {
+      transform: scale(1.1);
+    }
+    
+    .service-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem;
+      background: linear-gradient(transparent, rgba(26, 37, 47, 0.95));
+      color: white;
+    }
+    
+    .service-overlay h3 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    
+    .service-overlay p {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+    
+    /* Process */
+    .process {
+      padding: 6rem 5%;
+      background: var(--primary);
+      color: white;
+    }
+    
+    .process h2 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+    
+    .step-number {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 4rem;
+      color: var(--secondary);
+      opacity: 0.3;
+      line-height: 1;
+    }
+    
+    .process-step h4 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    
+    .process-step p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    /* CTA */
+    .cta {
+      padding: 6rem 5%;
+      background: var(--secondary);
+      text-align: center;
+      color: white;
+    }
+    
+    .cta h2 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    
+    .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .cta-phone {
+      display: inline-block;
+      background: white;
+      color: var(--secondary);
+      padding: 1.25rem 3rem;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1.8rem;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .cta-phone:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 3rem 5%;
+      text-align: center;
+    }
+    
+    .footer-logo {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-info {
+      opacity: 0.7;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-info a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+    
+    .copyright {
+      font-size: 0.85rem;
+      opacity: 0.5;
+    }
+    
+    /* Mobile */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+      nav { display: none; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Bent<span>nail</span></a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="tel:5125539012" class="header-cta">Get Quote</a>
+    </nav>
+  </header>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Building Austin's <span>Dreams</span> Since 2012</h1>
+      <p>From kitchen remodels to custom builds — we bring craftsmanship, reliability, and attention to detail to every project.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <h4>13+</h4>
+          <span>Years Experience</span>
+        </div>
+        <div class="hero-stat">
+          <h4>400+</h4>
+          <span>Projects Completed</span>
+        </div>
+        <div class="hero-stat">
+          <h4>100%</h4>
+          <span>Licensed & Insured</span>
+        </div>
+      </div>
+      <div class="hero-ctas">
+        <a href="tel:5125539012" class="btn btn-primary">Call (512) 553-9012</a>
+        <a href="#services" class="btn btn-outline">Our Work</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="services" id="services">
+    <div class="section-header" data-aos="fade-up">
+      <h2>What We Build</h2>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Kitchen remodel">
+        <div class="service-overlay">
+          <h3>Kitchen Remodels</h3>
+          <p>Complete kitchen transformations from cabinets to countertops.</p>
+        </div>
+      </div>
+      
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80" alt="Bathroom remodel">
+        <div class="service-overlay">
+          <h3>Bathroom Remodels</h3>
+          <p>Modern bathroom upgrades with quality fixtures and finishes.</p>
+        </div>
+      </div>
+      
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Room addition">
+        <div class="service-overlay">
+          <h3>Room Additions</h3>
+          <p>Expand your living space with seamlessly integrated additions.</p>
+        </div>
+      </div>
+      
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Custom builds">
+        <div class="service-overlay">
+          <h3>Custom Builds</h3>
+          <p>Bring your vision to life with expert custom construction.</p>
+        </div>
+      </div>
+      
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80" alt="Decks">
+        <div class="service-overlay">
+          <h3>Decks & Patios</h3>
+          <p>Outdoor living spaces built for Austin's climate and your lifestyle.</p>
+        </div>
+      </div>
+      
+      <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+        <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&q=80" alt="Whole home">
+        <div class="service-overlay">
+          <h3>Whole Home Renovation</h3>
+          <p>Complete home transformations managed from start to finish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="process" id="process" data-aos="fade-up">
+    <h2>Our Process</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">01</div>
+        <h4>Consultation</h4>
+        <p>We discuss your vision, needs, and budget.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">02</div>
+        <h4>Design</h4>
+        <p>Detailed plans and transparent pricing.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">03</div>
+        <h4>Build</h4>
+        <p>Expert construction with regular updates.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">04</div>
+        <h4>Deliver</h4>
+        <p>Final walkthrough and your dream realized.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="cta" data-aos="fade-up">
+    <h2>Ready to Build?</h2>
+    <p>Free consultations. Detailed estimates. Let's talk about your project.</p>
+    <a href="tel:5125539012" class="cta-phone">(512) 553-9012</a>
+  </section>
+  
+  <footer>
+    <div class="footer-logo">Bentnail Construction</div>
+    <div class="footer-info">
+      <p>Austin, TX | <a href="tel:5125539012">(512) 553-9012</a></p>
+      <p>Licensed General Contractor • Insured • 13 Years Experience</p>
+    </div>
+    <p class="copyright">© 2026 Bentnail Construction. All rights reserved.</p>
+  </footer>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>

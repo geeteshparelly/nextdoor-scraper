@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hill Country Farms | Austin, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary:#556b2f;--secondary:#daa520;--soil:#8b4513;--natural:#faf8f5}
+    html{scroll-behavior:smooth}
+    body{font-family:'Merriweather',serif;color:#333;line-height:1.8;background:var(--natural)}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,248,245,0.95);backdrop-filter:blur(10px);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Abril Fatface',cursive;font-size:1.8rem;color:var(--primary);text-decoration:none}
+    nav{display:flex;gap:2rem;align-items:center}
+    nav a{text-decoration:none;color:var(--soil);font-weight:500}
+    .nav-cta{background:var(--primary);color:#fff;padding:.75rem 1.5rem}
+    .hero{min-height:100vh;background:linear-gradient(rgba(85,107,47,0.6),rgba(85,107,47,0.7)),url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center}
+    .hero-content{color:#fff;animation:fadeInUp 1s ease-out}
+    .hero h1{font-family:'Abril Fatface',cursive;font-size:4.5rem;margin-bottom:1rem}
+    .hero p{font-size:1.3rem;margin-bottom:2rem;color:var(--secondary)}
+    .btn{display:inline-block;padding:1rem 2.5rem;text-decoration:none;transition:all .3s;background:var(--secondary);color:var(--soil)}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(218,165,32,0.4)}
+    .products{padding:6rem 5%;background:var(--natural)}
+    .section-title{text-align:center;margin-bottom:4rem}
+    .section-title h2{font-family:'Abril Fatface',cursive;font-size:3rem;color:var(--primary)}
+    .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1000px;margin:0 auto}
+    .product-card{background:#fff;padding:2rem;border-radius:12px;text-align:center;transition:all .3s;box-shadow:0 5px 20px rgba(0,0,0,0.05)}
+    .product-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(85,107,47,0.15)}
+    .product-icon{font-size:3rem;margin-bottom:1rem}
+    .product-card h3{font-family:'Abril Fatface',cursive;color:var(--primary);margin-bottom:.5rem}
+    .cta{padding:6rem 5%;background:var(--primary);text-align:center;color:#fff}
+    .cta h2{font-family:'Abril Fatface',cursive;font-size:3rem;margin-bottom:1rem}
+    .cta-info{font-size:1.1rem;margin-bottom:1.5rem;color:var(--secondary)}
+    footer{background:var(--soil);color:#fff;padding:3rem 5%;text-align:center}
+    @media(max-width:768px){.hero h1{font-size:3rem}nav{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Hill Country Farms</a>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="tel:5125550140" class="nav-cta">Visit Us</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Hill Country Farms</h1>
+      <p>Farm Fresh Since 1985</p>
+      <a href="#products" class="btn">Our Products</a>
+    </div>
+  </section>
+  <section class="products" id="products">
+    <div class="section-title" data-aos="fade-up"><h2>From Our Fields</h2></div>
+    <div class="products-grid">
+      <div class="product-card" data-aos="fade-up"><div class="product-icon">🥬</div><h3>Fresh Vegetables</h3><p>Seasonal produce grown sustainably.</p></div>
+      <div class="product-card" data-aos="fade-up" data-aos-delay="100"><div class="product-icon">🥚</div><h3>Farm Eggs</h3><p>Pasture-raised chicken eggs.</p></div>
+      <div class="product-card" data-aos="fade-up" data-aos-delay="200"><div class="product-icon">🍯</div><h3>Local Honey</h3><p>Raw wildflower honey.</p></div>
+    </div>
+  </section>
+  <section class="cta" data-aos="fade-up">
+    <h2>Visit the Farm Stand</h2>
+    <p class="cta-info">Saturdays 8am - 1pm | 4567 Ranch Road, Austin TX</p>
+    <p><a href="tel:5125550140" style="color:var(--secondary);text-decoration:none;font-size:1.5rem">(512) 555-0140</a></p>
+  </section>
+  <footer><p>© 2026 Hill Country Farms. Austin, TX.</p></footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

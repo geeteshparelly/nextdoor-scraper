@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guardian Pest Control | Austin, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary:#228b22;--secondary:#1a1a2e;--safe:#90EE90;--light:#fff}
+    html{scroll-behavior:smooth}
+    body{font-family:'Work Sans',sans-serif;color:#333;line-height:1.7}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.98);backdrop-filter:blur(10px);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 20px rgba(0,0,0,0.05)}
+    .logo{font-family:'Outfit',sans-serif;font-size:1.6rem;color:var(--primary);text-decoration:none;font-weight:700;display:flex;align-items:center;gap:.5rem}
+    nav{display:flex;gap:2rem;align-items:center}
+    nav a{text-decoration:none;color:var(--secondary);font-weight:500}
+    .nav-cta{background:var(--primary);color:#fff;padding:.75rem 1.5rem;border-radius:8px}
+    .hero{min-height:100vh;background:linear-gradient(135deg,#e8f5e9 0%,#fff 50%,#e3f2fd 100%);display:flex;align-items:center;padding:6rem 5%}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1300px;margin:0 auto;align-items:center}
+    .hero-content{animation:fadeInUp 1s ease-out}
+    .guarantee{display:inline-block;background:var(--primary);color:#fff;padding:.5rem 1rem;font-size:.9rem;font-weight:600;margin-bottom:1.5rem;border-radius:4px}
+    .hero h1{font-family:'Outfit',sans-serif;font-size:3.5rem;color:var(--secondary);margin-bottom:1.5rem}
+    .hero p{font-size:1.2rem;margin-bottom:2rem;color:#555}
+    .btn{display:inline-block;padding:1rem 2rem;border-radius:8px;font-family:'Outfit',sans-serif;font-weight:600;text-decoration:none;transition:all .3s;background:var(--primary);color:#fff}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(34,139,34,0.3)}
+    .hero-image img{width:100%;border-radius:20px;box-shadow:0 30px 60px rgba(0,0,0,0.15)}
+    .services{padding:6rem 5%;background:var(--light)}
+    .section-title{text-align:center;margin-bottom:4rem}
+    .section-title h2{font-family:'Outfit',sans-serif;font-size:2.5rem;color:var(--secondary)}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+    .service-card{background:#f8f9fa;padding:2rem;border-radius:12px;text-align:center;transition:all .3s}
+    .service-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(34,139,34,0.1)}
+    .service-icon{width:60px;height:60px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.5rem}
+    .service-card h3{font-family:'Outfit',sans-serif;color:var(--secondary);margin-bottom:.5rem}
+    .cta{padding:6rem 5%;background:var(--primary);text-align:center;color:#fff}
+    .cta h2{font-family:'Outfit',sans-serif;font-size:2.5rem;margin-bottom:1rem}
+    .cta-phone{display:inline-block;background:#fff;color:var(--primary);padding:1.25rem 3rem;border-radius:8px;font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:700;text-decoration:none}
+    footer{background:var(--secondary);color:#fff;padding:3rem 5%;text-align:center}
+    @media(max-width:768px){.hero-grid{grid-template-columns:1fr}.hero h1{font-size:2.5rem}.hero-image{order:-1}nav{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">🛡️ Guardian Pest</a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="tel:5125550145" class="nav-cta">Get Quote</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="guarantee">100% Satisfaction Guaranteed</div>
+        <h1>Pest-Free Living</h1>
+        <p>Protect your home and family. Safe, effective pest control with eco-friendly options.</p>
+        <a href="tel:5125550145" class="btn">Call (512) 555-0145</a>
+      </div>
+      <div class="hero-image"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Happy home"></div>
+    </div>
+  </section>
+  <section class="services" id="services">
+    <div class="section-title" data-aos="fade-up"><h2>What We Treat</h2></div>
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up"><div class="service-icon">🐜</div><h3>Ants</h3></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="50"><div class="service-icon">🕷️</div><h3>Spiders</h3></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100"><div class="service-icon">🪳</div><h3>Roaches</h3></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="150"><div class="service-icon">🐭</div><h3>Rodents</h3></div>
+    </div>
+  </section>
+  <section class="cta" data-aos="fade-up">
+    <h2>Free Inspection</h2>
+    <p>No obligation. Same-day service available.</p>
+    <a href="tel:5125550145" class="cta-phone">(512) 555-0145</a>
+  </section>
+  <footer><p>© 2026 Guardian Pest Control. Austin, TX. Licensed & Insured.</p></footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

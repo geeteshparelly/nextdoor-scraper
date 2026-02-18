@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Tree Farm | Regenerative Produce in Austin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+        :root{--cream:#f8f7f4;--sage:#5a7247;--sage-deep:#3d5030;--earth:#6b5344;--warm:#f0ebe3;--text:#2a2a26;--muted:#6b6b60}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Source Sans 3',sans-serif;background:var(--cream);color:var(--text);line-height:1.8;font-weight:300}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(248,247,244,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Libre Baskerville',serif;font-size:1.3rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:.5rem}
+        nav a{color:var(--muted);text-decoration:none;margin-left:2rem;font-size:.9rem;font-weight:400}
+        .header-cta{background:var(--sage);color:#fff;padding:.7rem 1.5rem;border-radius:50px;font-size:.85rem}
+        .hero{min-height:100vh;display:flex;align-items:center;padding:8rem 2rem;background:linear-gradient(135deg,var(--cream) 0%,var(--warm) 100%)}
+        .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .hero-content{animation:fadeIn 1s ease-out}
+        .hero-badge{font-size:.8rem;font-weight:500;color:var(--sage);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1rem}
+        .hero-title{font-family:'Libre Baskerville',serif;font-size:clamp(2.5rem,5vw,3.5rem);line-height:1.15;margin-bottom:1.5rem}
+        .hero-title span{color:var(--sage)}
+        .hero-subtitle{font-size:1.05rem;color:var(--muted);margin-bottom:2rem}
+        .hero-features{display:flex;gap:2rem;margin-bottom:2rem;flex-wrap:wrap}
+        .hero-feature{display:flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:400}
+        .btn{display:inline-block;padding:1rem 2rem;text-decoration:none;font-weight:500;border-radius:50px;transition:all .3s}
+        .btn-primary{background:var(--sage);color:#fff}
+        .btn-primary:hover{background:var(--sage-deep);transform:translateY(-3px)}
+        .hero-visual img{width:100%;border-radius:12px;box-shadow:0 24px 48px rgba(0,0,0,0.1)}
+        .products{padding:6rem 2rem;background:#fff}
+        .container{max-width:1100px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.2em;color:var(--sage);margin-bottom:.75rem;font-weight:500}
+        .section-title{font-family:'Libre Baskerville',serif;font-size:2.25rem}
+        .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+        .product-card{background:var(--cream);border-radius:12px;overflow:hidden;text-align:center;transition:all .3s}
+        .product-card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(0,0,0,0.1)}
+        .product-image{aspect-ratio:1;object-fit:cover;width:100%}
+        .product-content{padding:1.25rem}
+        .product-name{font-family:'Libre Baskerville',serif;font-size:1rem;margin-bottom:.25rem}
+        .product-price{font-size:.85rem;color:var(--sage);font-weight:500}
+        .values{padding:6rem 2rem;background:var(--sage);color:#fff}
+        .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;text-align:center}
+        .value-icon{font-size:2.5rem;margin-bottom:1rem}
+        .value-title{font-family:'Libre Baskerville',serif;font-size:1.25rem;margin-bottom:.75rem}
+        .value-desc{font-size:.95rem;opacity:.9}
+        .cta{padding:5rem 2rem;background:var(--earth);text-align:center;color:#fff}
+        .cta h2{font-family:'Libre Baskerville',serif;font-size:2.5rem;margin-bottom:1rem}
+        .cta p{opacity:.9;margin-bottom:2rem}
+        .cta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:700px;margin:0 auto}
+        .cta-item h3{font-size:1rem;margin-bottom:.5rem}
+        .cta-item p{font-size:.9rem;opacity:.85}
+        footer{background:var(--text);padding:2rem;color:#fff;text-align:center;font-size:.85rem}
+        @media(max-width:1024px){.hero-inner{grid-template-columns:1fr}.hero-visual{order:-1}.products-grid{grid-template-columns:repeat(2,1fr)}.values-grid,.cta-grid{grid-template-columns:1fr}}
+        @media(max-width:768px){nav{display:none}.products-grid{grid-template-columns:1fr 1fr}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">🌿 Ghost Tree Farm</a>
+            <nav><a href="#products">Products</a><a href="#values">Values</a><a href="#visit" class="header-cta">Find Us</a></nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge">Regenerative Agriculture</span>
+                <h1 class="hero-title">Farming in Harmony with <span>Nature</span></h1>
+                <p class="hero-subtitle">We grow nutrient-dense produce using regenerative practices that heal the land. No chemicals, no shortcuts — just good food grown right.</p>
+                <div class="hero-features">
+                    <span class="hero-feature">✓ No-Till</span>
+                    <span class="hero-feature">✓ Cover Crops</span>
+                    <span class="hero-feature">✓ Compost-Fed</span>
+                </div>
+                <a href="#products" class="btn btn-primary">What's Growing</a>
+            </div>
+            <div class="hero-visual"><img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&h=600&fit=crop" alt="Farm field"></div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">Now Growing</p>
+                <h2 class="section-title">This Week's Harvest</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=400&fit=crop" class="product-image" alt="Greens"><div class="product-content"><h3 class="product-name">Salad Mix</h3><p class="product-price">$6/bag</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="50"><img src="https://images.unsplash.com/photo-1518977676601-b53f82ber51?w=400&h=400&fit=crop" class="product-image" alt="Carrots"><div class="product-content"><h3 class="product-name">Rainbow Carrots</h3><p class="product-price">$5/bunch</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1594282486552-05b4d80fbb9f?w=400&h=400&fit=crop" class="product-image" alt="Beets"><div class="product-content"><h3 class="product-name">Red Beets</h3><p class="product-price">$5/bunch</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="150"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=400&fit=crop" class="product-image" alt="Herbs"><div class="product-content"><h3 class="product-name">Fresh Herbs</h3><p class="product-price">$4/bunch</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values" id="values">
+        <div class="container">
+            <div class="values-grid">
+                <div class="value-item" data-aos="zoom-in"><div class="value-icon">🌱</div><h3 class="value-title">Regenerative</h3><p class="value-desc">Building soil health with every harvest</p></div>
+                <div class="value-item" data-aos="zoom-in" data-aos-delay="100"><div class="value-icon">💧</div><h3 class="value-title">Water-Wise</h3><p class="value-desc">Drip irrigation and mulching</p></div>
+                <div class="value-item" data-aos="zoom-in" data-aos-delay="200"><div class="value-icon">🐝</div><h3 class="value-title">Pollinator Haven</h3><p class="value-desc">Wildflower borders for bees</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="visit">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Us at Market</h2>
+            <p>Fresh produce every Saturday</p>
+            <div class="cta-grid">
+                <div class="cta-item"><h3>📍 Location</h3><p>Barton Creek Farmers Market</p></div>
+                <div class="cta-item"><h3>🕐 Hours</h3><p>Saturdays 9am–1pm</p></div>
+                <div class="cta-item"><h3>📞 Contact</h3><p>(512) 555-0205</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer><p>© 2026 Ghost Tree Farm • Central Texas</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

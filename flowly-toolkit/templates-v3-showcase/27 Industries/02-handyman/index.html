@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pro Fix Handyman | Austin, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary:#1565c0;--secondary:#ff6f00;--dark:#37474f;--light:#f5f5f5}
+    html{scroll-behavior:smooth}
+    body{font-family:'Source Sans 3',sans-serif;color:var(--dark);line-height:1.6}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 20px rgba(0,0,0,0.1)}
+    .logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--primary);text-decoration:none;display:flex;align-items:center;gap:.5rem}
+    .logo span{color:var(--secondary)}
+    nav{display:flex;gap:2rem;align-items:center}
+    nav a{text-decoration:none;color:var(--dark);font-weight:500}
+    .nav-cta{background:var(--secondary);color:#fff;padding:.75rem 1.5rem;border-radius:4px}
+    .hero{min-height:100vh;background:linear-gradient(135deg,rgba(21,101,192,0.9),rgba(55,71,79,0.85)),url('https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=1920&q=80');background-size:cover;background-position:center;display:flex;align-items:center;padding:0 5%}
+    .hero-content{max-width:700px;color:#fff;animation:fadeInUp 1s ease-out}
+    .hero h1{font-family:'Bebas Neue',sans-serif;font-size:4.5rem;line-height:1.1;margin-bottom:1rem;text-transform:uppercase}
+    .hero p{font-size:1.3rem;margin-bottom:2rem}
+    .btn{display:inline-block;padding:1rem 2.5rem;border-radius:4px;text-decoration:none;font-weight:600;transition:all .3s}
+    .btn-primary{background:var(--secondary);color:#fff}
+    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(255,111,0,0.4)}
+    .services{padding:6rem 5%;background:var(--light)}
+    .section-title{text-align:center;margin-bottom:4rem}
+    .section-title h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--primary)}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1200px;margin:0 auto}
+    .service-card{background:#fff;padding:2rem;border-radius:8px;transition:all .3s;border-left:4px solid transparent}
+    .service-card:hover{transform:translateX(10px);border-left-color:var(--secondary);box-shadow:0 10px 30px rgba(0,0,0,0.08)}
+    .service-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--primary);margin-bottom:.5rem}
+    .cta{padding:6rem 5%;background:linear-gradient(135deg,var(--primary),var(--dark));text-align:center;color:#fff}
+    .cta h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;margin-bottom:1rem}
+    .cta-phone{display:inline-block;background:#fff;color:var(--secondary);padding:1rem 3rem;font-family:'Bebas Neue',sans-serif;font-size:2rem;text-decoration:none;transition:all .3s}
+    .cta-phone:hover{transform:scale(1.05)}
+    footer{background:var(--dark);color:#fff;padding:3rem 5%;text-align:center}
+    @media(max-width:768px){.hero h1{font-size:2.8rem}nav{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">🔧 Pro<span>Fix</span></a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="tel:5125550124" class="nav-cta">(512) 555-0124</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>No Job Too Small</h1>
+      <p>Reliable handyman services in Austin. From quick fixes to complete repairs — we handle it all.</p>
+      <a href="tel:5125550124" class="btn btn-primary">Call Now</a>
+    </div>
+  </section>
+  <section class="services" id="services">
+    <div class="section-title" data-aos="fade-up"><h2>What We Fix</h2></div>
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up"><h3>General Repairs</h3><p>Small fixes, odd jobs, and everything in between.</p></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100"><h3>Drywall Repair</h3><p>Holes, cracks, and water damage fixed seamlessly.</p></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200"><h3>Door Installation</h3><p>Interior, exterior, and storm doors installed.</p></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300"><h3>Deck & Fence Repair</h3><p>Restore safety and beauty to your outdoor spaces.</p></div>
+    </div>
+  </section>
+  <section class="cta" data-aos="fade-up">
+    <h2>Ready to Get It Fixed?</h2>
+    <p>Free estimates. Same-week appointments.</p>
+    <a href="tel:5125550124" class="cta-phone">(512) 555-0124</a>
+  </section>
+  <footer><p>© 2026 ProFix Handyman. Austin, TX. Licensed & Insured.</p></footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

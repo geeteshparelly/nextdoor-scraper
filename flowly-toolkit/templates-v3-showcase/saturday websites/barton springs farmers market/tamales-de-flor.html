@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamales de Flor | Authentic Mexican Tamales in Austin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+        :root{--cream:#fdf8f3;--terracotta:#c2703e;--green:#2d5a27;--gold:#d4a84b;--text:#2a2118;--muted:#6b5d52}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);line-height:1.8;font-weight:300}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,248,243,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Abril Fatface',serif;font-size:1.5rem;color:var(--terracotta);text-decoration:none}
+        nav a{color:var(--muted);text-decoration:none;margin-left:2rem;font-size:.9rem}
+        .header-cta{background:var(--terracotta);color:#fff;padding:.7rem 1.5rem;border-radius:50px;font-size:.85rem}
+        .hero{min-height:100vh;background:linear-gradient(rgba(194,112,62,0.85),rgba(45,90,39,0.9)),url('https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=1920&h=1080&fit=crop');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
+        .hero-content{max-width:700px;padding:2rem;animation:fadeIn 1s ease-out}
+        .hero-badge{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+        .hero-title{font-family:'Abril Fatface',serif;font-size:clamp(3rem,8vw,5rem);line-height:1;margin-bottom:1.5rem}
+        .hero-subtitle{font-size:1.1rem;margin-bottom:2.5rem;opacity:.95}
+        .btn{display:inline-block;padding:1rem 2.5rem;text-decoration:none;font-weight:500;border-radius:50px;transition:all .3s}
+        .btn-primary{background:var(--gold);color:var(--text)}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(0,0,0,0.3)}
+        .menu{padding:6rem 2rem;background:var(--cream)}
+        .container{max-width:1000px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terracotta);margin-bottom:.75rem}
+        .section-title{font-family:'Abril Fatface',serif;font-size:2.5rem;color:var(--text)}
+        .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .menu-card{background:#fff;border-radius:16px;overflow:hidden;text-align:center;transition:all .3s}
+        .menu-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
+        .menu-image{aspect-ratio:1;object-fit:cover;width:100%}
+        .menu-content{padding:1.5rem}
+        .menu-name{font-family:'Abril Fatface',serif;font-size:1.2rem;margin-bottom:.5rem;color:var(--terracotta)}
+        .menu-price{font-size:.9rem;color:var(--green);font-weight:500}
+        .menu-desc{font-size:.85rem;color:var(--muted);margin-top:.5rem}
+        .story{padding:6rem 2rem;background:var(--green);color:#fff}
+        .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .story-image{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
+        .story-content h2{font-family:'Abril Fatface',serif;font-size:2.5rem;margin-bottom:1.5rem}
+        .story-content p{opacity:.9;margin-bottom:1rem}
+        .cta{padding:5rem 2rem;background:var(--terracotta);text-align:center;color:#fff}
+        .cta h2{font-family:'Abril Fatface',serif;font-size:2.5rem;margin-bottom:1rem}
+        .cta p{opacity:.9;margin-bottom:2rem}
+        .cta-info{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
+        .cta-info div strong{display:block;color:var(--gold);margin-bottom:.25rem}
+        footer{background:var(--text);padding:2rem;color:#fff;text-align:center;font-size:.9rem}
+        @media(max-width:1024px){.story-grid{grid-template-columns:1fr}.menu-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){nav{display:none}.menu-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">Tamales de Flor</a>
+            <nav><a href="#menu">Menu</a><a href="#story">Story</a><a href="#find" class="header-cta">Find Us</a></nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-badge">🌽 Authentic Mexican</p>
+            <h1 class="hero-title">Tamales Made with Love</h1>
+            <p class="hero-subtitle">Traditional family recipes passed down through generations. Fresh masa, slow-cooked fillings, wrapped by hand.</p>
+            <a href="#menu" class="btn btn-primary">See Our Tamales</a>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">Our Tamales</p>
+                <h2 class="section-title">Made Fresh Daily</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-card" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=500&h=500&fit=crop" class="menu-image" alt="Pork tamales"><div class="menu-content"><h3 class="menu-name">Pork in Red Chile</h3><p class="menu-price">$18/dozen</p><p class="menu-desc">Slow-braised pork in guajillo chile sauce</p></div></div>
+                <div class="menu-card" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=500&h=500&fit=crop" class="menu-image" alt="Chicken tamales"><div class="menu-content"><h3 class="menu-name">Chicken Tomatillo</h3><p class="menu-price">$18/dozen</p><p class="menu-desc">Shredded chicken in tangy green salsa</p></div></div>
+                <div class="menu-card" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=500&h=500&fit=crop" class="menu-image" alt="Bean tamales"><div class="menu-content"><h3 class="menu-name">Bean & Cheese</h3><p class="menu-price">$15/dozen</p><p class="menu-desc">Refried beans with Oaxaca cheese (V)</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story" id="story">
+        <div class="container">
+            <div class="story-grid">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&h=525&fit=crop" class="story-image" data-aos="fade-right" alt="Cooking">
+                <div class="story-content" data-aos="fade-left">
+                    <p class="section-label" style="color:var(--gold)">Our Story</p>
+                    <h2>Mi Abuela's Recipe</h2>
+                    <p>I learned to make tamales standing on a stool in my grandmother's kitchen in Oaxaca. She taught me that the secret is patience — good masa takes time.</p>
+                    <p>Now I make tamales the same way she did, using the same recipes, the same techniques. Every batch is made by hand with fresh ingredients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="find">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Us at Market</h2>
+            <p>Fresh tamales every Saturday (we sell out fast!)</p>
+            <div class="cta-info">
+                <div><strong>📍 Location</strong>Barton Creek Farmers Market</div>
+                <div><strong>🕐 Hours</strong>Saturdays 9am–1pm</div>
+                <div><strong>📞 Pre-Order</strong>(512) 555-0214</div>
+            </div>
+        </div>
+    </section>
+
+    <footer><p>© 2026 Tamales de Flor • Austin, Texas</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

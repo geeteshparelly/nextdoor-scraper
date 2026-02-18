@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Vault ATX | Curated Vintage Clothing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root{--cream:#f5f3ef;--rust:#a0522d;--black:#1a1a1a;--gold:#c9a227;--muted:#666}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);line-height:1.7;font-weight:300}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,243,239,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--black);text-decoration:none;letter-spacing:.05em}
+        nav a{color:var(--muted);text-decoration:none;margin-left:2rem;font-size:.9rem}
+        .header-cta{background:var(--rust);color:#fff;padding:.7rem 1.5rem}
+        .hero{min-height:100vh;background:linear-gradient(rgba(26,26,26,0.7),rgba(26,26,26,0.8)),url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
+        .hero-content{max-width:700px;padding:2rem}
+        .hero-badge{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+        .hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,10vw,7rem);line-height:.95;margin-bottom:1.5rem;letter-spacing:.02em}
+        .hero-subtitle{font-size:1.1rem;margin-bottom:2.5rem;opacity:.9}
+        .btn{display:inline-block;padding:1rem 2.5rem;text-decoration:none;font-weight:500;transition:all .3s;background:var(--rust);color:#fff}
+        .btn:hover{transform:translateY(-3px)}
+        .gallery{padding:6rem 2rem;background:var(--cream)}
+        .container{max-width:1100px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-bottom:.75rem}
+        .section-title{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:.02em}
+        .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+        .gallery-item{aspect-ratio:3/4;overflow:hidden}
+        .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+        .gallery-item:hover img{transform:scale(1.08)}
+        .categories{padding:5rem 2rem;background:#fff}
+        .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+        .cat-item{padding:2rem;background:var(--cream);transition:all .3s}
+        .cat-item:hover{transform:translateY(-5px)}
+        .cat-icon{font-size:2rem;margin-bottom:1rem}
+        .cat-name{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.05em}
+        .cta{padding:5rem 2rem;background:var(--black);text-align:center;color:#fff}
+        .cta h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;margin-bottom:1rem;letter-spacing:.02em}
+        .cta-grid{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem}
+        .cta-grid div strong{display:block;color:var(--gold);margin-bottom:.25rem}
+        footer{background:var(--black);padding:2rem;color:#fff;text-align:center;font-size:.85rem;border-top:1px solid rgba(255,255,255,0.1)}
+        @media(max-width:1024px){.gallery-grid,.cat-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){nav{display:none}.gallery-grid,.cat-grid{grid-template-columns:1fr}.hero-title{font-size:4rem}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">VINTAGE VAULT ATX</a>
+            <nav><a href="#gallery">Shop</a><a href="#categories">Categories</a><a href="#visit" class="header-cta">Find Us</a></nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-badge">🕰️ Curated Vintage</p>
+            <h1 class="hero-title">TIMELESS STYLE</h1>
+            <p class="hero-subtitle">Hand-picked vintage clothing from the '60s through '90s. One-of-a-kind pieces with history and character.</p>
+            <a href="#gallery" class="btn">Shop the Collection</a>
+        </div>
+    </section>
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up"><p class="section-label">The Collection</p><h2 class="section-title">RECENT FINDS</h2></div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=700&fit=crop" alt="Vintage jacket"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="50"><img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&h=700&fit=crop" alt="Vintage denim"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=500&h=700&fit=crop" alt="Vintage dress"></div>
+            </div>
+        </div>
+    </section>
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="cat-grid">
+                <div class="cat-item" data-aos="zoom-in"><div class="cat-icon">🧥</div><p class="cat-name">Jackets</p></div>
+                <div class="cat-item" data-aos="zoom-in" data-aos-delay="50"><div class="cat-icon">👖</div><p class="cat-name">Denim</p></div>
+                <div class="cat-item" data-aos="zoom-in" data-aos-delay="100"><div class="cat-icon">👗</div><p class="cat-name">Dresses</p></div>
+                <div class="cat-item" data-aos="zoom-in" data-aos-delay="150"><div class="cat-icon">👟</div><p class="cat-name">Shoes</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="cta" id="visit">
+        <div class="container" data-aos="fade-up">
+            <h2>FIND US AT THE FLEA</h2>
+            <p>New finds every weekend</p>
+            <div class="cta-grid">
+                <div><strong>📍</strong>Austin Country Flea Market</div>
+                <div><strong>🕐</strong>Sat-Sun 9am–5pm</div>
+                <div><strong>📱</strong>@vintagevaultatx</div>
+            </div>
+        </div>
+    </section>
+    <footer><p>© 2026 Vintage Vault ATX • Austin, Texas</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

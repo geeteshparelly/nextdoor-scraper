@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinora by Huda | Art & Designs</title>
+    <meta name="description" content="Pinora by Huda - Talented artist creating beautiful art and designs. Discover unique pieces.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root { --bg: #f9f7f5; --surface: #fff; --text-dark: #1a1a1a; --text-body: #555; --text-muted: #888; --primary: #9b7e6a; --primary-dark: #7d6456; --primary-light: #f5f0ec; --accent: #c9a86c; --border: #e5e0d8; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text-body); line-height: 1.7; }
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(249,247,245,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+        .header-inner { max-width: 1100px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--text-dark); text-decoration: none; font-style: italic; }
+        .logo span { color: var(--primary); }
+        nav a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin-left: 2rem; }
+        .header-cta { background: var(--primary); color: white; padding: 0.6rem 1.2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.85rem; }
+        
+        .hero { padding: 10rem 2rem 6rem; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--text-dark); line-height: 1.1; margin-bottom: 1.5rem; font-style: italic; }
+        .hero-subtitle { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; }
+        .btn-primary { background: var(--primary); color: white; padding: 1rem 2rem; text-decoration: none; font-weight: 600; border-radius: 50px; display: inline-block; }
+        .hero-image { width: 100%; height: 500px; object-fit: cover; border-radius: 24px; }
+        
+        .gallery { padding: 6rem 2rem; background: white; }
+        .gallery-inner { max-width: 1100px; margin: 0 auto; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--text-dark); text-align: center; margin-bottom: 3rem; font-style: italic; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .gallery-item { aspect-ratio: 1; border-radius: 16px; overflow: hidden; background: var(--primary-light); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+        
+        .about { padding: 6rem 2rem; max-width: 800px; margin: 0 auto; text-align: center; }
+        .about h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--text-dark); margin-bottom: 1.5rem; font-style: italic; }
+        .about p { color: var(--text-body); font-size: 1.1rem; line-height: 1.8; }
+        
+        .cta { padding: 6rem 2rem; background: var(--primary); color: white; text-align: center; }
+        .cta h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; font-style: italic; }
+        .cta p { opacity: 0.9; margin-bottom: 2rem; }
+        .cta-btn { background: white; color: var(--primary); padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; }
+        
+        footer { padding: 3rem 2rem; background: var(--text-dark); color: white; text-align: center; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 1rem; font-style: italic; }
+        .social-links { display: flex; justify-content: center; gap: 1rem; margin: 1rem 0; }
+        .social-links a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; }
+        
+        @media (max-width: 1024px) { .hero { grid-template-columns: 1fr; text-align: center; } .hero-image { order: -1; height: 400px; } }
+        @media (max-width: 768px) { nav { display: none; } .hero-title { font-size: 2.5rem; } .gallery-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">Pinora <span>by Huda</span></a>
+            <nav><a href="#gallery">Gallery</a><a href="#about">About</a></nav>
+            <a href="https://instagram.com/pinorabyhuda" target="_blank" class="header-cta">View Art</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title" data-aos="fade-up">Art That Touches the Soul</h1>
+            <p class="hero-subtitle" data-aos="fade-up">Huda is such a talent! Discover beautiful art and designs created with passion and skill. Each piece tells a unique story.</p>
+            <a href="https://instagram.com/pinorabyhuda" target="_blank" class="btn-primary" data-aos="fade-up">Explore Gallery</a>
+        </div>
+        <div class="hero-visual" data-aos="fade-left">
+            <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&q=80" alt="Art studio" class="hero-image">
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <div class="gallery-inner">
+            <h2 class="section-title" data-aos="fade-up">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&q=80" alt="Art 1" style="width:100%;height:100%;object-fit:cover;"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=400&q=80" alt="Art 2" style="width:100%;height:100%;object-fit:cover;"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1578926288207-a90a5366759d?w=400&q=80" alt="Art 3" style="width:100%;height:100%;object-fit:cover;"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300"><img src="https://images.unsplash.com/photo-1582201942988-13e60e4556ee?w=400&q=80" alt="Art 4" style="width:100%;height:100%;object-fit:cover;"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="400"><img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=400&q=80" alt="Art 5" style="width:100%;height:100%;object-fit:cover;"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="500"><img src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5?w=400&q=80" alt="Art 6" style="width:100%;height:100%;object-fit:cover;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2 data-aos="fade-up">Meet the Artist</h2>
+        <p data-aos="fade-up">Huda brings incredible talent and creativity to every piece. Her art captures beauty, emotion, and inspiration, creating works that resonate with collectors and art lovers alike.</p>
+    </section>
+
+    <section class="cta">
+        <h2 data-aos="fade-up">Discover Huda's Art</h2>
+        <p data-aos="fade-up">Follow on Instagram to see the latest creations and available pieces!</p>
+        <a href="https://instagram.com/pinorabyhuda" target="_blank" class="cta-btn" data-aos="fade-up">@pinorabyhuda →</a>
+    </section>
+
+    <footer>
+        <div class="footer-logo">Pinora by Huda</div>
+        <div class="social-links"><a href="https://instagram.com/pinorabyhuda" target="_blank">IG</a></div>
+        <p style="opacity:0.5;font-size:0.85rem;">© 2026 Pinora by Huda. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 600, once: true });</script>
+</body>
+</html>

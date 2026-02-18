@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K&S Seafood | Fresh Gulf Seafood in Austin & Cedar Park</title>
+    <meta name="description" content="K&S Seafood - Fresh Gulf Coast seafood since 2008. Fish, shrimp, crab, and more delivered direct from the source to Austin area farmers markets.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        
+        header { animation: fadeInDown 0.6s ease-out; }
+        .hero-badge { animation: fadeIn 0.6s ease-out 0.2s both; }
+        .hero-title { animation: fadeInUp 0.7s ease-out 0.1s both; }
+        .hero-subtitle { animation: fadeIn 0.6s ease-out 0.3s both; }
+        .hero-ctas { animation: fadeInUp 0.6s ease-out 0.5s both; }
+        .hero-visual { animation: scaleIn 0.8s ease-out 0.3s both; }
+
+        :root {
+            --bg: #f5f8fa;
+            --bg-warm: #e8f0f5;
+            --surface: #ffffff;
+            --text-dark: #0d2137;
+            --text-body: #3a4a5a;
+            --text-muted: #6a7a8a;
+            --blue: #1a5f8a;
+            --blue-deep: #0d4a6f;
+            --blue-light: #ddeef8;
+            --sand: #d4a24c;
+            --border: #d8e2ea;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Source Sans 3', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(245, 248, 250, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav { display: flex; gap: 2.5rem; align-items: center; }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--blue); }
+
+        .header-cta {
+            background: var(--blue);
+            color: white;
+            padding: 0.7rem 1.4rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            transition: all 0.2s;
+        }
+
+        .header-cta:hover { background: var(--blue-deep); }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 5rem;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--blue-light) 100%);
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content { max-width: 520px; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-title span { color: var(--blue); }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-body);
+        }
+
+        .hero-feature-icon { color: var(--blue); }
+
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn-primary {
+            background: var(--blue);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-primary:hover { background: var(--blue-deep); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(26, 95, 138, 0.3); }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-secondary:hover { border-color: var(--blue); color: var(--blue); }
+
+        .hero-visual { position: relative; }
+
+        .hero-image-main {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.12);
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-float {
+            position: absolute;
+            bottom: -1.5rem;
+            left: -1.5rem;
+            background: white;
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .float-icon { font-size: 2rem; }
+        .float-text { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--text-dark); }
+        .float-subtext { font-size: 0.8rem; color: var(--text-muted); }
+
+        .products-section { padding: 6rem 2rem; background: var(--surface); }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--blue); margin-bottom: 0.75rem; font-weight: 600; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 3.5vw, 2.5rem); color: var(--text-dark); }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--bg);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease-out;
+            text-align: center;
+        }
+
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+        .product-image {
+            aspect-ratio: 1;
+            object-fit: cover;
+            width: 100%;
+            display: block;
+            transition: transform 0.4s ease-out;
+        }
+
+        .product-card:hover .product-image { transform: scale(1.05); }
+        .product-content { padding: 1.25rem; }
+        .product-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--text-dark); margin-bottom: 0.25rem; }
+        .product-desc { font-size: 0.85rem; color: var(--text-muted); }
+
+        .story-section { padding: 6rem 2rem; background: var(--bg-warm); }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-image {
+            border-radius: 16px;
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+        }
+
+        .story-content { max-width: 480px; }
+        .story-text { font-size: 1.05rem; color: var(--text-body); margin: 1.5rem 0; line-height: 1.9; }
+
+        .years-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--blue);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .years-number { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; }
+        .years-text { font-size: 0.9rem; line-height: 1.3; }
+
+        .find-section { padding: 6rem 2rem; background: var(--blue); color: white; }
+
+        .find-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .find-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 1rem; }
+        .find-card p { font-size: 1rem; opacity: 0.95; line-height: 1.7; }
+        .find-card a { color: white; text-decoration: underline; }
+
+        footer { background: var(--text-dark); padding: 3rem 2rem; color: white; text-align: center; }
+        footer p { font-size: 0.9rem; opacity: 0.7; }
+
+        @media (max-width: 1024px) {
+            .hero-inner, .story-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-visual { order: -1; }
+            .hero-float { display: none; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .find-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero { padding: 6rem 1.5rem 3rem; }
+            .hero-features { flex-direction: column; gap: 0.75rem; }
+            .products-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">K&S Seafood</a>
+            <nav>
+                <a href="#products">Fresh Catch</a>
+                <a href="#story">Our Story</a>
+                <a href="#find">Find Us</a>
+            </nav>
+            <a href="tel:5128015366" class="header-cta">Call to Pre-Order</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge">Since 2008</span>
+                <h1 class="hero-title">Fresh <span>Gulf Seafood</span> to Your Table</h1>
+                <p class="hero-subtitle">From the Texas Gulf Coast to Austin's best farmers markets. We bring you the freshest fish, shrimp, and crab — personally inspected by Scott to ensure peak quality.</p>
+                <div class="hero-features">
+                    <span class="hero-feature"><span class="hero-feature-icon">✓</span> Gulf Coast Fresh</span>
+                    <span class="hero-feature"><span class="hero-feature-icon">✓</span> Personally Inspected</span>
+                    <span class="hero-feature"><span class="hero-feature-icon">✓</span> SNAP Accepted</span>
+                </div>
+                <div class="hero-ctas">
+                    <a href="tel:5128015366" class="btn-primary">Pre-Order: (512) 801-5366</a>
+                    <a href="#products" class="btn-secondary">View Fresh Catch</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-main">
+                    <img src="https://images.unsplash.com/photo-1510130387422-82bed34b37e9?w=800&h=600&fit=crop" alt="Fresh Gulf seafood" class="hero-image">
+                </div>
+                <div class="hero-float">
+                    <span class="float-icon">🦐</span>
+                    <div>
+                        <p class="float-text">Fresh Daily</p>
+                        <p class="float-subtext">Direct from the Gulf</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">Today's Catch</p>
+                <h2 class="section-title">Fresh Gulf Seafood</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=400&h=400&fit=crop" alt="Fresh Fish" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Fresh Fish</h3>
+                        <p class="product-desc">Snapper, flounder, drum & more</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+                    <img src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=400&h=400&fit=crop" alt="Gulf Shrimp" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Gulf Shrimp</h3>
+                        <p class="product-desc">Wild-caught, various sizes</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1510130387422-82bed34b37e9?w=400&h=400&fit=crop" alt="Blue Crab" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Blue Crab</h3>
+                        <p class="product-desc">Live or cleaned & ready</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=400&h=400&fit=crop" alt="Oysters" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Oysters</h3>
+                        <p class="product-desc">Fresh Gulf oysters (seasonal)</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1553659971-f01207815844?w=400&h=400&fit=crop" alt="Fish Fillets" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Fish Fillets</h3>
+                        <p class="product-desc">Skinned & boned, ready to cook</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+                    <img src="https://images.unsplash.com/photo-1606731219412-77c0f0a5b03d?w=400&h=400&fit=crop" alt="Crawfish" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Crawfish</h3>
+                        <p class="product-desc">Live, in season</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=400&h=400&fit=crop" alt="Salmon" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Salmon</h3>
+                        <p class="product-desc">Fresh Atlantic salmon</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://images.unsplash.com/photo-1579631542720-3a87824fff86?w=400&h=400&fit=crop" alt="Seafood Boil" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Boil Packs</h3>
+                        <p class="product-desc">Everything you need</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section" id="story">
+        <div class="container">
+            <div class="story-grid">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop" alt="Gulf Coast" class="story-image" data-aos="fade-right">
+                <div class="story-content" data-aos="fade-left">
+                    <p class="section-label">Our Story</p>
+                    <h2 class="section-title">From the Gulf to Your Kitchen</h2>
+                    <p class="story-text">K&S Seafood was founded by Scott and Kim Treaster in 2008. What started as a small roadside stand quickly grew as Central Texans discovered their hunger for truly fresh Gulf Coast seafood.</p>
+                    <p class="story-text">We've been selling at Texas Farmers Market since the beginning, bringing fresh fish, crab, shrimp, and more — right from the source to your table. Every product is personally inspected by Scott to ensure it meets our standards of peak freshness.</p>
+                    <p class="story-text">When you buy from K&S, you're getting seafood so fresh you can taste the difference.</p>
+                    <div class="years-badge">
+                        <span class="years-number">17+</span>
+                        <span class="years-text">Years serving<br>Central Texas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="find-section" id="find">
+        <div class="container">
+            <div class="find-grid">
+                <div class="find-card">
+                    <h3>📍 Saturday Markets</h3>
+                    <p>Texas Farmers Market at Bell<br>200 S Bell Blvd, Cedar Park<br>9am - 1pm</p>
+                </div>
+                <div class="find-card">
+                    <h3>📱 Pre-Order</h3>
+                    <p>Text us to reserve your order!<br><a href="tel:5128015366">(512) 801-5366</a><br><a href="tel:5127810669">(512) 781-0669</a></p>
+                </div>
+                <div class="find-card">
+                    <h3>🐟 Follow Us</h3>
+                    <p><a href="https://www.instagram.com/Kands.seafood/" target="_blank">@Kands.seafood</a><br><a href="https://www.facebook.com/kandsseafood" target="_blank">Facebook</a><br>Georgetown, TX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 K&S Seafood. Fresh from the Gulf since 2008. Georgetown, Texas.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true, offset: 100 });</script>
+</body>
+</html>

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native Roots Salsa Company | Fresh Artisan Salsa in Austin, TX</title>
+    <meta name="description" content="Native Roots Salsa Company - Woman-owned Austin business crafting fresh gourmet salsas, queso, and hot sauces since 2018. Find us at Texas Farmers Market.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #faf8f5;
+            --surface: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-body: #4a4540;
+            --text-muted: #7a756d;
+            --primary: #c73e1d;
+            --primary-dark: #a33218;
+            --primary-light: #fef3f0;
+            --accent: #2d6a4f;
+            --accent-light: #e8f5e9;
+            --border: #e8e2d8;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--primary); }
+
+        nav { display: flex; gap: 2rem; align-items: center; }
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: var(--primary); }
+
+        .header-cta {
+            background: var(--primary);
+            color: white;
+            padding: 0.65rem 1.3rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            transition: all 0.2s;
+        }
+        .header-cta:hover { background: var(--primary-dark); }
+
+        /* Hero */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-family: 'Source Serif 4', serif;
+            font-size: 3.2rem;
+            color: var(--text-dark);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 480px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 0.9rem 1.8rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            padding: 0.9rem 1.8rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            border: 2px solid var(--border);
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover { border-color: var(--text-dark); }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .hero-badge-floating {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .hero-badge-floating .icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .hero-badge-floating .text strong {
+            display: block;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .hero-badge-floating .text span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .products-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: 'Source Serif 4', serif;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--bg);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, #fce8e4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Story Section */
+        .story {
+            padding: 6rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 24px;
+        }
+
+        .story-content h2 {
+            font-family: 'Source Serif 4', serif;
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .story-content p {
+            color: var(--text-body);
+            margin-bottom: 1rem;
+        }
+
+        .story-highlight {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 1.25rem;
+            border-radius: 0 12px 12px 0;
+            margin-top: 1.5rem;
+        }
+
+        .story-highlight p {
+            color: var(--primary-dark);
+            font-weight: 500;
+            margin: 0;
+        }
+
+        /* Find Us Section */
+        .find-us {
+            padding: 6rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .find-us-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .find-us h2 {
+            font-family: 'Source Serif 4', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .find-us p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .markets {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .market-card {
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            text-align: left;
+            min-width: 250px;
+        }
+
+        .market-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .market-card p {
+            opacity: 0.85;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 2rem 2rem;
+            background: var(--text-dark);
+            color: white;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            opacity: 0.7;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .footer-links h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .footer-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover { opacity: 1; }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .social-links a:hover { background: var(--primary); }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            opacity: 0.5;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 8rem; }
+            .hero-subtitle { margin: 0 auto 2rem; }
+            .hero-ctas { justify-content: center; }
+            .hero-visual { order: -1; }
+            .hero-badge-floating { left: 50%; transform: translateX(-50%); }
+            .story { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+            .social-links { justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero-title { font-size: 2.2rem; }
+            .section-title { font-size: 1.8rem; }
+            .products-grid { grid-template-columns: 1fr; }
+            .markets { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">Native Roots <span>Salsa</span></a>
+            <nav>
+                <a href="#products">Products</a>
+                <a href="#story">Our Story</a>
+                <a href="#find-us">Find Us</a>
+            </nav>
+            <a href="#find-us" class="header-cta">Shop at Market</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-up">
+                <span>🌱</span> Woman-Owned Since 2018
+            </div>
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">Fresh Salsa Made with <em>Soul</em></h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Handcrafted gourmet salsas, quesos, and hot sauces made fresh every week with locally sourced ingredients. Taste the difference of small-batch, made-with-love flavor.</p>
+            <div class="hero-ctas" data-aos="fade-up" data-aos-delay="300">
+                <a href="#find-us" class="btn-primary">Find Us at Market →</a>
+                <a href="#products" class="btn-secondary">See Products</a>
+            </div>
+        </div>
+        <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
+            <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=800&q=80" alt="Fresh salsa ingredients" class="hero-image">
+            <div class="hero-badge-floating">
+                <div class="icon">🫙</div>
+                <div class="text">
+                    <strong>SNAP Accepted</strong>
+                    <span>Fresh food for all</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="products-inner">
+            <p class="section-label" data-aos="fade-up">Our Products</p>
+            <h2 class="section-title" data-aos="fade-up">From Our Kitchen to Your Table</h2>
+            <p class="section-subtitle" data-aos="fade-up">Every jar is made fresh with recipes perfected over years of farmer's market feedback.</p>
+            
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="product-image">🍅</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Fresh Salsas</h3>
+                        <p class="product-desc">Made weekly with the freshest tomatoes, peppers, and cilantro. Multiple heat levels available.</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-image">🧀</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Creamy Queso</h3>
+                        <p class="product-desc">Rich, smooth, and perfectly spiced. Our signature queso that keeps customers coming back.</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image">🌶️</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Hot Sauces</h3>
+                        <p class="product-desc">Taqueria-style hot sauces and sweet chili sauces. Shelf-stable for your pantry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story" id="story">
+        <div class="story-visual" data-aos="fade-right">
+            <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=800&q=80" alt="Fresh ingredients" class="story-image">
+        </div>
+        <div class="story-content" data-aos="fade-left">
+            <h2>A Family Recipe, Shared with Austin</h2>
+            <p>Native Roots Salsa Company started in 2018 when we brought our homemade salsas to the Texas Farmers Market. What began as a way to share family recipes quickly grew into something bigger — a true family business.</p>
+            <p>Today, we've expanded to include shelf-stable hot sauces, jarred salsa casera, and more — all while staying true to our roots: fresh, local, and made with love.</p>
+            <div class="story-highlight">
+                <p>We believe good food should be accessible to everyone. That's why we proudly accept SNAP benefits at every market.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="find-us" id="find-us">
+        <div class="find-us-inner">
+            <h2 data-aos="fade-up">Find Us Every Weekend</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Visit us at the Texas Farmers Markets to taste before you buy!</p>
+            <div class="markets" data-aos="fade-up" data-aos-delay="200">
+                <div class="market-card">
+                    <h3>📍 TFM at Bell</h3>
+                    <p>Saturdays, 9am - 1pm<br>200 S Bell Blvd, Cedar Park</p>
+                </div>
+                <div class="market-card">
+                    <h3>📍 TFM at Mueller</h3>
+                    <p>Sundays, 10am - 2pm<br>4209 Airport Blvd, Austin</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <h3>Native Roots Salsa Co.</h3>
+                <p>Woman-owned Austin business crafting fresh gourmet salsas since 2018. Find us at your local farmers market!</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/NativeRootsSalsaCo/" target="_blank">FB</a>
+                    <a href="https://www.instagram.com/nativerootssalsaco/" target="_blank">IG</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#products">Products</a>
+                <a href="#story">Our Story</a>
+                <a href="#find-us">Find Us</a>
+            </div>
+            <div class="footer-links">
+                <h4>Markets</h4>
+                <a href="#">Bell - Saturdays</a>
+                <a href="#">Mueller - Sundays</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Native Roots Salsa Company. Made with ❤️ in Austin, TX</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 600, once: true });</script>
+</body>
+</html>

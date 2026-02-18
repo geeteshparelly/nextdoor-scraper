@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelance Arborist | Certified Tree Care | Austin, TX</title>
+  <meta name="description" content="ISA Certified Arborist in Austin, TX. Tree trimming, removal, stump grinding, emergency storm damage. 15 years experience. Call (512) 671-4408.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --primary: #1a4731;
+      --secondary: #8b4513;
+      --accent: #90EE90;
+      --dark: #0d2818;
+      --light: #f5f5f0;
+    }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(26, 71, 49, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.6rem;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .logo span { color: var(--accent); }
+    
+    nav { display: flex; gap: 2rem; align-items: center; }
+    
+    nav a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover { color: var(--accent); }
+    
+    .emergency-btn {
+      background: #c62828;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(198, 40, 40, 0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(198, 40, 40, 0); }
+    }
+    
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(to bottom, rgba(13, 40, 24, 0.8), rgba(26, 71, 49, 0.75)),
+                  url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
+    }
+    
+    .hero-content {
+      max-width: 700px;
+      color: white;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    .certified-badge {
+      display: inline-block;
+      background: var(--secondary);
+      color: white;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      border-radius: 4px;
+    }
+    
+    .hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+    
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: 'Oswald', sans-serif;
+    }
+    
+    .btn-primary {
+      background: var(--accent);
+      color: var(--dark);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(144, 238, 144, 0.4);
+    }
+    
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+    }
+    
+    .btn-outline:hover {
+      background: white;
+      color: var(--primary);
+    }
+    
+    /* Services */
+    .services {
+      padding: 6rem 5%;
+      background: var(--light);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .section-header h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.8rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    
+    .services-list {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .service-item {
+      display: flex;
+      gap: 2rem;
+      padding: 2rem;
+      background: white;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      align-items: center;
+      transition: all 0.3s;
+      border-left: 4px solid transparent;
+    }
+    
+    .service-item:hover {
+      transform: translateX(10px);
+      border-left-color: var(--secondary);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    
+    .service-number {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5rem;
+      color: var(--accent);
+      min-width: 60px;
+    }
+    
+    .service-item h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.4rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    
+    .service-item p {
+      color: #666;
+    }
+    
+    /* About */
+    .about {
+      padding: 6rem 5%;
+      background: var(--primary);
+      color: white;
+    }
+    
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    
+    .about-content h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    
+    .about-content p {
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+    
+    .credentials {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .credential {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+    }
+    
+    .credential-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .credential span {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .about-image {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+    }
+    
+    /* CTA */
+    .cta {
+      padding: 6rem 5%;
+      background: var(--secondary);
+      text-align: center;
+      color: white;
+    }
+    
+    .cta h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.8rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    
+    .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .cta-phone {
+      display: inline-block;
+      background: white;
+      color: var(--secondary);
+      padding: 1.25rem 3rem;
+      font-family: 'Oswald', sans-serif;
+      font-size: 2rem;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .cta-phone:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 3rem 5%;
+      text-align: center;
+    }
+    
+    .footer-logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-info {
+      opacity: 0.8;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-info a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    
+    .copyright {
+      font-size: 0.85rem;
+      opacity: 0.5;
+    }
+    
+    /* Mobile */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      nav { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .credentials { flex-wrap: wrap; }
+      .service-item { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Freelance <span>Arborist</span></a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="tel:5126714408" class="emergency-btn">24/7 Emergency</a>
+    </nav>
+  </header>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <div class="certified-badge">ISA Certified Arborist</div>
+      <h1>Certified Care for Your Trees</h1>
+      <p>15 years of professional tree care in Austin. From precision trimming to emergency storm response — trust the expert.</p>
+      <div class="hero-ctas">
+        <a href="tel:5126714408" class="btn btn-primary">Call (512) 671-4408</a>
+        <a href="#services" class="btn btn-outline">Our Services</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="services" id="services">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Tree Services</h2>
+    </div>
+    
+    <div class="services-list">
+      <div class="service-item" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-number">01</div>
+        <div>
+          <h3>Tree Trimming & Pruning</h3>
+          <p>Proper pruning techniques that promote healthy growth, improve structure, and enhance your trees' natural beauty.</p>
+        </div>
+      </div>
+      
+      <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-number">02</div>
+        <div>
+          <h3>Tree Removal</h3>
+          <p>Safe, efficient removal of dead, dying, or hazardous trees. We handle trees of all sizes with precision.</p>
+        </div>
+      </div>
+      
+      <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-number">03</div>
+        <div>
+          <h3>Stump Grinding</h3>
+          <p>Complete stump removal below ground level. Reclaim your yard space and eliminate tripping hazards.</p>
+        </div>
+      </div>
+      
+      <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-number">04</div>
+        <div>
+          <h3>Emergency Storm Damage</h3>
+          <p>24/7 emergency response for storm-damaged trees. Fast, safe cleanup when you need it most.</p>
+        </div>
+      </div>
+      
+      <div class="service-item" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-number">05</div>
+        <div>
+          <h3>Tree Health Assessment</h3>
+          <p>Certified arborist evaluation of tree health, disease diagnosis, and treatment recommendations.</p>
+        </div>
+      </div>
+      
+      <div class="service-item" data-aos="fade-up" data-aos-delay="500">
+        <div class="service-number">06</div>
+        <div>
+          <h3>Land Clearing</h3>
+          <p>Selective clearing for construction, views, or property management. We work with your goals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-content" data-aos="fade-right">
+        <h2>Why Choose a Certified Arborist?</h2>
+        <p>I'm Jake Wilson, ISA Certified Arborist with 15 years of experience caring for Austin's urban forest. Being certified means I've demonstrated knowledge in all aspects of tree care — from proper pruning techniques to disease diagnosis.</p>
+        <p>When you hire me, you're getting science-based tree care that protects your investment and keeps your property safe. I'm fully insured, use proper equipment, and treat every tree with the respect it deserves.</p>
+        <div class="credentials">
+          <div class="credential">
+            <div class="credential-icon">🎓</div>
+            <span>ISA Certified</span>
+          </div>
+          <div class="credential">
+            <div class="credential-icon">📋</div>
+            <span>Fully Insured</span>
+          </div>
+          <div class="credential">
+            <div class="credential-icon">⏱️</div>
+            <span>15 Years Exp</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-image" data-aos="fade-left">
+        <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?w=800&q=80" alt="Tree work">
+      </div>
+    </div>
+  </section>
+  
+  <section class="cta" data-aos="fade-up">
+    <h2>Need Tree Work Done Right?</h2>
+    <p>Free estimates for all tree services. Emergency calls answered 24/7.</p>
+    <a href="tel:5126714408" class="cta-phone">(512) 671-4408</a>
+  </section>
+  
+  <footer>
+    <div class="footer-logo">Freelance Arborist</div>
+    <div class="footer-info">
+      <p>Austin, TX | <a href="tel:5126714408">(512) 671-4408</a></p>
+      <p>ISA Certified • Fully Insured • 15 Years Experience</p>
+    </div>
+    <p class="copyright">© 2026 Freelance Arborist. All rights reserved.</p>
+  </footer>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>

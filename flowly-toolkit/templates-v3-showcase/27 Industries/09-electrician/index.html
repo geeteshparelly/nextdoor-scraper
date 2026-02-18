@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volt Electric | Licensed Electrician | Austin, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary:#1a1a2e;--secondary:#ffd700;--accent:#e74c3c;--light:#f8f9fa}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:#333;line-height:1.6}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes spark{0%,100%{opacity:1}50%{opacity:.5}}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(26,26,46,0.98);backdrop-filter:blur(10px);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;color:#fff;text-decoration:none;font-weight:700;display:flex;align-items:center;gap:.5rem}
+    .logo-bolt{color:var(--secondary);animation:spark 1.5s infinite}
+    nav{display:flex;gap:2rem;align-items:center}
+    nav a{text-decoration:none;color:rgba(255,255,255,0.85);font-weight:500}
+    .nav-cta{background:var(--secondary);color:var(--primary);padding:.75rem 1.5rem;font-weight:700}
+    .hero{min-height:100vh;background:linear-gradient(135deg,var(--primary) 50%,#16213e 100%);display:flex;align-items:center;padding:0 5%}
+    .hero-content{max-width:600px;color:#fff;animation:fadeInUp 1s ease-out}
+    .badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,215,0,0.15);border:1px solid var(--secondary);color:var(--secondary);padding:.5rem 1rem;font-size:.85rem;font-weight:600;margin-bottom:1.5rem}
+    .hero h1{font-family:'Space Grotesk',sans-serif;font-size:3.5rem;margin-bottom:1rem}
+    .hero h1 span{color:var(--secondary)}
+    .hero p{font-size:1.2rem;margin-bottom:2rem;opacity:.85}
+    .btn{display:inline-block;padding:1rem 2rem;text-decoration:none;font-weight:600;transition:all .3s;background:var(--secondary);color:var(--primary)}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(255,215,0,0.3)}
+    .services{padding:6rem 5%;background:var(--light)}
+    .section-title{text-align:center;margin-bottom:4rem}
+    .section-title h2{font-family:'Space Grotesk',sans-serif;font-size:2.5rem;color:var(--primary)}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1200px;margin:0 auto}
+    .service-card{background:#fff;padding:2rem;border-radius:8px;border-left:4px solid var(--secondary);transition:all .3s}
+    .service-card:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,0,0,0.1)}
+    .service-icon{width:50px;height:50px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.5rem}
+    .service-card h3{font-family:'Space Grotesk',sans-serif;color:var(--primary);margin-bottom:.5rem}
+    .cta{padding:6rem 5%;background:linear-gradient(135deg,var(--secondary),#ffed4a);text-align:center}
+    .cta h2{font-family:'Space Grotesk',sans-serif;font-size:2.5rem;color:var(--primary);margin-bottom:1rem}
+    .cta-phone{display:inline-block;background:var(--primary);color:var(--secondary);padding:1.25rem 3rem;font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700;text-decoration:none}
+    footer{background:var(--primary);color:#fff;padding:3rem 5%;text-align:center}
+    @media(max-width:768px){.hero h1{font-size:2.5rem}nav{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo"><span class="logo-bolt">⚡</span> Volt Electric</a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="tel:5125550131" class="nav-cta">(512) 555-0131</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="badge">⚡ Licensed & Insured</div>
+      <h1>Powering <span>Austin</span></h1>
+      <p>Expert electrical services for homes and businesses. 10 years of trusted service.</p>
+      <a href="tel:5125550131" class="btn">Call Now</a>
+    </div>
+  </section>
+  <section class="services" id="services">
+    <div class="section-title" data-aos="fade-up"><h2>Electrical Services</h2></div>
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up"><div class="service-icon">🔌</div><h3>Panel Upgrades</h3><p>Modern panels for modern power demands.</p></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100"><div class="service-icon">💡</div><h3>Lighting</h3><p>Recessed, under-cabinet, and outdoor lighting.</p></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200"><div class="service-icon">🚗</div><h3>EV Chargers</h3><p>Level 2 charger installation for all EVs.</p></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300"><div class="service-icon">🔧</div><h3>Repairs</h3><p>Troubleshooting and electrical repairs.</p></div>
+    </div>
+  </section>
+  <section class="cta" data-aos="fade-up">
+    <h2>Need an Electrician?</h2>
+    <p>Free estimates. Same-day service available.</p>
+    <a href="tel:5125550131" class="cta-phone">(512) 555-0131</a>
+  </section>
+  <footer><p>© 2026 Volt Electric. Austin, TX. TECL #12345.</p></footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

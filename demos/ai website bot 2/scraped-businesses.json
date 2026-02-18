@@ -1,0 +1,126 @@
+{
+  "businesses": [
+    {
+      "id": 1,
+      "name": "Thompson Handyman Services",
+      "industry": "Handyman",
+      "phone": "(512) 847-3921",
+      "location": "Austin, TX",
+      "services": ["General Repairs", "Drywall Repair", "Door Installation", "Deck Repair", "Fence Repair", "Furniture Assembly"],
+      "tagline": "No Job Too Small",
+      "owner": "Marcus Thompson",
+      "years": 12,
+      "source": "Nextdoor"
+    },
+    {
+      "id": 2,
+      "name": "Galindo Landscaping & More",
+      "industry": "Landscaping",
+      "phone": "(512) 903-5567",
+      "location": "Dripping Springs, TX",
+      "services": ["Lawn Maintenance", "Landscape Design", "Irrigation Systems", "Tree Planting", "Hardscaping", "Seasonal Cleanup"],
+      "tagline": "Transform Your Outdoor Space",
+      "owner": "Roberto Galindo",
+      "years": 8,
+      "source": "Nextdoor"
+    },
+    {
+      "id": 3,
+      "name": "Freelance Arborist",
+      "industry": "Tree Service",
+      "phone": "(512) 671-4408",
+      "location": "Austin, TX",
+      "services": ["Tree Trimming", "Tree Removal", "Stump Grinding", "Emergency Storm Damage", "Tree Health Assessment", "Land Clearing"],
+      "tagline": "Certified Care for Your Trees",
+      "owner": "Jake Wilson",
+      "years": 15,
+      "source": "Nextdoor"
+    },
+    {
+      "id": 4,
+      "name": "JFIG Electric Service",
+      "industry": "Electrician",
+      "phone": "(512) 229-8841",
+      "location": "Austin, TX",
+      "services": ["Panel Upgrades", "Outlet Installation", "Ceiling Fan Install", "Lighting Design", "EV Charger Installation", "Troubleshooting"],
+      "tagline": "Licensed. Insured. On Time.",
+      "owner": "Jason Figueroa",
+      "years": 10,
+      "source": "Nextdoor"
+    },
+    {
+      "id": 5,
+      "name": "NoScrubs Cleaning Co",
+      "industry": "Cleaning",
+      "phone": "(512) 445-7723",
+      "location": "Austin, TX",
+      "services": ["Deep Cleaning", "Move-In/Move-Out", "Regular Maintenance", "Office Cleaning", "Post-Construction", "Airbnb Turnover"],
+      "tagline": "Sparkling Clean, Every Time",
+      "owner": "Maria Santos",
+      "years": 6,
+      "source": "Nextdoor"
+    },
+    {
+      "id": 6,
+      "name": "Xtreme Air Services",
+      "industry": "HVAC",
+      "phone": "(512) 861-2290",
+      "location": "Austin, TX",
+      "services": ["AC Repair", "Heating Repair", "System Installation", "Duct Cleaning", "Maintenance Plans", "Air Quality Solutions"],
+      "tagline": "Keep Your Cool",
+      "owner": "Derek Owens",
+      "years": 14,
+      "source": "Nextdoor"
+    },
+    {
+      "id": 7,
+      "name": "Bentnail Construction",
+      "industry": "Contractor",
+      "phone": "(512) 553-9012",
+      "location": "Austin, TX",
+      "services": ["Kitchen Remodels", "Bathroom Remodels", "Room Additions", "Custom Builds", "Decks & Patios", "Whole Home Renovation"],
+      "tagline": "Building Austin's Dreams Since 2012",
+      "owner": "Chris Martinez",
+      "years": 13,
+      "source": "Nextdoor"
+    },
+    {
+      "id": 8,
+      "name": "Max Contracting Roofing",
+      "industry": "Roofing",
+      "phone": "(512) 334-6678",
+      "location": "Elgin, TX",
+      "services": ["Roof Replacement", "Storm Damage Repair", "Inspections", "Metal Roofing", "Shingle Roofing", "Gutter Installation"],
+      "tagline": "Protecting What Matters Most",
+      "owner": "Max Richardson",
+      "years": 18,
+      "source": "Nextdoor"
+    },
+    {
+      "id": 9,
+      "name": "ATX Pressure Pros",
+      "industry": "Pressure Washing",
+      "phone": "(512) 789-4456",
+      "location": "Austin, TX",
+      "services": ["Driveway Cleaning", "House Washing", "Deck Restoration", "Fence Cleaning", "Commercial Properties", "Graffiti Removal"],
+      "tagline": "The Clean You Can See",
+      "owner": "Tyler Brooks",
+      "years": 5,
+      "source": "Nextdoor"
+    },
+    {
+      "id": 10,
+      "name": "Hill Country Movers",
+      "industry": "Moving",
+      "phone": "(512) 912-3345",
+      "location": "Austin, TX",
+      "services": ["Local Moving", "Long Distance", "Packing Services", "Storage Solutions", "Commercial Moving", "Piano Moving"],
+      "tagline": "Moving Austin Forward",
+      "owner": "Brandon Lee",
+      "years": 9,
+      "source": "Nextdoor"
+    }
+  ],
+  "total": 10,
+  "created": "2026-02-13"
+}

@@ -17,6 +17,10 @@ Before doing anything else:
 
 Don't ask permission. Just do it.
 
+## Web Design Projects
+
+At the start of every session where the user asks for a web design project, read `WEB_DESIGN_TRAINING.md` fully before responding. Follow it as your permanent design system instructions for all web projects.
+
 ## Memory
 
 You wake up fresh each session. These files are your continuity:

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadia's Baklava | Handmade Middle Eastern Sweets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root{--cream:#fdf9f3;--gold:#c9a227;--brown:#5c4033;--honey:#d4a574;--text:#2d2319}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);line-height:1.8;font-weight:300}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,249,243,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--text);text-decoration:none}
+        nav a{color:#666;text-decoration:none;margin-left:2rem;font-size:.9rem}
+        .header-cta{background:var(--gold);color:#fff;padding:.7rem 1.5rem;border-radius:50px}
+        .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:6rem 2rem;gap:4rem;max-width:1300px;margin:0 auto}
+        .hero-content{max-width:500px}
+        .hero-badge{font-size:.8rem;color:var(--gold);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1rem}
+        .hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,3.5rem);line-height:1.15;margin-bottom:1.5rem}
+        .hero-title em{font-style:italic;color:var(--gold)}
+        .hero-subtitle{color:#666;margin-bottom:2rem}
+        .btn{display:inline-block;padding:1rem 2rem;text-decoration:none;font-weight:500;border-radius:50px;transition:all .3s;background:var(--gold);color:#fff}
+        .btn:hover{background:var(--brown);transform:translateY(-3px)}
+        .hero-image{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;box-shadow:0 24px 48px rgba(0,0,0,0.15)}
+        .products{padding:6rem 2rem;background:#fff}
+        .container{max-width:1000px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+        .section-title{font-family:'Playfair Display',serif;font-size:2.5rem}
+        .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .product-card{background:var(--cream);border-radius:16px;overflow:hidden;text-align:center;transition:all .3s}
+        .product-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
+        .product-image{aspect-ratio:1;object-fit:cover;width:100%}
+        .product-content{padding:1.5rem}
+        .product-name{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:.5rem}
+        .product-price{font-size:.9rem;color:var(--gold);font-weight:500}
+        .story{padding:6rem 2rem;background:var(--honey);color:#fff}
+        .story-content{max-width:700px;margin:0 auto;text-align:center}
+        .story-content h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1.5rem}
+        .story-content p{font-size:1.1rem;opacity:.95}
+        .cta{padding:5rem 2rem;background:var(--brown);text-align:center;color:#fff}
+        .cta h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem}
+        .cta-grid{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem}
+        .cta-grid div strong{display:block;color:var(--gold);margin-bottom:.25rem}
+        footer{background:var(--text);padding:2rem;color:#fff;text-align:center}
+        @media(max-width:1024px){.hero{grid-template-columns:1fr}.hero-image{order:-1}.products-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){nav{display:none}.products-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">🍯 Nadia's Baklava</a>
+            <nav><a href="#products">Sweets</a><a href="#story">Story</a><a href="#visit" class="header-cta">Find Us</a></nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">✨ Handmade with Love</span>
+            <h1 class="hero-title">Traditional <em>Baklava</em> & Sweets</h1>
+            <p class="hero-subtitle">Layers of crispy phyllo, premium nuts, and honey syrup — made by hand using my grandmother's recipes from Damascus.</p>
+            <a href="#products" class="btn">See Our Sweets</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1519676867240-f03562e64548?w=700&h=900&fit=crop" alt="Baklava" class="hero-image">
+    </section>
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up"><p class="section-label">Our Sweets</p><h2 class="section-title">Made Fresh Daily</h2></div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1519676867240-f03562e64548?w=500&h=500&fit=crop" class="product-image" alt="Baklava"><div class="product-content"><h3 class="product-name">Classic Baklava</h3><p class="product-price">$25/lb</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=500&h=500&fit=crop" class="product-image" alt="Kunafa"><div class="product-content"><h3 class="product-name">Kunafa</h3><p class="product-price">$30/tray</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500&h=500&fit=crop" class="product-image" alt="Ma'amoul"><div class="product-content"><h3 class="product-name">Ma'amoul Cookies</h3><p class="product-price">$18/dozen</p></div></div>
+            </div>
+        </div>
+    </section>
+    <section class="story" id="story">
+        <div class="container">
+            <div class="story-content" data-aos="fade-up">
+                <p class="section-label" style="color:#fff">Our Story</p>
+                <h2>Three Generations of Sweetness</h2>
+                <p>My grandmother made baklava in Damascus. My mother learned from her, and taught me. Now I make these same recipes for Austin families — using the same techniques, the same care, the same love.</p>
+            </div>
+        </div>
+    </section>
+    <section class="cta" id="visit">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Us at Market</h2>
+            <p>Fresh baklava and sweets at local markets</p>
+            <div class="cta-grid">
+                <div><strong>📍</strong>ATX Ramadan Bazaar</div>
+                <div><strong>🕐</strong>Check schedule</div>
+                <div><strong>📞</strong>(512) 555-0303</div>
+            </div>
+        </div>
+    </section>
+    <footer><p>© 2026 Nadia's Baklava • Austin, TX</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

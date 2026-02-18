@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olive Branch Imports | Mediterranean Olive Oil & Goods</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root{--cream:#faf8f4;--olive:#6b7c4c;--gold:#c9a227;--terracotta:#b5651d;--text:#2d2926}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);line-height:1.8;font-weight:300}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--text);text-decoration:none}
+        nav a{color:#666;text-decoration:none;margin-left:2rem;font-size:.9rem}
+        .header-cta{background:var(--olive);color:#fff;padding:.7rem 1.5rem;border-radius:50px}
+        .hero{min-height:100vh;background:linear-gradient(rgba(107,124,76,0.85),rgba(107,124,76,0.9)),url('https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=1920&h=1080&fit=crop');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
+        .hero-content{max-width:700px;padding:2rem}
+        .hero-badge{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+        .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,5rem);line-height:1.1;margin-bottom:1.5rem}
+        .hero-subtitle{font-size:1.1rem;margin-bottom:2.5rem;opacity:.95}
+        .btn{display:inline-block;padding:1rem 2.5rem;text-decoration:none;font-weight:500;border-radius:50px;transition:all .3s;background:var(--gold);color:var(--text)}
+        .btn:hover{transform:translateY(-3px)}
+        .products{padding:6rem 2rem;background:var(--cream)}
+        .container{max-width:1000px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);margin-bottom:.75rem}
+        .section-title{font-family:'Cormorant Garamond',serif;font-size:2.5rem}
+        .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .product-card{background:#fff;border-radius:16px;overflow:hidden;text-align:center;transition:all .3s}
+        .product-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
+        .product-image{aspect-ratio:1;object-fit:cover;width:100%}
+        .product-content{padding:1.5rem}
+        .product-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:.5rem}
+        .product-price{font-size:.9rem;color:var(--olive);font-weight:500}
+        .cta{padding:5rem 2rem;background:var(--olive);text-align:center;color:#fff}
+        .cta h2{font-family:'Cormorant Garamond',serif;font-size:2.5rem;margin-bottom:1rem}
+        .cta-grid{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem}
+        .cta-grid div strong{display:block;color:var(--gold);margin-bottom:.25rem}
+        footer{background:var(--text);padding:2rem;color:#fff;text-align:center}
+        @media(max-width:768px){nav{display:none}.products-grid{grid-template-columns:1fr}.hero-title{font-size:3rem}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">🫒 Olive Branch Imports</a>
+            <nav><a href="#products">Products</a><a href="#visit" class="header-cta">Find Us</a></nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-badge">🌿 From the Mediterranean</p>
+            <h1 class="hero-title">Pure Olive Oil & Fine Goods</h1>
+            <p class="hero-subtitle">Premium olive oil, za'atar, tahini, and specialty foods imported from family farms in Palestine, Jordan, and Lebanon.</p>
+            <a href="#products" class="btn">Shop Our Products</a>
+        </div>
+    </section>
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up"><p class="section-label">Our Products</p><h2 class="section-title">Mediterranean Essentials</h2></div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=500&h=500&fit=crop" class="product-image" alt="Olive Oil"><div class="product-content"><h3 class="product-name">Extra Virgin Olive Oil</h3><p class="product-price">$24/bottle</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&h=500&fit=crop" class="product-image" alt="Za'atar"><div class="product-content"><h3 class="product-name">Za'atar Blend</h3><p class="product-price">$12/jar</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=500&h=500&fit=crop" class="product-image" alt="Tahini"><div class="product-content"><h3 class="product-name">Stone-Ground Tahini</h3><p class="product-price">$14/jar</p></div></div>
+            </div>
+        </div>
+    </section>
+    <section class="cta" id="visit">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Us at Market</h2>
+            <p>Authentic Mediterranean goods at local markets</p>
+            <div class="cta-grid">
+                <div><strong>📍</strong>ATX Ramadan Bazaar</div>
+                <div><strong>🕐</strong>Check schedule</div>
+                <div><strong>📞</strong>(512) 555-0302</div>
+            </div>
+        </div>
+    </section>
+    <footer><p>© 2026 Olive Branch Imports • Austin, TX</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

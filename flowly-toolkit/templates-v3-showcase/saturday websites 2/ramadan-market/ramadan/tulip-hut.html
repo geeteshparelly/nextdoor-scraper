@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tulip Hut | Handmade to Inspire by Saleha</title>
+    <meta name="description" content="Tulip Hut - Handmade to Inspire. Beautiful handcrafted pieces by Saleha.">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root { --bg: #fef9f4; --surface: #fff; --text-dark: #1a1a1a; --text-body: #555; --text-muted: #888; --primary: #e85d5d; --primary-dark: #d04848; --primary-light: #fff0f0; --accent: #7eb5a6; --border: #f0e8e4; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text-body); line-height: 1.7; }
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(254,249,244,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+        .header-inner { max-width: 1100px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; font-family: 'Quicksand', sans-serif; font-size: 1.4rem; color: var(--text-dark); text-decoration: none; font-weight: 700; }
+        .logo-icon { font-size: 1.5rem; }
+        nav a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin-left: 2rem; }
+        .header-cta { background: var(--primary); color: white; padding: 0.6rem 1.2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.85rem; }
+        
+        .hero { padding: 10rem 2rem 6rem; max-width: 1100px; margin: 0 auto; text-align: center; }
+        .hero-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .hero-title { font-family: 'Quicksand', sans-serif; font-size: 3.5rem; color: var(--text-dark); line-height: 1.15; margin-bottom: 1.5rem; font-weight: 700; }
+        .hero-tagline { font-size: 1.3rem; color: var(--primary); margin-bottom: 1rem; font-weight: 600; }
+        .hero-subtitle { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .btn-primary { background: var(--primary); color: white; padding: 1rem 2rem; text-decoration: none; font-weight: 600; border-radius: 50px; display: inline-block; }
+        
+        .products { padding: 6rem 2rem; background: white; }
+        .products-inner { max-width: 1100px; margin: 0 auto; }
+        .section-title { font-family: 'Quicksand', sans-serif; font-size: 2.2rem; color: var(--text-dark); text-align: center; margin-bottom: 3rem; font-weight: 700; }
+        .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .product-card { background: var(--bg); border-radius: 20px; overflow: hidden; transition: transform 0.3s; }
+        .product-card:hover { transform: translateY(-8px); }
+        .product-image { height: 180px; background: linear-gradient(135deg, var(--primary-light) 0%, #fff5f5 100%); display: flex; align-items: center; justify-content: center; font-size: 3.5rem; }
+        .product-content { padding: 1.5rem; text-align: center; }
+        .product-title { font-family: 'Quicksand', sans-serif; font-size: 1.1rem; color: var(--text-dark); font-weight: 600; }
+        
+        .about { padding: 6rem 2rem; background: var(--primary-light); }
+        .about-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+        .about h2 { font-family: 'Quicksand', sans-serif; font-size: 2rem; color: var(--text-dark); margin-bottom: 1.5rem; font-weight: 700; }
+        .about p { color: var(--text-body); font-size: 1.1rem; }
+        
+        .cta { padding: 6rem 2rem; background: var(--primary); color: white; text-align: center; }
+        .cta h2 { font-family: 'Quicksand', sans-serif; font-size: 2.2rem; margin-bottom: 1rem; font-weight: 700; }
+        .cta p { opacity: 0.9; margin-bottom: 2rem; }
+        .cta-btn { background: white; color: var(--primary); padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; }
+        
+        footer { padding: 3rem 2rem; background: var(--text-dark); color: white; text-align: center; }
+        .footer-logo { font-family: 'Quicksand', sans-serif; font-size: 1.4rem; margin-bottom: 1rem; font-weight: 700; }
+        .social-links { display: flex; justify-content: center; gap: 1rem; margin: 1rem 0; }
+        .social-links a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; }
+        
+        @media (max-width: 768px) { nav { display: none; } .hero-title { font-size: 2.5rem; } .products-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">Tulip Hut</a>
+            <nav><a href="#products">Products</a><a href="#about">About</a></nav>
+            <a href="https://instagram.com/tulip_hut" target="_blank" class="header-cta">Shop Now</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=150&q=80" alt="Tulip" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:1.5rem;" data-aos="fade-up">
+        <h1 class="hero-title" data-aos="fade-up">Tulip Hut</h1>
+        <p class="hero-tagline" data-aos="fade-up">Handmade to Inspire</p>
+        <p class="hero-subtitle" data-aos="fade-up">Beautiful handcrafted pieces made with love and care. Each creation is unique, designed to bring joy and inspiration to your life.</p>
+        <a href="https://instagram.com/tulip_hut" target="_blank" class="btn-primary" data-aos="fade-up">Explore Collection</a>
+    </section>
+
+    <section class="products" id="products">
+        <div class="products-inner">
+            <h2 class="section-title" data-aos="fade-up">Our Handmade Creations</h2>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&q=80" alt="Art" style="height:180px;width:100%;object-fit:cover;">
+                    <div class="product-content"><h3>Handcrafted Art</h3></div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400&q=80" alt="Gifts" style="height:180px;width:100%;object-fit:cover;">
+                    <div class="product-content"><h3>Gift Items</h3></div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=400&q=80" alt="Decor" style="height:180px;width:100%;object-fit:cover;">
+                    <div class="product-content"><h3>Home Decor</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-inner">
+            <h2 data-aos="fade-up">Meet Saleha</h2>
+            <p data-aos="fade-up">Behind every piece is Saleha's passion for creating beautiful, handmade items that inspire. Each creation is made with attention to detail and a love for the craft.</p>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2 data-aos="fade-up">Get Inspired Today</h2>
+        <p data-aos="fade-up">Follow us on Instagram to see our latest handmade creations!</p>
+        <a href="https://instagram.com/tulip_hut" target="_blank" class="cta-btn" data-aos="fade-up">@tulip_hut →</a>
+    </section>
+
+    <footer>
+        <div class="footer-logo">Tulip Hut</div>
+        <p style="opacity:0.7;font-size:0.9rem;margin-bottom:0.5rem;">Handmade to Inspire</p>
+        <div class="social-links"><a href="https://instagram.com/tulip_hut" target="_blank">IG</a></div>
+        <p style="opacity:0.5;font-size:0.85rem;">© 2026 Tulip Hut by Saleha. Made with ❤️</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 600, once: true });</script>
+</body>
+</html>

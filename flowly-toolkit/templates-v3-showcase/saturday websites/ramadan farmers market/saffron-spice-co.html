@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saffron Spice Co. | Premium Middle Eastern Spices</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root{--cream:#fdf8f3;--saffron:#d4763a;--purple:#4a3728;--gold:#c9a227;--text:#2d2319}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);line-height:1.8;font-weight:300}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,248,243,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--text);text-decoration:none}
+        nav a{color:#666;text-decoration:none;margin-left:2rem;font-size:.9rem}
+        .header-cta{background:var(--saffron);color:#fff;padding:.7rem 1.5rem;border-radius:50px}
+        .hero{min-height:100vh;background:linear-gradient(rgba(212,118,58,0.9),rgba(74,55,40,0.95)),url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=1920&h=1080&fit=crop');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
+        .hero-content{max-width:700px;padding:2rem}
+        .hero-badge{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+        .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,5rem);line-height:1.1;margin-bottom:1.5rem}
+        .hero-subtitle{font-size:1.1rem;margin-bottom:2.5rem;opacity:.95}
+        .btn{display:inline-block;padding:1rem 2.5rem;text-decoration:none;font-weight:500;border-radius:50px;transition:all .3s;background:var(--gold);color:var(--text)}
+        .btn:hover{transform:translateY(-3px)}
+        .products{padding:6rem 2rem;background:var(--cream)}
+        .container{max-width:1000px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--saffron);margin-bottom:.75rem}
+        .section-title{font-family:'Cormorant Garamond',serif;font-size:2.5rem}
+        .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+        .product-card{background:#fff;border-radius:12px;overflow:hidden;text-align:center;transition:all .3s}
+        .product-card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(0,0,0,0.1)}
+        .product-image{aspect-ratio:1;object-fit:cover;width:100%}
+        .product-content{padding:1.25rem}
+        .product-name{font-family:'Cormorant Garamond',serif;font-size:1rem;margin-bottom:.25rem}
+        .product-price{font-size:.85rem;color:var(--saffron);font-weight:500}
+        .cta{padding:5rem 2rem;background:var(--saffron);text-align:center;color:#fff}
+        .cta h2{font-family:'Cormorant Garamond',serif;font-size:2.5rem;margin-bottom:1rem}
+        .cta-grid{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem}
+        .cta-grid div strong{display:block;color:var(--gold);margin-bottom:.25rem}
+        footer{background:var(--purple);padding:2rem;color:#fff;text-align:center}
+        @media(max-width:1024px){.products-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){nav{display:none}.products-grid{grid-template-columns:1fr 1fr}.hero-title{font-size:3rem}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">✨ Saffron Spice Co.</a>
+            <nav><a href="#products">Spices</a><a href="#visit" class="header-cta">Find Us</a></nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-badge">🌿 Premium Quality</p>
+            <h1 class="hero-title">Spices of the Silk Road</h1>
+            <p class="hero-subtitle">Authentic spices and blends from Iran, Morocco, and beyond. Hand-selected, freshly ground, and full of flavor.</p>
+            <a href="#products" class="btn">Shop Spices</a>
+        </div>
+    </section>
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up"><p class="section-label">Our Spices</p><h2 class="section-title">Aromatic Treasures</h2></div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&h=400&fit=crop" class="product-image" alt="Saffron"><div class="product-content"><h3 class="product-name">Persian Saffron</h3><p class="product-price">$18/gram</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="50"><img src="https://images.unsplash.com/photo-1599909533681-74392d79438a?w=400&h=400&fit=crop" class="product-image" alt="Sumac"><div class="product-content"><h3 class="product-name">Sumac</h3><p class="product-price">$8/jar</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop" class="product-image" alt="Ras el Hanout"><div class="product-content"><h3 class="product-name">Ras el Hanout</h3><p class="product-price">$12/jar</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="150"><img src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=400&h=400&fit=crop" class="product-image" alt="Baharat"><div class="product-content"><h3 class="product-name">Baharat</h3><p class="product-price">$10/jar</p></div></div>
+            </div>
+        </div>
+    </section>
+    <section class="cta" id="visit">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Us at Market</h2>
+            <p>Premium spices at local markets</p>
+            <div class="cta-grid">
+                <div><strong>📍</strong>ATX Ramadan Bazaar</div>
+                <div><strong>🕐</strong>Check schedule</div>
+                <div><strong>📞</strong>(512) 555-0304</div>
+            </div>
+        </div>
+    </section>
+    <footer><p>© 2026 Saffron Spice Co. • Austin, TX</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

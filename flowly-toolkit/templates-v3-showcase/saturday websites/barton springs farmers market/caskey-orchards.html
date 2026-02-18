@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caskey Orchards | Fresh Fruit from Central Texas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        :root{--cream:#fdf8f3;--surface:#fff;--text:#2d1f1a;--muted:#7a6b62;--accent:#b54b2a;--accent-deep:#8a3a20;--accent-light:#f5e6dd;--peach:#e8b89d;--border:#e5dcd5}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Source Sans 3',sans-serif;background:var(--cream);color:#4a3f38;line-height:1.7}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,248,243,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Libre Baskerville',serif;font-size:1.3rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:.5rem}
+        nav{display:flex;gap:2rem;align-items:center}
+        nav a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500}
+        .header-cta{background:var(--accent);color:#fff;padding:.7rem 1.4rem;text-decoration:none;font-weight:600;font-size:.85rem;border-radius:50px}
+        .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:6rem 2rem;gap:4rem;max-width:1300px;margin:0 auto}
+        .hero-content{animation:fadeInUp .8s ease-out}
+        .hero-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1.25rem;background:var(--accent-light);padding:.5rem 1rem;border-radius:50px}
+        .hero-title{font-family:'Libre Baskerville',serif;font-size:clamp(2.5rem,5vw,3.5rem);font-weight:700;line-height:1.15;margin-bottom:1.5rem;color:var(--text)}
+        .hero-title span{color:var(--accent)}
+        .hero-subtitle{font-size:1.05rem;color:var(--muted);margin-bottom:2rem;line-height:1.8}
+        .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+        .btn-primary{background:var(--accent);color:#fff;padding:1rem 2rem;text-decoration:none;font-weight:600;border-radius:50px;transition:all .3s}
+        .btn-primary:hover{background:var(--accent-deep);transform:translateY(-3px);box-shadow:0 12px 28px rgba(181,75,42,0.3)}
+        .hero-visual{position:relative}
+        .hero-image{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 12px 12px;box-shadow:0 24px 48px rgba(0,0,0,0.1)}
+        .floating-badge{position:absolute;bottom:2rem;left:-1rem;background:#fff;padding:1rem 1.5rem;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.08);font-family:'Libre Baskerville',serif}
+        .floating-badge span{display:block;font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+        .products{padding:6rem 2rem;background:var(--surface)}
+        .container{max-width:1100px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin-bottom:.75rem;font-weight:600}
+        .section-title{font-family:'Libre Baskerville',serif;font-size:clamp(1.75rem,3.5vw,2.25rem);color:var(--text)}
+        .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .product-card{background:var(--cream);border-radius:16px;overflow:hidden;transition:all .3s;text-align:center}
+        .product-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
+        .product-image{aspect-ratio:1;object-fit:cover;width:100%}
+        .product-content{padding:1.5rem}
+        .product-name{font-family:'Libre Baskerville',serif;font-size:1.1rem;color:var(--text);margin-bottom:.5rem}
+        .product-price{font-size:.9rem;color:var(--accent);font-weight:600}
+        .story{padding:6rem 2rem;background:var(--accent-light)}
+        .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .story-image{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
+        .story-content h2{font-family:'Libre Baskerville',serif;font-size:2rem;color:var(--text);margin-bottom:1.5rem}
+        .story-content p{margin-bottom:1rem;line-height:1.9}
+        .cta{padding:5rem 2rem;background:var(--accent);text-align:center;color:#fff}
+        .cta h2{font-family:'Libre Baskerville',serif;font-size:2rem;margin-bottom:1rem}
+        .cta p{opacity:.9;margin-bottom:2rem}
+        .cta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:800px;margin:0 auto 2rem}
+        .cta-item h3{font-size:1rem;margin-bottom:.5rem}
+        .cta-item p{font-size:.9rem;opacity:.85}
+        footer{background:var(--text);padding:3rem 2rem;color:#fff;text-align:center}
+        @media(max-width:1024px){.hero,.story-grid{grid-template-columns:1fr}.hero-visual{order:-1}.products-grid{grid-template-columns:repeat(2,1fr)}.cta-grid{grid-template-columns:1fr}}
+        @media(max-width:768px){nav{display:none}.products-grid{grid-template-columns:1fr}.floating-badge{display:none}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">🍑 Caskey Orchards</a>
+            <nav><a href="#products">Fruit</a><a href="#story">Our Story</a><a href="#visit">Visit</a></nav>
+            <a href="#visit" class="header-cta">Find Us</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">🌳 Family Orchard</span>
+            <h1 class="hero-title">Texas-Grown <span>Stone Fruit</span> & More</h1>
+            <p class="hero-subtitle">Four generations of fruit farming in the Hill Country. We bring the freshest peaches, plums, and pears to Austin's best farmers markets.</p>
+            <div class="hero-ctas">
+                <a href="#products" class="btn-primary">See What's Ripe</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="https://images.unsplash.com/photo-1595743825637-cdafc8ad4173?w=700&h=900&fit=crop" alt="Fresh peaches" class="hero-image">
+            <div class="floating-badge"><span>In Season</span>Hill Country Peaches</div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">Fresh Picked</p>
+                <h2 class="section-title">From Our Orchard</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1595743825637-cdafc8ad4173?w=500&h=500&fit=crop" class="product-image" alt="Peaches"><div class="product-content"><h3 class="product-name">Hill Country Peaches</h3><p class="product-price">$6/lb</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=500&h=500&fit=crop" class="product-image" alt="Plums"><div class="product-content"><h3 class="product-name">Santa Rosa Plums</h3><p class="product-price">$5/lb</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1514756331096-242fdeb70d4a?w=500&h=500&fit=crop" class="product-image" alt="Pears"><div class="product-content"><h3 class="product-name">Bartlett Pears</h3><p class="product-price">$5/lb</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story" id="story">
+        <div class="container">
+            <div class="story-grid">
+                <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=700&h=500&fit=crop" class="story-image" data-aos="fade-right" alt="Orchard">
+                <div class="story-content" data-aos="fade-left">
+                    <p class="section-label">Our Story</p>
+                    <h2>Four Generations of Fruit</h2>
+                    <p>The Caskey family has been growing fruit in Central Texas since 1952. What started as a small peach orchard has grown into 80 acres of stone fruit, citrus, and berries.</p>
+                    <p>We still pick everything by hand and bring it to market within 24 hours of harvest. That's freshness you can taste.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="visit">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Us at Market</h2>
+            <p>Fresh fruit every Saturday morning</p>
+            <div class="cta-grid">
+                <div class="cta-item"><h3>📍 Location</h3><p>Barton Creek Farmers Market</p></div>
+                <div class="cta-item"><h3>🕐 Hours</h3><p>Saturdays 9am–1pm</p></div>
+                <div class="cta-item"><h3>📞 Contact</h3><p>(512) 555-0202</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer><p>© 2026 Caskey Orchards • Central Texas</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

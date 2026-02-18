@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handmade by Maria | Artisan Jewelry & Crafts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root{--cream:#fdfbf7;--rose:#c9a87c;--blush:#f5e6e0;--text:#2d2926;--muted:#666}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);line-height:1.8;font-weight:300}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,251,247,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--text);text-decoration:none}
+        nav a{color:var(--muted);text-decoration:none;margin-left:2rem;font-size:.9rem}
+        .header-cta{background:var(--rose);color:#fff;padding:.7rem 1.5rem;border-radius:50px}
+        .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:6rem 2rem;gap:4rem;max-width:1300px;margin:0 auto}
+        .hero-content{max-width:500px}
+        .hero-badge{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);margin-bottom:1rem}
+        .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1.1;margin-bottom:1.5rem}
+        .hero-subtitle{color:var(--muted);margin-bottom:2rem}
+        .btn{display:inline-block;padding:1rem 2rem;text-decoration:none;font-weight:500;border-radius:50px;transition:all .3s;background:var(--rose);color:#fff}
+        .btn:hover{transform:translateY(-3px)}
+        .hero-image{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;box-shadow:0 24px 48px rgba(0,0,0,0.1)}
+        .products{padding:6rem 2rem;background:var(--blush)}
+        .container{max-width:1000px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);margin-bottom:.75rem}
+        .section-title{font-family:'Cormorant Garamond',serif;font-size:2.5rem}
+        .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .product-card{background:var(--cream);border-radius:16px;overflow:hidden;text-align:center;transition:all .3s}
+        .product-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
+        .product-image{aspect-ratio:1;object-fit:cover;width:100%}
+        .product-content{padding:1.5rem}
+        .product-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:.5rem}
+        .product-price{font-size:.9rem;color:var(--rose);font-weight:500}
+        .cta{padding:5rem 2rem;background:var(--rose);text-align:center;color:#fff}
+        .cta h2{font-family:'Cormorant Garamond',serif;font-size:2.5rem;margin-bottom:1rem}
+        .cta-grid{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem}
+        .cta-grid div strong{display:block;margin-bottom:.25rem}
+        footer{background:var(--text);padding:2rem;color:#fff;text-align:center}
+        @media(max-width:1024px){.hero{grid-template-columns:1fr}.hero-image{order:-1}.products-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){nav{display:none}.products-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">✨ Handmade by Maria</a>
+            <nav><a href="#products">Shop</a><a href="#visit" class="header-cta">Find Me</a></nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">💎 Artisan Jewelry</span>
+            <h1 class="hero-title">Jewelry Made with Heart</h1>
+            <p class="hero-subtitle">One-of-a-kind earrings, necklaces, and bracelets crafted by hand. Every piece is unique, just like you.</p>
+            <a href="#products" class="btn">Shop the Collection</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=700&h=900&fit=crop" alt="Handmade jewelry" class="hero-image">
+    </section>
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up"><p class="section-label">The Collection</p><h2 class="section-title">Handcrafted Pieces</h2></div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&h=500&fit=crop" class="product-image" alt="Earrings"><div class="product-content"><h3 class="product-name">Beaded Drop Earrings</h3><p class="product-price">$28</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&h=500&fit=crop" class="product-image" alt="Necklace"><div class="product-content"><h3 class="product-name">Layered Necklace Set</h3><p class="product-price">$45</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=500&h=500&fit=crop" class="product-image" alt="Bracelet"><div class="product-content"><h3 class="product-name">Charm Bracelet</h3><p class="product-price">$35</p></div></div>
+            </div>
+        </div>
+    </section>
+    <section class="cta" id="visit">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Me at the Flea</h2>
+            <p>New pieces every weekend</p>
+            <div class="cta-grid">
+                <div><strong>📍</strong>Austin Country Flea Market</div>
+                <div><strong>🕐</strong>Sat-Sun 9am–5pm</div>
+                <div><strong>📱</strong>@handmadebymaria</div>
+            </div>
+        </div>
+    </section>
+    <footer><p>© 2026 Handmade by Maria • Austin, TX</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

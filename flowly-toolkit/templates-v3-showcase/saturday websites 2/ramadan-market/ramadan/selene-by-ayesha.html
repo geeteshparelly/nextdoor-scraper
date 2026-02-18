@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selene by Ayesha | Elegant Designs</title>
+    <meta name="description" content="Selene by Ayesha - Elegant designs inspired by the moon. Discover beautiful, handcrafted pieces.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root { --bg: #0d0d12; --surface: #16161d; --text-light: #ffffff; --text-body: #a0a0a8; --text-muted: #6a6a72; --primary: #c9b8ff; --primary-dark: #a090d8; --accent: #ffd4a0; --border: #2a2a35; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text-body); line-height: 1.7; }
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,13,18,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+        .header-inner { max-width: 1100px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--text-light); text-decoration: none; font-style: italic; }
+        .logo span { color: var(--primary); }
+        nav a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin-left: 2rem; }
+        .header-cta { background: var(--primary); color: var(--bg); padding: 0.6rem 1.2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.85rem; }
+        
+        .hero { padding: 10rem 2rem 6rem; max-width: 1100px; margin: 0 auto; text-align: center; }
+        .hero-icon { font-size: 4rem; margin-bottom: 2rem; }
+        .hero-title { font-family: 'Cormorant Garamond', serif; font-size: 4rem; color: var(--text-light); line-height: 1.1; margin-bottom: 1.5rem; font-style: italic; }
+        .hero-subtitle { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .btn-primary { background: var(--primary); color: var(--bg); padding: 1rem 2rem; text-decoration: none; font-weight: 600; border-radius: 50px; display: inline-block; }
+        
+        .collection { padding: 6rem 2rem; }
+        .collection-inner { max-width: 1100px; margin: 0 auto; }
+        .section-title { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--text-light); text-align: center; margin-bottom: 3rem; font-style: italic; }
+        .collection-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .collection-card { background: var(--surface); border-radius: 20px; padding: 2rem; text-align: center; border: 1px solid var(--border); }
+        .collection-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .collection-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--text-light); margin-bottom: 0.5rem; }
+        .collection-card p { font-size: 0.95rem; color: var(--text-muted); }
+        
+        .cta { padding: 6rem 2rem; background: linear-gradient(135deg, var(--primary-dark) 0%, #7060a0 100%); color: white; text-align: center; }
+        .cta h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 1rem; font-style: italic; }
+        .cta p { opacity: 0.9; margin-bottom: 2rem; }
+        .cta-btn { background: white; color: var(--primary-dark); padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; }
+        
+        footer { padding: 3rem 2rem; background: var(--surface); color: var(--text-light); text-align: center; }
+        .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; margin-bottom: 1rem; font-style: italic; }
+        .social-links { display: flex; justify-content: center; gap: 1rem; margin: 1rem 0; }
+        .social-links a { width: 40px; height: 40px; background: var(--bg); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); text-decoration: none; }
+        
+        @media (max-width: 768px) { nav { display: none; } .hero-title { font-size: 2.5rem; } .collection-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">Selene <span>by Ayesha</span></a>
+            <nav><a href="#collection">Collection</a><a href="#contact">Contact</a></nav>
+            <a href="https://instagram.com/selenebyayesha" target="_blank" class="header-cta">Shop Now</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <img src="https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=150&q=80" alt="Moon" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:2rem;" data-aos="fade-up">
+        <h1 class="hero-title" data-aos="fade-up">Inspired by the Moon</h1>
+        <p class="hero-subtitle" data-aos="fade-up">Elegant designs that capture the ethereal beauty of moonlight. Each piece is crafted with intention, created to make you shine.</p>
+        <a href="https://instagram.com/selenebyayesha" target="_blank" class="btn-primary" data-aos="fade-up">Explore Collection</a>
+    </section>
+
+    <section class="collection" id="collection">
+        <div class="collection-inner">
+            <h2 class="section-title" data-aos="fade-up">Our Designs</h2>
+            <div class="collection-grid">
+                <div class="collection-card" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=80&q=80" alt="Celestial" style="width:60px;height:60px;border-radius:50%;object-fit:cover;">
+                    <h3>Celestial Collection</h3>
+                    <p>Moon and star inspired pieces</p>
+                </div>
+                <div class="collection-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=80&q=80" alt="Ethereal" style="width:60px;height:60px;border-radius:50%;object-fit:cover;">
+                    <h3>Ethereal Designs</h3>
+                    <p>Delicate, dreamy creations</p>
+                </div>
+                <div class="collection-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=80&q=80" alt="Custom" style="width:60px;height:60px;border-radius:50%;object-fit:cover;">
+                    <h3>Custom Pieces</h3>
+                    <p>Personalized just for you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <h2 data-aos="fade-up">Discover Your Moonlit Piece</h2>
+        <p data-aos="fade-up">Follow on Instagram to see our latest designs!</p>
+        <a href="https://instagram.com/selenebyayesha" target="_blank" class="cta-btn" data-aos="fade-up">@selenebyayesha →</a>
+    </section>
+
+    <footer>
+        <div class="footer-logo">Selene by Ayesha</div>
+        <div class="social-links"><a href="https://instagram.com/selenebyayesha" target="_blank">IG</a></div>
+        <p style="opacity:0.5;font-size:0.85rem;">© 2026 Selene by Ayesha. Inspired by the moon.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 600, once: true });</script>
+</body>
+</html>

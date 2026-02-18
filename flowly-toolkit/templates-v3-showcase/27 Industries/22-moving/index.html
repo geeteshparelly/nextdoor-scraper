@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swift Movers | Moving Company | Austin, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary:#1e3a5f;--secondary:#ff6b00;--slate:#2d3748;--light:#fff}
+    html{scroll-behavior:smooth}
+    body{font-family:'Rubik',sans-serif;color:#333;line-height:1.7}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(30,58,95,0.98);backdrop-filter:blur(10px);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Oswald',sans-serif;font-size:1.6rem;color:#fff;text-decoration:none;text-transform:uppercase;display:flex;align-items:center;gap:.5rem}
+    .logo span{color:var(--secondary)}
+    nav{display:flex;gap:2rem;align-items:center}
+    nav a{text-decoration:none;color:rgba(255,255,255,0.85);font-weight:500}
+    .nav-cta{background:var(--secondary);color:#fff;padding:.75rem 1.5rem}
+    .hero{min-height:100vh;background:linear-gradient(135deg,var(--primary),#0f1f33);display:flex;align-items:center;padding:0 5%}
+    .hero-content{max-width:650px;color:#fff;animation:fadeInUp 1s ease-out}
+    .hero h1{font-family:'Oswald',sans-serif;font-size:4rem;text-transform:uppercase;margin-bottom:1rem}
+    .hero h1 span{color:var(--secondary)}
+    .hero p{font-size:1.2rem;margin-bottom:2rem;opacity:.9}
+    .hero-features{display:flex;gap:2rem;margin-bottom:2rem}
+    .hero-feature{display:flex;align-items:center;gap:.5rem}
+    .feature-icon{width:30px;height:30px;background:var(--secondary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+    .btn{display:inline-block;padding:1rem 2rem;text-decoration:none;font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;transition:all .3s;background:var(--secondary);color:#fff}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(255,107,0,0.4)}
+    .services{padding:6rem 5%;background:var(--light)}
+    .section-title{text-align:center;margin-bottom:4rem}
+    .section-title h2{font-family:'Oswald',sans-serif;font-size:2.5rem;color:var(--primary);text-transform:uppercase}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1200px;margin:0 auto}
+    .service-card{background:#f8f9fa;padding:2rem;border-radius:8px;border-left:4px solid transparent;transition:all .3s}
+    .service-card:hover{transform:translateX(10px);border-left-color:var(--secondary)}
+    .service-icon{width:50px;height:50px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.5rem}
+    .service-card h3{font-family:'Oswald',sans-serif;color:var(--primary);text-transform:uppercase;margin-bottom:.5rem}
+    .cta{padding:6rem 5%;background:var(--secondary);text-align:center;color:#fff}
+    .cta h2{font-family:'Oswald',sans-serif;font-size:2.5rem;text-transform:uppercase;margin-bottom:1rem}
+    .cta-phone{display:inline-block;background:#fff;color:var(--secondary);padding:1.25rem 3rem;font-family:'Oswald',sans-serif;font-size:1.8rem;text-decoration:none}
+    footer{background:#0f1f33;color:#fff;padding:3rem 5%;text-align:center}
+    @media(max-width:768px){.hero h1{font-size:2.5rem}.hero-features{flex-direction:column;gap:1rem}nav{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">🚚 Swift<span>Movers</span></a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="tel:5125550144" class="nav-cta">Get Quote</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Moving <span>Austin</span> Forward</h1>
+      <p>Stress-free moving. We treat your belongings like our own.</p>
+      <div class="hero-features">
+        <div class="hero-feature"><span class="feature-icon">✓</span>Licensed & Insured</div>
+        <div class="hero-feature"><span class="feature-icon">✓</span>No Hidden Fees</div>
+      </div>
+      <a href="tel:5125550144" class="btn">Call (512) 555-0144</a>
+    </div>
+  </section>
+  <section class="services" id="services">
+    <div class="section-title" data-aos="fade-up"><h2>Moving Services</h2></div>
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up"><div class="service-icon">🏠</div><h3>Local Moving</h3><p>Same-day moves within Austin.</p></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100"><div class="service-icon">🗺️</div><h3>Long Distance</h3><p>Interstate moves with tracking.</p></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200"><div class="service-icon">📦</div><h3>Packing Services</h3><p>Full-service packing available.</p></div>
+    </div>
+  </section>
+  <section class="cta" data-aos="fade-up">
+    <h2>Ready to Move?</h2>
+    <p>Free estimates. No obligation.</p>
+    <a href="tel:5125550144" class="cta-phone">(512) 555-0144</a>
+  </section>
+  <footer><p>© 2026 Swift Movers. Austin, TX. TXDMV Licensed.</p></footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

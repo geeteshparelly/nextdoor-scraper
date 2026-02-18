@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cool Comfort HVAC | Austin, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;700;800&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--warm:#e63946;--cool:#457b9d;--accent:#a8dadc;--dark:#1d3557;--light:#f1faee}
+    html{scroll-behavior:smooth}
+    body{font-family:'Open Sans',sans-serif;color:#333;line-height:1.7}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Nunito Sans',sans-serif;font-size:1.6rem;color:var(--dark);text-decoration:none;font-weight:800}
+    .logo span{color:var(--cool)}
+    nav{display:flex;gap:2rem;align-items:center}
+    nav a{text-decoration:none;color:var(--dark);font-weight:600}
+    .nav-cta{background:linear-gradient(135deg,var(--warm),var(--cool));color:#fff;padding:.75rem 1.5rem;border-radius:8px;font-weight:700}
+    .hero{min-height:100vh;background:linear-gradient(135deg,var(--warm) 0%,var(--cool) 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 5%}
+    .hero-content{max-width:800px;color:#fff;animation:fadeInUp 1s ease-out}
+    .hero h1{font-family:'Nunito Sans',sans-serif;font-size:4rem;font-weight:800;margin-bottom:1.5rem}
+    .hero p{font-size:1.3rem;margin-bottom:2.5rem;opacity:.95}
+    .btn{display:inline-block;padding:1rem 2.5rem;border-radius:8px;font-family:'Nunito Sans',sans-serif;font-weight:700;text-decoration:none;transition:all .3s;background:#fff;color:var(--dark)}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(0,0,0,0.2)}
+    .services{padding:6rem 5%;background:var(--light)}
+    .section-title{text-align:center;margin-bottom:4rem}
+    .section-title h2{font-family:'Nunito Sans',sans-serif;font-size:2.5rem;color:var(--dark)}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1200px;margin:0 auto}
+    .service-card{background:#fff;padding:2.5rem;border-radius:16px;text-align:center;transition:all .3s;border-top:4px solid transparent}
+    .service-card.heating{border-top-color:var(--warm)}
+    .service-card.cooling{border-top-color:var(--cool)}
+    .service-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,0.1)}
+    .service-icon{width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:2rem}
+    .heating .service-icon{background:linear-gradient(135deg,var(--warm),#ff6b6b)}
+    .cooling .service-icon{background:linear-gradient(135deg,var(--cool),var(--accent))}
+    .service-card h3{font-family:'Nunito Sans',sans-serif;color:var(--dark);margin-bottom:1rem}
+    .cta{padding:6rem 5%;background:linear-gradient(135deg,var(--cool),var(--dark));text-align:center;color:#fff}
+    .cta h2{font-family:'Nunito Sans',sans-serif;font-size:2.5rem;margin-bottom:1rem}
+    .cta-phone{display:inline-block;background:#fff;color:var(--dark);padding:1.25rem 3rem;border-radius:8px;font-family:'Nunito Sans',sans-serif;font-size:1.8rem;font-weight:800;text-decoration:none}
+    footer{background:#0d1b2a;color:#fff;padding:3rem 5%;text-align:center}
+    @media(max-width:768px){.hero h1{font-size:2.5rem}nav{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Cool<span>Comfort</span></a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="tel:5125550132" class="nav-cta">Call Now</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Keep Your Cool</h1>
+      <p>Austin's trusted HVAC experts. From emergency repairs to complete system installation.</p>
+      <a href="tel:5125550132" class="btn">Call (512) 555-0132</a>
+    </div>
+  </section>
+  <section class="services" id="services">
+    <div class="section-title" data-aos="fade-up"><h2>Heating & Cooling</h2></div>
+    <div class="services-grid">
+      <div class="service-card cooling" data-aos="fade-up"><div class="service-icon">❄️</div><h3>AC Repair</h3><p>Fast, reliable air conditioning repair.</p></div>
+      <div class="service-card heating" data-aos="fade-up" data-aos-delay="100"><div class="service-icon">🔥</div><h3>Heating Repair</h3><p>Furnace and heat pump repairs.</p></div>
+      <div class="service-card cooling" data-aos="fade-up" data-aos-delay="200"><div class="service-icon">🏠</div><h3>Installation</h3><p>New HVAC systems installed.</p></div>
+    </div>
+  </section>
+  <section class="cta" data-aos="fade-up">
+    <h2>Need HVAC Service?</h2>
+    <p>Free estimates. 24/7 emergency service.</p>
+    <a href="tel:5125550132" class="cta-phone">(512) 555-0132</a>
+  </section>
+  <footer><p>© 2026 Cool Comfort HVAC. Austin, TX. TACLA #12345.</p></footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

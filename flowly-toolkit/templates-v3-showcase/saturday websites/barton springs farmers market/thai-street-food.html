@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Street Food | Authentic Thai at Austin Markets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        :root{--cream:#fffbf5;--gold:#d4a84b;--red:#c41e3a;--green:#2d5016;--text:#1a1a1a;--muted:#666}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;font-weight:300}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,251,245,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--red);text-decoration:none;letter-spacing:.05em}
+        nav{display:flex;gap:2rem}
+        nav a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500}
+        .header-cta{background:var(--red);color:#fff;padding:.7rem 1.5rem;text-decoration:none;font-weight:500;font-size:.85rem;border-radius:50px}
+        .hero{min-height:100vh;background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1562565652-a0d8f0c59eb4?w=1920&h=1080&fit=crop');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
+        .hero-content{max-width:700px;padding:2rem;animation:fadeInUp 1s ease-out}
+        .hero-badge{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+        .hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,10vw,7rem);line-height:.95;margin-bottom:1.5rem;letter-spacing:.02em}
+        .hero-subtitle{font-size:1.1rem;margin-bottom:2.5rem;opacity:.9}
+        .btn{display:inline-block;padding:1rem 2.5rem;text-decoration:none;font-weight:500;border-radius:50px;transition:all .3s}
+        .btn-primary{background:var(--gold);color:var(--text)}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(0,0,0,0.3)}
+        .menu{padding:6rem 2rem;background:var(--cream)}
+        .container{max-width:1000px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.75rem;font-weight:600}
+        .section-title{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:.02em}
+        .menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+        .menu-item{background:#fff;padding:2rem;border-radius:12px;display:flex;gap:1.5rem;transition:all .3s}
+        .menu-item:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,0.08)}
+        .menu-image{width:90px;height:90px;border-radius:8px;object-fit:cover;flex-shrink:0}
+        .menu-content{flex:1}
+        .menu-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem}
+        .menu-name{font-weight:600;font-size:1.05rem}
+        .menu-price{color:var(--red);font-weight:600}
+        .menu-desc{font-size:.85rem;color:var(--muted)}
+        .spice{color:var(--red);font-size:.8rem}
+        .story{padding:6rem 2rem;background:var(--green);color:#fff}
+        .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .story-image{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
+        .story-content h2{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;margin-bottom:1.5rem;letter-spacing:.02em}
+        .story-content p{opacity:.9;margin-bottom:1rem}
+        .cta{padding:5rem 2rem;background:var(--red);text-align:center;color:#fff}
+        .cta h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;margin-bottom:1rem;letter-spacing:.02em}
+        .cta p{opacity:.9;margin-bottom:2rem}
+        .cta-grid{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
+        .cta-item{text-align:center}
+        .cta-item strong{display:block;font-size:1.1rem;margin-bottom:.25rem}
+        footer{background:var(--text);padding:2rem;color:#fff;text-align:center;font-size:.85rem}
+        @media(max-width:1024px){.story-grid{grid-template-columns:1fr}.menu-grid{grid-template-columns:1fr}}
+        @media(max-width:768px){nav{display:none}.hero-title{font-size:4rem}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">THAI STREET FOOD</a>
+            <nav><a href="#menu">Menu</a><a href="#story">About</a><a href="#find">Find Us</a></nav>
+            <a href="#find" class="header-cta">Find Us</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-badge">🌶️ Authentic Thai</p>
+            <h1 class="hero-title">STREET FOOD FROM BANGKOK</h1>
+            <p class="hero-subtitle">Real Thai flavors made fresh at Austin's farmers markets. Pad Thai, curries, and more — just like the streets of Thailand.</p>
+            <a href="#menu" class="btn btn-primary">See Menu</a>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">Our Menu</p>
+                <h2 class="section-title">FRESH & AUTHENTIC</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1559314809-0d155014e29e?w=200&h=200&fit=crop" class="menu-image" alt="Pad Thai"><div class="menu-content"><div class="menu-header"><span class="menu-name">Pad Thai</span><span class="menu-price">$12</span></div><p class="menu-desc">Rice noodles, tamarind, egg, peanuts. Chicken or tofu.</p></div></div>
+                <div class="menu-item" data-aos="fade-up" data-aos-delay="50"><img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=200&h=200&fit=crop" class="menu-image" alt="Green Curry"><div class="menu-content"><div class="menu-header"><span class="menu-name">Green Curry</span><span class="menu-price">$13</span></div><p class="menu-desc">Coconut curry, Thai basil, bamboo. <span class="spice">🌶️ Spicy</span></p></div></div>
+                <div class="menu-item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?w=200&h=200&fit=crop" class="menu-image" alt="Som Tam"><div class="menu-content"><div class="menu-header"><span class="menu-name">Som Tam (Papaya Salad)</span><span class="menu-price">$9</span></div><p class="menu-desc">Green papaya, tomatoes, peanuts, lime. <span class="spice">🌶️🌶️ Hot</span></p></div></div>
+                <div class="menu-item" data-aos="fade-up" data-aos-delay="50"><img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=200&h=200&fit=crop" class="menu-image" alt="Mango Sticky Rice"><div class="menu-content"><div class="menu-header"><span class="menu-name">Mango Sticky Rice</span><span class="menu-price">$7</span></div><p class="menu-desc">Sweet coconut rice with fresh mango.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story" id="story">
+        <div class="container">
+            <div class="story-grid">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&h=525&fit=crop" class="story-image" data-aos="fade-right" alt="Thai cooking">
+                <div class="story-content" data-aos="fade-left">
+                    <p class="section-label" style="color:var(--gold)">Our Story</p>
+                    <h2>FROM BANGKOK TO AUSTIN</h2>
+                    <p>I grew up cooking with my grandmother in Bangkok. When I moved to Texas, I brought her recipes with me.</p>
+                    <p>Every dish is made fresh with authentic ingredients — fish sauce from Thailand, fresh herbs, and real coconut milk. No shortcuts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="find">
+        <div class="container" data-aos="fade-up">
+            <h2>FIND US AT MARKET</h2>
+            <p>Fresh Thai food every Saturday</p>
+            <div class="cta-grid">
+                <div class="cta-item"><strong>📍 Location</strong>Barton Creek Farmers Market</div>
+                <div class="cta-item"><strong>🕐 Hours</strong>Saturdays 9am–1pm</div>
+                <div class="cta-item"><strong>📞 Pre-Order</strong>(512) 555-0215</div>
+            </div>
+        </div>
+    </section>
+
+    <footer><p>© 2026 Thai Street Food • Austin, TX</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

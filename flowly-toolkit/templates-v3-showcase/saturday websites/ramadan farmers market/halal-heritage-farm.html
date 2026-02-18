@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halal Heritage Farm | Pasture-Raised Halal Meats</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root{--cream:#f9f7f3;--green:#2d5a27;--gold:#c9a227;--earth:#5c4033;--text:#2a2a26}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Source Sans 3',sans-serif;background:var(--cream);color:var(--text);line-height:1.8}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(249,247,243,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--text);text-decoration:none}
+        nav a{color:#666;text-decoration:none;margin-left:2rem;font-size:.9rem}
+        .header-cta{background:var(--green);color:#fff;padding:.7rem 1.5rem;border-radius:50px}
+        .hero{min-height:100vh;display:flex;align-items:center;padding:6rem 2rem;background:linear-gradient(135deg,var(--cream) 0%,#e8e4dc 100%)}
+        .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .hero-content{max-width:500px}
+        .hero-badge{font-size:.8rem;color:var(--green);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1rem;background:rgba(45,90,39,0.1);display:inline-block;padding:.5rem 1rem;border-radius:50px}
+        .hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3rem);line-height:1.2;margin-bottom:1.5rem}
+        .hero-title span{color:var(--green)}
+        .hero-subtitle{color:#666;margin-bottom:2rem}
+        .hero-features{display:flex;gap:1.5rem;margin-bottom:2rem;flex-wrap:wrap}
+        .hero-feature{font-size:.9rem;display:flex;align-items:center;gap:.5rem}
+        .btn{display:inline-block;padding:1rem 2rem;text-decoration:none;font-weight:500;border-radius:50px;transition:all .3s;background:var(--green);color:#fff}
+        .btn:hover{transform:translateY(-3px)}
+        .hero-image{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:0 24px 48px rgba(0,0,0,0.1)}
+        .products{padding:6rem 2rem;background:#fff}
+        .container{max-width:1000px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.2em;color:var(--green);margin-bottom:.75rem}
+        .section-title{font-family:'Playfair Display',serif;font-size:2rem}
+        .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .product-card{background:var(--cream);border-radius:16px;overflow:hidden;text-align:center;transition:all .3s}
+        .product-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
+        .product-image{aspect-ratio:1;object-fit:cover;width:100%}
+        .product-content{padding:1.5rem}
+        .product-name{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:.5rem}
+        .product-price{font-size:.9rem;color:var(--green);font-weight:500}
+        .values{padding:5rem 2rem;background:var(--green);color:#fff}
+        .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center;max-width:900px;margin:0 auto}
+        .value-icon{font-size:2rem;margin-bottom:1rem}
+        .value-title{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:.5rem}
+        .value-desc{font-size:.9rem;opacity:.9}
+        .cta{padding:5rem 2rem;background:var(--earth);text-align:center;color:#fff}
+        .cta h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem}
+        .cta-grid{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem}
+        .cta-grid div strong{display:block;color:var(--gold);margin-bottom:.25rem}
+        footer{background:var(--text);padding:2rem;color:#fff;text-align:center}
+        @media(max-width:1024px){.hero-inner{grid-template-columns:1fr}.hero-image{order:-1}.products-grid,.values-grid{grid-template-columns:1fr}}
+        @media(max-width:768px){nav{display:none}.hero-features{flex-direction:column;gap:.75rem}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">☪️ Halal Heritage Farm</a>
+            <nav><a href="#products">Products</a><a href="#values">Our Values</a><a href="#visit" class="header-cta">Find Us</a></nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge">✓ Certified Halal</span>
+                <h1 class="hero-title">Pasture-Raised <span>Halal Meats</span></h1>
+                <p class="hero-subtitle">Ethically raised, hand-slaughtered according to Islamic tradition. From our family farm to your family table.</p>
+                <div class="hero-features">
+                    <span class="hero-feature">✓ Zabiha Halal</span>
+                    <span class="hero-feature">✓ Pasture-Raised</span>
+                    <span class="hero-feature">✓ No Antibiotics</span>
+                </div>
+                <a href="#products" class="btn">Our Products</a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=800&h=600&fit=crop" alt="Farm" class="hero-image">
+        </div>
+    </section>
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up"><p class="section-label">Our Meats</p><h2 class="section-title">Fresh Halal Cuts</h2></div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1588168333986-5078d3ae3976?w=500&h=500&fit=crop" class="product-image" alt="Lamb"><div class="product-content"><h3 class="product-name">Whole Lamb</h3><p class="product-price">$12/lb</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1603048297172-c92544798d5a?w=500&h=500&fit=crop" class="product-image" alt="Beef"><div class="product-content"><h3 class="product-name">Ground Beef</h3><p class="product-price">$9/lb</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1587593810167-a84920ea0781?w=500&h=500&fit=crop" class="product-image" alt="Chicken"><div class="product-content"><h3 class="product-name">Whole Chicken</h3><p class="product-price">$18/bird</p></div></div>
+            </div>
+        </div>
+    </section>
+    <section class="values" id="values">
+        <div class="container">
+            <div class="values-grid">
+                <div class="value-item" data-aos="zoom-in"><div class="value-icon">☪️</div><h3 class="value-title">Zabiha Halal</h3><p class="value-desc">Hand-slaughtered with prayer</p></div>
+                <div class="value-item" data-aos="zoom-in" data-aos-delay="100"><div class="value-icon">🌿</div><h3 class="value-title">Grass-Fed</h3><p class="value-desc">Natural diet, no hormones</p></div>
+                <div class="value-item" data-aos="zoom-in" data-aos-delay="200"><div class="value-icon">👨‍👩‍👧</div><h3 class="value-title">Family Farm</h3><p class="value-desc">Local & sustainable</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="cta" id="visit">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Us at Market</h2>
+            <p>Fresh halal meats available at local markets</p>
+            <div class="cta-grid">
+                <div><strong>📍</strong>ATX Ramadan Bazaar</div>
+                <div><strong>🕐</strong>Check schedule</div>
+                <div><strong>📞</strong>(512) 555-0301</div>
+            </div>
+        </div>
+    </section>
+    <footer><p>© 2026 Halal Heritage Farm • Central Texas</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

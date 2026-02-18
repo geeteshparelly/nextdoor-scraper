@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahara Spice House | Middle Eastern Spices in Austin</title>
+    <meta name="description" content="Sahara Spice House - Authentic Middle Eastern spices, za'atar, sumac, and spice blends. Find us at ATX Ramadan Bazaar.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        
+        header { animation: fadeInDown 0.6s ease-out; }
+        .hero-badge { animation: fadeIn 0.6s ease-out 0.2s both; }
+        .hero-title { animation: fadeInUp 0.7s ease-out 0.1s both; }
+        .hero-subtitle { animation: fadeIn 0.6s ease-out 0.3s both; }
+        .hero-ctas { animation: fadeInUp 0.6s ease-out 0.5s both; }
+        .hero-visual { animation: scaleIn 0.8s ease-out 0.3s both; }
+
+        :root {
+            --bg: #fdf9f3;
+            --bg-warm: #f8f0e3;
+            --surface: #ffffff;
+            --text-dark: #2a1f14;
+            --text-body: #5a4a3a;
+            --text-muted: #8a7a6a;
+            --saffron: #d4a24c;
+            --saffron-deep: #b8892e;
+            --saffron-light: #faf0d8;
+            --spice: #c4593a;
+            --border: #ebe2d4;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Outfit', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(253, 249, 243, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav { display: flex; gap: 2.5rem; align-items: center; }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--saffron); }
+
+        .header-cta {
+            background: var(--saffron);
+            color: white;
+            padding: 0.7rem 1.4rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            transition: all 0.2s;
+        }
+
+        .header-cta:hover { background: var(--saffron-deep); }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 5rem;
+            background: linear-gradient(180deg, var(--bg) 0%, var(--saffron-light) 100%);
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content { max-width: 520px; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--saffron-deep);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-title span { color: var(--spice); }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn-primary {
+            background: var(--saffron);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-primary:hover { background: var(--saffron-deep); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(212, 162, 76, 0.4); }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-secondary:hover { border-color: var(--saffron); color: var(--saffron); }
+
+        .hero-visual { position: relative; }
+
+        .hero-image-main {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.12);
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .products-section { padding: 6rem 2rem; background: var(--surface); }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--saffron); margin-bottom: 0.75rem; font-weight: 600; }
+        .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.75rem, 3.5vw, 2.5rem); color: var(--text-dark); }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease-out;
+            text-align: center;
+        }
+
+        .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.1); }
+
+        .product-image {
+            aspect-ratio: 1;
+            object-fit: cover;
+            width: 100%;
+            display: block;
+            transition: transform 0.4s ease-out;
+        }
+
+        .product-card:hover .product-image { transform: scale(1.05); }
+        .product-content { padding: 1.25rem; }
+        .product-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text-dark); margin-bottom: 0.25rem; font-weight: 600; }
+        .product-price { font-size: 0.85rem; color: var(--saffron); font-weight: 600; }
+
+        .about-section { padding: 6rem 2rem; background: var(--bg-warm); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 12px;
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+        }
+
+        .about-content { max-width: 480px; }
+        .about-text { font-size: 1rem; color: var(--text-body); margin: 1.5rem 0; line-height: 1.9; }
+
+        .contact-section { padding: 6rem 2rem; background: var(--saffron); color: white; }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .contact-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 1rem; font-weight: 600; }
+        .contact-card p { font-size: 0.95rem; opacity: 0.95; line-height: 1.7; }
+        .contact-card a { color: white; text-decoration: underline; }
+
+        footer { background: var(--text-dark); padding: 3rem 2rem; color: white; text-align: center; }
+        footer p { font-size: 0.9rem; opacity: 0.7; }
+
+        @media (max-width: 1024px) {
+            .hero-inner, .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-visual { order: -1; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero { padding: 6rem 1.5rem 3rem; }
+            .products-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">Sahara Spice House</a>
+            <nav>
+                <a href="#spices">Spices</a>
+                <a href="#about">Our Story</a>
+                <a href="#contact">Find Us</a>
+            </nav>
+            <a href="#contact" class="header-cta">Visit Us</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge">Authentic Middle Eastern</span>
+                <h1 class="hero-title">Spices That Tell <span>Stories</span></h1>
+                <p class="hero-subtitle">From za'atar to sumac, saffron to baharat — we bring you the authentic flavors of the Middle East. Hand-blended spices sourced directly from family farms.</p>
+                <div class="hero-ctas">
+                    <a href="#spices" class="btn-primary">Browse Spices</a>
+                    <a href="#contact" class="btn-secondary">Find Us</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-main">
+                    <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&h=600&fit=crop" alt="Colorful spices in bowls" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section" id="spices">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">Our Collection</p>
+                <h2 class="section-title">Authentic Spices & Blends</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1599909533706-cd57c89bcc75?w=400&h=400&fit=crop" alt="Za'atar" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Palestinian Za'atar</h3>
+                        <p class="product-price">$8 / 4oz</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+                    <img src="https://images.unsplash.com/photo-1506368249639-73a05d6f6488?w=400&h=400&fit=crop" alt="Saffron" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Persian Saffron</h3>
+                        <p class="product-price">$18 / gram</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=400&h=400&fit=crop" alt="Sumac" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Wild Sumac</h3>
+                        <p class="product-price">$7 / 4oz</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://images.unsplash.com/photo-1528750997573-59b89d56f4f7?w=400&h=400&fit=crop" alt="Baharat" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Baharat Blend</h3>
+                        <p class="product-price">$9 / 4oz</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=400&h=400&fit=crop" alt="Cumin" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Whole Cumin</h3>
+                        <p class="product-price">$6 / 4oz</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+                    <img src="https://images.unsplash.com/photo-1509358271058-adc04a880eb5?w=400&h=400&fit=crop" alt="Cardamom" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Green Cardamom</h3>
+                        <p class="product-price">$12 / 2oz</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1608198093002-ad4e005e2a68?w=400&h=400&fit=crop" alt="Ras el Hanout" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Ras el Hanout</h3>
+                        <p class="product-price">$10 / 4oz</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://images.unsplash.com/photo-1518977676601-b53f82ber5f9?w=400&h=400&fit=crop" alt="Shawarma Spice" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Shawarma Spice</h3>
+                        <p class="product-price">$8 / 4oz</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <img src="https://images.unsplash.com/photo-1606914501449-5a96b6ce24ca?w=800&h=600&fit=crop" alt="Spice market" class="about-image" data-aos="fade-right">
+                <div class="about-content" data-aos="fade-left">
+                    <p class="section-label">Our Story</p>
+                    <h2 class="section-title">Flavors From Home</h2>
+                    <p class="about-text">Sahara Spice House was born from homesickness. When our family moved to Austin, we missed the flavors we grew up with — the za'atar from grandmother's kitchen, the saffron from the markets of Tehran, the sumac picked from wild bushes.</p>
+                    <p class="about-text">We started sourcing spices from the same farms and markets we remembered, and now we share those flavors with you. Every spice is hand-selected, freshly ground, and blended with recipes passed down through generations.</p>
+                    <p class="about-text">Come taste the difference that real spices make.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>ATX Ramadan Bazaar</h3>
+                    <p>Palmer Events Center<br>900 Barton Springs Rd<br>Saturdays during Ramadan</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Custom Blends</h3>
+                    <p>Need a specific blend?<br>We can create custom<br>spice mixes for you.</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Get In Touch</h3>
+                    <p><a href="mailto:hello@saharaspice.com">hello@saharaspice.com</a><br>@saharaspicehouse<br>Austin, TX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Sahara Spice House. Bringing authentic flavors to Austin.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true, offset: 100 });</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NationGem | Premium Gemstone Jewelry</title>
+    <meta name="description" content="NationGem - Discover premium gemstone jewelry. Beautiful, authentic pieces crafted with care.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root { --bg: #f9f8f6; --surface: #fff; --text-dark: #1a1a1a; --text-body: #555; --text-muted: #888; --primary: #2d4a3e; --primary-dark: #1e3329; --primary-light: #e8f0ed; --accent: #c4a35a; --border: #e5e0d8; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text-body); line-height: 1.7; }
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(249,248,246,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+        .header-inner { max-width: 1100px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--text-dark); text-decoration: none; font-weight: 600; }
+        .logo span { color: var(--accent); }
+        nav a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin-left: 2rem; }
+        .header-cta { background: var(--primary); color: white; padding: 0.6rem 1.2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.85rem; }
+        
+        .hero { padding: 10rem 2rem 6rem; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero-title { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: var(--text-dark); line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero-subtitle { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; }
+        .btn-primary { background: var(--primary); color: white; padding: 1rem 2rem; text-decoration: none; font-weight: 600; border-radius: 50px; display: inline-block; }
+        .hero-image { width: 100%; height: 500px; object-fit: cover; border-radius: 24px; }
+        
+        .collection { padding: 6rem 2rem; background: white; }
+        .collection-inner { max-width: 1100px; margin: 0 auto; }
+        .section-title { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--text-dark); text-align: center; margin-bottom: 3rem; }
+        .collection-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .collection-item { text-align: center; }
+        .collection-icon { width: 90px; height: 90px; background: var(--primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 1rem; }
+        .collection-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text-dark); }
+        
+        .cta { padding: 6rem 2rem; background: var(--primary); color: white; text-align: center; }
+        .cta h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 1rem; }
+        .cta p { opacity: 0.9; margin-bottom: 2rem; }
+        .cta-btn { background: white; color: var(--primary); padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; }
+        
+        footer { padding: 3rem 2rem; background: var(--text-dark); color: white; text-align: center; }
+        .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; margin-bottom: 1rem; }
+        .social-links { display: flex; justify-content: center; gap: 1rem; margin: 1rem 0; }
+        .social-links a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; }
+        
+        @media (max-width: 1024px) { .hero { grid-template-columns: 1fr; text-align: center; } .hero-image { order: -1; height: 400px; } .collection-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { nav { display: none; } .hero-title { font-size: 2.5rem; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">Nation<span>Gem</span></a>
+            <nav><a href="#collection">Collection</a><a href="#contact">Contact</a></nav>
+            <a href="https://instagram.com/nationgemstore" target="_blank" class="header-cta">Shop Now</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title" data-aos="fade-up">Discover the Beauty of Gemstones</h1>
+            <p class="hero-subtitle" data-aos="fade-up">Premium gemstone jewelry crafted with care. Each piece is selected for its unique beauty and authentic quality.</p>
+            <a href="https://instagram.com/nationgemstore" target="_blank" class="btn-primary" data-aos="fade-up">Explore Collection</a>
+        </div>
+        <div class="hero-visual" data-aos="fade-left">
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80" alt="Gemstone jewelry" class="hero-image">
+        </div>
+    </section>
+
+    <section class="collection" id="collection">
+        <div class="collection-inner">
+            <h2 class="section-title" data-aos="fade-up">Our Collections</h2>
+            <div class="collection-grid">
+                <div class="collection-item" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=100&q=80" alt="Rings" style="width:90px;height:90px;border-radius:50%;object-fit:cover;">
+                    <h3>Rings</h3>
+                </div>
+                <div class="collection-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=100&q=80" alt="Necklaces" style="width:90px;height:90px;border-radius:50%;object-fit:cover;">
+                    <h3>Necklaces</h3>
+                </div>
+                <div class="collection-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=100&q=80" alt="Earrings" style="width:90px;height:90px;border-radius:50%;object-fit:cover;">
+                    <h3>Earrings</h3>
+                </div>
+                <div class="collection-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=100&q=80" alt="Bracelets" style="width:90px;height:90px;border-radius:50%;object-fit:cover;">
+                    <h3>Bracelets</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <h2 data-aos="fade-up">Find Your Perfect Gemstone</h2>
+        <p data-aos="fade-up">Follow us on Instagram to see our latest pieces and shop!</p>
+        <a href="https://instagram.com/nationgemstore" target="_blank" class="cta-btn" data-aos="fade-up">@nationgemstore →</a>
+    </section>
+
+    <footer>
+        <div class="footer-logo">NationGem</div>
+        <div class="social-links"><a href="https://instagram.com/nationgemstore" target="_blank">IG</a></div>
+        <p style="opacity:0.5;font-size:0.85rem;">© 2026 NationGem. Premium Gemstone Jewelry.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 600, once: true });</script>
+</body>
+</html>

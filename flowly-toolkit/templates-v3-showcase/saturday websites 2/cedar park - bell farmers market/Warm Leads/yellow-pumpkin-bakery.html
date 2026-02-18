@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Yellow Pumpkin Bakery | Micro Bakery in Austin, TX</title>
+    <meta name="description" content="The Yellow Pumpkin Bakery - A cozy female and queer-owned micro bakery in Austin, Texas celebrating diversity and creativity through delicious baked goods.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fffbf5;
+            --surface: #ffffff;
+            --text-dark: #2a2520;
+            --text-body: #5c554d;
+            --text-muted: #8c857a;
+            --primary: #e8a838;
+            --primary-dark: #d4942a;
+            --primary-light: #fff8eb;
+            --accent: #6b5b4f;
+            --accent-light: #f5f0ea;
+            --border: #ebe5dc;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 251, 245, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Fraunces', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+        }
+
+        nav { display: flex; gap: 2rem; align-items: center; }
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: var(--primary); }
+
+        .header-cta {
+            background: var(--primary);
+            color: white;
+            padding: 0.65rem 1.3rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            transition: all 0.2s;
+        }
+        .header-cta:hover { background: var(--primary-dark); }
+
+        /* Hero */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .hero-badge.pride {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 25%, #6bcb77 50%, #4d96ff 75%, #9b59b6 100%);
+            color: white;
+        }
+
+        .hero-title {
+            font-family: 'Fraunces', serif;
+            font-size: 4rem;
+            color: var(--text-dark);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero-title span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            border: 2px solid var(--border);
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover { border-color: var(--text-dark); }
+
+        .hero-image-container {
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 900px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.12);
+        }
+
+        .floating-card {
+            position: absolute;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .floating-card.left {
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .floating-card.right {
+            right: -30px;
+            bottom: 60px;
+        }
+
+        .floating-card .icon {
+            font-size: 2rem;
+        }
+
+        .floating-card .text {
+            text-align: left;
+        }
+
+        .floating-card .text strong {
+            display: block;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        .floating-card .text span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .about-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .about-content h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--text-body);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .values-list {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .value-item .check {
+            width: 24px;
+            height: 24px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        /* Menu Preview */
+        .menu {
+            padding: 6rem 2rem;
+            background: var(--bg);
+        }
+
+        .menu-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: 'Fraunces', serif;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+        }
+
+        .menu-item .emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .menu-item h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 6rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            opacity: 0.9;
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            background: white;
+            color: var(--primary-dark);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .social-links a:hover { background: var(--primary); }
+
+        .footer-text {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-inner { grid-template-columns: 1fr; }
+            .floating-card { display: none; }
+            .menu-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero-title { font-size: 2.5rem; }
+            .section-title { font-size: 1.8rem; }
+            .menu-grid { grid-template-columns: 1fr; }
+            .hero-badges { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <span class="logo-icon">🎃</span>
+                The Yellow Pumpkin
+            </a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#menu">Menu</a>
+                <a href="#order">Order</a>
+            </nav>
+            <a href="#order" class="header-cta">Order Now</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-badges" data-aos="fade-up">
+            <span class="hero-badge pride">🏳️‍🌈 Queer-Owned</span>
+            <span class="hero-badge">👩‍🍳 Female-Owned</span>
+            <span class="hero-badge">🎃 Micro Bakery</span>
+        </div>
+        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">Baked with <span>Joy</span>, Served with Pride</h1>
+        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">A cozy micro bakery in the heart of Austin, celebrating diversity and creativity through every delicious bite.</p>
+        <div class="hero-ctas" data-aos="fade-up" data-aos-delay="300">
+            <a href="#order" class="btn-primary">🛒 Order Online</a>
+            <a href="#menu" class="btn-secondary">See Our Menu</a>
+        </div>
+        <div class="hero-image-container" data-aos="zoom-in" data-aos-delay="400">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1000&q=80" alt="Fresh baked goods" class="hero-image">
+            <div class="floating-card left">
+                <span class="icon">🧁</span>
+                <div class="text">
+                    <strong>Small Batch</strong>
+                    <span>Made Fresh Daily</span>
+                </div>
+            </div>
+            <div class="floating-card right">
+                <span class="icon">💛</span>
+                <div class="text">
+                    <strong>Made with Love</strong>
+                    <span>In Austin, TX</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-inner">
+            <img src="https://images.unsplash.com/photo-1556217477-d325251ece38?w=800&q=80" alt="Bakery kitchen" class="about-image" data-aos="fade-right">
+            <div class="about-content" data-aos="fade-left">
+                <h2>Welcome to Our Little Corner of Austin</h2>
+                <p>The Yellow Pumpkin Bakery is a cozy micro bakery nestled in the heart of Austin, Texas. We take pride in being a female and queer-owned establishment, creating a space that celebrates diversity and creativity.</p>
+                <p>Every item is baked in small batches with love, attention, and the finest ingredients we can find.</p>
+                <div class="values-list">
+                    <div class="value-item">
+                        <span class="check">✓</span>
+                        Small-batch, artisan baking
+                    </div>
+                    <div class="value-item">
+                        <span class="check">✓</span>
+                        Locally sourced ingredients
+                    </div>
+                    <div class="value-item">
+                        <span class="check">✓</span>
+                        Community-focused business
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <div class="menu-inner">
+            <p class="section-label" data-aos="fade-up">What We Bake</p>
+            <h2 class="section-title" data-aos="fade-up">Our Menu</h2>
+            <p class="section-subtitle" data-aos="fade-up">Fresh baked goods made with love. Menu varies weekly based on seasonal ingredients!</p>
+            
+            <div class="menu-grid">
+                <div class="menu-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="emoji">🥐</div>
+                    <h3>Pastries</h3>
+                    <p>Flaky croissants & danishes</p>
+                </div>
+                <div class="menu-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="emoji">🍪</div>
+                    <h3>Cookies</h3>
+                    <p>Classic & creative flavors</p>
+                </div>
+                <div class="menu-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="emoji">🧁</div>
+                    <h3>Cupcakes</h3>
+                    <p>Beautifully decorated treats</p>
+                </div>
+                <div class="menu-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="emoji">🍞</div>
+                    <h3>Breads</h3>
+                    <p>Artisan loaves & rolls</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="order">
+        <h2 data-aos="fade-up">Ready for Something Sweet?</h2>
+        <p data-aos="fade-up" data-aos-delay="100">Order online or find us at your local farmers market!</p>
+        <a href="https://www.hotplate.com/theyellowpumpkinbakery" target="_blank" class="cta-btn" data-aos="fade-up" data-aos-delay="200">
+            Order on Hotplate →
+        </a>
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            <span>🎃</span> The Yellow Pumpkin Bakery
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/theyellowpumpkinbakery/" target="_blank">IG</a>
+        </div>
+        <p class="footer-text">© 2026 The Yellow Pumpkin Bakery. Made with 💛 in Austin, TX</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 600, once: true });</script>
+</body>
+</html>

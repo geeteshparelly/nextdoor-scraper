@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxe Salon & Spa | Austin, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary:#6b4c6a;--secondary:#c4a484;--pearl:#faf8f5;--gold:#d4af37}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',sans-serif;color:#333;line-height:1.7;background:var(--pearl)}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,248,245,0.95);backdrop-filter:blur(10px);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--primary);text-decoration:none;font-weight:600}
+    nav{display:flex;gap:2rem;align-items:center}
+    nav a{text-decoration:none;color:#333;font-weight:500;font-size:.9rem;text-transform:uppercase;letter-spacing:1px}
+    .nav-cta{background:var(--primary);color:#fff;padding:.75rem 1.5rem}
+    .hero{min-height:100vh;background:linear-gradient(rgba(107,76,106,0.7),rgba(107,76,106,0.8)),url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center}
+    .hero-content{color:#fff;animation:fadeInUp 1s ease-out}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-size:5rem;margin-bottom:1rem;font-weight:600}
+    .hero p{font-size:1.2rem;margin-bottom:2rem;color:var(--secondary);text-transform:uppercase;letter-spacing:3px}
+    .btn{display:inline-block;padding:1rem 2.5rem;text-decoration:none;transition:all .3s;background:var(--secondary);color:#fff}
+    .btn:hover{background:var(--gold)}
+    .services{padding:6rem 5%;background:var(--pearl)}
+    .section-title{text-align:center;margin-bottom:4rem}
+    .section-title h2{font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--primary)}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;max-width:1000px;margin:0 auto}
+    .service-item{text-align:center;padding:2rem}
+    .service-item h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--primary);margin-bottom:.5rem}
+    .service-item .price{color:var(--secondary);font-weight:600}
+    .cta{padding:6rem 5%;background:var(--primary);text-align:center;color:#fff}
+    .cta h2{font-family:'Cormorant Garamond',serif;font-size:2.5rem;margin-bottom:1rem}
+    .cta-phone{display:inline-block;color:var(--secondary);font-family:'Cormorant Garamond',serif;font-size:2rem;text-decoration:none}
+    footer{background:#2c2c2c;color:#fff;padding:3rem 5%;text-align:center}
+    @media(max-width:768px){.hero h1{font-size:3rem}nav{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Luxe</a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="tel:5125550127" class="nav-cta">Book Now</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Luxe Salon</h1>
+      <p>Elevate Your Beauty</p>
+      <a href="#services" class="btn">Our Services</a>
+    </div>
+  </section>
+  <section class="services" id="services">
+    <div class="section-title" data-aos="fade-up"><h2>Services</h2></div>
+    <div class="services-grid">
+      <div class="service-item" data-aos="fade-up"><h3>Haircut & Style</h3><p class="price">From $65</p></div>
+      <div class="service-item" data-aos="fade-up" data-aos-delay="100"><h3>Color & Highlights</h3><p class="price">From $120</p></div>
+      <div class="service-item" data-aos="fade-up" data-aos-delay="200"><h3>Blowout</h3><p class="price">From $45</p></div>
+      <div class="service-item" data-aos="fade-up" data-aos-delay="300"><h3>Facial Treatment</h3><p class="price">From $85</p></div>
+    </div>
+  </section>
+  <section class="cta" data-aos="fade-up">
+    <h2>Book Your Appointment</h2>
+    <p>Experience the Luxe difference</p>
+    <a href="tel:5125550127" class="cta-phone">(512) 555-0127</a>
+  </section>
+  <footer><p>© 2026 Luxe Salon & Spa. Austin, TX.</p></footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

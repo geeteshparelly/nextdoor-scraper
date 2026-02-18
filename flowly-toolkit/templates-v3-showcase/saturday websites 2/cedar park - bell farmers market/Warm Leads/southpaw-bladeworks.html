@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Southpaw Bladeworks | Knife Sharpening & Custom Blades in Austin</title>
+    <meta name="description" content="Southpaw Bladeworks - Expert knife sharpening, repair, re-handling, and custom blades. Hand-sharpened with precision since 2014. Austin, TX.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        
+        header { animation: fadeInDown 0.6s ease-out; }
+        .hero-badge { animation: fadeIn 0.6s ease-out 0.2s both; }
+        .hero-title { animation: fadeInUp 0.7s ease-out 0.1s both; }
+        .hero-subtitle { animation: fadeIn 0.6s ease-out 0.3s both; }
+        .hero-ctas { animation: fadeInUp 0.6s ease-out 0.5s both; }
+        .hero-visual { animation: scaleIn 0.8s ease-out 0.3s both; }
+
+        :root {
+            --bg: #0a0a0a;
+            --bg-lighter: #141414;
+            --surface: #1a1a1a;
+            --text-light: #ffffff;
+            --text-body: #b0b0b0;
+            --text-muted: #707070;
+            --orange: #e85a1e;
+            --orange-deep: #c44a15;
+            --steel: #4a5568;
+            --border: #2a2a2a;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            color: var(--text-light);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+
+        nav { display: flex; gap: 2.5rem; align-items: center; }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--orange); }
+
+        .header-cta {
+            background: var(--orange);
+            color: white;
+            padding: 0.7rem 1.4rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .header-cta:hover { background: var(--orange-deep); }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 5rem;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-lighter) 100%);
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content { max-width: 520px; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--orange);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            letter-spacing: 0.02em;
+        }
+
+        .hero-title span { color: var(--orange); }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text-body);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn-primary {
+            background: var(--orange);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-primary:hover { background: var(--orange-deep); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(232, 90, 30, 0.3); }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-secondary:hover { border-color: var(--orange); color: var(--orange); }
+
+        .hero-visual { position: relative; }
+
+        .hero-image-main {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.4);
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .services-section { padding: 6rem 2rem; background: var(--surface); }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--orange); margin-bottom: 0.75rem; font-weight: 600; }
+        .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--text-light); letter-spacing: 0.02em; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--bg-lighter);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease-out;
+            border: 1px solid var(--border);
+        }
+
+        .service-card:hover { transform: translateY(-8px); border-color: var(--orange); }
+
+        .service-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .service-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: var(--text-light); margin-bottom: 0.5rem; letter-spacing: 0.02em; }
+        .service-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+        .story-section { padding: 6rem 2rem; background: var(--bg); }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-image {
+            border-radius: 8px;
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+        }
+
+        .story-content { max-width: 480px; }
+        .story-text { font-size: 1.05rem; color: var(--text-body); margin: 1.5rem 0; line-height: 1.9; }
+
+        .experience-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .exp-number { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--orange); }
+        .exp-text { font-size: 0.9rem; color: var(--text-muted); line-height: 1.3; }
+
+        .find-section { padding: 6rem 2rem; background: var(--orange); color: white; }
+
+        .find-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .find-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; margin-bottom: 1rem; letter-spacing: 0.02em; }
+        .find-card p { font-size: 1rem; opacity: 0.95; line-height: 1.7; }
+        .find-card a { color: white; text-decoration: underline; }
+
+        footer { background: var(--bg); padding: 3rem 2rem; color: var(--text-muted); text-align: center; border-top: 1px solid var(--border); }
+        footer p { font-size: 0.9rem; }
+
+        @media (max-width: 1024px) {
+            .hero-inner, .story-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-visual { order: -1; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .find-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero { padding: 6rem 1.5rem 3rem; }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">SOUTHPAW BLADEWORKS</a>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#story">About</a>
+                <a href="#find">Find Us</a>
+            </nav>
+            <a href="#find" class="header-cta">Get Your Blades Sharp</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge">Est. 2014 • Austin, TX</span>
+                <h1 class="hero-title">SHARP BLADES.<br><span>EXPERT HANDS.</span></h1>
+                <p class="hero-subtitle">No automated sharpeners. No shortcuts. Just skilled hands, quality tools, and blades sharpened to perfection. Service while you shop at the farmers market.</p>
+                <div class="hero-ctas">
+                    <a href="#services" class="btn-primary">Our Services</a>
+                    <a href="#find" class="btn-secondary">Find Us</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-main">
+                    <img src="https://images.unsplash.com/photo-1593618998160-e34014e67546?w=800&h=600&fit=crop" alt="Knife sharpening" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">What We Do</p>
+                <h2 class="section-title">EXPERT BLADE SERVICES</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-icon">🔪</div>
+                    <h3 class="service-name">SHARPENING</h3>
+                    <p class="service-desc">Kitchen knives, pocket knives, scissors, and more. Razor-sharp results every time.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="service-name">REPAIR</h3>
+                    <p class="service-desc">Chipped blades, bent tips, damaged edges — we bring your knives back to life.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">🪵</div>
+                    <h3 class="service-name">RE-HANDLING</h3>
+                    <p class="service-desc">New handles for old favorites. Custom wood, G10, or micarta options available.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">⚔️</div>
+                    <h3 class="service-name">CUSTOM BLADES</h3>
+                    <p class="service-desc">Handmade knives crafted to your specifications. One of a kind, built to last.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section" id="story">
+        <div class="container">
+            <div class="story-grid">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop" alt="Craftsman at work" class="story-image" data-aos="fade-right">
+                <div class="story-content" data-aos="fade-left">
+                    <p class="section-label">The Craft</p>
+                    <h2 class="section-title">HAND-SHARPENED.<br>NO MACHINES.</h2>
+                    <p class="story-text">Southpaw Bladeworks was established in 2014 by Lyndon, who learned the craft through an apprenticeship more than a decade ago. That's where he realized the true value of hand-made and hand-sharpened blades.</p>
+                    <p class="story-text">No automated sharpeners here. Every edge is done by eye, with quality tools, and the results speak for themselves — expert, high-quality work that machines simply can't replicate.</p>
+                    <p class="story-text">Cancer survivor. Austin grown. Still sharpening.</p>
+                    <div class="experience-badge">
+                        <span class="exp-number">10+</span>
+                        <span class="exp-text">Years of<br>blade work</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="find-section" id="find">
+        <div class="container">
+            <div class="find-grid">
+                <div class="find-card">
+                    <h3>📍 SATURDAY</h3>
+                    <p>Texas Farmers Market at Bell<br>200 S Bell Blvd, Cedar Park<br>9am - 1pm</p>
+                </div>
+                <div class="find-card">
+                    <h3>🌞 SUNDAY</h3>
+                    <p>Texas Farmers Market at Mueller<br>2006 Philomena St, Austin<br>10am - 2pm</p>
+                </div>
+                <div class="find-card">
+                    <h3>📱 CONNECT</h3>
+                    <p><a href="https://www.instagram.com/southpaw_bladeworks/" target="_blank">@southpaw_bladeworks</a><br><a href="https://www.facebook.com/SouthpawSharpening" target="_blank">Facebook</a><br>Austin, TX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Southpaw Bladeworks. Sharp blades, expert hands. Austin, Texas.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true, offset: 100 });</script>
+</body>
+</html>

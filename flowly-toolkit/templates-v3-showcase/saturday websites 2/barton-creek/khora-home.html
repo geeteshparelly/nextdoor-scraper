@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khôra Home | Handcrafted Home Goods in Austin</title>
+    <meta name="description" content="Khôra Home - Artisan home goods, ceramics, and handcrafted decor. Find us at Barton Creek Farmers Market.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        
+        header { animation: fadeInDown 0.6s ease-out; }
+        .hero-badge { animation: fadeIn 0.6s ease-out 0.2s both; }
+        .hero-title { animation: fadeInUp 0.7s ease-out 0.1s both; }
+        .hero-subtitle { animation: fadeIn 0.6s ease-out 0.3s both; }
+        .hero-ctas { animation: fadeInUp 0.6s ease-out 0.5s both; }
+        .hero-visual { animation: scaleIn 0.8s ease-out 0.3s both; }
+
+        :root {
+            --bg: #faf9f7;
+            --bg-warm: #f4f1eb;
+            --surface: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-body: #4a4a4a;
+            --text-muted: #7a7a7a;
+            --stone: #8c7b6b;
+            --stone-deep: #6b5a4a;
+            --stone-light: #e8e0d5;
+            --cream: #d4c9b8;
+            --border: #e5e0d8;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Mulish', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(250, 249, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+
+        nav { display: flex; gap: 2.5rem; align-items: center; }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--stone); }
+
+        .header-cta {
+            background: var(--stone);
+            color: white;
+            padding: 0.7rem 1.4rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            transition: all 0.2s;
+        }
+
+        .header-cta:hover { background: var(--stone-deep); }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 5rem;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content { max-width: 520px; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--stone);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-title span { font-style: italic; }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn-primary {
+            background: var(--stone);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-primary:hover { background: var(--stone-deep); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(140, 123, 107, 0.3); }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-secondary:hover { border-color: var(--stone); color: var(--stone); }
+
+        .hero-visual { position: relative; }
+
+        .hero-image-main {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.08);
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            display: block;
+        }
+
+        .products-section { padding: 6rem 2rem; background: var(--surface); }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--stone); margin-bottom: 0.75rem; font-weight: 600; }
+        .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.75rem, 3.5vw, 2.5rem); color: var(--text-dark); font-weight: 600; }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease-out;
+        }
+
+        .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.08); }
+
+        .product-image {
+            aspect-ratio: 1;
+            object-fit: cover;
+            width: 100%;
+            display: block;
+            transition: transform 0.4s ease-out;
+        }
+
+        .product-card:hover .product-image { transform: scale(1.03); }
+        .product-content { padding: 1.5rem; text-align: center; }
+        .product-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text-dark); margin-bottom: 0.5rem; font-weight: 600; }
+        .product-price { font-size: 0.9rem; color: var(--stone); font-weight: 500; }
+
+        .story-section { padding: 6rem 2rem; background: var(--bg-warm); }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-image {
+            border-radius: 8px;
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+        }
+
+        .story-content { max-width: 480px; }
+        .story-text { font-size: 1rem; color: var(--text-body); margin: 1.5rem 0; line-height: 1.9; }
+
+        .contact-section { padding: 6rem 2rem; background: var(--stone); color: white; }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .contact-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; margin-bottom: 1rem; font-weight: 600; }
+        .contact-card p { font-size: 0.95rem; opacity: 0.9; line-height: 1.7; }
+        .contact-card a { color: white; text-decoration: underline; }
+
+        footer { background: var(--text-dark); padding: 3rem 2rem; color: white; text-align: center; }
+        footer p { font-size: 0.9rem; opacity: 0.7; }
+
+        @media (max-width: 1024px) {
+            .hero-inner, .story-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-visual { order: -1; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero { padding: 6rem 1.5rem 3rem; }
+            .products-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">KHÔRA HOME</a>
+            <nav>
+                <a href="#products">Collection</a>
+                <a href="#story">Our Story</a>
+                <a href="#contact">Visit</a>
+            </nav>
+            <a href="#contact" class="header-cta">Find Us</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge">Handcrafted in Austin</span>
+                <h1 class="hero-title">Objects for <span>Thoughtful</span> Living</h1>
+                <p class="hero-subtitle">Khôra Home creates handcrafted ceramics and home goods that bring warmth and intention to everyday spaces. Each piece is made by hand in our Austin studio.</p>
+                <div class="hero-ctas">
+                    <a href="#products" class="btn-primary">View Collection</a>
+                    <a href="#contact" class="btn-secondary">Find Us</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-main">
+                    <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&h=1000&fit=crop" alt="Handcrafted ceramic vases" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">The Collection</p>
+                <h2 class="section-title">Crafted With Care</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=500&h=500&fit=crop" alt="Ceramic Vase" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Stoneware Vase</h3>
+                        <p class="product-price">From $48</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=500&h=500&fit=crop" alt="Ceramic Bowls" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Nesting Bowls Set</h3>
+                        <p class="product-price">$65</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&h=500&fit=crop" alt="Ceramic Mugs" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Handthrown Mugs</h3>
+                        <p class="product-price">$32 each</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1595408076683-5d0b4e86c5a0?w=500&h=500&fit=crop" alt="Candle Holders" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Taper Candleholders</h3>
+                        <p class="product-price">$28 pair</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=500&h=500&fit=crop" alt="Woven Basket" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Woven Storage Basket</h3>
+                        <p class="product-price">$45</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1563122870-6b0b48a0af09?w=500&h=500&fit=crop" alt="Linen Napkins" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Linen Napkin Set</h3>
+                        <p class="product-price">$38 set of 4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section" id="story">
+        <div class="container">
+            <div class="story-grid">
+                <img src="https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?w=800&h=1000&fit=crop" alt="Hands shaping clay" class="story-image" data-aos="fade-right">
+                <div class="story-content" data-aos="fade-left">
+                    <p class="section-label">Our Story</p>
+                    <h2 class="section-title">Made With Intention</h2>
+                    <p class="story-text">Khôra — from the Greek word for "space" — began as a small studio practice in East Austin. What started as a meditation became a mission: to create objects that hold space for the moments that matter.</p>
+                    <p class="story-text">Every piece in our collection is made by hand, from wheel-thrown ceramics to naturally-dyed textiles. We believe in slow craft, sustainable materials, and the beauty of imperfection.</p>
+                    <p class="story-text">Find us at Barton Creek Farmers Market every Saturday, or schedule a studio visit to see where it all begins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Find Us</h3>
+                    <p>Barton Creek Farmers Market<br>2901 S Capital of TX Hwy<br>Saturdays 9am - 1pm</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Custom Orders</h3>
+                    <p>Wedding registries, gifts,<br>and special commissions<br>welcome.</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Connect</h3>
+                    <p><a href="mailto:hello@khorahome.com">hello@khorahome.com</a><br>@khorahome<br>Austin, TX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Khôra Home. Handcrafted in Austin, Texas.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true, offset: 100 });</script>
+</body>
+</html>

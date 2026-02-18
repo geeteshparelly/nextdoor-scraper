@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Coat Painting | Austin, TX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary:#2d3436;--accent:#e17055;--sage:#81c784;--cream:#fafafa}
+    body{font-family:'DM Sans',sans-serif;color:#333;line-height:1.7}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.98);backdrop-filter:blur(10px);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Outfit',sans-serif;font-size:1.6rem;color:var(--primary);text-decoration:none}
+    .logo span{color:var(--accent)}
+    .nav-cta{background:var(--accent);color:#fff;padding:.75rem 1.5rem;border-radius:8px;text-decoration:none}
+    .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+    .hero-content{padding:3rem 5%}
+    .hero h1{font-family:'Outfit',sans-serif;font-size:3.5rem;color:var(--primary);margin-bottom:1.5rem}
+    .hero p{font-size:1.2rem;margin-bottom:2rem;color:#555}
+    .btn{display:inline-block;padding:1rem 2rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none}
+    .hero-visual{height:100vh;display:flex;flex-wrap:wrap}
+    .color-block{width:50%;height:50%}
+    .c1{background:#f8f4f0}.c2{background:#2d3436}.c3{background:#81c784}.c4{background:#e17055}
+    .services{padding:6rem 5%;background:var(--cream)}
+    .section-title h2{font-family:'Outfit',sans-serif;font-size:2.5rem;color:var(--primary);text-align:center;margin-bottom:4rem}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1000px;margin:0 auto}
+    .service-card{background:#fff;padding:2.5rem;border-radius:16px;border-left:4px solid var(--accent)}
+    .service-card h3{font-family:'Outfit',sans-serif;color:var(--primary);margin-bottom:.5rem}
+    .cta{padding:6rem 5%;background:var(--primary);text-align:center;color:#fff}
+    .cta h2{font-family:'Outfit',sans-serif;font-size:2.5rem;margin-bottom:1rem}
+    .cta-phone{display:inline-block;background:var(--accent);color:#fff;padding:1.25rem 3rem;border-radius:8px;font-size:1.8rem;text-decoration:none}
+    footer{background:#1a1a1a;color:#fff;padding:3rem 5%;text-align:center}
+    @media(max-width:768px){.hero{grid-template-columns:1fr}.hero h1{font-size:2.5rem}.hero-visual{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Fresh<span>Coat</span></a>
+    <a href="tel:5125550147" class="nav-cta">Free Quote</a>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Transform Your Space</h1>
+      <p>Professional interior and exterior painting. Clean work, premium finishes.</p>
+      <a href="tel:5125550147" class="btn">Call (512) 555-0147</a>
+    </div>
+    <div class="hero-visual"><div class="color-block c1"></div><div class="color-block c2"></div><div class="color-block c3"></div><div class="color-block c4"></div></div>
+  </section>
+  <section class="services" id="services">
+    <div class="section-title"><h2>Painting Services</h2></div>
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up"><h3>Interior Painting</h3><p>Walls, ceilings, trim, and cabinets.</p></div>
+      <div class="service-card" data-aos="fade-up"><h3>Exterior Painting</h3><p>Siding, fences, decks.</p></div>
+      <div class="service-card" data-aos="fade-up"><h3>Color Consultation</h3><p>Free help choosing colors.</p></div>
+    </div>
+  </section>
+  <section class="cta">
+    <h2>Ready for a Fresh Look?</h2>
+    <p>Free estimates. No mess guaranteed.</p>
+    <a href="tel:5125550147" class="cta-phone">(512) 555-0147</a>
+  </section>
+  <footer><p>© 2026 Fresh Coat Painting. Austin, TX.</p></footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

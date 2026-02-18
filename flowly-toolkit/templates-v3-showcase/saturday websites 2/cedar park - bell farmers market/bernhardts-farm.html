@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bernhardt's Farm | Fresh Produce & Prepared Foods in Elgin, TX</title>
+    <meta name="description" content="Bernhardt's Farm - Zero-waste family farm in Elgin, TX. Fresh seasonal vegetables, homemade pickles, jams, kimchi, pesto & more. Texas Farmers Market.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        
+        header { animation: fadeInDown 0.6s ease-out; }
+        .hero-badge { animation: fadeIn 0.6s ease-out 0.2s both; }
+        .hero-title { animation: fadeInUp 0.7s ease-out 0.1s both; }
+        .hero-subtitle { animation: fadeIn 0.6s ease-out 0.3s both; }
+        .hero-ctas { animation: fadeInUp 0.6s ease-out 0.5s both; }
+        .hero-visual { animation: scaleIn 0.8s ease-out 0.3s both; }
+
+        :root {
+            --bg: #f8f6f2;
+            --bg-warm: #f0ebe0;
+            --surface: #ffffff;
+            --text-dark: #2a2d1e;
+            --text-body: #4a4d3e;
+            --text-muted: #6b6e5f;
+            --green: #5a7c47;
+            --green-deep: #3d5a2d;
+            --green-light: #dce8d4;
+            --earth: #8b7355;
+            --border: #e0dbd0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Source Sans 3', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(248, 246, 242, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon { font-size: 1.5rem; }
+
+        nav { display: flex; gap: 2.5rem; align-items: center; }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--green); }
+
+        .header-cta {
+            background: var(--green);
+            color: white;
+            padding: 0.7rem 1.4rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            transition: all 0.2s;
+        }
+
+        .header-cta:hover { background: var(--green-deep); }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 5rem;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--green-light) 100%);
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content { max-width: 520px; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-title {
+            font-family: 'Libre Baskerville', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-title span { color: var(--green); }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-body);
+        }
+
+        .hero-feature-icon { color: var(--green); }
+
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn-primary {
+            background: var(--green);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-primary:hover { background: var(--green-deep); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(90, 124, 71, 0.3); }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-secondary:hover { border-color: var(--green); color: var(--green); }
+
+        .hero-visual { position: relative; }
+
+        .hero-image-main {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.12);
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .products-section { padding: 6rem 2rem; background: var(--surface); }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--green); margin-bottom: 0.75rem; font-weight: 600; }
+        .section-title { font-family: 'Libre Baskerville', serif; font-size: clamp(1.75rem, 3.5vw, 2.5rem); color: var(--text-dark); }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .products-column h3 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--green-light);
+        }
+
+        .product-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .product-icon { font-size: 1.5rem; }
+        .product-name { font-weight: 600; color: var(--text-dark); }
+        .product-desc { font-size: 0.9rem; color: var(--text-muted); }
+
+        .story-section { padding: 6rem 2rem; background: var(--bg-warm); }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-image {
+            border-radius: 16px;
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+        }
+
+        .story-content { max-width: 480px; }
+        .story-text { font-size: 1.05rem; color: var(--text-body); margin: 1.5rem 0; line-height: 1.9; }
+
+        .zero-waste-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--green);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .badge-icon { font-size: 1.5rem; }
+        .badge-text { font-weight: 600; }
+
+        .find-section { padding: 6rem 2rem; background: var(--green); color: white; }
+
+        .find-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .find-card h3 { font-family: 'Libre Baskerville', serif; font-size: 1.4rem; margin-bottom: 1rem; }
+        .find-card p { font-size: 1rem; opacity: 0.95; line-height: 1.7; }
+        .find-card a { color: white; text-decoration: underline; }
+
+        footer { background: var(--text-dark); padding: 3rem 2rem; color: white; text-align: center; }
+        footer p { font-size: 0.9rem; opacity: 0.7; }
+
+        @media (max-width: 1024px) {
+            .hero-inner, .story-grid, .products-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-visual { order: -1; }
+            .find-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero { padding: 6rem 1.5rem 3rem; }
+            .hero-features { flex-direction: column; gap: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo"><span class="logo-icon">🌿</span> Bernhardt's Farm</a>
+            <nav>
+                <a href="#products">Products</a>
+                <a href="#story">Our Story</a>
+                <a href="#find">Find Us</a>
+            </nav>
+            <a href="sms:5127918404" class="header-cta">Text to Pre-Order</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge">Zero-Waste Farm</span>
+                <h1 class="hero-title">From Our <span>Garden</span> to Your Table</h1>
+                <p class="hero-subtitle">Fresh seasonal produce and homemade prepared foods from our family farm in Elgin. We grow it, we make it, and we bring it to you every Saturday.</p>
+                <div class="hero-features">
+                    <span class="hero-feature"><span class="hero-feature-icon">✓</span> Seasonal Produce</span>
+                    <span class="hero-feature"><span class="hero-feature-icon">✓</span> Homemade Goods</span>
+                    <span class="hero-feature"><span class="hero-feature-icon">✓</span> Zero Waste</span>
+                </div>
+                <div class="hero-ctas">
+                    <a href="sms:5127918404" class="btn-primary">Pre-Order: Text 512-791-8404</a>
+                    <a href="#products" class="btn-secondary">What We Grow</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-main">
+                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&h=600&fit=crop" alt="Fresh farm vegetables" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">What We Bring</p>
+                <h2 class="section-title">Fresh Produce & Prepared Foods</h2>
+            </div>
+            <div class="products-grid">
+                <div class="products-column" data-aos="fade-up">
+                    <h3>🥬 Fresh Produce</h3>
+                    <div class="product-item">
+                        <span class="product-icon">🍅</span>
+                        <div>
+                            <p class="product-name">Seasonal Vegetables</p>
+                            <p class="product-desc">Whatever's ripe and ready from our garden</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <span class="product-icon">🫐</span>
+                        <div>
+                            <p class="product-name">Small Fruits</p>
+                            <p class="product-desc">Berries and seasonal fruits when available</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <span class="product-icon">🌿</span>
+                        <div>
+                            <p class="product-name">Fresh Herbs</p>
+                            <p class="product-desc">Basil, cilantro, and more</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-column" data-aos="fade-up" data-aos-delay="100">
+                    <h3>🫙 Prepared Foods</h3>
+                    <div class="product-item">
+                        <span class="product-icon">🥒</span>
+                        <div>
+                            <p class="product-name">House Pickles</p>
+                            <p class="product-desc">Crunchy, tangy, made in our kitchen</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <span class="product-icon">🍓</span>
+                        <div>
+                            <p class="product-name">Homemade Jams</p>
+                            <p class="product-desc">Small-batch, seasonal fruit preserves</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <span class="product-icon">🥬</span>
+                        <div>
+                            <p class="product-name">Kimchi</p>
+                            <p class="product-desc">Fermented, probiotic-rich goodness</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <span class="product-icon">🧄</span>
+                        <div>
+                            <p class="product-name">Fresh Pesto</p>
+                            <p class="product-desc">Made with our own basil</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <span class="product-icon">🫘</span>
+                        <div>
+                            <p class="product-name">Hummus</p>
+                            <p class="product-desc">Creamy, fresh, flavorful</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section" id="story">
+        <div class="container">
+            <div class="story-grid">
+                <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?w=800&h=600&fit=crop" alt="Bernhardt family farm" class="story-image" data-aos="fade-right">
+                <div class="story-content" data-aos="fade-left">
+                    <p class="section-label">Our Story</p>
+                    <h2 class="section-title">A Garden That Grew</h2>
+                    <p class="story-text">In 2011, the Bernhardts moved to a family property in Elgin and started a garden just to keep busy. What began as a hobby quickly blossomed into a passion — and then a small business.</p>
+                    <p class="story-text">We grow seasonal vegetables and small fruits, and we make everything else in our commercial kitchen. Pickles, jams, kimchi, hummus, pesto — if we grow it, we use it. Nothing goes to waste.</p>
+                    <p class="story-text">That's our promise: a zero-waste farm that brings you the freshest, most flavorful produce and prepared foods every week.</p>
+                    <div class="zero-waste-badge">
+                        <span class="badge-icon">♻️</span>
+                        <span class="badge-text">Zero-Waste Farm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="find-section" id="find">
+        <div class="container">
+            <div class="find-grid">
+                <div class="find-card">
+                    <h3>📍 Find Us</h3>
+                    <p>Texas Farmers Market at Bell<br>200 S Bell Blvd, Cedar Park<br>Saturdays 9am - 1pm</p>
+                </div>
+                <div class="find-card">
+                    <h3>📱 Pre-Orders</h3>
+                    <p>Text <a href="sms:5127918404">(512) 791-8404</a><br>by Thursday at 5pm<br>for Saturday pickup</p>
+                </div>
+                <div class="find-card">
+                    <h3>📷 Follow Along</h3>
+                    <p><a href="https://www.instagram.com/bernhardtsfarm/" target="_blank">@bernhardtsfarm</a><br><a href="https://www.facebook.com/bernhardts.farm/" target="_blank">Facebook</a><br>Elgin, TX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Bernhardt's Farm. Zero-waste family farm in Elgin, Texas.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true, offset: 100 });</script>
+</body>
+</html>

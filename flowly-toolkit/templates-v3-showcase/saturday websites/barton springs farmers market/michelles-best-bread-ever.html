@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michelle's Best Bread Ever | Artisan Bakery in Austin</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+        :root{--cream:#f9f6f0;--warm:#e8dfd3;--brown:#5c4033;--gold:#c9a227;--text:#2d2319;--muted:#7a6b5a}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);line-height:1.8;font-weight:300}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(249,246,240,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1000px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--brown);text-decoration:none}
+        nav a{color:var(--muted);text-decoration:none;margin-left:2rem;font-size:.9rem}
+        .header-cta{background:var(--brown);color:#fff;padding:.6rem 1.2rem;border-radius:50px;font-size:.85rem}
+        .hero{min-height:100vh;display:flex;align-items:center;padding:8rem 2rem;background:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1920&h=1080&fit=crop');background-size:cover;background-position:center;position:relative}
+        .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(249,246,240,0.95) 0%,rgba(249,246,240,0.7) 50%,rgba(249,246,240,0) 100%)}
+        .hero-content{max-width:550px;position:relative;z-index:2;animation:fadeIn 1s ease-out}
+        .hero-eyebrow{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brown);margin-bottom:1rem}
+        .hero-title{font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1.1;margin-bottom:1.5rem}
+        .hero-subtitle{font-size:1.05rem;color:var(--muted);margin-bottom:2rem}
+        .btn{display:inline-block;padding:1rem 2rem;text-decoration:none;font-weight:500;border-radius:50px;transition:all .3s}
+        .btn-primary{background:var(--brown);color:#fff}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(92,64,51,0.25)}
+        .products{padding:6rem 2rem;background:#fff}
+        .container{max-width:1000px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brown);margin-bottom:.75rem}
+        .section-title{font-family:'DM Serif Display',serif;font-size:2.5rem}
+        .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .product-card{background:var(--cream);border-radius:16px;overflow:hidden;text-align:center;transition:all .3s}
+        .product-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.08)}
+        .product-image{aspect-ratio:1;object-fit:cover;width:100%}
+        .product-content{padding:1.5rem}
+        .product-name{font-family:'DM Serif Display',serif;font-size:1.2rem;margin-bottom:.5rem}
+        .product-price{font-size:.9rem;color:var(--brown);font-weight:500}
+        .story{padding:6rem 2rem;background:var(--warm)}
+        .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .story-image{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
+        .story-content h2{font-family:'DM Serif Display',serif;font-size:2rem;margin-bottom:1.5rem}
+        .story-content p{color:var(--muted);margin-bottom:1rem}
+        .story-signature{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.1rem;margin-top:2rem}
+        .cta{padding:5rem 2rem;background:var(--brown);text-align:center;color:#fff}
+        .cta h2{font-family:'DM Serif Display',serif;font-size:2.5rem;margin-bottom:1rem}
+        .cta p{opacity:.9;margin-bottom:2rem}
+        .cta-info{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
+        .cta-info div strong{display:block;margin-bottom:.25rem}
+        footer{background:var(--text);padding:2rem;color:#fff;text-align:center;font-size:.85rem}
+        @media(max-width:1024px){.story-grid{grid-template-columns:1fr}.products-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){nav{display:none}.products-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">Michelle's Best Bread Ever</a>
+            <nav><a href="#products">Breads</a><a href="#story">About</a><a href="#find" class="header-cta">Find Us</a></nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow">🥖 Artisan Bakery</p>
+            <h1 class="hero-title">Bread Worth Waking Up For</h1>
+            <p class="hero-subtitle">Small-batch artisan breads baked fresh every market day. Sourdough, focaccia, and more — made with love and time.</p>
+            <a href="#products" class="btn btn-primary">See Our Breads</a>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">Fresh Baked</p>
+                <h2 class="section-title">Our Breads</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&h=500&fit=crop" class="product-image" alt="Sourdough"><div class="product-content"><h3 class="product-name">Country Sourdough</h3><p class="product-price">$9</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=500&h=500&fit=crop" class="product-image" alt="Focaccia"><div class="product-content"><h3 class="product-name">Rosemary Focaccia</h3><p class="product-price">$8</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1598373182133-52452f7691ef?w=500&h=500&fit=crop" class="product-image" alt="Baguette"><div class="product-content"><h3 class="product-name">French Baguette</h3><p class="product-price">$5</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story" id="story">
+        <div class="container">
+            <div class="story-grid">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=700&h=525&fit=crop" class="story-image" data-aos="fade-right" alt="Baker">
+                <div class="story-content" data-aos="fade-left">
+                    <p class="section-label">Our Story</p>
+                    <h2>Slow Food, Made Right</h2>
+                    <p>I started baking bread during the pandemic. What began as a hobby became an obsession — then a business.</p>
+                    <p>Every loaf is made with organic flour, wild yeast, and a 24-hour ferment. No shortcuts. No compromises.</p>
+                    <p class="story-signature">— Michelle</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="find">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Us at Market</h2>
+            <p>Fresh bread every Saturday (we sell out early!)</p>
+            <div class="cta-info">
+                <div><strong>📍 Location</strong>Barton Creek Farmers Market</div>
+                <div><strong>🕐 Hours</strong>Saturdays 9am–1pm</div>
+                <div><strong>📞 Pre-Order</strong>(512) 555-0212</div>
+            </div>
+        </div>
+    </section>
+
+    <footer><p>© 2026 Michelle's Best Bread Ever • Austin, TX</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

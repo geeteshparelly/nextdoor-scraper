@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serenity Spa | Massage & Wellness | Austin, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&family=Libre+Baskerville:wght@400&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary:#7c9885;--secondary:#d4b896;--spa:#f5f0eb;--eucalyptus:#a8c5b5}
+    html{scroll-behavior:smooth}
+    body{font-family:'Libre Baskerville',serif;color:#333;line-height:1.8;background:var(--spa)}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(245,240,235,0.95);backdrop-filter:blur(10px);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Josefin Sans',sans-serif;font-size:1.8rem;color:var(--primary);text-decoration:none;font-weight:300;letter-spacing:3px}
+    nav{display:flex;gap:2rem;align-items:center}
+    nav a{text-decoration:none;color:#555;font-family:'Josefin Sans',sans-serif;font-weight:400}
+    .nav-cta{background:var(--primary);color:#fff;padding:.75rem 1.5rem}
+    .hero{min-height:100vh;background:linear-gradient(rgba(124,152,133,0.6),rgba(124,152,133,0.7)),url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=80');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center}
+    .hero-content{color:#fff;animation:fadeInUp 1s ease-out}
+    .hero h1{font-family:'Josefin Sans',sans-serif;font-size:4.5rem;font-weight:300;letter-spacing:5px;margin-bottom:1rem}
+    .hero p{font-size:1.2rem;margin-bottom:2rem;letter-spacing:2px}
+    .btn{display:inline-block;padding:1rem 2.5rem;text-decoration:none;transition:all .3s;background:var(--secondary);color:#fff}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(212,184,150,0.4)}
+    .services{padding:6rem 5%;background:var(--spa)}
+    .section-title{text-align:center;margin-bottom:4rem}
+    .section-title h2{font-family:'Josefin Sans',sans-serif;font-size:2.5rem;color:var(--primary);font-weight:300;letter-spacing:3px}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1000px;margin:0 auto}
+    .service-item{background:#fff;padding:2.5rem;text-align:center;transition:all .3s}
+    .service-item:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(124,152,133,0.15)}
+    .service-item h3{font-family:'Josefin Sans',sans-serif;font-size:1.3rem;color:var(--primary);letter-spacing:2px;margin-bottom:.5rem}
+    .service-item .price{color:var(--secondary);font-weight:600}
+    .cta{padding:6rem 5%;background:var(--primary);text-align:center;color:#fff}
+    .cta h2{font-family:'Josefin Sans',sans-serif;font-size:2.5rem;font-weight:300;letter-spacing:3px;margin-bottom:1rem}
+    .cta-phone{display:inline-block;color:var(--eucalyptus);font-family:'Josefin Sans',sans-serif;font-size:2rem;text-decoration:none}
+    footer{background:#5a7560;color:#fff;padding:3rem 5%;text-align:center}
+    @media(max-width:768px){.hero h1{font-size:2.5rem}nav{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">SERENITY</a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="tel:5125550143" class="nav-cta">Book</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>SERENITY</h1>
+      <p>Massage & Wellness</p>
+      <a href="#services" class="btn">Our Services</a>
+    </div>
+  </section>
+  <section class="services" id="services">
+    <div class="section-title" data-aos="fade-up"><h2>TREATMENTS</h2></div>
+    <div class="services-grid">
+      <div class="service-item" data-aos="fade-up"><h3>Swedish Massage</h3><p class="price">60 min — $95</p></div>
+      <div class="service-item" data-aos="fade-up" data-aos-delay="100"><h3>Deep Tissue</h3><p class="price">60 min — $115</p></div>
+      <div class="service-item" data-aos="fade-up" data-aos-delay="200"><h3>Hot Stone</h3><p class="price">75 min — $135</p></div>
+    </div>
+  </section>
+  <section class="cta" data-aos="fade-up">
+    <h2>Book Your Escape</h2>
+    <p>Gift cards available</p>
+    <a href="tel:5125550143" class="cta-phone">(512) 555-0143</a>
+  </section>
+  <footer><p>© 2026 Serenity Spa. Austin, TX. Licensed Massage Therapists.</p></footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

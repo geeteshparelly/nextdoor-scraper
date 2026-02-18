@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moti Jewelry | Luxurious, Trendy & Unique Pieces</title>
+    <meta name="description" content="Moti Jewelry - Luxurious, trendy and unique jewelry pieces curated to your taste. Find your perfect accessory.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root { --bg: #faf9f7; --surface: #fff; --text-dark: #1a1a1a; --text-body: #555; --text-muted: #888; --primary: #9c7a4a; --primary-dark: #7d6239; --primary-light: #faf5ef; --accent: #d4af37; --border: #e8e2d8; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text-body); line-height: 1.7; }
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,249,247,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+        .header-inner { max-width: 1100px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--text-dark); text-decoration: none; font-weight: 500; font-style: italic; }
+        nav a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin-left: 2rem; }
+        .header-cta { background: var(--primary); color: white; padding: 0.6rem 1.2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.85rem; }
+        
+        .hero { padding: 10rem 2rem 6rem; max-width: 1100px; margin: 0 auto; text-align: center; }
+        .hero-title { font-family: 'Cormorant Garamond', serif; font-size: 4rem; color: var(--text-dark); line-height: 1.1; margin-bottom: 1.5rem; font-style: italic; }
+        .hero-subtitle { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .btn-primary { background: var(--primary); color: white; padding: 1rem 2rem; text-decoration: none; font-weight: 600; border-radius: 50px; display: inline-block; }
+        .hero-image { width: 100%; max-width: 900px; height: 450px; object-fit: cover; border-radius: 24px; margin-top: 3rem; }
+        
+        .collection { padding: 6rem 2rem; background: white; }
+        .collection-inner { max-width: 1100px; margin: 0 auto; }
+        .section-title { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--text-dark); text-align: center; margin-bottom: 3rem; font-style: italic; }
+        .collection-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .collection-item { text-align: center; }
+        .collection-icon { width: 100px; height: 100px; background: var(--primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 1rem; }
+        .collection-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text-dark); }
+        
+        .cta { padding: 6rem 2rem; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; text-align: center; }
+        .cta h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 1rem; font-style: italic; }
+        .cta p { opacity: 0.9; margin-bottom: 2rem; }
+        .cta-btn { background: white; color: var(--primary-dark); padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; }
+        
+        footer { padding: 3rem 2rem; background: var(--text-dark); color: white; text-align: center; }
+        .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin-bottom: 1rem; font-style: italic; }
+        .social-links { display: flex; justify-content: center; gap: 1rem; margin: 1rem 0; }
+        .social-links a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; }
+        
+        @media (max-width: 1024px) { .collection-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { nav { display: none; } .hero-title { font-size: 2.5rem; } .collection-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">Moti</a>
+            <nav><a href="#collection">Collection</a><a href="#contact">Contact</a></nav>
+            <a href="https://instagram.com/motijewelrytx" target="_blank" class="header-cta">Shop Now</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1 class="hero-title" data-aos="fade-up">Luxurious & Unique</h1>
+        <p class="hero-subtitle" data-aos="fade-up">Trendy jewelry pieces curated to your taste. Each piece is selected to help you express your unique style with elegance.</p>
+        <a href="https://instagram.com/motijewelrytx" target="_blank" class="btn-primary" data-aos="fade-up">Explore Collection</a>
+        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1000&q=80" alt="Jewelry collection" class="hero-image" data-aos="fade-up" data-aos-delay="200">
+    </section>
+
+    <section class="collection" id="collection">
+        <div class="collection-inner">
+            <h2 class="section-title" data-aos="fade-up">Our Collections</h2>
+            <div class="collection-grid">
+                <div class="collection-item" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=120&q=80" alt="Rings" style="width:100px;height:100px;border-radius:50%;object-fit:cover;">
+                    <h3>Rings</h3>
+                </div>
+                <div class="collection-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=120&q=80" alt="Necklaces" style="width:100px;height:100px;border-radius:50%;object-fit:cover;">
+                    <h3>Necklaces</h3>
+                </div>
+                <div class="collection-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=120&q=80" alt="Earrings" style="width:100px;height:100px;border-radius:50%;object-fit:cover;">
+                    <h3>Earrings</h3>
+                </div>
+                <div class="collection-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=120&q=80" alt="Bracelets" style="width:100px;height:100px;border-radius:50%;object-fit:cover;">
+                    <h3>Bracelets</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <h2 data-aos="fade-up">Find Your Perfect Piece</h2>
+        <p data-aos="fade-up">Follow us on Instagram to see our latest arrivals and shop!</p>
+        <a href="https://instagram.com/motijewelrytx" target="_blank" class="cta-btn" data-aos="fade-up">@motijewelrytx →</a>
+    </section>
+
+    <footer>
+        <div class="footer-logo">Moti</div>
+        <div class="social-links"><a href="https://instagram.com/motijewelrytx" target="_blank">IG</a></div>
+        <p style="opacity:0.5;font-size:0.85rem;">© 2026 Moti Jewelry. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 600, once: true });</script>
+</body>
+</html>

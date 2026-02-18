@@ -36,7 +36,7 @@
 - **Price point:** $100 per website
 - **Contact:** geetesh.parelly@2hourlearning.com / (737) 287-5336
 - **X:** @GeeteshParelly
-- **Age:** 14 (uses this as an advantage in pitches)
+- **Age:** 17 (uses this as an advantage in pitches)
 - **Portfolio:** XL Roofing, Walk in Life Handyman, Fuentes Lawn Care, CallCoach, Flowly app
 - **Live portfolio:** https://geeteshparelly.github.io/flowly/
 
@@ -58,6 +58,12 @@
 - `demos/rumbles-handyman/index.html` - Michael Rumble, (737) 990-5176, Georgetown TX
 - `demos/freedom-lawn-services/index.html` - (bad lead - permanently closed)
 
+### Web Design System (Feb 17, 2026)
+- **Training doc:** `WEB_DESIGN_TRAINING.md` - read at start of any web design project
+- **GSAP Fix:** Always use `immediateRender: false` on ScrollTrigger animations to prevent invisible content
+- **Portfolio project:** Solara skincare landing page → https://geeteshparelly.github.io/solara/
+- **Client intake form:** Google Form questionnaire (9 questions) - in progress
+
 ### Anti-AI-Slop Design Rules
 - NO Inter/Roboto/Arial fonts → use Outfit + Source Serif 4
 - NO purple gradients → industry-specific palettes (Lawn=#2d6a4f, Handyman=#1565c0)
@@ -67,7 +73,31 @@
 - Documented in `website-builder/playbooks/anti-ai-slop.md`
 
 ### Weekend Sales Plan (Feb 14-15)
-- Sat AM: Barton Creek Farmers Market
-- Sat PM: ATX Ramadan Bazaar → Austin Country Flea Market
-- Sun: Mueller Farmers Market → Bee Cave Farmers Market
+- Sat AM: Barton Creek Farmers Market (9am)
+- Sat PM: ATX Ramadan Bazaar (12pm) → Austin Country Flea Market (2pm)
+- Sun: Mueller Farmers Market (10am) → Bee Cave Farmers Market (11am)
+
+### Saturday Website Demos Built (Feb 14)
+- **Locations:** `saturday websites/` and `saturday websites 2/`
+- **Barton Creek:** 21 vendor demos (17 + 4)
+- **Ramadan Market:** 5 demos complete
+- **Bell Market (Cedar Park):** 1 done (Goodie Dumplings), 4 in progress
+- **Pitch:** Free website for testimonial, teenager angle ("I'm 16...")
 - Feb 27-Mar 1: Austin Home & Garden Show (priority event)
+
+### Bell Market Leads (No Website)
+- Goodie Dumplings, Yallatizers, K&S Seafood, Bernhardt's Farm, Southpaw Bladeworks
+- TFM vendor page pattern: texasfarmersmarket.org/bell-vendors/[vendor-slug]
+
+### Flowly Business Tiers (Feb 14, 2026)
+- **Starter ($100):** Single-page, mobile-ready, 24-48hr delivery
+- **Pro ($250):** Multi-page, contact form, gallery, revisions
+- **Commerce ($400):** Stripe/Snipcart integration, up to 20 products
+- **Premium ($750):** Full custom, unlimited pages, blog, booking, 30-day support
+- **Retainer ($75/mo):** 4 updates/month, ongoing support
+- Full plan: `flowly-toolkit/FLOWLY-BUSINESS-PLAN.md`
+
+### Nick's Capabilities
+- ✅ Static sites, deployments, forms, SEO, Stripe Payment Links, Snipcart
+- ⚡ Need setup: Custom Stripe Checkout, Shopify themes, custom domains
+- 📚 Would learn: Full Shopify Liquid, WooCommerce (1-2 weeks each)

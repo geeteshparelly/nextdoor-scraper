@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top of Texas Apples | Fresh Apples from the Panhandle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root{--cream:#faf6f1;--red:#a52a2a;--green:#4a6741;--warm:#f5ebe0;--text:#2d2319}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Source Sans 3',sans-serif;background:var(--cream);color:var(--text);line-height:1.8;font-weight:300}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,246,241,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Libre Baskerville',serif;font-size:1.3rem;color:var(--text);text-decoration:none}
+        nav a{color:#666;text-decoration:none;margin-left:2rem;font-size:.9rem}
+        .header-cta{background:var(--red);color:#fff;padding:.7rem 1.5rem;border-radius:50px}
+        .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:6rem 2rem;gap:4rem;max-width:1300px;margin:0 auto}
+        .hero-content{animation:fadeIn 1s ease-out}
+        .hero-badge{font-size:.8rem;font-weight:500;color:var(--red);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1rem;background:rgba(165,42,42,0.1);display:inline-block;padding:.5rem 1rem;border-radius:50px}
+        .hero-title{font-family:'Libre Baskerville',serif;font-size:clamp(2.5rem,5vw,3.5rem);line-height:1.15;margin-bottom:1.5rem}
+        .hero-title span{color:var(--red)}
+        .hero-subtitle{font-size:1.05rem;color:#666;margin-bottom:2rem}
+        .btn{display:inline-block;padding:1rem 2rem;text-decoration:none;font-weight:500;border-radius:50px;transition:all .3s;background:var(--red);color:#fff}
+        .btn:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(165,42,42,0.25)}
+        .hero-image{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 12px 12px;box-shadow:0 24px 48px rgba(0,0,0,0.1)}
+        .products{padding:6rem 2rem;background:#fff}
+        .container{max-width:1100px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.2em;color:var(--red);margin-bottom:.75rem}
+        .section-title{font-family:'Libre Baskerville',serif;font-size:2.25rem}
+        .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .product-card{background:var(--cream);border-radius:16px;overflow:hidden;text-align:center;transition:all .3s}
+        .product-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
+        .product-image{aspect-ratio:1;object-fit:cover;width:100%}
+        .product-content{padding:1.5rem}
+        .product-name{font-family:'Libre Baskerville',serif;font-size:1.15rem;margin-bottom:.5rem}
+        .product-price{font-size:.9rem;color:var(--red);font-weight:500}
+        .story{padding:6rem 2rem;background:var(--warm)}
+        .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .story-image{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
+        .story-content h2{font-family:'Libre Baskerville',serif;font-size:2rem;margin-bottom:1.5rem}
+        .story-content p{color:#666;margin-bottom:1rem}
+        .cta{padding:5rem 2rem;background:var(--red);text-align:center;color:#fff}
+        .cta h2{font-family:'Libre Baskerville',serif;font-size:2.5rem;margin-bottom:1rem}
+        .cta-grid{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem}
+        .cta-grid div strong{display:block;margin-bottom:.25rem}
+        footer{background:var(--text);padding:2rem;color:#fff;text-align:center}
+        @media(max-width:1024px){.hero,.story-grid{grid-template-columns:1fr}.hero-image{order:-1}.products-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){nav{display:none}.products-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">🍎 Top of Texas Apples</a>
+            <nav><a href="#products">Varieties</a><a href="#story">Our Story</a><a href="#visit" class="header-cta">Find Us</a></nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">🍎 Texas Panhandle</span>
+            <h1 class="hero-title">Fresh <span>Texas</span> Apples</h1>
+            <p class="hero-subtitle">Crisp, sweet apples grown in the high altitude of the Texas Panhandle. We bring the harvest to Austin every fall.</p>
+            <a href="#products" class="btn">See Our Varieties</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1568702846914-96b305d2uj8d?w=700&h=900&fit=crop" alt="Fresh apples" class="hero-image">
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">Our Apples</p>
+                <h2 class="section-title">Hand-Picked Varieties</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?w=500&h=500&fit=crop" class="product-image" alt="Gala"><div class="product-content"><h3 class="product-name">Texas Gala</h3><p class="product-price">$4/lb</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1579613832125-5d34a13ffe2a?w=500&h=500&fit=crop" class="product-image" alt="Honeycrisp"><div class="product-content"><h3 class="product-name">Honeycrisp</h3><p class="product-price">$5/lb</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1619546952812-520e98064a52?w=500&h=500&fit=crop" class="product-image" alt="Granny Smith"><div class="product-content"><h3 class="product-name">Granny Smith</h3><p class="product-price">$4/lb</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story" id="story">
+        <div class="container">
+            <div class="story-grid">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&h=525&fit=crop" class="story-image" data-aos="fade-right" alt="Orchard">
+                <div class="story-content" data-aos="fade-left">
+                    <p class="section-label">Our Story</p>
+                    <h2>High Altitude, High Quality</h2>
+                    <p>At 3,500 feet in the Texas Panhandle, our orchard experiences the cold nights that apples need to develop their signature crunch and sweetness.</p>
+                    <p>We've been growing apples for three generations, and we make the drive to Austin every weekend during apple season to share our harvest.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="visit">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Us at Market</h2>
+            <p>Fresh apples every Saturday during apple season (Sept–Nov)</p>
+            <div class="cta-grid">
+                <div><strong>📍 Location</strong>Barton Creek Farmers Market</div>
+                <div><strong>🕐 Hours</strong>Saturdays 9am–1pm</div>
+                <div><strong>📞 Contact</strong>(512) 555-0209</div>
+            </div>
+        </div>
+    </section>
+
+    <footer><p>© 2026 Top of Texas Apples • Texas Panhandle</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

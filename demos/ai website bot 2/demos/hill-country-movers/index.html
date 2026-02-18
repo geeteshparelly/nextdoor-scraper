@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hill Country Movers | Moving Austin Forward | Austin, TX</title>
+  <meta name="description" content="Professional moving company in Austin, TX. Local and long distance moving, packing services, storage. 9 years experience. Call (512) 912-3345.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --primary: #1e3a5f;
+      --secondary: #ff6b00;
+      --accent: #2d3748;
+      --dark: #0f1f33;
+      --light: #f8f9fa;
+    }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Rubik', sans-serif;
+      color: #333;
+      line-height: 1.7;
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes drive {
+      0% { transform: translateX(-10px); }
+      50% { transform: translateX(10px); }
+      100% { transform: translateX(-10px); }
+    }
+    
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(30, 58, 95, 0.98);
+      backdrop-filter: blur(10px);
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.5rem;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .logo-icon {
+      font-size: 1.3rem;
+      animation: drive 3s ease-in-out infinite;
+    }
+    
+    .logo span { color: var(--secondary); }
+    
+    nav { display: flex; gap: 2rem; align-items: center; }
+    
+    nav a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover { color: var(--secondary); }
+    
+    .header-cta {
+      background: var(--secondary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    
+    .header-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+    }
+    
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--primary), var(--dark));
+      display: flex;
+      align-items: center;
+      padding: 6rem 5%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.2;
+    }
+    
+    .hero-content {
+      max-width: 650px;
+      color: white;
+      animation: fadeInUp 1s ease-out;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+    
+    .hero h1 span { color: var(--secondary); }
+    
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.9;
+    }
+    
+    .hero-features {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    
+    .hero-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .feature-icon {
+      width: 35px;
+      height: 35px;
+      background: var(--secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+    
+    .hero-ctas { display: flex; gap: 1rem; }
+    
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .btn-primary {
+      background: var(--secondary);
+      color: white;
+      border-radius: 4px;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255, 107, 0, 0.4);
+    }
+    
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+      border-radius: 4px;
+    }
+    
+    .btn-outline:hover {
+      background: white;
+      color: var(--primary);
+    }
+    
+    /* Services */
+    .services {
+      padding: 6rem 5%;
+      background: var(--light);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .section-header h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .service-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 8px;
+      transition: all 0.3s;
+      border-left: 4px solid transparent;
+    }
+    
+    .service-card:hover {
+      transform: translateX(10px);
+      border-left-color: var(--secondary);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+    
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+    
+    .service-card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    
+    .service-card p {
+      color: #666;
+    }
+    
+    /* Process */
+    .process {
+      padding: 6rem 5%;
+      background: var(--primary);
+      color: white;
+    }
+    
+    .process h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .process-steps {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 15%;
+      right: 15%;
+      height: 3px;
+      background: rgba(255,255,255,0.2);
+    }
+    
+    .process-step {
+      text-align: center;
+      flex: 1;
+      position: relative;
+    }
+    
+    .step-number {
+      width: 80px;
+      height: 80px;
+      background: var(--secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-family: 'Oswald', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .process-step h4 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    
+    .process-step p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      padding: 0 1rem;
+    }
+    
+    /* CTA */
+    .cta {
+      padding: 6rem 5%;
+      background: var(--secondary);
+      text-align: center;
+      color: white;
+    }
+    
+    .cta h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    
+    .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .cta-phone {
+      display: inline-block;
+      background: white;
+      color: var(--secondary);
+      padding: 1.25rem 3rem;
+      border-radius: 4px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .cta-phone:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 3rem 5%;
+      text-align: center;
+    }
+    
+    .footer-logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-info {
+      opacity: 0.7;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-info a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+    
+    .copyright {
+      font-size: 0.85rem;
+      opacity: 0.5;
+    }
+    
+    /* Mobile */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .hero-features { flex-direction: column; gap: 1rem; }
+      nav { display: none; }
+      .process-steps { flex-direction: column; gap: 2rem; }
+      .process-steps::before { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">
+      <span class="logo-icon">🚚</span>
+      Hill Country <span>Movers</span>
+    </a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#process">How It Works</a>
+      <a href="tel:5129123345" class="header-cta">Get Quote</a>
+    </nav>
+  </header>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Moving <span>Austin</span> Forward</h1>
+      <p>Stress-free local and long distance moving. We treat your belongings like our own — because your stuff matters.</p>
+      <div class="hero-features">
+        <div class="hero-feature">
+          <span class="feature-icon">✓</span>
+          <span>Licensed & Insured</span>
+        </div>
+        <div class="hero-feature">
+          <span class="feature-icon">✓</span>
+          <span>No Hidden Fees</span>
+        </div>
+        <div class="hero-feature">
+          <span class="feature-icon">✓</span>
+          <span>9 Years Experience</span>
+        </div>
+      </div>
+      <div class="hero-ctas">
+        <a href="tel:5129123345" class="btn btn-primary">Call (512) 912-3345</a>
+        <a href="#services" class="btn btn-outline">Our Services</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="services" id="services">
+    <div class="section-header" data-aos="fade-up">
+      <h2>Moving Services</h2>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-icon">🏠</div>
+        <h3>Local Moving</h3>
+        <p>Same-day and scheduled moves within Austin and surrounding areas. Apartments to houses.</p>
+      </div>
+      
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-icon">🗺️</div>
+        <h3>Long Distance</h3>
+        <p>Interstate and cross-country moves with tracking and guaranteed delivery dates.</p>
+      </div>
+      
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-icon">📦</div>
+        <h3>Packing Services</h3>
+        <p>Full-service packing with quality materials. Fragile items handled with extra care.</p>
+      </div>
+      
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-icon">🏪</div>
+        <h3>Storage Solutions</h3>
+        <p>Climate-controlled storage for short or long term. Flexible access.</p>
+      </div>
+      
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-icon">🏢</div>
+        <h3>Commercial Moving</h3>
+        <p>Office relocations with minimal downtime. Weekend and after-hours available.</p>
+      </div>
+      
+      <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="service-icon">🎹</div>
+        <h3>Piano Moving</h3>
+        <p>Specialized equipment and trained movers for pianos and heavy items.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="process" id="process" data-aos="fade-up">
+    <h2>How It Works</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <h4>Get a Quote</h4>
+        <p>Call or request a free estimate online.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <h4>Book Your Date</h4>
+        <p>Choose your moving date and time.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <h4>We Move You</h4>
+        <p>Our team handles everything safely.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <h4>Settle In</h4>
+        <p>Enjoy your new space, stress-free.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="cta" data-aos="fade-up">
+    <h2>Ready to Move?</h2>
+    <p>Free estimates with no obligation. Call Brandon for a quote today!</p>
+    <a href="tel:5129123345" class="cta-phone">(512) 912-3345</a>
+  </section>
+  
+  <footer>
+    <div class="footer-logo">Hill Country Movers</div>
+    <div class="footer-info">
+      <p>Austin, TX | <a href="tel:5129123345">(512) 912-3345</a></p>
+      <p>Licensed & Insured • TXDMV #12345 • BBB Accredited</p>
+    </div>
+    <p class="copyright">© 2026 Hill Country Movers. All rights reserved.</p>
+  </footer>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>

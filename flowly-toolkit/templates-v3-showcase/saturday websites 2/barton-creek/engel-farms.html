@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engel Farms | Fresh Produce & Eggs in Austin</title>
+    <meta name="description" content="Engel Farms - Family farm growing fresh vegetables and raising free-range eggs near Austin, TX. Find us at Barton Creek Farmers Market.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        
+        header { animation: fadeInDown 0.6s ease-out; }
+        .hero-badge { animation: fadeIn 0.6s ease-out 0.2s both; }
+        .hero-title { animation: fadeInUp 0.7s ease-out 0.1s both; }
+        .hero-subtitle { animation: fadeIn 0.6s ease-out 0.3s both; }
+        .hero-features { animation: fadeIn 0.6s ease-out 0.4s both; }
+        .hero-ctas { animation: fadeInUp 0.6s ease-out 0.5s both; }
+        .hero-visual { animation: scaleIn 0.8s ease-out 0.3s both; }
+
+        :root {
+            --bg-cream: #f8f6f1;
+            --bg-warm: #f0ebe0;
+            --surface: #ffffff;
+            --text-dark: #2a2d1e;
+            --text-body: #4a4d3e;
+            --text-muted: #6b6e5f;
+            --green: #5a7c47;
+            --green-deep: #3d5a2d;
+            --green-light: #dce8d4;
+            --earth: #8b7355;
+            --border: #e0dbd0;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Source Sans 3', -apple-system, sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(248, 246, 241, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon { font-size: 1.5rem; }
+
+        nav { display: flex; gap: 2.5rem; align-items: center; }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--green); }
+
+        .header-cta {
+            background: var(--green);
+            color: white;
+            padding: 0.7rem 1.4rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            transition: all 0.2s;
+        }
+
+        .header-cta:hover { background: var(--green-deep); }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg-shape {
+            position: absolute;
+            right: -10%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50%;
+            height: 130%;
+            background: var(--green-light);
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content { max-width: 520px; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--green);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-title {
+            font-family: 'Libre Baskerville', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-title span { color: var(--green); }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-body);
+        }
+
+        .hero-feature-icon { color: var(--green); }
+
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn-primary {
+            background: var(--green);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-primary:hover { background: var(--green-deep); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(90, 124, 71, 0.3); }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-secondary:hover { border-color: var(--green); color: var(--green); }
+
+        .hero-visual { position: relative; }
+
+        .hero-image-main {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.1);
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-float {
+            position: absolute;
+            bottom: -1.5rem;
+            left: -1.5rem;
+            background: white;
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .float-icon { font-size: 2rem; }
+        .float-text { font-family: 'Libre Baskerville', serif; font-size: 0.95rem; color: var(--text-dark); }
+        .float-subtext { font-size: 0.8rem; color: var(--text-muted); }
+
+        .products-section { padding: 6rem 2rem; background: var(--surface); }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--green); margin-bottom: 0.75rem; font-weight: 600; }
+        .section-title { font-family: 'Libre Baskerville', serif; font-size: clamp(1.75rem, 3.5vw, 2.25rem); color: var(--text-dark); }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--bg-cream);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease-out;
+            text-align: center;
+        }
+
+        .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.1); }
+
+        .product-image {
+            aspect-ratio: 1;
+            object-fit: cover;
+            width: 100%;
+            display: block;
+            transition: transform 0.4s ease-out;
+        }
+
+        .product-card:hover .product-image { transform: scale(1.05); }
+        .product-content { padding: 1.25rem; }
+        .product-name { font-family: 'Libre Baskerville', serif; font-size: 1rem; color: var(--text-dark); margin-bottom: 0.25rem; }
+        .product-price { font-size: 0.85rem; color: var(--green); font-weight: 600; }
+
+        .about-section { padding: 6rem 2rem; background: var(--bg-warm); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-images { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .about-image { border-radius: 8px; object-fit: cover; width: 100%; }
+        .about-image:first-child { grid-column: span 2; aspect-ratio: 2/1; }
+        .about-image:not(:first-child) { aspect-ratio: 1; }
+        .about-content { max-width: 480px; }
+        .about-text { font-size: 1rem; color: var(--text-body); margin: 1.5rem 0; line-height: 1.9; }
+
+        .visit-section { padding: 6rem 2rem; background: var(--green); color: white; }
+
+        .visit-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .visit-card h3 { font-family: 'Libre Baskerville', serif; font-size: 1.25rem; margin-bottom: 1rem; }
+        .visit-card p { font-size: 0.95rem; opacity: 0.9; line-height: 1.7; }
+        .visit-card a { color: white; text-decoration: underline; }
+
+        footer { background: var(--text-dark); padding: 3rem 2rem; color: white; text-align: center; }
+        footer p { font-size: 0.9rem; opacity: 0.7; }
+
+        @media (max-width: 1024px) {
+            .hero-inner, .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-visual { order: -1; }
+            .hero-bg-shape, .hero-float { display: none; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .visit-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero { padding: 6rem 1.5rem 3rem; }
+            .hero-features { flex-direction: column; gap: 0.75rem; }
+            .products-grid { grid-template-columns: 1fr; }
+            .about-images { grid-template-columns: 1fr; }
+            .about-image:first-child { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo"><span class="logo-icon">🥬</span> Engel Farms</a>
+            <nav>
+                <a href="#products">Products</a>
+                <a href="#about">Our Farm</a>
+                <a href="#visit">Find Us</a>
+            </nav>
+            <a href="#visit" class="header-cta">Market Schedule</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg-shape"></div>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge">Local Texas Farm</span>
+                <h1 class="hero-title">Farm Fresh <span>Goodness</span> Every Week</h1>
+                <p class="hero-subtitle">We grow seasonal vegetables and raise free-range hens the way nature intended. Find us every Saturday at Barton Creek Farmers Market.</p>
+                <div class="hero-features">
+                    <span class="hero-feature"><span class="hero-feature-icon">✓</span> Chemical Free</span>
+                    <span class="hero-feature"><span class="hero-feature-icon">✓</span> Free Range Eggs</span>
+                    <span class="hero-feature"><span class="hero-feature-icon">✓</span> Picked Fresh</span>
+                </div>
+                <div class="hero-ctas">
+                    <a href="#products" class="btn-primary">See What's Fresh</a>
+                    <a href="#visit" class="btn-secondary">Find Us</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-main">
+                    <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&h=600&fit=crop" alt="Fresh farm vegetables" class="hero-image">
+                </div>
+                <div class="hero-float">
+                    <span class="float-icon">🥚</span>
+                    <div>
+                        <p class="float-text">Farm Fresh Eggs</p>
+                        <p class="float-subtext">Free-range, pasture-raised</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">From Our Fields</p>
+                <h2 class="section-title">What We're Growing</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1569288052389-dac9b01c9c05?w=400&h=400&fit=crop" alt="Farm Eggs" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Pasture-Raised Eggs</h3>
+                        <p class="product-price">$7/dozen</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=400&fit=crop" alt="Mixed Greens" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Mixed Greens</h3>
+                        <p class="product-price">$5/bag</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&h=400&fit=crop" alt="Tomatoes" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Heirloom Tomatoes</h3>
+                        <p class="product-price">$6/lb</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1518977676601-b53f82ber5f9?w=400&h=400&fit=crop" alt="Squash" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Summer Squash</h3>
+                        <p class="product-price">$4/lb</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&h=400&fit=crop" alt="Peppers" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Sweet Peppers</h3>
+                        <p class="product-price">$5/lb</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400&h=400&fit=crop" alt="Herbs" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Fresh Herbs</h3>
+                        <p class="product-price">$3/bunch</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=400&fit=crop" alt="Farm fields" class="about-image">
+                    <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=400&h=400&fit=crop" alt="Free range chickens" class="about-image">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=400&fit=crop" alt="Fresh harvest" class="about-image">
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <p class="section-label">Our Story</p>
+                    <h2 class="section-title">Growing With Purpose</h2>
+                    <p class="about-text">Engel Farms started as a simple dream — grow food the right way, without shortcuts or chemicals. Today, we farm 15 acres just outside Austin, raising happy hens and growing vegetables that taste like they should.</p>
+                    <p class="about-text">Every Saturday morning, we pack up the truck and head to Barton Creek Farmers Market. We love meeting our neighbors and sharing what we've grown.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="visit-section" id="visit">
+        <div class="container">
+            <div class="visit-grid">
+                <div class="visit-card">
+                    <h3>Find Us</h3>
+                    <p>Barton Creek Farmers Market<br>2901 S Capital of TX Hwy<br>Every Saturday 9am-1pm</p>
+                </div>
+                <div class="visit-card">
+                    <h3>Pre-Orders</h3>
+                    <p>Want to guarantee your eggs?<br>Message us by Friday at noon<br>for Saturday pickup.</p>
+                </div>
+                <div class="visit-card">
+                    <h3>Contact</h3>
+                    <p><a href="mailto:hello@engelfarms.com">hello@engelfarms.com</a><br>@engelfarms<br>Austin, TX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Engel Farms. Grown in Texas with love.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true, offset: 100 });</script>
+</body>
+</html>

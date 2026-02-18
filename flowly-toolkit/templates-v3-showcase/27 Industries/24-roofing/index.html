@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summit Roofing | Austin, TX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary:#2c3e50;--secondary:#8b0000;--sky:#87ceeb;--light:#f8f9fa}
+    html{scroll-behavior:smooth}
+    body{font-family:'Nunito',sans-serif;color:#333;line-height:1.7}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(44,62,80,0.98);backdrop-filter:blur(10px);padding:1rem 5%;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Archivo Black',sans-serif;font-size:1.5rem;color:#fff;text-decoration:none}
+    .logo span{color:var(--secondary)}
+    .emergency{background:var(--secondary);color:#fff;padding:.5rem 1rem;font-size:.85rem;font-weight:700}
+    nav{display:flex;gap:1.5rem;align-items:center}
+    nav a{text-decoration:none;color:rgba(255,255,255,0.85)}
+    .nav-cta{background:#fff;color:var(--primary);padding:.75rem 1.5rem;font-weight:700}
+    .hero{min-height:100vh;background:linear-gradient(rgba(44,62,80,0.7),rgba(44,62,80,0.8)),url('https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=1920&q=80');background-size:cover;background-position:center;display:flex;align-items:center;padding:0 5%}
+    .hero-content{max-width:700px;color:#fff;animation:fadeInUp 1s ease-out}
+    .trust-badges{display:flex;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}
+    .trust-badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);padding:.5rem 1rem;font-size:.85rem}
+    .hero h1{font-family:'Archivo Black',sans-serif;font-size:3.5rem;margin-bottom:1rem}
+    .hero p{font-size:1.2rem;margin-bottom:2rem;opacity:.9}
+    .btn{display:inline-block;padding:1rem 2rem;text-decoration:none;font-weight:700;transition:all .3s;background:var(--secondary);color:#fff}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(139,0,0,0.4)}
+    .services{padding:6rem 5%;background:var(--light)}
+    .section-title{text-align:center;margin-bottom:4rem}
+    .section-title h2{font-family:'Archivo Black',sans-serif;font-size:2.5rem;color:var(--primary)}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1000px;margin:0 auto}
+    .service-card{background:#fff;padding:2rem;border-radius:8px;text-align:center;border-bottom:4px solid transparent;transition:all .3s}
+    .service-card:hover{transform:translateY(-8px);border-bottom-color:var(--secondary);box-shadow:0 20px 50px rgba(0,0,0,0.1)}
+    .service-icon{width:60px;height:60px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.5rem}
+    .service-card h3{font-family:'Archivo Black',sans-serif;color:var(--primary);margin-bottom:.5rem}
+    .cta{padding:6rem 5%;background:linear-gradient(135deg,var(--sky),#5f9ea0);text-align:center}
+    .cta h2{font-family:'Archivo Black',sans-serif;font-size:2.5rem;color:var(--primary);margin-bottom:1rem}
+    .cta-phone{display:inline-block;background:var(--primary);color:#fff;padding:1.25rem 3rem;font-family:'Archivo Black',sans-serif;font-size:1.8rem;text-decoration:none}
+    footer{background:#1a252f;color:#fff;padding:3rem 5%;text-align:center}
+    @media(max-width:768px){.hero h1{font-size:2.5rem}nav{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Summit<span>Roofing</span></a>
+    <nav>
+      <span class="emergency">Storm Damage?</span>
+      <a href="tel:5125550146" class="nav-cta">(512) 555-0146</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="trust-badges">
+        <span class="trust-badge">20 Years Experience</span>
+        <span class="trust-badge">Free Inspections</span>
+      </div>
+      <h1>Protecting What Matters</h1>
+      <p>Austin's trusted roofing contractor. Quality materials, expert installation, lasting protection.</p>
+      <a href="tel:5125550146" class="btn">Get Free Estimate</a>
+    </div>
+  </section>
+  <section class="services" id="services">
+    <div class="section-title" data-aos="fade-up"><h2>Roofing Services</h2></div>
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up"><div class="service-icon">🏠</div><h3>Roof Replacement</h3><p>Complete tear-off and new installation.</p></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100"><div class="service-icon">⛈️</div><h3>Storm Damage</h3><p>Fast repair and insurance assistance.</p></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200"><div class="service-icon">🔍</div><h3>Inspections</h3><p>Thorough roof assessments.</p></div>
+    </div>
+  </section>
+  <section class="cta" data-aos="fade-up">
+    <h2>Free Roof Inspection</h2>
+    <p>Insurance claim experts. Call today.</p>
+    <a href="tel:5125550146" class="cta-phone">(512) 555-0146</a>
+  </section>
+  <footer><p>© 2026 Summit Roofing. Austin, TX. Licensed Contractor.</p></footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

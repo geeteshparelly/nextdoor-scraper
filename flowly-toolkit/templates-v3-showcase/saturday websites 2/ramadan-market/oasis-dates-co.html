@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oasis Dates Co | Premium Medjool Dates in Austin</title>
+    <meta name="description" content="Oasis Dates Co - Premium Medjool dates, stuffed dates, and date-based treats. Perfect for Ramadan and beyond. Find us at ATX Ramadan Bazaar.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        
+        header { animation: fadeInDown 0.6s ease-out; }
+        .hero-badge { animation: fadeIn 0.6s ease-out 0.2s both; }
+        .hero-title { animation: fadeInUp 0.7s ease-out 0.1s both; }
+        .hero-subtitle { animation: fadeIn 0.6s ease-out 0.3s both; }
+        .hero-ctas { animation: fadeInUp 0.6s ease-out 0.5s both; }
+        .hero-visual { animation: scaleIn 0.8s ease-out 0.3s both; }
+
+        :root {
+            --bg: #faf6f0;
+            --bg-warm: #f5ede0;
+            --surface: #ffffff;
+            --text-dark: #2a1e14;
+            --text-body: #5a4a3a;
+            --text-muted: #8a7560;
+            --amber: #b38728;
+            --amber-deep: #8c6a1e;
+            --amber-light: #f5ead5;
+            --brown: #6b4423;
+            --border: #e8dcc8;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Source Sans 3', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(250, 246, 240, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        nav { display: flex; gap: 2.5rem; align-items: center; }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--amber); }
+
+        .header-cta {
+            background: var(--amber);
+            color: white;
+            padding: 0.7rem 1.4rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            transition: all 0.2s;
+        }
+
+        .header-cta:hover { background: var(--amber-deep); }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 5rem;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--amber-light) 100%);
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content { max-width: 520px; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--amber);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-title {
+            font-family: 'Libre Baskerville', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-title span { color: var(--amber); }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn-primary {
+            background: var(--amber);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-primary:hover { background: var(--amber-deep); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(179, 135, 40, 0.35); }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            transition: all 0.3s ease-out;
+        }
+
+        .btn-secondary:hover { border-color: var(--amber); color: var(--amber); }
+
+        .hero-visual { position: relative; }
+
+        .hero-image-main {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.12);
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .products-section { padding: 6rem 2rem; background: var(--surface); }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--amber); margin-bottom: 0.75rem; font-weight: 600; }
+        .section-title { font-family: 'Libre Baskerville', serif; font-size: clamp(1.75rem, 3.5vw, 2.25rem); color: var(--text-dark); }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease-out;
+            text-align: center;
+        }
+
+        .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.1); }
+
+        .product-image {
+            aspect-ratio: 1;
+            object-fit: cover;
+            width: 100%;
+            display: block;
+            transition: transform 0.4s ease-out;
+        }
+
+        .product-card:hover .product-image { transform: scale(1.05); }
+        .product-content { padding: 1.5rem; }
+        .product-name { font-family: 'Libre Baskerville', serif; font-size: 1.1rem; color: var(--text-dark); margin-bottom: 0.5rem; }
+        .product-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+        .product-price { font-size: 0.9rem; color: var(--amber); font-weight: 600; }
+
+        .about-section { padding: 6rem 2rem; background: var(--bg-warm); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 12px;
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+        }
+
+        .about-content { max-width: 480px; }
+        .about-text { font-size: 1rem; color: var(--text-body); margin: 1.5rem 0; line-height: 1.9; }
+
+        .contact-section { padding: 6rem 2rem; background: var(--brown); color: white; }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .contact-card h3 { font-family: 'Libre Baskerville', serif; font-size: 1.25rem; margin-bottom: 1rem; }
+        .contact-card p { font-size: 0.95rem; opacity: 0.9; line-height: 1.7; }
+        .contact-card a { color: white; text-decoration: underline; }
+
+        footer { background: var(--text-dark); padding: 3rem 2rem; color: white; text-align: center; }
+        footer p { font-size: 0.9rem; opacity: 0.7; }
+
+        @media (max-width: 1024px) {
+            .hero-inner, .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-visual { order: -1; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero { padding: 6rem 1.5rem 3rem; }
+            .products-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">Oasis Dates Co</a>
+            <nav>
+                <a href="#products">Products</a>
+                <a href="#about">About</a>
+                <a href="#contact">Find Us</a>
+            </nav>
+            <a href="#contact" class="header-cta">Order Now</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge">Premium Medjool Dates</span>
+                <h1 class="hero-title">Nature's <span>Sweetest</span> Gift</h1>
+                <p class="hero-subtitle">Premium Medjool dates, hand-selected for quality and flavor. Perfect for Ramadan, special occasions, or everyday indulgence. Now with stuffed varieties and date-based treats.</p>
+                <div class="hero-ctas">
+                    <a href="#products" class="btn-primary">Shop Dates</a>
+                    <a href="#contact" class="btn-secondary">Find Us</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-main">
+                    <img src="https://images.unsplash.com/photo-1590751531966-72a01869bf79?w=800&h=600&fit=crop" alt="Premium Medjool dates" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">Our Selection</p>
+                <h2 class="section-title">Premium Dates & Treats</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1590751531966-72a01869bf79?w=500&h=500&fit=crop" alt="Medjool Dates" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Classic Medjool</h3>
+                        <p class="product-desc">Jumbo grade, naturally sweet</p>
+                        <p class="product-price">$18 / lb</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1597714026720-8f74c62310ba?w=500&h=500&fit=crop" alt="Stuffed Dates" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Almond Stuffed</h3>
+                        <p class="product-desc">Medjool + roasted almonds</p>
+                        <p class="product-price">$24 / lb</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=500&h=500&fit=crop" alt="Chocolate Dates" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Dark Chocolate</h3>
+                        <p class="product-desc">Dipped in 70% dark</p>
+                        <p class="product-price">$28 / box</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1612205907765-a3cd73dd45d5?w=500&h=500&fit=crop" alt="Walnut Stuffed" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Walnut Stuffed</h3>
+                        <p class="product-desc">With California walnuts</p>
+                        <p class="product-price">$24 / lb</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1520218508822-998633d997cd?w=500&h=500&fit=crop" alt="Date Energy Balls" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Date Energy Balls</h3>
+                        <p class="product-desc">Dates, nuts, coconut</p>
+                        <p class="product-price">$12 / dozen</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1604423041847-cf0cc75c5a48?w=500&h=500&fit=crop" alt="Gift Box" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-name">Ramadan Gift Box</h3>
+                        <p class="product-desc">Assorted premium dates</p>
+                        <p class="product-price">$45</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&h=600&fit=crop" alt="Date palm grove" class="about-image" data-aos="fade-right">
+                <div class="about-content" data-aos="fade-left">
+                    <p class="section-label">Our Story</p>
+                    <h2 class="section-title">From Palm to Table</h2>
+                    <p class="about-text">Oasis Dates Co was founded with a simple mission: bring the finest quality dates to Austin. We source our Medjool dates directly from family farms in California's Coachella Valley, where the desert climate produces the world's best dates.</p>
+                    <p class="about-text">Every date is hand-selected for size, sweetness, and texture. We stuff them by hand with premium nuts, dip them in artisan chocolate, and create treats that honor this ancient fruit.</p>
+                    <p class="about-text">Whether you're breaking fast during Ramadan, hosting a gathering, or just craving something naturally sweet — we've got you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>ATX Ramadan Bazaar</h3>
+                    <p>Palmer Events Center<br>900 Barton Springs Rd<br>Saturdays during Ramadan</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Bulk & Gifts</h3>
+                    <p>Custom gift boxes available<br>Bulk orders for events<br>Corporate gifting</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Contact</h3>
+                    <p><a href="tel:5125552468">(512) 555-2468</a><br><a href="mailto:hello@oasisdates.com">hello@oasisdates.com</a><br>@oasisdatesco</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Oasis Dates Co. Premium dates for every occasion.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true, offset: 100 });</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Crescent Farm | Organic Produce & Dates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root{--cream:#f9f7f3;--green:#2d5a27;--gold:#c9a227;--earth:#6b5344;--text:#2a2a26}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Source Sans 3',sans-serif;background:var(--cream);color:var(--text);line-height:1.8}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(249,247,243,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Libre Baskerville',serif;font-size:1.3rem;color:var(--text);text-decoration:none}
+        nav a{color:#666;text-decoration:none;margin-left:2rem;font-size:.9rem}
+        .header-cta{background:var(--green);color:#fff;padding:.7rem 1.5rem;border-radius:50px}
+        .hero{min-height:100vh;display:flex;align-items:center;padding:6rem 2rem;background:linear-gradient(135deg,var(--cream) 0%,#e8e4dc 100%)}
+        .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .hero-content{max-width:500px}
+        .hero-badge{font-size:.8rem;color:var(--green);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1rem}
+        .hero-title{font-family:'Libre Baskerville',serif;font-size:clamp(2.2rem,4vw,3rem);line-height:1.2;margin-bottom:1.5rem}
+        .hero-title span{color:var(--green)}
+        .hero-subtitle{color:#666;margin-bottom:2rem}
+        .btn{display:inline-block;padding:1rem 2rem;text-decoration:none;font-weight:500;border-radius:50px;transition:all .3s;background:var(--green);color:#fff}
+        .btn:hover{transform:translateY(-3px)}
+        .hero-image{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:0 24px 48px rgba(0,0,0,0.1)}
+        .products{padding:6rem 2rem;background:#fff}
+        .container{max-width:1000px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.2em;color:var(--green);margin-bottom:.75rem}
+        .section-title{font-family:'Libre Baskerville',serif;font-size:2rem}
+        .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .product-card{background:var(--cream);border-radius:16px;overflow:hidden;text-align:center;transition:all .3s}
+        .product-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
+        .product-image{aspect-ratio:1;object-fit:cover;width:100%}
+        .product-content{padding:1.5rem}
+        .product-name{font-family:'Libre Baskerville',serif;font-size:1.1rem;margin-bottom:.5rem}
+        .product-price{font-size:.9rem;color:var(--green);font-weight:500}
+        .cta{padding:5rem 2rem;background:var(--green);text-align:center;color:#fff}
+        .cta h2{font-family:'Libre Baskerville',serif;font-size:2rem;margin-bottom:1rem}
+        .cta-grid{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem}
+        .cta-grid div strong{display:block;color:var(--gold);margin-bottom:.25rem}
+        footer{background:var(--text);padding:2rem;color:#fff;text-align:center}
+        @media(max-width:1024px){.hero-inner{grid-template-columns:1fr}.hero-image{order:-1}.products-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){nav{display:none}.products-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">☪️ Green Crescent Farm</a>
+            <nav><a href="#products">Products</a><a href="#visit" class="header-cta">Find Us</a></nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge">🌱 Organic & Local</span>
+                <h1 class="hero-title">Fresh Produce & <span>Premium Dates</span></h1>
+                <p class="hero-subtitle">Organic vegetables, herbs, and imported Medjool dates. Perfect for iftar and family gatherings.</p>
+                <a href="#products" class="btn">Our Products</a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&h=600&fit=crop" alt="Farm" class="hero-image">
+        </div>
+    </section>
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up"><p class="section-label">Our Products</p><h2 class="section-title">Fresh & Wholesome</h2></div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1546548970-71785318a17b?w=500&h=500&fit=crop" class="product-image" alt="Dates"><div class="product-content"><h3 class="product-name">Medjool Dates</h3><p class="product-price">$15/lb</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&h=500&fit=crop" class="product-image" alt="Greens"><div class="product-content"><h3 class="product-name">Mixed Greens</h3><p class="product-price">$6/bag</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=500&h=500&fit=crop" class="product-image" alt="Herbs"><div class="product-content"><h3 class="product-name">Fresh Mint & Parsley</h3><p class="product-price">$3/bunch</p></div></div>
+            </div>
+        </div>
+    </section>
+    <section class="cta" id="visit">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Us at Market</h2>
+            <p>Fresh organic produce at local markets</p>
+            <div class="cta-grid">
+                <div><strong>📍</strong>ATX Ramadan Bazaar</div>
+                <div><strong>🕐</strong>Check schedule</div>
+                <div><strong>📞</strong>(512) 555-0305</div>
+            </div>
+        </div>
+    </section>
+    <footer><p>© 2026 Green Crescent Farm • Central Texas</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

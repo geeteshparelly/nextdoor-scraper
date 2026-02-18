@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crispy Rice Cakes | Korean Street Food in Austin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root{--cream:#fffbf5;--red:#c41e3a;--gold:#d4a84b;--dark:#1a1a1a;--warm:#f5ebe0}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--dark);line-height:1.8;font-weight:300}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,251,245,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--red);text-decoration:none;letter-spacing:.05em}
+        nav a{color:#666;text-decoration:none;margin-left:2rem;font-size:.9rem}
+        .header-cta{background:var(--red);color:#fff;padding:.7rem 1.5rem;border-radius:50px}
+        .hero{min-height:100vh;background:linear-gradient(rgba(196,30,58,0.9),rgba(26,26,26,0.95)),url('https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=1920&h=1080&fit=crop');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
+        .hero-content{max-width:700px;padding:2rem}
+        .hero-badge{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+        .hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,10vw,7rem);line-height:.95;margin-bottom:1.5rem;letter-spacing:.02em}
+        .hero-subtitle{font-size:1.1rem;margin-bottom:2.5rem;opacity:.9}
+        .btn{display:inline-block;padding:1rem 2.5rem;text-decoration:none;font-weight:500;border-radius:50px;transition:all .3s;background:var(--gold);color:var(--dark)}
+        .btn:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(0,0,0,0.3)}
+        .menu{padding:6rem 2rem;background:var(--cream)}
+        .container{max-width:900px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.75rem}
+        .section-title{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:.02em}
+        .menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+        .menu-item{background:#fff;border-radius:16px;overflow:hidden;text-align:center;transition:all .3s}
+        .menu-item:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
+        .menu-image{aspect-ratio:4/3;object-fit:cover;width:100%}
+        .menu-content{padding:1.5rem}
+        .menu-name{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;margin-bottom:.5rem;color:var(--red);letter-spacing:.05em}
+        .menu-price{font-size:.9rem;color:var(--dark);font-weight:500}
+        .menu-desc{font-size:.85rem;color:#666;margin-top:.5rem}
+        .cta{padding:5rem 2rem;background:var(--red);text-align:center;color:#fff}
+        .cta h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;margin-bottom:1rem;letter-spacing:.02em}
+        .cta-grid{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem}
+        .cta-grid div strong{display:block;color:var(--gold);margin-bottom:.25rem}
+        footer{background:var(--dark);padding:2rem;color:#fff;text-align:center}
+        @media(max-width:768px){nav{display:none}.menu-grid{grid-template-columns:1fr}.hero-title{font-size:4rem}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">CRISPY RICE CAKES</a>
+            <nav><a href="#menu">Menu</a><a href="#visit" class="header-cta">Find Us</a></nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-badge">🍚 Korean Street Food</p>
+            <h1 class="hero-title">TTEOKBOKKI & MORE</h1>
+            <p class="hero-subtitle">Authentic Korean rice cakes and street food snacks. Spicy, sweet, and seriously addictive.</p>
+            <a href="#menu" class="btn">See Menu</a>
+        </div>
+    </section>
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up"><p class="section-label">Our Menu</p><h2 class="section-title">KOREAN STREET EATS</h2></div>
+            <div class="menu-grid">
+                <div class="menu-item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=500&h=375&fit=crop" class="menu-image" alt="Tteokbokki"><div class="menu-content"><h3 class="menu-name">Tteokbokki</h3><p class="menu-price">$10</p><p class="menu-desc">Chewy rice cakes in spicy gochujang sauce</p></div></div>
+                <div class="menu-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1553163147-622ab57be1c7?w=500&h=375&fit=crop" class="menu-image" alt="Kimbap"><div class="menu-content"><h3 class="menu-name">Kimbap</h3><p class="menu-price">$8</p><p class="menu-desc">Korean rice rolls with vegetables</p></div></div>
+                <div class="menu-item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?w=500&h=375&fit=crop" class="menu-image" alt="Hotteok"><div class="menu-content"><h3 class="menu-name">Hotteok</h3><p class="menu-price">$5</p><p class="menu-desc">Sweet pancake with brown sugar filling</p></div></div>
+                <div class="menu-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1567982047351-76b6f93e38ee?w=500&h=375&fit=crop" class="menu-image" alt="Mandu"><div class="menu-content"><h3 class="menu-name">Mandu</h3><p class="menu-price">$7</p><p class="menu-desc">Crispy Korean dumplings</p></div></div>
+            </div>
+        </div>
+    </section>
+    <section class="cta" id="visit">
+        <div class="container" data-aos="fade-up">
+            <h2>FIND US AT MARKET</h2>
+            <p>Fresh Korean street food every Saturday</p>
+            <div class="cta-grid">
+                <div><strong>📍</strong>Barton Creek Farmers Market</div>
+                <div><strong>🕐</strong>Saturdays 9am–1pm</div>
+                <div><strong>📞</strong>(512) 555-0216</div>
+            </div>
+        </div>
+    </section>
+    <footer><p>© 2026 Crispy Rice Cakes • Austin, TX</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

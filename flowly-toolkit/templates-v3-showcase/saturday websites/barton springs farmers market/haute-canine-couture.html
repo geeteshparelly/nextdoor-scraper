@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haute Canine Couture | Luxury Pet Accessories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+        :root{--cream:#faf8f5;--blush:#f5e6e0;--gold:#b8860b;--black:#1a1a1a;--muted:#666}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--black);line-height:1.8;font-weight:300}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,245,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--black);text-decoration:none;letter-spacing:.1em}
+        nav a{color:var(--muted);text-decoration:none;margin-left:2.5rem;font-size:.85rem;letter-spacing:.05em}
+        .header-cta{background:var(--black);color:#fff;padding:.7rem 1.5rem;font-size:.8rem;letter-spacing:.1em}
+        .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:6rem 2rem;gap:4rem;max-width:1300px;margin:0 auto}
+        .hero-content{animation:fadeIn 1s ease-out}
+        .hero-eyebrow{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+        .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1.1;margin-bottom:1.5rem;font-weight:400}
+        .hero-subtitle{font-size:1rem;color:var(--muted);margin-bottom:2rem}
+        .btn{display:inline-block;padding:1rem 2.5rem;text-decoration:none;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;transition:all .3s}
+        .btn-primary{background:var(--black);color:#fff}
+        .btn-primary:hover{background:var(--gold)}
+        .hero-image{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
+        .products{padding:6rem 2rem;background:#fff}
+        .container{max-width:1100px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+        .section-title{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400}
+        .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .product-card{text-align:center;transition:all .3s}
+        .product-card:hover{transform:translateY(-8px)}
+        .product-image{aspect-ratio:1;object-fit:cover;width:100%;margin-bottom:1.5rem}
+        .product-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:.5rem}
+        .product-price{font-size:.9rem;color:var(--gold);letter-spacing:.05em}
+        .about{padding:6rem 2rem;background:var(--blush)}
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .about-image{width:100%;aspect-ratio:3/4;object-fit:cover}
+        .about-content h2{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;margin-bottom:1.5rem}
+        .about-content p{color:var(--muted);margin-bottom:1rem}
+        .cta{padding:5rem 2rem;background:var(--black);text-align:center;color:#fff}
+        .cta h2{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;margin-bottom:1rem}
+        .cta p{opacity:.8;margin-bottom:2rem}
+        .cta-info{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
+        .cta-info div{text-align:center}
+        .cta-info strong{display:block;color:var(--gold);margin-bottom:.25rem;font-size:.7rem;letter-spacing:.2em}
+        footer{background:var(--black);padding:2rem;color:#fff;text-align:center;font-size:.8rem;letter-spacing:.1em}
+        @media(max-width:1024px){.hero,.about-grid{grid-template-columns:1fr}.hero-image{order:-1}.products-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){nav{display:none}.products-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">HAUTE CANINE</a>
+            <nav><a href="#products">Collection</a><a href="#about">About</a><a href="#contact" class="header-cta">Contact</a></nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow">Luxury Pet Accessories</p>
+            <h1 class="hero-title">Elevated Style for Discerning Dogs</h1>
+            <p class="hero-subtitle">Handcrafted collars, leashes, and accessories made with premium materials. Because your best friend deserves the best.</p>
+            <a href="#products" class="btn btn-primary">Shop Collection</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=700&h=900&fit=crop" alt="Elegant dog" class="hero-image">
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">The Collection</p>
+                <h2 class="section-title">Handcrafted Luxury</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1567612529009-afe25813a308?w=500&h=500&fit=crop" class="product-image" alt="Leather collar"><h3 class="product-name">Heritage Leather Collar</h3><p class="product-price">$85</p></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=500&h=500&fit=crop" class="product-image" alt="Leash"><h3 class="product-name">Brass Hardware Leash</h3><p class="product-price">$120</p></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?w=500&h=500&fit=crop" class="product-image" alt="Bandana"><h3 class="product-name">Linen Bandana Set</h3><p class="product-price">$45</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?w=600&h=800&fit=crop" class="about-image" data-aos="fade-right" alt="Craftsman">
+                <div class="about-content" data-aos="fade-left">
+                    <p class="section-label">Our Craft</p>
+                    <h2>Made by Hand, Made to Last</h2>
+                    <p>Every piece in our collection is handcrafted using full-grain leather, solid brass hardware, and premium textiles.</p>
+                    <p>We believe pet accessories should be as thoughtfully designed as anything else in your home — beautiful, functional, and built to last a lifetime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Us at Market</h2>
+            <p>Shop in person every Saturday</p>
+            <div class="cta-info">
+                <div><strong>LOCATION</strong>Barton Creek Farmers Market</div>
+                <div><strong>HOURS</strong>Saturdays 9am–1pm</div>
+                <div><strong>CUSTOM ORDERS</strong>(512) 555-0220</div>
+            </div>
+        </div>
+    </section>
+
+    <footer><p>© 2026 Haute Canine Couture • Austin</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

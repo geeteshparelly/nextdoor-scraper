@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rustic Resale | Upcycled Furniture & Home Goods</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root{--cream:#f9f6f1;--sage:#7c9885;--brown:#5c4033;--warm:#e8dfd3;--text:#2d2319}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Source Sans 3',sans-serif;background:var(--cream);color:var(--text);line-height:1.8}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(249,246,241,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Libre Baskerville',serif;font-size:1.3rem;color:var(--text);text-decoration:none}
+        nav a{color:#666;text-decoration:none;margin-left:2rem;font-size:.9rem}
+        .header-cta{background:var(--sage);color:#fff;padding:.7rem 1.5rem;border-radius:50px}
+        .hero{min-height:100vh;display:flex;align-items:center;padding:6rem 2rem;background:var(--warm)}
+        .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .hero-content{max-width:500px}
+        .hero-badge{font-size:.8rem;color:var(--sage);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1rem}
+        .hero-title{font-family:'Libre Baskerville',serif;font-size:clamp(2.2rem,4vw,3rem);line-height:1.2;margin-bottom:1.5rem}
+        .hero-title span{color:var(--sage)}
+        .hero-subtitle{color:#666;margin-bottom:2rem}
+        .btn{display:inline-block;padding:1rem 2rem;text-decoration:none;font-weight:500;border-radius:50px;transition:all .3s;background:var(--sage);color:#fff}
+        .btn:hover{transform:translateY(-3px)}
+        .hero-image{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:0 24px 48px rgba(0,0,0,0.1)}
+        .gallery{padding:6rem 2rem;background:#fff}
+        .container{max-width:1100px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.2em;color:var(--sage);margin-bottom:.75rem}
+        .section-title{font-family:'Libre Baskerville',serif;font-size:2rem}
+        .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+        .gallery-item{background:var(--cream);border-radius:12px;overflow:hidden;transition:all .3s}
+        .gallery-item:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
+        .gallery-image{aspect-ratio:4/3;object-fit:cover;width:100%}
+        .gallery-content{padding:1.5rem;text-align:center}
+        .gallery-name{font-family:'Libre Baskerville',serif;font-size:1.1rem;margin-bottom:.5rem}
+        .gallery-price{font-size:.9rem;color:var(--sage);font-weight:500}
+        .cta{padding:5rem 2rem;background:var(--sage);text-align:center;color:#fff}
+        .cta h2{font-family:'Libre Baskerville',serif;font-size:2rem;margin-bottom:1rem}
+        .cta-grid{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-top:2rem}
+        .cta-grid div strong{display:block;margin-bottom:.25rem}
+        footer{background:var(--text);padding:2rem;color:#fff;text-align:center}
+        @media(max-width:1024px){.hero-inner{grid-template-columns:1fr}.hero-image{order:-1}.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){nav{display:none}.gallery-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">♻️ Rustic Resale</a>
+            <nav><a href="#gallery">Shop</a><a href="#visit" class="header-cta">Find Us</a></nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge">🪵 Upcycled & Restored</span>
+                <h1 class="hero-title">Furniture with a <span>Second Life</span></h1>
+                <p class="hero-subtitle">Rescued, restored, and reimagined furniture and home goods. Sustainable style that tells a story.</p>
+                <a href="#gallery" class="btn">See What's Available</a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=600&fit=crop" alt="Vintage furniture" class="hero-image">
+        </div>
+    </section>
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up"><p class="section-label">Available Now</p><h2 class="section-title">Recent Restorations</h2></div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&h=375&fit=crop" class="gallery-image" alt="Restored couch"><div class="gallery-content"><h3 class="gallery-name">Mid-Century Sofa</h3><p class="gallery-price">$450</p></div></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=500&h=375&fit=crop" class="gallery-image" alt="Restored table"><div class="gallery-content"><h3 class="gallery-name">Farmhouse Table</h3><p class="gallery-price">$350</p></div></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=500&h=375&fit=crop" class="gallery-image" alt="Restored chair"><div class="gallery-content"><h3 class="gallery-name">Accent Chair Pair</h3><p class="gallery-price">$275</p></div></div>
+            </div>
+        </div>
+    </section>
+    <section class="cta" id="visit">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Us at the Flea</h2>
+            <p>New pieces every weekend</p>
+            <div class="cta-grid">
+                <div><strong>📍</strong>Austin Country Flea Market</div>
+                <div><strong>🕐</strong>Sat-Sun 9am–5pm</div>
+                <div><strong>📞</strong>(512) 555-0402</div>
+            </div>
+        </div>
+    </section>
+    <footer><p>© 2026 Rustic Resale • Austin, TX</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>

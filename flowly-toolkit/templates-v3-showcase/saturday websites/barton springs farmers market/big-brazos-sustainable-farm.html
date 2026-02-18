@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Brazos Sustainable Farm | Fresh Produce in Central Texas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+        @keyframes scaleIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+        header{animation:fadeIn 0.6s ease-out}
+        .hero-content{animation:fadeInUp 0.8s ease-out}
+        .hero-visual{animation:scaleIn 0.9s ease-out 0.2s both}
+        :root{--cream:#faf7f2;--surface:#fff;--text:#1e2318;--muted:#6b6e5f;--green:#4a6741;--green-deep:#2d4027;--green-light:#d4dece;--earth:#8b7355;--border:#ddd8cd}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Source Sans 3',sans-serif;background:var(--cream);color:#3a3d32;line-height:1.7}
+        body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%234a6741' fill-opacity='0.03'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;z-index:1000}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,247,242,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Libre Baskerville',serif;font-size:1.3rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:.5rem}
+        nav{display:flex;gap:2rem;align-items:center}
+        nav a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+        nav a:hover{color:var(--green)}
+        .header-cta{background:var(--green);color:#fff;padding:.7rem 1.4rem;text-decoration:none;font-weight:600;font-size:.85rem;border-radius:50px;transition:all .2s}
+        .header-cta:hover{background:var(--green-deep)}
+        .hero{min-height:100vh;display:flex;align-items:center;padding:8rem 2rem 5rem;position:relative}
+        .hero-bg{position:absolute;right:-5%;top:50%;transform:translateY(-50%);width:45%;height:140%;background:var(--green-light);border-radius:50%;opacity:.5}
+        .hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:2}
+        .hero-content{max-width:520px}
+        .hero-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:.15em;margin-bottom:1.25rem}
+        .hero-title{font-family:'Libre Baskerville',serif;font-size:clamp(2.5rem,5vw,3.5rem);font-weight:700;line-height:1.15;margin-bottom:1.5rem;color:var(--text)}
+        .hero-title span{color:var(--green)}
+        .hero-subtitle{font-size:1.05rem;color:var(--muted);margin-bottom:2rem;line-height:1.8}
+        .hero-features{display:flex;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap}
+        .hero-feature{display:flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:500}
+        .hero-feature-icon{color:var(--green)}
+        .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+        .btn-primary{background:var(--green);color:#fff;padding:1rem 2rem;text-decoration:none;font-weight:600;font-size:.9rem;border-radius:50px;transition:all .3s}
+        .btn-primary:hover{background:var(--green-deep);transform:translateY(-3px);box-shadow:0 12px 28px rgba(74,103,65,0.3)}
+        .btn-secondary{background:transparent;color:var(--text);padding:1rem 2rem;text-decoration:none;font-weight:600;font-size:.9rem;border:2px solid var(--border);border-radius:50px;transition:all .3s}
+        .btn-secondary:hover{border-color:var(--green);color:var(--green)}
+        .hero-visual{position:relative}
+        .hero-image-main{border-radius:12px;overflow:hidden;box-shadow:0 24px 48px rgba(0,0,0,0.1)}
+        .hero-image{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+        .hero-float{position:absolute;bottom:-1.5rem;left:-1.5rem;background:#fff;padding:1.25rem 1.5rem;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.08);display:flex;align-items:center;gap:1rem}
+        .float-icon{font-size:2rem}
+        .float-text{font-family:'Libre Baskerville',serif;font-size:.95rem;color:var(--text)}
+        .float-subtext{font-size:.8rem;color:var(--muted)}
+        .products{padding:6rem 2rem;background:var(--surface)}
+        .container{max-width:1100px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.2em;color:var(--green);margin-bottom:.75rem;font-weight:600}
+        .section-title{font-family:'Libre Baskerville',serif;font-size:clamp(1.75rem,3.5vw,2.25rem);color:var(--text)}
+        .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+        .product-card{background:var(--cream);border-radius:12px;overflow:hidden;transition:all .3s;text-align:center}
+        .product-card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(0,0,0,0.1)}
+        .product-image{aspect-ratio:1;object-fit:cover;width:100%;display:block;transition:transform .4s}
+        .product-card:hover .product-image{transform:scale(1.05)}
+        .product-content{padding:1.25rem}
+        .product-name{font-family:'Libre Baskerville',serif;font-size:1rem;color:var(--text);margin-bottom:.25rem}
+        .product-price{font-size:.85rem;color:var(--green);font-weight:600}
+        .about{padding:6rem 2rem;background:#f3ece0}
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .about-images{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+        .about-image{border-radius:8px;object-fit:cover;width:100%}
+        .about-image:first-child{grid-column:span 2;aspect-ratio:2/1}
+        .about-image:not(:first-child){aspect-ratio:1}
+        .about-content{max-width:480px}
+        .about-text{font-size:1rem;margin:1.5rem 0;line-height:1.9}
+        .about-values{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+        .value-item{display:flex;align-items:flex-start;gap:.75rem}
+        .value-icon{font-size:1.25rem;color:var(--green)}
+        .value-title{font-weight:600;color:var(--text);font-size:.95rem}
+        .value-desc{font-size:.85rem;color:var(--muted)}
+        .visit{padding:6rem 2rem;background:var(--green);color:#fff}
+        .visit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;text-align:center}
+        .visit-card h3{font-family:'Libre Baskerville',serif;font-size:1.25rem;margin-bottom:1rem}
+        .visit-card p{font-size:.95rem;opacity:.9;line-height:1.7}
+        .visit-card a{color:#fff;text-decoration:underline}
+        footer{background:var(--text);padding:3rem 2rem;color:#fff;text-align:center}
+        .footer-content{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+        .footer-brand{font-family:'Libre Baskerville',serif;font-size:1.1rem}
+        .footer-links{display:flex;gap:2rem}
+        .footer-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:.9rem}
+        .footer-links a:hover{color:#fff}
+        @media(max-width:1024px){.hero-inner,.about-grid{grid-template-columns:1fr;gap:3rem}.hero-visual{order:-1}.hero-bg,.hero-float{display:none}.products-grid{grid-template-columns:repeat(2,1fr)}.visit-grid{grid-template-columns:1fr}}
+        @media(max-width:768px){nav{display:none}.hero{padding:6rem 1.5rem 3rem}.products-grid{grid-template-columns:1fr 1fr}.about-images{grid-template-columns:1fr}.about-image:first-child{grid-column:span 1}.about-values{grid-template-columns:1fr}.footer-content{flex-direction:column;text-align:center}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">🌾 Big Brazos Farm</a>
+            <nav>
+                <a href="#products">Products</a>
+                <a href="#about">Our Farm</a>
+                <a href="#visit">Visit</a>
+            </nav>
+            <a href="#visit" class="header-cta">Find Us at Market</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge">🌱 Sustainably Grown</span>
+                <h1 class="hero-title">Fresh From the <span>Brazos Valley</span></h1>
+                <p class="hero-subtitle">We're a family farm committed to sustainable practices and exceptional produce. Find us every Saturday at Barton Creek Farmers Market.</p>
+                <div class="hero-features">
+                    <span class="hero-feature"><span class="hero-feature-icon">✓</span>Certified Organic</span>
+                    <span class="hero-feature"><span class="hero-feature-icon">✓</span>No Pesticides</span>
+                    <span class="hero-feature"><span class="hero-feature-icon">✓</span>Locally Grown</span>
+                </div>
+                <div class="hero-ctas">
+                    <a href="#products" class="btn-primary">What's In Season</a>
+                    <a href="#visit" class="btn-secondary">Visit Us</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-main">
+                    <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&h=600&fit=crop" alt="Fresh farm produce" class="hero-image">
+                </div>
+                <div class="hero-float">
+                    <span class="float-icon">🥬</span>
+                    <div>
+                        <p class="float-text">Now in Season</p>
+                        <p class="float-subtext">Spring greens, radishes & herbs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">What We Grow</p>
+                <h2 class="section-title">Farm Fresh Produce</h2>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&h=400&fit=crop" class="product-image" alt="Tomatoes"><div class="product-content"><h3 class="product-name">Heirloom Tomatoes</h3><p class="product-price">$5/lb</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="50"><img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=400&fit=crop" class="product-image" alt="Greens"><div class="product-content"><h3 class="product-name">Mixed Greens</h3><p class="product-price">$4/bunch</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&h=400&fit=crop" class="product-image" alt="Honey"><div class="product-content"><h3 class="product-name">Raw Honey</h3><p class="product-price">$14/jar</p></div></div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="150"><img src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&h=400&fit=crop" class="product-image" alt="Peppers"><div class="product-content"><h3 class="product-name">Sweet Peppers</h3><p class="product-price">$4/lb</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=400&fit=crop" class="about-image" alt="Farm">
+                    <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=400&h=400&fit=crop" class="about-image" alt="Farmer">
+                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=400&fit=crop" class="about-image" alt="Produce">
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <p class="section-label">Our Story</p>
+                    <h2 class="section-title">Sustainable Farming Since 2010</h2>
+                    <p class="about-text">Big Brazos Farm started with 10 acres and a dream to grow food the right way. Today we farm 50+ acres using regenerative practices that build soil health and support biodiversity.</p>
+                    <p class="about-text">Every vegetable we grow is nurtured without synthetic chemicals — just sun, water, and a whole lot of care.</p>
+                    <div class="about-values">
+                        <div class="value-item"><span class="value-icon">🌿</span><div><p class="value-title">Regenerative</p><p class="value-desc">Building soil health</p></div></div>
+                        <div class="value-item"><span class="value-icon">💧</span><div><p class="value-title">Water-Smart</p><p class="value-desc">Drip irrigation</p></div></div>
+                        <div class="value-item"><span class="value-icon">🐝</span><div><p class="value-title">Pollinator-Friendly</p><p class="value-desc">Habitat preservation</p></div></div>
+                        <div class="value-item"><span class="value-icon">👨‍👩‍👧</span><div><p class="value-title">Family-Run</p><p class="value-desc">Third generation</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="visit" id="visit">
+        <div class="container">
+            <div class="visit-grid">
+                <div class="visit-card" data-aos="zoom-in">
+                    <h3>📍 Find Us</h3>
+                    <p>Barton Creek Farmers Market<br>2901 S Capital of TX Hwy<br>Austin, TX 78746</p>
+                </div>
+                <div class="visit-card" data-aos="zoom-in" data-aos-delay="100">
+                    <h3>🕐 Market Hours</h3>
+                    <p>Every Saturday<br>9:00 AM – 1:00 PM<br>Rain or shine!</p>
+                </div>
+                <div class="visit-card" data-aos="zoom-in" data-aos-delay="200">
+                    <h3>📞 Contact</h3>
+                    <p><a href="tel:5125550201">(512) 555-0201</a><br>hello@bigbrazosfarm.com<br>@bigbrazosfarm</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <span class="footer-brand">🌾 Big Brazos Sustainable Farm</span>
+            <div class="footer-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="mailto:hello@bigbrazosfarm.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true,offset:100});</script>
+</body>
+</html>

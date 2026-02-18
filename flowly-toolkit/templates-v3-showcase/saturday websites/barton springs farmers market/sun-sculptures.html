@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun Sculptures | Handcrafted Metal Art</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+        :root{--cream:#f5f3ef;--rust:#a0522d;--bronze:#cd7f32;--charcoal:#2c2c2c;--muted:#666}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.8;font-weight:300}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,243,239,0.95);backdrop-filter:blur(10px)}
+        .header-inner{max-width:1100px;margin:0 auto;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--charcoal);text-decoration:none}
+        nav a{color:var(--muted);text-decoration:none;margin-left:2rem;font-size:.9rem}
+        .header-cta{background:var(--rust);color:#fff;padding:.7rem 1.5rem;font-size:.85rem}
+        .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:6rem 2rem;gap:4rem;max-width:1300px;margin:0 auto}
+        .hero-content{animation:fadeIn 1s ease-out}
+        .hero-eyebrow{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-bottom:1rem}
+        .hero-title{font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1.1;margin-bottom:1.5rem}
+        .hero-subtitle{font-size:1rem;color:var(--muted);margin-bottom:2rem}
+        .btn{display:inline-block;padding:1rem 2rem;text-decoration:none;font-weight:500;transition:all .3s}
+        .btn-primary{background:var(--rust);color:#fff}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(160,82,45,0.25)}
+        .hero-image{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:8px}
+        .gallery{padding:6rem 2rem;background:#fff}
+        .container{max-width:1100px;margin:0 auto}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-label{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-bottom:.75rem}
+        .section-title{font-family:'DM Serif Display',serif;font-size:2.5rem}
+        .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+        .gallery-item{aspect-ratio:1;overflow:hidden;border-radius:8px}
+        .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+        .gallery-item:hover img{transform:scale(1.08)}
+        .about{padding:6rem 2rem;background:var(--charcoal);color:#fff}
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .about-image{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px}
+        .about-content h2{font-family:'DM Serif Display',serif;font-size:2.5rem;margin-bottom:1.5rem}
+        .about-content p{opacity:.85;margin-bottom:1rem}
+        .cta{padding:5rem 2rem;background:var(--rust);text-align:center;color:#fff}
+        .cta h2{font-family:'DM Serif Display',serif;font-size:2.5rem;margin-bottom:1rem}
+        .cta p{opacity:.9;margin-bottom:2rem}
+        .cta-info{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
+        .cta-info div strong{display:block;color:var(--bronze);margin-bottom:.25rem}
+        footer{background:var(--charcoal);padding:2rem;color:#fff;text-align:center;font-size:.85rem}
+        @media(max-width:1024px){.hero,.about-grid{grid-template-columns:1fr}.hero-image{order:-1}.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){nav{display:none}.gallery-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">Sun Sculptures</a>
+            <nav><a href="#gallery">Gallery</a><a href="#about">About</a><a href="#contact" class="header-cta">Commission</a></nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow">Handcrafted Metal Art</p>
+            <h1 class="hero-title">Sculpture That Captures Light</h1>
+            <p class="hero-subtitle">One-of-a-kind metal sculptures for gardens, patios, and interiors. Each piece is hand-forged in my Austin studio.</p>
+            <a href="#gallery" class="btn btn-primary">View Gallery</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&h=900&fit=crop" alt="Metal sculpture" class="hero-image">
+    </section>
+
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">The Gallery</p>
+                <h2 class="section-title">Recent Work</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=500&h=500&fit=crop" alt="Sculpture"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="50"><img src="https://images.unsplash.com/photo-1561839561-b13bcfe95249?w=500&h=500&fit=crop" alt="Metal art"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=500&h=500&fit=crop" alt="Garden sculpture"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="150"><img src="https://images.unsplash.com/photo-1549887534-1541e9326642?w=500&h=500&fit=crop" alt="Abstract metal"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1577720580479-7d839d829c73?w=500&h=500&fit=crop" alt="Iron work"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="250"><img src="https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=500&h=500&fit=crop" alt="Outdoor art"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&h=525&fit=crop" class="about-image" data-aos="fade-right" alt="Artist at work">
+                <div class="about-content" data-aos="fade-left">
+                    <p class="section-label" style="color:var(--bronze)">The Artist</p>
+                    <h2>Fire, Hammer, Vision</h2>
+                    <p>I've been working with metal for over 20 years. What started as blacksmithing evolved into sculptural work — pieces that play with light, shadow, and movement.</p>
+                    <p>Every sculpture is hand-forged using traditional techniques and quality metals. Custom commissions welcome.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="container" data-aos="fade-up">
+            <h2>Find Me at Market</h2>
+            <p>Small pieces available, commissions discussed</p>
+            <div class="cta-info">
+                <div><strong>📍 Location</strong>Barton Creek Farmers Market</div>
+                <div><strong>🕐 Hours</strong>Saturdays 9am–1pm</div>
+                <div><strong>📞 Commissions</strong>(512) 555-0221</div>
+            </div>
+        </div>
+    </section>
+
+    <footer><p>© 2026 Sun Sculptures • Austin, TX</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({duration:800,once:true});</script>
+</body>
+</html>
